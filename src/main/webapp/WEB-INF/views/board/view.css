@@ -1,0 +1,84 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+div {
+  display: block;
+}
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block;
+}
+div[contenteditable=true] {
+  border: 1px solid #ddd;
+  color : #333;
+  font-size: 12px;
+  width: 99%;
+  height: 300px;
+  padding: 5px;
+}
+.view_list{
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  font-size: 15px;
+}
+.top_btn{
+    padding: 0 0 15px;
+}
+.top_btn:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.left_area{
+  float: left;
+}
+.right_area{
+  float: right;
+}
+.basebutton {
+    display: inline-block;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+}
+.skin {
+    border: 1px solid green;
+    background: green;
+    color: black;
+}
+.size{
+  padding: 0 12px;
+  font-size: 13px;
+  line-height: 35px;
+}
+.view_content{
+  padding: 29px 29px 0;
+  border: 1px solid green;
+  border-radius: 6px;
+}
+.comment_box{
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+}
+.commentwriter {
+    margin: 12px 0 29px;
+    padding: 16px 10px 10px 18px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: white;
+}
+.cmt_write_box{
+    width: 500px;
+    height: 78px;
+    padding: 13px;
+    margin-top: 10px;
+    border: 1px solid #cecdce;
+    background: #fff;
+    line-height: 18px;
+    resize: none;
+}
