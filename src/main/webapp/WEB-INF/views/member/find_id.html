@@ -118,22 +118,22 @@
         </div>
     </div>
     <script type="text/javascript">
-        var id_div = $('#container_name_div');
-        var id_input = $('#container_name_input');
+        var name_div = $('#container_name_div');
+        var name_input = $('#container_name_input');
         var email_div = $('#container_email_div');
         var email_input = $('#container_email_input');
         
         function move_container_name_div() {
-            id_div.css('fontSize', '10px');
-            id_div.css('bottom', '392px');
-            id_input.css('borderBottom', '2px solid #4f9f4f');
+            name_div.css('fontSize', '10px');
+            name_div.css('bottom', '392px');
+            name_input.css('borderBottom', '2px solid #4f9f4f');
         }
 
         function move_container_name_div_return() {
-            if (id_input.val() == "") {
-                id_div.css('fontSize', '16px');
-                id_div.css('bottom', '362px');
-                id_input.css('borderBottom', '1px solid #c0c0c0');
+            if (name_input.val() == "") {
+                name_div.css('fontSize', '16px');
+                name_div.css('bottom', '362px');
+                name_input.css('borderBottom', '1px solid #c0c0c0');
             }
         }
 
