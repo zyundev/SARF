@@ -67,8 +67,8 @@
 			<hr>
 			<a href="#">운영진 소개</a>
 			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
-			<button id="signup">회원가입</button>
-			<button id="login" onclick="location.href='member/login'">로그인</button>
+			<button class="menubar-button" id="signup">회원가입</button>
+			<button class="menubar-button" id="login" onclick="location.href='member/login'">로그인</button>
 		</div>
 	</header>
 <br>
