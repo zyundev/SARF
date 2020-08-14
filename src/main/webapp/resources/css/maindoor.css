@@ -1,0 +1,44 @@
+        	
+        	img .imgsize{
+        	
+        		width:100%;
+        		height:100%;
+        		z-index:10;
+        	
+        	}
+        
+            .ldoor{
+                
+                width:50%;
+                height:100%;
+                position: absolute;
+                left:0;
+                animation: ldoor 3s forwards;
+ 
+            }
+            
+
+            
+            .rdoor{
+                
+                width:50%;
+                height:100%;
+                position: absolute;
+                right:0;
+                animation: rdoor 3s forwards;
+            }
+            
+            
+            
+            @keyframes ldoor{
+                from{left:0%}
+                to{left:-50%}
+            }
+            
+            
+            
+            @keyframes rdoor{
+                from{right:0%}
+                to{right:-50%}
+            }
+            

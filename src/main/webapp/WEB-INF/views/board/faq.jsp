@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="kr">
 <head>
-	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+	<meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 	<title>FAQ 게시판</title>
+	<link rel="stylesheet" href="resources/css/faq.css" />
 </head>
-<link rel="stylesheet" href="faq.css">
 
 <body>
 	<div>
@@ -12,7 +14,7 @@
 	          <h3 class="txt">FAQ</h3>
 	<div>
 	    <div class="faq_txt">
-	<strong>"FAQ를 통해서 원하시는 답변을 쉽고 빠르게 찾아보세요"</strong><br>
+	<strong>"FAQ를 통해서 원하시는 답변을 쉽고 빠르게 찾아보세요"</strong><br />
 	서울 여행 관련 질문 중 가장 빈도수가 높은 질문들을 모아, 친절한 답변과 함께 제공해드리고 있습니다.
 		</div>
 	</div>

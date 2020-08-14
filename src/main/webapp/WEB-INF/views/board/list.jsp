@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="list.css">
+  <link rel="stylesheet" href="resources/css/list.css">
 </head>
 <body>
   <!--게시판 외형 -->
@@ -60,7 +62,7 @@
             <div style="float:right">
 				  <button class="write_btn" onclick="location.href='write.html'">글쓰기</button> 
 			      </div>
-            <div class="paging">
+            <div class="paging"><!-- spring 클래스 하나 생성해서 조작해야하는 구간 -->
                 <a href="#" class="bt">첫 페이지</a>
                 <a href="#" class="bt">이전 페이지</a>?>
                 <a href="#" class="num on">1</a>
@@ -78,7 +80,7 @@
 			<option value="sub">제목</option>
 			<option value="writer">글쓴이</option>
 			<option value="content">내용</option>
-		<select>
+		</select>
 		<span class='green_window'>
 			<input type='text' class='input_text' />
 		</span>

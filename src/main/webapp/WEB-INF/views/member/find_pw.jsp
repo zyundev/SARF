@@ -1,10 +1,12 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 
 <html>
 
 <head>
     <meta charset="utf-8">
-    <title>SARF</title>
+    <title>비밀번호 찾기</title>
     <style>
         input {
             outline: none;
@@ -101,7 +103,8 @@
 
 <body>
     <div class="logo">
-        <img src="./logo.jpg" alt="로고" width="200px">
+       <a href="#"><img src="./logo.jpg" alt="로고" width="200px"></a>
+       <!-- 메인화면 넘기는 경로 -->
     </div>
     <div class="container">
         <div class="container_main">비밀번호 찾기</div>
