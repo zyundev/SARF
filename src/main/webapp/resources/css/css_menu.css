@@ -1,6 +1,12 @@
-@charset "EUC-KR";
+@charset "UTF-8";
 
-/* ¸Ş´º ¾ÆÀÌÄÜ ¸ğ¾ç ¼³Á¤ */
+@font-face { font-family: 'Jua'; src: url(Jua.ttf) format('truetype'); }
+
+body {
+	font-family:Jua;
+}
+
+/* ë©”ë‰´ ì•„ì´ì½˜ ëª¨ì–‘ ì„¤ì • */
 input[id="menuicon"] {
 	display:none;
 }
@@ -10,7 +16,7 @@ input[id="menuicon"] + label {
 	width:60px;
 	height:40px;
 	position:fixed;
-	left:10;
+	right:10px;
 	top:10;
 	transition:all .35s;
 	cursor:pointer;
@@ -22,7 +28,7 @@ input[id="menuicon"] + label span {
 	width:100%;
 	height:5px;
 	border-radius:30px;
-	background:#000;
+	background:#B1B1B1;
 	transition:all .35s;
 }
 
@@ -39,7 +45,7 @@ input[id="menuicon"] + label span:nth-child(3) {
 	bottom:0;
 }
 
-/* ¸Ş´º ¾ÆÀÌÄÜ ´©¸£¸é X·Î º¯È­ */
+/* ë©”ë‰´ ì•„ì´ì½˜ ëˆ„ë¥´ë©´ Xë¡œ ë³€í™” */
 input[id="menuicon"]:checked + label span:nth-child(1) {
 	top:50%;
 	transform:translateY(-50%) rotate(45deg);
@@ -54,44 +60,65 @@ input[id="menuicon"]:checked + label span:nth-child(3) {
 	transform:translateY(50%) rotate(-45deg);
 }
 
-/* »çÀÌµå¹Ù ¼³Á¤(È­¸é¿¡¼­ ¾Èº¸ÀÓ) */
+/* ì‚¬ì´ë“œë°” ì„¤ì •(í™”ë©´ì—ì„œ ì•ˆë³´ì„) */
 div[class="sidebar"] {
 	width:300px;
 	height:100%;
-	background:#222;
+	background:#F1F1F1;
 	position:fixed;
 	top:0;
-	left:-300px;
+	right:-300px;
 	z-index:1;
 	transition:all .35s;
 }
 
-/* ¸Ş´º ¾ÆÀÌÄÜÀÌ Å¬¸¯µÇ¸é »çÀÌµå¹Ù°¡ È­¸é¿¡ º¸¿©Áü */
+/* ë©”ë‰´ ì•„ì´ì½˜ì´ í´ë¦­ë˜ë©´ ì‚¬ì´ë“œë°”ê°€ í™”ë©´ì— ë³´ì—¬ì§ */
 input[id="menuicon"]:checked + label + div {
-	left:0;
+	right:0;
 }
 
-/* »çÀÌµå¹Ù°¡ º¸¿©Áö¸é¼­ ¸Ş´º ¾ÆÀÌÄÜµµ »çÀÌµå¹Ù ³Êºñ¸¸Å­ ÀÌµ¿ */
+/* ì‚¬ì´ë“œë°”ê°€ ë³´ì—¬ì§€ë©´ì„œ ë©”ë‰´ ì•„ì´ì½˜ë„ ì‚¬ì´ë“œë°” ë„ˆë¹„ë§Œí¼ ì´ë™ */
 input[id="menuicon"]:checked + label {
 	z-index:2;
-	left:300px;
+	right:300px;
 }
 
-/* »çÀÌµå¹Ù ¼¼ºÎ ¸Ş´º ¼³Á¤*/
+/* ì‚¬ì´ë“œë°” ì„¸ë¶€ ë©”ë‰´ ì„¤ì •*/
 div[class="sidebar"] a {
 	position:relative;
 	display:block; 
 	font-size:30px; 
-	line-height:150px; 
-	color:#fff;
+	line-height:83px; 
+	color:#000;
 	text-decoration:none;
 	text-align:center;
 }
 
 div[class="sidebar"] a:hover {
-	color:#FAED7D;
+	background-color:#555;
+	color:white;
+	transition:all .35s;
 }
 
 hr {
 	width:80%;
+}
+
+button {
+	float:right;
+	margin-right:10px;
+	border:0;
+	outline:0;
+	font-family:Jua;
+	font-size:20px;
+	color:#B1B1B1;
+}
+
+button:hover {
+	color:#000;
+	cursor:pointer;
+}
+
+button[id="login"] {
+	margin-right:-2px;
 }
