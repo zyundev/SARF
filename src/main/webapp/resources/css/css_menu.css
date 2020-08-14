@@ -104,7 +104,7 @@ hr {
 	width:80%;
 }
 
-button {
+.menubar-button {
 	float:right;
 	margin-right:10px;
 	border:0;
