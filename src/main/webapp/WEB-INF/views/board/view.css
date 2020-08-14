@@ -13,21 +13,23 @@ div[contenteditable=true] {
   border: 1px solid #ddd;
   color : #333;
   font-size: 12px;
-  width: 99%;
+  width: 718px;
   height: 300px;
-  padding: 5px;
+  padding: 12px 10px 12px 10px;
+  margin-top: 1em;
 }
 .view_list{
   position: relative;
   width: 800px;
   margin: 0 auto;
+  margin-top: 30px;
   font-size: 15px;
 }
 .top_btn{
-    padding: 0 0 15px;
+    margin-top: 6px;
+	padding: 0 0 15px;
 }
 .top_btn:after {
-    content: "";
     display: block;
     clear: both;
 }
@@ -37,7 +39,7 @@ div[contenteditable=true] {
 .right_area{
   float: right;
 }
-.basebutton {
+.basebutton{
     display: inline-block;
     border-radius: 6px;
     box-sizing: border-box;
@@ -45,9 +47,19 @@ div[contenteditable=true] {
     text-align: center;
     vertical-align: top;
 }
+.basebutton2{
+    display: inline-block;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+	float: right;
+}
+
 .skin {
     border: 1px solid green;
-    background: green;
+    background: #22B600;
     color: black;
 }
 .size{
@@ -56,29 +68,66 @@ div[contenteditable=true] {
   line-height: 35px;
 }
 .view_content{
-  padding: 29px 29px 0;
+  padding: 29px;
   border: 1px solid green;
   border-radius: 6px;
 }
 .comment_box{
+	display: inline-block;
     margin-top: 10px;
     border-top: 1px solid #ddd;
 }
-.commentwriter {
-    margin: 12px 0 29px;
-    padding: 16px 10px 10px 18px;
+.comment_inbox {
+    position: relative;
+    margin-bottom: 10px;
+}
+.comment_inbox_name {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 13px;
+	padding: 8px 8px 0px 8px;;
+}
+.comment_writer {
+	width: 740px;
+	height: 130px;
+    padding: 10px;
     border: 2px solid #ddd;
     border-radius: 6px;
     box-sizing: border-box;
     background: white;
+	float: right;
 }
 .cmt_write_box{
-    width: 500px;
-    height: 78px;
-    padding: 13px;
-    margin-top: 10px;
-    border: 1px solid #cecdce;
-    background: #fff;
-    line-height: 18px;
+	width: 700px;
+    padding: 8px;
+  	line-height: 18px;
     resize: none;
+	overflow: hidden;
+	border: 0px solid #aaa;
 }
+.reply_input{
+	margin: 0;
+	width: 740px;
+}
+.input_box{
+	display: inline-block;
+	width: 710px;
+}
+.input_button{
+	display: inline-block;
+    min-width: 35px;
+    height: 34px;
+    font-size: 15px;
+    color: #b7b7b7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+	float: right;
+}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+

@@ -52,3 +52,6 @@ strong {
   display:none;
   padding:20px;
 }
+.hidden{
+  display: none;
+}
