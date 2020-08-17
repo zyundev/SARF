@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
-<title>Css Card Hover Effects</title>
+<title>운영진 소개</title>
 <link rel="stylesheet" type="text/css" href="resources/css/intro.css">
 <body>
     <div class="card-wrapper">

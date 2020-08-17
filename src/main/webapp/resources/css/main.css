@@ -18,7 +18,7 @@
    position: absolute;
    margin-top: 10px;
    left: 50%;
-   /* margin-left:-(로고width/2) */
+   /* margin-left:-(濡쒓퀬width/2) */
    margin-left: -150px;
 }
 
@@ -63,7 +63,7 @@
 
 /* main-article3 */
 .intro {
-   background: url('./images/intro.jpg') no-repeat center center/cover;
+   background: url('../images/intro.jpg') no-repeat center center/cover;
    padding: 100px 20px;
    text-align: center;
    margin-bottom: 50px;
@@ -95,7 +95,7 @@ footer {
    font-size: 15px;
 }
 
-/* 문 열림 */
+/* 臾   뿴由  */
 .imgsize {
    width: 100%;
    height: 100%;
@@ -106,7 +106,7 @@ footer {
    height: 100%;
    position: absolute;
    left: 0;
-   animation: ldoor 2s forwards;
+   animation: ldoor 6.5s forwards;
 }
 
 .rdoor {
@@ -114,7 +114,7 @@ footer {
    height: 100%;
    position: absolute;
    right: 0;
-   animation: rdoor 2s forwards;
+   animation: rdoor 6.5s forwards;
 }
 
 @keyframes ldoor {
