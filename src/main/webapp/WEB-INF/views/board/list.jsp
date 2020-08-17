@@ -5,7 +5,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>커뮤니티</title>
   <link rel="stylesheet" href="resources/css/list.css">
 </head>
 <body>
@@ -33,7 +33,7 @@
                     <tr>
                         <td>5</td>
                         <td class="tit">
-                            <a href="view.html">글11</a>
+                            <a href="view.html">글11</a><!-- 경로 재설정 -->
                         </td>
                         <td>admin</td>
                         <td>2019-08-09</td>
@@ -60,7 +60,7 @@
                 </tbody>
             </table>
             <div style="float:right">
-				  <button class="write_btn" onclick="location.href='write.html'">글쓰기</button> 
+				  <button class="write_btn" onclick="location.href='board/write'">글쓰기</button> 
 			      </div>
             <div class="paging"><!-- spring 클래스 하나 생성해서 조작해야하는 구간 -->
                 <a href="#" class="bt">첫 페이지</a>

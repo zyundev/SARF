@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="stylesheet" href="resources/css/main.css" />
     <link rel="stylesheet" href="resources/css/css_menu.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
     <script src="resources/js/main.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -43,34 +44,54 @@
    <!-- 로고 메뉴-->
 <header>
     <!-- 로고 -->
-      <div class="logo">
-         <img src="resources/images/logo.jpg" alt="로고" width="300px">
-      </div>
- 
-      <!-- 메뉴 -->
-      <input type="checkbox" id="menuicon"> <label for="menuicon">
-         <span></span> <span></span> <span></span>
-      </label>
+		<div class="logo">
+			<img src="resources/images/logo.jpg" alt="로고" width="300px">
+		</div>
 
-      <div class="sidebar">
-         <a href="#">공지사항</a>
-         <hr>
-         <a href="#">게시판</a>
-         <hr>
-         <a href="#">명소</a>
-         <hr>
-         <a href="#">맛집</a>
-         <hr>
-         <a href="#">축제</a>
-         <hr>
-         <a href="#">고객센터</a>
-         <hr>
-         <a href="#">운영진 소개</a>
-         <!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
-         <button class="menubar-button" id="signup">회원가입</button>
-         <button class="menubar-button" id="login" onclick="location.href='member/login'">로그인</button>
-      </div>
-   </header>
+		<!-- 메뉴 -->
+		<input type="checkbox" id="menuicon"> <label for="menuicon">
+			<span></span> <span></span> <span></span>
+		</label>
+
+		<div class="sidebar">
+			<a href="#">공지사항</a>
+			<hr>
+
+			<div class="board">
+				<a href="#">게시판</a>
+				<div>
+					<button class="bd">- 자유 게시판</button>
+					<br>
+					<p>
+						<button class="bd">- 명소 게시판</button>
+					</p>
+					<br>
+					<p>
+						<button class="bd">- 맛집 게시판</button>
+					</p>
+					<br>
+					<p>
+						<button class="bd">- 축제 게시판</button>
+					</p>
+					<br> <br>
+				</div>
+			</div>
+
+			<hr>
+			<a href="#">명소</a>
+			<hr>
+			<a href="#">맛집</a>
+			<hr>
+			<a href="#">축제</a>
+			<hr>
+			<a href="#">고객센터</a>
+			<hr>
+			<a href="#">운영진 소개</a>
+
+			<button id="signup">회원가입</button>
+			<button id="login">로그인</button>
+		</div>
+	</header>
 <br>
 <!-- 지도, 팝업, 소개 -->
 <main>

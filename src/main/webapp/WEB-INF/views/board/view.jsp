@@ -10,14 +10,13 @@
   </head>
   <body>
 <div class="view_list">
-  <div class="top_btn" style="
-    padding-bottom: 13px">
+  <div class="top_btn" style="padding-bottom: 13px">
       <div class="right_area">
 <!-- 이전글 -->
 <a class="basebutton skin size" role="button">이전글</a>
 <!-- 다음글-->
 <a class="basebutton skin size">다음글</a>
-<!-- 목록 -->
+<!-- 목록  경로 재설정 -->
 <a href="list.html" class="basebutton skin size">목록</a>
     </div>
   </div>
@@ -32,7 +31,7 @@
   <div>작성 시간</div>
 	<hr size="1" color="c0c0c0">
 	<!-- 내용 -->
-	<div contenteditable="true" placeholder="타인의 권리를 침해하거나 명예를 훼손하는 글은 제제를 받을 수 있습니다.&#13;&#10;Shift+Enter 키를 동시에 누르면 줄 바꿈이 됩니다."></div>
+	<div contenteditable="true"></div>
    <hr size="1" color="c0c0c0">
   <div class="comment_box">
  <!-- 댓글 출력창-->  
