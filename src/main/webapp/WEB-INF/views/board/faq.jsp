@@ -46,7 +46,7 @@
 		</div><!-- end:content -->
 			<!-- 페이징 -->
 			<div class="page">
-    <!-- 처음 -->
+    <!-- 처음 --> <!-- jsp 수정 -->
     	<img src="https://bimg.nexon.com/images/career_imgs/NEW/page_first.jpg" width="30" height="30" alt="첫 페이지" />
     <!-- 이전 n개 -->
     	<img src="https://bimg.nexon.com/images/career_imgs/NEW/page_prev.jpg" width="30" height="30" alt="이전 페이지" />
