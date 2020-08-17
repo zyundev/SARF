@@ -6,8 +6,8 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Join</title>
-    <link rel="stylesheet" href="/resources/css/join.css" />
+    <title>updatemember</title>
+    <link rel="stylesheet" href="/resources/css/updatemember.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
@@ -15,16 +15,16 @@
     <div class="logo">
         <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
     </div>
-    <form onsubmit="return joinchk()" method="post" action="join">
+    <form onsubmit="return chk()" method="post" action="updatemember">
         <div class="container">
-            <div class="container_main">회원가입</div>
+            <div class="container_main">회원 정보 수정</div>
             <div class="container_id">
-                <input class="container_id_input" type="text" name="id">
+                <input class="container_id_input" type="text" name="id" value="${member.getId()}" readonly>
                 <div class="container_id_div">아이디</div>
             </div>
             <div class="container_pw">
                 <input class="container_pw_input" type="password" name="pw">
-                <div class="container_pw_div">비밀번호</div>
+                <div class="container_pw_div">변경할 비밀번호를 입력해주세요.</div>
             </div>
             <div class="container_pwcheck">
                 <input class="container_pwcheck_input" type="password">
@@ -46,11 +46,12 @@
                 <input class="container_phone_input" type="text" name="phone">
                 <div class="container_phone_div">전화번호</div>
             </div>
-            <div class="container_join">
-                <input class="container_join_input" type="submit" value="회원 가입">
+            <div class="container_update">
+                <input class="container_update_input" type="submit" value="정보 수정">
+                <button class="container_delete_button" type="button" onclick="location.href=''">회원 탈퇴</button>
             </div>
         </div>
     </form>
-    <script src="/resources/js/join.js"></script>
+    <script src="/resources/js/updatemember.js"></script>
 </body>
 </html>

@@ -1,0 +1,94 @@
+input {
+	outline: none;
+	border: none;
+	border-bottom: 1px solid #c0c0c0;
+	width: 100%;
+	font-size: 20px;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 15px;
+    cursor:pointer;
+}
+
+input+div {
+	position: absolute;
+	color: #c0c0c0;
+	transition-property: font-size, bottom;
+	transition-duration: 0.5s;
+	pointer-events: none;
+}
+
+.container {
+	position: absolute;
+	width: 500px;
+	height: 800px;
+	top: 50%;
+	left: 50%;
+	margin-top: -400px;
+	margin-left: -250px;
+}
+
+.container_main {
+	height: 15%;
+	font-size: 30px;
+    margin-top: 50px;
+}
+
+.container_id, .container_pw, .container_pwcheck, .container_name, .container_addr, .container_email, .container_phone {
+	height: 10%;                           
+}                                          
+
+.container_join {
+	height: 15%;
+	text-align: center;
+}
+
+.container_id_div {
+	left: 3px;
+	bottom: 611px;
+}
+
+.container_pw_div {
+	left: 3px;
+	bottom: 531px;
+}
+
+.container_pwcheck_div {
+	left: 3px;
+	bottom: 451px;
+}
+
+.container_name_div {
+	left: 3px;
+	bottom: 371px;
+}
+
+.container_addr_div {
+	left: 3px;
+	bottom: 291px;
+}
+
+.container_email_div {
+	left: 3px;
+	bottom: 211px;
+}
+
+.container_phone_div {
+	left: 3px;
+	bottom: 131px;
+}
+
+.container_join_input {
+	width: 60%;
+	min-width: 120px;
+	background: #4f9f4f;
+	border: solid 1px #4f9f4f;
+	border-radius: 22px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 13px;
+	height: 42px;
+	padding: 11px 25px 12px 25px;
+}

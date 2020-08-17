@@ -1,0 +1,90 @@
+input {
+    outline: none;
+}
+
+.logo {
+    text-align: center;
+    margin-top: 15px;
+    cursor:pointer;
+}
+
+input+div {
+    position: absolute;
+    color: #c0c0c0;
+    transition-property: font-size, bottom;
+    transition-duration: 0.5s;
+    pointer-events: none;
+}
+
+.container {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: 50%;
+    top: 50%;
+    margin-top: -250px;
+    margin-left: -250px;
+}
+
+.container_main {
+    height: 20%;
+    font-size: 30px;
+}
+
+.container_id {
+    margin-top: 16px;
+    height: 10%;
+}
+
+.container_pw {
+    margin-top: 48px;
+    height: 10%;
+}
+
+.container_find {
+    height: 10%;
+    text-align: right;
+    padding-top: 11px;
+    font-size: 13px;
+}
+
+.container_login {
+    height: 30%;
+    text-align: center;
+}
+
+.container_id_input, .container_pw_input {
+    width: 100%;
+    display: block;
+    border: none;
+    border-bottom: 1px solid #c0c0c0;
+    font-size: 20px;
+}
+
+.container_login input {
+    background: #4f9f4f;
+    border: solid 1px #4f9f4f;
+    border-radius: 22px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 13px;
+    min-width: 120px;
+    padding: 11px 25px 12px 25px;
+    text-align: center;
+    margin-left: 25px;
+}
+
+.container_find a {
+    text-decoration: none;
+    color: #000000aa;
+}
+
+.container_id_div {
+    bottom: 362px;
+    left: 3px;
+}
+
+.container_pw_div {
+    bottom: 264px;
+    left: 3px;
+}
