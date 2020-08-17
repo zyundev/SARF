@@ -46,7 +46,7 @@
       <div class="logo">
          <img src="resources/images/logo.jpg" alt="로고" width="300px">
       </div>
-
+ 
       <!-- 메뉴 -->
       <input type="checkbox" id="menuicon"> <label for="menuicon">
          <span></span> <span></span> <span></span>
