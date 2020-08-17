@@ -72,16 +72,23 @@
         }
 
         .container_login input {
-            background: #4f9f4f;
+            background: #ffffff00;
             border: solid 1px #4f9f4f;
             border-radius: 22px;
-            color: #fff;
+            box-shadow: inset 0 0 0 1px #4f9f4f!important;
+            color: #4f9f4f;
             cursor: pointer;
             font-size: 13px;
             min-width: 120px;
             padding: 11px 25px 12px 25px;
             text-align: center;
             margin-left: 25px;
+        }
+        
+        .container_login input:hover{
+            color:#ffffff;
+            background: #4f9f4f;
+            transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out;
         }
 
         #container_name_div {

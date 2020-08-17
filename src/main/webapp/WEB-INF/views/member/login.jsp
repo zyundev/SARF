@@ -56,6 +56,10 @@
             padding-top: 11px;
             font-size: 13px;
         }
+        
+        .container_find_under:hover{
+            text-decoration: underline;
+        }
 
         .container_login {
             height: 30%;
@@ -71,16 +75,23 @@
         }
 
         .container_login input {
-            background: #4f9f4f;
+            background: #ffffff00;
             border: solid 1px #4f9f4f;
             border-radius: 22px;
-            color: #fff;
+            box-shadow: inset 0 0 0 1px #4f9f4f!important;
+            color: #4f9f4f;
             cursor: pointer;
             font-size: 13px;
             min-width: 120px;
             padding: 11px 25px 12px 25px;
             text-align: center;
             margin-left: 25px;
+        }
+        
+        .container_login input:hover{
+            color:#ffffff;
+            background: #4f9f4f;
+            transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out;
         }
 
         .container_find a {
@@ -116,15 +127,18 @@
             <input id="container_pw_input" class="container_id_container_pw_input" type="password" name="" value="" onfocus="move_container_pw_div()" onfocusout="move_container_pw_div_return()">
             <div id="container_pw_div">비밀번호</div>
         </div>
+        
         <div class="container_find">
-            <a href="#">아이디 찾기 |</a>
-            <a href="#">비밀번호 찾기</a>
+            <a class="container_find_under" href="#">아이디 찾기</a> | 
+            <a class="container_find_under" href="#">비밀번호 찾기</a>
         </div>
+        
         <div class="container_login">
             <input type="submit" name="" value="로그인">
             <input type="button" name="" value="회원 가입" onclick="location.href='join.html';">
         </div>
     </div>
+    
     <script type="text/javascript">
         var id_div = $('#container_id_div');
         var id_input = $('#container_id_input');
