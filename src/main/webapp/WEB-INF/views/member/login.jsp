@@ -31,7 +31,7 @@
 	            <div class="container_pw_div">비밀번호</div>
 	        </div>
 	        <div class="container_find">
-	            <a href="#">아이디 찾기 |</a>
+	            <a href="find_id">아이디 찾기 |</a>
 	            <a href="#">비밀번호 찾기</a>
 	        </div>
 	        <div class="container_login">

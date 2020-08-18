@@ -31,24 +31,24 @@
                 <div class="container_pwcheck_div">비밀번호 확인</div>
             </div>
             <div class="container_name">
-                <input class="container_name_input" type="text" name="name">
+                <input class="container_name_input" type="text" name="name" value="${member.getName()}">
                 <div class="container_name_div">이름</div>
             </div>
             <div class="container_addr">
-                <input class="container_addr_input" type="text" name="addr">
+                <input class="container_addr_input" type="text" name="addr" value="${member.getAddr()}">
                 <div class="container_addr_div">주소</div>
             </div>
             <div class="container_email">
-                <input class="container_email_input" type="email" name="email">
+                <input class="container_email_input" type="email" name="email" value="${member.getEmail()}">
                 <div class="container_email_div">이메일</div>
             </div>
             <div class="container_phone">
-                <input class="container_phone_input" type="text" name="phone">
+                <input class="container_phone_input" type="text" name="phone" value="${member.getPhone()}">
                 <div class="container_phone_div">전화번호</div>
             </div>
             <div class="container_update">
                 <input class="container_update_input" type="submit" value="정보 수정">
-                <button class="container_delete_button" type="button" onclick="location.href=''">회원 탈퇴</button>
+                <button class="container_delete_button" type="button" onclick="location.href='deletemember'">회원 탈퇴</button>
             </div>
         </div>
     </form>
