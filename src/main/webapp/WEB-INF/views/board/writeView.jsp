@@ -16,7 +16,7 @@
 	</div>
 	<div class="WritingContent">
 		<div class="WritingTitle">
-			XXX 게시판 <!-- 서버를 통해서 해당 게시판의 값을 가져오기 -->
+			자유 게시판 <!-- 서버를 통해서 해당 게시판의 값을 가져오기 -->
 		</div>
 		<div>
 			<textarea  class="textarea_input" placeholder="제목을 입력해 주세요." style="height: 40px;" ></textarea>

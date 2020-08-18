@@ -41,7 +41,7 @@
       <div class="sidebar">
          <a href="#">공지사항</a>
          <hr>
-         <a href="#">게시판</a>
+         <a href="/board/list">게시판</a>
          <hr>
          <a href="#">명소</a>
          <hr>
