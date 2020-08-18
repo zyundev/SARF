@@ -1,7 +1,5 @@
 package com.sarf.dao;
 
-import java.util.List;
-
 import com.sarf.vo.MemberVO;
 
 public interface MemberDAO {
@@ -18,5 +16,5 @@ public interface MemberDAO {
 	public void deleteMember(MemberVO vo) throws Exception;
 
 	// 아이디 찾기
-	public List<MemberVO> findId(MemberVO vo) throws Exception;
+	public MemberVO findId(MemberVO vo) throws Exception;
 }

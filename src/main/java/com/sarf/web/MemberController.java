@@ -169,20 +169,19 @@ public class MemberController {
 	
 	// 아이디 찾기 post
 	@RequestMapping(value = "find_id", method = RequestMethod.POST)
-	public String postFindId(Model model, MemberVO vo, RedirectAttributes rttr) throws Exception{
+	public String postFindId(MemberVO vo, RedirectAttributes rttr) throws Exception{
 		// LOG
 		if (debug == 1) {
 			logger.info("~~~post find_id~~~");
 		}
-		List<MemberVO> idlist = service.findId(vo);
+		MemberVO findid = service.findId(vo);
 		
-		model.addAttribute(idlist);
-		
-		if(idlist == null) {
+		if(findid == null) {
 			rttr.addFlashAttribute("msg", false);
 			return "redirect:find_id";
 		}
 		
-		return "find_id";
+		rttr.addFlashAttribute("findid", findid);
+		return "redirect:find_id";
 	}
 }
