@@ -18,14 +18,14 @@
    
 	<!-- 로그인 -->
 	<select id="login" resultType="com.sarf.vo.MemberVO">
-	    SELECT id, pw
+	    SELECT *
 	    FROM MEMBER
 	    WHERE id = #{id}
 	    AND pw = #{pw}
     </select>
    
 	<!-- 회원정보 수정 -->
-	<update id="memberUpdate">
+	<update id="updateMember">
 	    UPDATE MEMBER SET
 	    pw = #{pw},
 	    name = #{name},
@@ -36,9 +36,17 @@
     </update>
     
 	<!-- 회원 탈퇴-->
-	<delete id="memberDelete">
-	    DELETE FROM MP_MEMBER
-	    WHERE USERID = #{userId}
-	    AND USERPASS = #{userPass}
+	<delete id="deleteMember">
+	    DELETE FROM MEMBER
+	    WHERE id = #{id}
+	    AND pw = ${pw}
     </delete>
+    
+    <!-- 아이디 찾기 -->
+	<select id="findId" resultType="com.sarf.vo.MemberVO">
+	    SELECT id
+	    FROM MEMBER
+	    WHERE name = #{name}
+	    AND email = #{email}
+    </select>
 </mapper>

@@ -16,6 +16,9 @@
     
 </head>
 <body>
+	<c:if test="${deletemsg == false}">
+		<script>alert('회원 탈퇴되었습니다.');</script>
+	</c:if>
    <!-- main1 -->
    <div class="loading-container">
       <div class="ldoor">

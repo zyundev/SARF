@@ -1,5 +1,7 @@
 package com.sarf.service;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
@@ -26,10 +28,14 @@ public class MemberServiceImpl implements MemberService {
 	public void updateMember(MemberVO vo) throws Exception {
 		dao.updateMember(vo);		
 	}
-	/*
+
 	@Override
-	public void memberDelete(MemberVO vo) throws Exception {
-		dao.memberDelete(vo);
+	public void deleteMember(MemberVO vo) throws Exception {
+		dao.deleteMember(vo);
 	}
-	*/
+
+	@Override
+	public List<MemberVO> findId(MemberVO vo) throws Exception {
+		return dao.findId(vo);
+	}
 }

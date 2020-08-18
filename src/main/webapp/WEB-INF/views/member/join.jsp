@@ -12,7 +12,7 @@
 </head>
 
 <body>
-    <div class="logo">
+	<div class="logo">
         <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
     </div>
     <form onsubmit="return joinchk()" method="post" action="join">

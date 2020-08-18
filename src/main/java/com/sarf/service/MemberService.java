@@ -1,12 +1,13 @@
 package com.sarf.service;
 
+import java.util.List;
+
 import com.sarf.vo.MemberVO;
 
 public interface MemberService {
 	public void join(MemberVO vo) throws Exception;
 	public MemberVO login(MemberVO vo) throws Exception;
 	public void updateMember(MemberVO vo) throws Exception;
-	/*
-	public void memberDelete(MemberVO vo) throws Exception;
-	*/
+	public void deleteMember(MemberVO vo) throws Exception;
+	public List<MemberVO> findId(MemberVO vo) throws Exception;
 }
