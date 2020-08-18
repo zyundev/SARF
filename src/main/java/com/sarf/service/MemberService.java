@@ -1,7 +1,5 @@
 package com.sarf.service;
 
-import java.util.List;
-
 import com.sarf.vo.MemberVO;
 
 public interface MemberService {
@@ -9,5 +7,5 @@ public interface MemberService {
 	public MemberVO login(MemberVO vo) throws Exception;
 	public void updateMember(MemberVO vo) throws Exception;
 	public void deleteMember(MemberVO vo) throws Exception;
-	public List<MemberVO> findId(MemberVO vo) throws Exception;
+	public MemberVO findId(MemberVO vo) throws Exception;
 }

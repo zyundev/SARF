@@ -1,14 +1,11 @@
 package com.sarf.dao;
 
-import java.util.List;
-
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.sarf.vo.MemberVO;
-
 
 @Repository
 public class MemberDAOImpl implements MemberDAO {
@@ -40,9 +37,7 @@ public class MemberDAOImpl implements MemberDAO {
 	}
 
 	@Override
-	public List<MemberVO> findId(MemberVO vo) throws Exception {
-		List<MemberVO> idlist = sql.selectList("memberMapper.findId", vo);
-		
-		return idlist;
+	public MemberVO findId(MemberVO vo) throws Exception {
+		return sql.selectOne("memberMapper.findId", vo);
 	}
 }

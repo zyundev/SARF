@@ -123,8 +123,12 @@
 		        <div class="container_login">
 		            <input type="submit" value="조회 하기">
 		        </div>
+		        <c:if test="${findid != null}">
+    				<div>아이디는 : ${findid.getId()} 입니다.</div>
+    			</c:if>
 	    </div>
     </form>
+    
     <script type="text/javascript">
         var name_div = $('.container_name_div');
         var name_input = $('.container_name_input');
