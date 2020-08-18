@@ -1,4 +1,3 @@
-
 input {
 	outline: none;
 	border: none;
@@ -41,14 +40,15 @@ input+div {
 	height: 10%;                           
 }                                          
 
-.container_join {
+.container_update {
 	height: 15%;
 	text-align: center;
 }
 
 .container_id_div {
+	font-size: 10px;
 	left: 3px;
-	bottom: 611px;
+	bottom: 641px;
 }
 
 .container_pw_div {
@@ -81,11 +81,24 @@ input+div {
 	bottom: 131px;
 }
 
-.container_join_input {
-	width: 60%;
+.container_update_input {
+	width: 30%;
 	min-width: 120px;
 	background: #4f9f4f;
 	border: solid 1px #4f9f4f;
+	border-radius: 22px;
+	color: #fff;
+	cursor: pointer;
+	font-size: 13px;
+	height: 42px;
+	padding: 11px 25px 12px 25px;
+}
+
+.container_delete_button {
+	width: 30%;
+	min-width: 120px;
+	background: #ff3333;
+	border: solid 1px #f00;
 	border-radius: 22px;
 	color: #fff;
 	cursor: pointer;

@@ -109,11 +109,11 @@
     <div class="container">
         <div class="container_main">비밀번호 찾기</div>
         <div class="container_id">
-            <input id="container_id_input" class="container_id_container_email_input" type="text" onfocus="move_container_id_div()" onfocusout="move_container_id_div_return()">
+            <input id="container_id_input" class="container_id_container_email_input" type="text" onfocus="move_container_id_div()" onblur="move_container_id_div_return()">
             <div id="container_id_div">아이디</div>
         </div>
         <div class="container_email">
-            <input id="container_email_input" class="container_id_container_email_input" type="password" onfocus="move_container_email_div()" onfocusout="move_container_email_div_return()">
+            <input id="container_email_input" class="container_id_container_email_input" type="password" onfocus="move_container_email_div()" onblur="move_container_email_div_return()">
             <div id="container_email_div">이메일 주소</div>
         </div>
         <div class="container_login">

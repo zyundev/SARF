@@ -1,165 +1,46 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
+ 
 <!DOCTYPE html> 
 <html>
 
 <head>
     <meta charset="utf-8">
     <title>Login</title>
-    <style>
-        input {
-            outline: none;
-        }
-
-        .logo {
-            text-align: center;
-            margin-top: 15px;
-        }
-        
-        input+div {
-            position: absolute;
-            color: #c0c0c0;
-            transition-property: font-size, bottom;
-            transition-duration: 0.5s;
-            pointer-events: none;
-        }
-
-        .container {
-            position: absolute;
-            width: 500px;
-            height: 500px;
-            left: 50%;
-            top: 50%;
-            margin-top: -250px;
-            margin-left: -250px;
-        }
-
-        .container_main {
-            height: 20%;
-            font-size: 30px;
-        }
-
-        .container_id {
-            margin-top: 16px;
-            height: 10%;
-        }
-
-        .container_pw {
-            margin-top: 48px;
-            height: 10%;
-        }
-
-        .container_find {
-            height: 10%;
-            text-align: right;
-            padding-top: 11px;
-            font-size: 13px;
-        }
-
-        .container_login {
-            height: 30%;
-            text-align: center;
-        }
-
-        .container_id_container_pw_input {
-            width: 100%;
-            display: block;
-            border: none;
-            border-bottom: 1px solid #c0c0c0;
-            font-size: 20px;
-        }
-
-        .container_login input {
-            background: #4f9f4f;
-            border: solid 1px #4f9f4f;
-            border-radius: 22px;
-            color: #fff;
-            cursor: pointer;
-            font-size: 13px;
-            min-width: 120px;
-            padding: 11px 25px 12px 25px;
-            text-align: center;
-            margin-left: 25px;
-        }
-
-        .container_find a {
-            text-decoration: none;
-            color: #000000aa;
-        }
-
-        #container_id_div {
-            bottom: 362px;
-            left: 3px;
-        }
-
-        #container_pw_div {
-            bottom: 264px;
-            left: 3px;
-        }
-
-    </style>
+    <link rel="stylesheet" href="/resources/css/login.css" />
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 
 <body>
+	<c:if test="${msg == false}">
+		<script>alert('일치하는 아이디 또는 비밀번호가 없습니다.');</script>
+	</c:if>
     <div class="logo">
-        <img src="./logo.jpg" alt="로고" width="200px">
+        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
     </div>
-    <div class="container">
-        <div class="container_main">로그인</div>
-        <div class="container_id">
-            <input id="container_id_input" class="container_id_container_pw_input" type="text" name="" value="" onfocus="move_container_id_div()" onfocusout="move_container_id_div_return()">
-            <div id="container_id_div">아이디</div>
-        </div>
-        <div class="container_pw">
-            <input id="container_pw_input" class="container_id_container_pw_input" type="password" name="" value="" onfocus="move_container_pw_div()" onfocusout="move_container_pw_div_return()">
-            <div id="container_pw_div">비밀번호</div>
-        </div>
-        <div class="container_find">
-            <a href="#">아이디 찾기 |</a>
-            <a href="#">비밀번호 찾기</a>
-        </div>
-        <div class="container_login">
-            <input type="submit" name="" value="로그인">
-            <input type="button" name="" value="회원 가입" onclick="location.href='join.html';">
-        </div>
-    </div>
-    <script type="text/javascript">
-        var id_div = $('#container_id_div');
-        var id_input = $('#container_id_input');
-        var pw_div = $('#container_pw_div');
-        var pw_input = $('#container_pw_input');
-
-        function move_container_id_div() {
-            id_div.css('fontSize', '10px');
-            id_div.css('bottom', '392px');
-            id_input.css('borderBottom', '2px solid #4f9f4f');
-        }
-
-        function move_container_id_div_return() {
-            if (id_input.val() == "") {
-                id_div.css('fontSize', '16px');
-                id_div.css('bottom', '362px');
-                id_input.css('borderBottom', '1px solid #c0c0c0');
-            }
-        }
-
-        function move_container_pw_div() {
-            pw_div.css('fontSize', '10px');
-            pw_div.css('bottom', '294px');
-            pw_input.css('borderBottom', '2px solid #4f9f4f');
-        }
-
-        function move_container_pw_div_return() {
-            if ((pw_input.val() == "")) {
-                pw_div.css('fontSize', '16px');
-                pw_div.css('bottom', '264px');
-                pw_input.css('borderBottom', '2px solid #c0c0c0');
-            }
-        }
-
-    </script>
+    <form action="/member/login" method="post">
+		<div class="container">
+	        <div class="container_main">로그인</div>
+	        <div class="container_id">
+	            <input class="container_id_input" type="text" name="id">
+	            <div class="container_id_div">아이디</div>
+	        </div>
+	        <div class="container_pw">
+	            <input class="container_pw_input" type="password" name="pw">
+	            <div class="container_pw_div">비밀번호</div>
+	        </div>
+	        <div class="container_find">
+	            <a href="#">아이디 찾기 |</a>
+	            <a href="#">비밀번호 찾기</a>
+	        </div>
+	        <div class="container_login">
+	            <input type="submit" value="로그인">
+	            <input type="button" value="회원 가입" onclick="location.href='join.html';">
+	        </div>
+	    </div>
+    </form>
+    <script src="/resources/js/login.js"></script>
 </body>
 
 </html>

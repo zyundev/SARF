@@ -1,4 +1,3 @@
-
 var id_div = $('.container_id_div');
 var id_input = $('.container_id_input');
 var pw_div = $('.container_pw_div');
@@ -128,7 +127,7 @@ phone_input.on({
 	}
 });
 
-function joinchk() {
+function chk() {
     if ((id_input.val() == "") || (pw_input.val() == "") || (pwcheck_input.val() == "") || (name_input.val() == "") || (addr_input.val() == "") || (email_input.val() == "") || (phone_input.val() == "")) {
         alert("빈 항목을 작성해주세요");
 
