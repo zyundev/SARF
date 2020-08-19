@@ -16,6 +16,9 @@
 	<c:if test="${msg == false}">
 		<script>alert('일치하는 아이디 또는 비밀번호가 없습니다.');</script>
 	</c:if>
+	<c:if test="${find_pw_msg == true}">
+		<script>alert('이메일로 임시비밀번호를 전송했습니다.');</script>
+	</c:if>
     <div class="logo">
         <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
     </div>
@@ -32,7 +35,7 @@
 	        </div>
 	        <div class="container_find">
 	            <a href="find_id">아이디 찾기 |</a>
-	            <a href="#">비밀번호 찾기</a>
+	            <a href="find_pw">비밀번호 찾기</a>
 	        </div>
 	        <div class="container_login">
 	            <input type="submit" value="로그인">
@@ -42,5 +45,4 @@
     </form>
     <script src="/resources/js/login.js"></script>
 </body>
-
 </html>

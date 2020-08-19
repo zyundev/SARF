@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>    
 <!DOCTYPE html>
 
 <html>
@@ -40,7 +41,7 @@
             font-size: 30px;
         }
 
-        .container_id {
+        .container_name {
             margin-top: 16px;
             height: 10%;
         }
@@ -84,14 +85,14 @@
             margin-left: 25px;
         }
 
-        #container_id_div {
+        .container_id_div {
             bottom: 362px;
             left: 3px;
             border-bottom: 0;
 
         }
 
-        #container_email_div {
+        .container_email_div {
             bottom: 264px;
             left: 3px;
         }
@@ -102,57 +103,71 @@
 </head>
 
 <body>
+	<c:if test="${find_pw_msg == false}">
+		<script>alert('일치하는 아이디 또는 이메일이 없습니다.');</script>
+	</c:if>
     <div class="logo">
-       <a href="#"><img src="./logo.jpg" alt="로고" width="200px"></a>
-       <!-- 메인화면 넘기는 경로 -->
+        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
     </div>
-    <div class="container">
-        <div class="container_main">비밀번호 찾기</div>
-        <div class="container_id">
-            <input id="container_id_input" class="container_id_container_email_input" type="text" onfocus="move_container_id_div()" onblur="move_container_id_div_return()">
-            <div id="container_id_div">아이디</div>
-        </div>
-        <div class="container_email">
-            <input id="container_email_input" class="container_id_container_email_input" type="password" onfocus="move_container_email_div()" onblur="move_container_email_div_return()">
-            <div id="container_email_div">이메일 주소</div>
-        </div>
-        <div class="container_login">
-            <input type="submit" value="조회 하기">
-        </div>
-    </div>
+   	<form action="find_pw" method="post">
+	    <div class="container">
+	        <div class="container_main">비밀번호 찾기</div>
+	        <div class="container_name">
+	            <input class="container_id_container_email_input container_id_input" type="text" name="id">
+	            <div class="container_id_div">아이디</div>
+	        </div>
+	        <div class="container_email">
+	            <input class="container_id_container_email_input container_email_input" type="email" name="email">
+	            <div class="container_email_div">이메일 주소</div>
+	        </div>
+	        <div class="container_login">
+	            <input type="submit" value="조회 하기">
+	        </div>
+	    </div>
+    </form>
+    
     <script type="text/javascript">
-        var id_div = $('#container_id_div');
-        var id_input = $('#container_id_input');
-        var email_div = $('#container_email_div');
-        var email_input = $('#container_email_input');
-        
-        function move_container_id_div() {
-            id_div.css('fontSize', '10px');
-            id_div.css('bottom', '392px');
-            id_input.css('borderBottom', '2px solid #4f9f4f');
-        }
+        var id_div = $('.container_id_div');
+        var id_input = $('.container_id_input');
+        var email_div = $('.container_email_div');
+        var email_input = $('.container_email_input');
 
-        function move_container_id_div_return() {
-            if (id_input.val() == "") {
-                id_div.css('fontSize', '16px');
-                id_div.css('bottom', '362px');
-                id_input.css('borderBottom', '1px solid #c0c0c0');
+        id_input.on({
+            focus: function() {
+            	id_div.css({
+                    'fontSize': '10px',
+                    'bottom': '392px'
+                });
+                id_input.css('borderBottom', '2px solid #4f9f4f');
+            },
+            blur: function() {
+                if (id_input.val() == "") {
+                	id_div.css({
+                        'fontSize': '16px',
+                        'bottom': '362px'
+                    });
+                	id_input.css('borderBottom', '1px solid #c0c0c0');
+                }
             }
-        }
-
-        function move_container_email_div() {
-            email_div.css('fontSize', '10px');
-            email_div.css('bottom', '294px');
-            email_input.css('borderBottom', '2px solid #4f9f4f');
-        }
-
-        function move_container_email_div_return() {
-            if ((email_input.val() == "")) {
-                email_div.css('fontSize', '16px');
-                email_div.css('bottom', '264px');
-                email_input.css('borderBottom', '2px solid #c0c0c0');
+        });
+        email_input.on({
+            focus: function() {
+            	email_div.css({
+                    'fontSize': '10px',
+                    'bottom': '294px'
+                });
+            	email_input.css('borderBottom', '2px solid #4f9f4f');
+            },
+            blur: function() {
+                if (email_input.val() == "") {
+                	email_div.css({
+                        'fontSize': '16px',
+                        'bottom': '264px'
+                    });
+                	email_input.css('borderBottom', '2px solid #c0c0c0');
+                }
             }
-        }
+        });
     </script>
 </body>
 
