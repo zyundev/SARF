@@ -1,7 +1,5 @@
 package com.sarf.web;
 
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -15,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sarf.service.MemberService;
+import com.sarf.service.UserMailSendService;
 import com.sarf.vo.MemberVO;
 
 @Controller
@@ -24,6 +23,10 @@ public class MemberController {
 	
 	@Inject
 	MemberService service;
+	
+	// 메일 관련 
+	@Inject
+	UserMailSendService mailsender;
 	
 	// ENABLE LOG
 	// 0 is off, 1 is on
@@ -183,5 +186,40 @@ public class MemberController {
 		
 		rttr.addFlashAttribute("findid", findid);
 		return "redirect:find_id";
+	}
+	
+	// 비밀번호 찾기 get
+	@RequestMapping(value = "find_pw", method = RequestMethod.GET)
+	public void getFindPw() throws Exception{
+		// LOG
+		if (debug == 1) {
+			logger.info("~~~get find_pw~~~");
+		}
+	}
+	
+	// 비밀번호 찾기 post
+	@RequestMapping(value = "find_pw", method = RequestMethod.POST)
+	public String postFindPw(MemberVO vo, RedirectAttributes rttr, Model model, HttpServletRequest request) throws Exception{
+		// LOG
+		if (debug == 1) {
+			logger.info("~~~post find_pw~~~");
+		}
+		
+		MemberVO findpw = service.findPw(vo);
+		
+		if(findpw == null) {
+			rttr.addFlashAttribute("find_pw_msg", false);
+			return "redirect:find_pw";
+		}
+		
+		// 비밀번호 이메일 전송 후 임시 비밀번호 받음
+		String key = mailsender.mailSendWithUserKey(vo.getId(), vo.getEmail(), request);
+		
+		findpw.setPw(key);
+		service.updateMember(findpw);
+		
+		rttr.addFlashAttribute("find_pw_msg", true);
+		
+		return "redirect:login";
 	}
 }

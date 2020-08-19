@@ -17,4 +17,7 @@ public interface MemberDAO {
 
 	// 아이디 찾기
 	public MemberVO findId(MemberVO vo) throws Exception;
+	
+	// 비밀번호 찾기
+	public MemberVO findPw(MemberVO vo) throws Exception;
 }
