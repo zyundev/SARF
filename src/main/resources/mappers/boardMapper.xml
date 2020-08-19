@@ -10,18 +10,9 @@
 	</select>
 
 	<!-- 게시판 글 작성 -->
-	<insert id="insert">
-		INSERT INTO F_BOARD( BNO
-		, NAME
-		, SUBJECT
-		, CONTENT
-		FIEL )
-		VALUES( F_BOARD_SEQ.NEXTVAL
-		, #{title}
-		, #{content}
-		, #{writer}
-		, #{fileupload} )
-
+	<insert id="write" >
+		INSERT INTO F_BOARD(BNO, SUBJECT, NAME, CONTENT)
+		VALUES( F_BOARD_SEQ.NEXTVAL, #{subject}, #{name}, #{content})
 	</insert>
 </mapper>
 

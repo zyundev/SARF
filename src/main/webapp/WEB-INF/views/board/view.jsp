@@ -49,7 +49,6 @@
 	    </div>
       <div class="comment_writer">
         <textarea class="cmt_write_box"placeholder="댓글을 남겨보세요"></textarea>
-
       </div>
 	 </form>
   </div>

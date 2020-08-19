@@ -1,7 +1,7 @@
 package com.sarf.service;
 
 
-import java.util.List;	
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -19,7 +19,6 @@ public class BoardServiceImpl implements BoardService {
 	// 게시물 목록 조회
 	@Override
 	public List<BoardVO> list() throws Exception {
-		System.out.println("sersadf");
 		return dao.list();
 	}
 	// 게시글 작성

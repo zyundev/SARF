@@ -41,8 +41,8 @@
 			</tbody>
 		</table>
 		<div style="float: right">
-			<button class="write_btn" onclick="location.href='board/write'">글쓰기</button>
-		</div>
+			<button class="write_btn" onclick="location.href='/board/writeView'">글쓰기</button>
+		</div>     
 		<div class="paging">
 			<!-- spring 클래스 하나 생성해서 조작해야하는 구간 -->
 			<a href="#" class="bt">첫 페이지</a> <a href="#" class="bt">이전 페이지</a>?>
