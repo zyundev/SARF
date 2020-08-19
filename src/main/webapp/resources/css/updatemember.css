@@ -7,9 +7,9 @@ input {
 }
 
 .logo {
-    text-align: center;
-    margin-top: 15px;
-    cursor:pointer;
+	text-align: center;
+	margin-top: 15px;
+	cursor: pointer;
 }
 
 input+div {
@@ -33,12 +33,13 @@ input+div {
 .container_main {
 	height: 15%;
 	font-size: 30px;
-    margin-top: 50px;
+	margin-top: 50px;
 }
 
-.container_id, .container_pw, .container_pwcheck, .container_name, .container_addr, .container_email, .container_phone {
-	height: 10%;                           
-}                                          
+.container_id, .container_pw, .container_pwcheck, .container_name,
+	.container_addr, .container_email, .container_phone {
+	height: 10%;
+}
 
 .container_update {
 	height: 15%;

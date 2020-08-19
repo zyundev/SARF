@@ -1,54 +1,63 @@
-*{
+* {
 	margin: 0;
 	padding: 0;
 }
-div{
+
+div {
 	display: block;
 }
-.infor{
-    width: 100%;
-    max-width: 1000px;
-    margin: 0 auto;
+
+.infor {
+	width: 100%;
+	max-width: 1000px;
+	margin: 0 auto;
 }
-.txt{
-    font-size: 36px;
-    font-weight: 600;
-    color: #333;
-    letter-spacing: -1px;
-    word-break: keep-all;
+
+.txt {
+	font-size: 36px;
+	font-weight: 600;
+	color: #333;
+	letter-spacing: -1px;
+	word-break: keep-all;
 	text-align: center;
 }
+
 .faq_txt {
-    
-    background: #e5f2f9;
-    color: #007bc0;
+	background: #e5f2f9;
+	color: #007bc0;
 	text-align: center;
 	position: relative;
-    padding: 20px 20px 20px 120px !important;
-    font-size: 16px;
-    line-height: 1.6em;
+	padding: 20px 20px 20px 120px !important;
+	font-size: 16px;
+	line-height: 1.6em;
 }
+
 strong {
-    font-weight: 700;
+	font-weight: 700;
 	font-size: 18px;
 }
+
 .faq_list {
-    border-top: 1px solid #333;
-    margin-top: 70px;
+	border-top: 1px solid #333;
+	margin-top: 70px;
 }
-.page{
+
+.page {
 	text-align: center;
 }
-.faq-list div a{
+
+.faq-list div a {
 	display: block;
-    padding: 20px 20px 20px 70px;
-    position: relative;
-    border-bottom: 1px solid #ddd;
+	padding: 20px 20px 20px 70px;
+	position: relative;
+	border-bottom: 1px solid #ddd;
 }
+
 .faq-list-cont {
-    overflow: hidden;
+	overflow: hidden;
 }
+
 .tab_box {
-  display:none;
-  padding:20px;
+	display: none;
+	padding: 20px;
 }
