@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="boardMapper">
+	<!-- 게시판 목록 조회 -->
+	<select id="list" resultType="com.sarf.vo.BoardVO">
+	   SELECT *	FROM F_BOARD
+			ORDER BY BNO DESC
+	</select>
+
+	<!-- 게시판 글 작성 -->
+	<insert id="insert">
+		INSERT INTO F_BOARD( BNO
+		, NAME
+		, SUBJECT
+		, CONTENT
+		FIEL )
+		VALUES( F_BOARD_SEQ.NEXTVAL
+		, #{title}
+		, #{content}
+		, #{writer}
+		, #{fileupload} )
+
+	</insert>
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+

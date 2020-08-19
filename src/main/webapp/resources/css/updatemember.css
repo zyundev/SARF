@@ -63,23 +63,27 @@ input+div {
 }
 
 .container_name_div {
+	font-size: 10px;
 	left: 3px;
-	bottom: 371px;
+	bottom: 401px;
 }
 
 .container_addr_div {
+	font-size: 10px;
 	left: 3px;
-	bottom: 291px;
+	bottom: 321px;
 }
 
 .container_email_div {
+	font-size: 10px;
 	left: 3px;
-	bottom: 211px;
+	bottom: 241px;
 }
 
 .container_phone_div {
+	font-size: 10px;
 	left: 3px;
-	bottom: 131px;
+	bottom: 161px;
 }
 
 .container_update_input {

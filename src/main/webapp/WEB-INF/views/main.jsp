@@ -19,21 +19,25 @@
 
 </head>
 <body>
-	<!-- main1 -->
-	<div class="loading-container">
-		<div class="ldoor">
-			<img class="imgsize" src="/resources/images/ldoorimage.jpg">
-		</div>
-		<div class="rdoor">
-			<img class="imgsize" src="/resources/images/rdoorimage.jpg">
-		</div>
-	</div>
-	<!-- 로고 메뉴-->
-	<header>
-		<!-- 로고 -->
-		<div class="logo">
-			<img src="/resources/images/logo.jpg" alt="로고" width="300px">
-		</div>
+
+	<c:if test="${deletemsg == false}">
+		<script>alert('회원 탈퇴되었습니다.');</script>
+	</c:if>
+   <!-- main1 -->
+   <div class="loading-container">
+      <div class="ldoor">
+         <img class="imgsize" src="/resources/images/ldoorimage.jpg">
+      </div>
+      <div class="rdoor">
+         <img class="imgsize" src="/resources/images/rdoorimage.jpg">
+      </div>
+   </div>
+   <!-- 로고 메뉴-->
+<header>
+    <!-- 로고 -->
+      <div class="logo">
+         <img src="/resources/images/logo.jpg" alt="로고" width="300px">
+      </div>
 
 		<!-- 메뉴 -->
 		<input type="checkbox" id="menuicon"> <label for="menuicon">
@@ -45,7 +49,7 @@
 			<hr>
 		
 		<div class="board">
-			<a href="#">게시판</a>
+			<a href="/board/list">게시판</a>
 			<div>
 				<button class="bd">- 자유 게시판</button>
 				<br>
@@ -81,20 +85,16 @@
 			<a href="#">운영진 소개</a>
 			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
 			<c:choose>
-				<c:when test="${member == null}">
-					<button class="menubar-button" id="signup"
-						onclick="location.href='/member/join'">회원가입</button>
-					<button class="menubar-button" id="login"
-						onclick="location.href='/member/login'">로그인</button>
-				</c:when>
-				<c:otherwise>
-					<div>${member.getId()}님</div>
-					<button class="menubar-button" id="updateuser"
-						onclick="location.href='/member/updatemember'">회원정보수정</button>
-					<button class="menubar-button" id="logout"
-						onclick="location.href='/member/logout'">로그아웃</button>
-				</c:otherwise>
-			</c:choose>
+         	<c:when test="${member == null}">
+         		<button class="menubar-button" id="signup" onclick="location.href='/member/join'">회원가입</button>
+         		<button class="menubar-button" id="login" onclick="location.href='/member/login'">로그인</button>
+         	</c:when>
+	        <c:otherwise>
+	        	<div>${member.getId()} 님</div>
+	        	<button class="menubar-button" id="updateuser" onclick="location.href='/member/updatemember'">회원정보수정</button>
+				<button class="menubar-button" id="logout" onclick="location.href='/member/logout'">로그아웃</button>
+			</c:otherwise>
+		 </c:choose>
 		</div>
 	</header>
 	<br>
@@ -102,8 +102,7 @@
 	<main>
 		<!-- 지도 -->
 		<article class="map">
-			<img usemap="#seoul" src="/resources/images/map_seoul.jpg" alt="지도"
-				width="100%">
+			<img usemap="#seoul" src="/resources/images/map_seoul.jpg" alt="지도" width="100%">
 
 			<map name="seoul">
 				<area shape="poly" class="west" onmouseover=""

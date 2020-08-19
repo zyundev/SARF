@@ -9,3 +9,19 @@ CREATE TABLE MEMBER(
 );
 
 --DROP TABLE MEMBER;
+게시판 DB(4종) ▶ C_(J, A, R, F)_BOARD 
+[Community, Attraction, Restaurant, Festival ]
+    [자유게시판,   명소,       맛집,       축제]
+
+//자유 게시판 테이블
+CREATE TABLE F_BOARD(
+    BNO       NUMBER PRIMARY KEY,
+	NAME      VARCHAR2(10) NOT NULL,
+    SUBJECT   VARCHAR2(20) NOT NULL,
+	CONTENT   VARCHAR2(2000) NOT NULL,
+	REGDATE   DATE DEFAULT SYSDATE,
+	FIEL      VARCHAR(100),
+	READCOUNT NUMBER DEFAULT 0
+);
+
+create sequence f_board_seq;

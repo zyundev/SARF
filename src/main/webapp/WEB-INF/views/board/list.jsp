@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="ko">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>커뮤니티</title>
-<link rel="stylesheet" href="resources/css/list.css">
+<link rel="stylesheet" href="/resources/css/list.css">
 </head>
 <body>
-	<!--게시판 외형 -->
-
 	<!-- location  -->
 	<div class="board_list_wrap">
 		<div class="loction">
@@ -27,29 +27,16 @@
 					<th>조회</th>
 				</tr>
 			</thead>
-			<tbody>
-				<tr>
-					<td>5</td>
-					<td class="tit"><a href="view.html">글11</a>
-					<!-- 경로 재설정 --></td>
-					<td>admin</td>
-					<td>2019-08-09</td>
-					<td>조회수</td>
-				</tr>
-				<tr>
-					<td>4</td>
-					<td class="tit"><a href="view.html">글22</a></td>
-					<td>admin</td>
-					<td>2020-08-09</td>
-					<td>조회수</td>
-				</tr>
-				<tr>
-					<td>3</td>
-					<td class="tit"><a href="view.html">글33</a></td>
-					<td>admin</td>
-					<td>2020-08-09</td>
-					<td>조회수</td>
-				</tr>
+			<tbody>   
+				<c:forEach items="${list}" var="list">
+					<tr>
+						<td><c:out value="${list.bno}"></c:out></td>
+						<td class="tit"><c:out value="${list.subject}"></c:out></td>
+						<td><c:out value="${list.name}"></c:out></td>
+						<td><fmt:formatDate value="${list.regdate}"	pattern="yyyy-MM-dd" /></td>
+						<td><c:out value="${list.readcount}"></c:out></td>
+					</tr> 
+				</c:forEach>
 			</tbody>
 		</table>
 		<div style="float: right">

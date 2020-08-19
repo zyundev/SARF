@@ -29,9 +29,9 @@
 				<h2>
 					박영원<span> 팀원</span>
 				</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Nullam pellentesque, risus ut semper varius, justo est mollis
-					lectus, convallis elementum nisl dolor sit amet turpis.</p>
+
+				<p>부트스트링이 어려웠어요. 하지만 꾸준한 연구 끝에 좋은 결과를 보게 되었어요.부트스트링이 어려웠어요. 하지만
+					꾸준한 연구 끝에 좋은 결과를 보게 되었어요.</p>
 			</div>
 		</div>
 		<div class="card_3">
@@ -42,9 +42,8 @@
 				<h2>
 					김성규<span> 팀원</span>
 				</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Nullam pellentesque, risus ut semper varius, justo est mollis
-					lectus, convallis elementum nisl dolor sit amet turpis.</p>
+				<p>부트스트링이 어려웠어요. 하지만 꾸준한 연구 끝에 좋은 결과를 보게 되었어요.부트스트링이 어려웠어요. 하지만
+					꾸준한 연구 끝에 좋은 결과를 보게 되었어요.</p>
 			</div>
 		</div>
 		<div class="card_4">
@@ -55,9 +54,8 @@
 				<h2>
 					양바울<span> 팀원</span>
 				</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Nullam pellentesque, risus ut semper varius, justo est mollis
-					lectus, convallis elementum nisl dolor sit amet turpis.</p>
+				<p>부트스트링이 어려웠어요. 하지만 꾸준한 연구 끝에 좋은 결과를 보게 되었어요.부트스트링이 어려웠어요. 하지만
+					꾸준한 연구 끝에 좋은 결과를 보게 되었어요.</p>
 			</div>
 		</div>
 		<div class="card_5">
@@ -68,9 +66,8 @@
 				<h2>
 					박수빈<span> 팀원</span>
 				</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Nullam pellentesque, risus ut semper varius, justo est mollis
-					lectus, convallis elementum nisl dolor sit amet turpis.</p>
+				<p>부트스트링이 어려웠어요. 하지만 꾸준한 연구 끝에 좋은 결과를 보게 되었어요.부트스트링이 어려웠어요. 하지만
+					꾸준한 연구 끝에 좋은 결과를 보게 되었어요.</p>
 			</div>
 		</div>
 		<div class="card_6">
@@ -81,9 +78,8 @@
 				<h2>
 					정성학<span> 팀원</span>
 				</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Nullam pellentesque, risus ut semper varius, justo est mollis
-					lectus, convallis elementum nisl dolor sit amet turpis.</p>
+				<p>부트스트링이 어려웠어요. 하지만 꾸준한 연구 끝에 좋은 결과를 보게 되었어요.부트스트링이 어려웠어요. 하지만
+					꾸준한 연구 끝에 좋은 결과를 보게 되었어요.</p>
 			</div>
 		</div>
 		<div class="card_7">
@@ -92,15 +88,21 @@
 			</div>
 			<div class="details">
 				<h2>
-					김남혁<span style="font-size: 16;"> 팀원</span>
+					김남혁<span> 팀원</span>
 				</h2>
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-					Nullam pellentesque, risus ut semper varius, justo est mollis
-					lectus, convallis elementum nisl dolor sit amet turpis.</p>
+				<p>부트스트링이 어려웠어요. 하지만 꾸준한 연구 끝에 좋은 결과를 보게 되었어요.부트스트링이 어려웠어요. 하지만
+					꾸준한 연구 끝에 좋은 결과를 보게 되었어요.</p>
 			</div>
 		</div>
 	</div>
-	<img class="chasing-img" src="resources/images/char_lion.png">
+    <div class="char-wrapper">
+        <img class="chasing-img" src="resources/images/char_lion.png">
+        <span class="speech-bubble"></span>
+        <span class="bubble-content">만든 제작자들입니다~</span>
+        <span class="semi-bubble_1"></span>
+        <span class="semi-bubble_2"></span>
+        <span class="semi-bubble_3"></span>
+    </div>
 	<br>
 	<br>
 	<br>
@@ -155,52 +157,7 @@
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
+
 
 </body>
 </head>
