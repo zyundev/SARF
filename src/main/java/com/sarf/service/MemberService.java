@@ -8,4 +8,5 @@ public interface MemberService {
 	public void updateMember(MemberVO vo) throws Exception;
 	public void deleteMember(MemberVO vo) throws Exception;
 	public MemberVO findId(MemberVO vo) throws Exception;
+	public MemberVO findPw(MemberVO vo) throws Exception;
 }
