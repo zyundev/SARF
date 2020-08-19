@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -162,9 +165,9 @@
 			<h3>1. 미래능력개발교육원<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button></h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-             <td><img src = "resources/images/att_image/Dong/Mirae_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Mirae_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Mirae_3.jpg"></td>
+             <td><img src = "../images/att_image/Dong/Mirae_1.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Mirae_2.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Mirae_3.jpg"></td>
             </table>
             
              - 장소: 서울 강동구 천호대로 1095 현대코아 3층
@@ -181,9 +184,9 @@
             <h3>2. 강풀 만화 거리<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button></h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/att_image/Dong/Kang_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Kang_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Kang_3.jpg"></td>
+               <td><img src = "../images/att_image/Dong/Kang_1.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Kang_2.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Kang_3.jpg"></td>
             </table>
             
              - 장소: 서울 강동구 천호대로168가길 38-3
@@ -204,9 +207,9 @@
             <h3>3. 천호동 장미마을<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/att_image/Dong/Rose_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Rose_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Rose_3.jpg"></td>
+               <td><img src = "../images/att_image/Dong/Rose_1.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Rose_2.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Rose_3.jpg"></td>
             </table>
                         
              - 장소: 서울 강동구 천호2동 장미마을
@@ -227,9 +230,9 @@
              
             
            <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/att_image/Dong/Am_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Am_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Am_3.jpg"></td>
+               <td><img src = "../images/att_image/Dong/Am_1.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Am_2.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Am_3.jpg"></td>
             </table>
             
              - 장소: 서울 강동구 올림픽로 875 암사선사유적전시관
@@ -248,9 +251,9 @@
             <h3>5. 허브 천문 공원<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Dong/Hub_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Hub_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Dong/Hub_3.jpg"></td>   
+                <td><img src = "../images/att_image/Dong/Hub_1.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Hub_2.jpg"></td>
+                <td><img src = "../images/att_image/Dong/Hub_3.jpg"></td>   
             </table>
             
              - 장소: 서울 강동구 둔촌동 산86
@@ -274,9 +277,9 @@
 			<h3>1. 허준 테마 거리 <button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button></h3>
             
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Seo/Hu_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Hu_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Hu_3.jpg"></td>   
+                <td><img src = "../images/att_image/Seo/Hu_1.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Hu_2.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Hu_3.jpg"></td>   
             </table>       
 
               - 장소: 서울 강서구 가양2동 18-46
@@ -294,9 +297,9 @@
             <h3>2. 허준 박물관<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Seo/Park_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Park_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Park_3.jpg"></td>   
+                <td><img src = "../images/att_image/Seo/Park_1.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Park_2.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Park_3.jpg"></td>   
             </table>  
             
               - 장소: 서울 강서구 허준로 87 허준박물관
@@ -316,9 +319,9 @@
              <h3>3. 롯데 어린이식품체험관 SweetVill <button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Seo/Sweet_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Sweet_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Sweet_3.jpg"></td>   
+                <td><img src = "../images/att_image/Seo/Sweet_1.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Sweet_2.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Sweet_3.jpg"></td>   
             </table>  
             
              - 장소: 서울 강서구 마곡중앙로 201 롯데중앙연구소
@@ -337,9 +340,9 @@
              <h3>4. 서울 식물원<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Seo/Sik_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Sik_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Sik_3.jpg"></td>   
+                <td><img src = "../images/att_image/Seo/Sik_1.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Sik_2.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Sik_3.jpg"></td>   
             </table>  
             
              - 장소: 서울 강서구 마곡동로 161 서울식물원
@@ -359,9 +362,9 @@
              <h3>5. 강서 습지생태공원<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Seo/Sub_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Sub_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Seo/Sub_3.jpg"></td>   
+                <td><img src = "../images/att_image/Seo/Sub_1.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Sub_2.jpg"></td>
+                <td><img src = "../images/att_image/Seo/Sub_3.jpg"></td>   
             </table>  
             
              - 장소: 서울 강서구 방화동
@@ -387,9 +390,9 @@
 			<h3>1. 코엑스 아쿠아리움<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>
             
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Nam/Aqua_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Aqua_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Aqua_3.jpg"></td>   
+                <td><img src = "../images/att_image/Nam/Aqua_1.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Aqua_2.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Aqua_3.jpg"></td>   
             </table>       
 
             - 장소: 서울 강남구 영동대로 513
@@ -409,9 +412,9 @@
             <h3>2. 한류 스타 거리(K-STAR Road)<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Nam/Road_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Road_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Road_3.jpg"></td>   
+                <td><img src = "../images/att_image/Nam/Road_1.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Road_2.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Road_3.jpg"></td>   
             </table>  
             
              - 장소: 서울 강남구 압구정동 394
@@ -431,9 +434,9 @@
              <h3>3. 신사동 가로수길<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Nam/Ga_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Ga_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Ga_3.jpg"></td>   
+                <td><img src = "../images/att_image/Nam/Ga_1.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Ga_2.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Ga_3.jpg"></td>   
             </table>  
              - 장소: 서울 강남구 신사동
             <br>
@@ -453,9 +456,9 @@
              <h3>4. 봉은사<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Nam/Bong_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Bong_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Bong_3.jpg"></td>   
+                <td><img src = "../images/att_image/Nam/Bong_1.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Bong_2.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Bong_3.jpg"></td>   
             </table>  
             
             - 장소: 서울 강남구 봉은사로 531 봉은사
@@ -475,9 +478,9 @@
              <h3>5. 선정릉 <button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button></h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Nam/Son_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Son_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Nam/Son_3.jpg"></td>   
+                <td><img src = "../images/att_image/Nam/Son_1.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Son_2.jpg"></td>
+                <td><img src = "../images/att_image/Nam/Son_3.jpg"></td>   
             </table>  
             
            - 장소: 서울 강남구 선릉로100길 1 선릉정릉
@@ -504,9 +507,9 @@
             <h3>1. 경복궁<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>
             
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Book/Gyeong_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Gyeong_3.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Gyeong_2.jpg"></td>   
+                <td><img src = "../images/att_image/Book/Gyeong_1.jpg"></td>
+                <td><img src = "../images/att_image/Book/Gyeong_3.jpg"></td>
+                <td><img src = "../images/att_image/Book/Gyeong_2.jpg"></td>   
             </table>       
 
             
@@ -526,9 +529,9 @@
             <h3>2. 남산 서울타워<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Book/Nam_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Nam_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Nam_3.jpg"></td>   
+                <td><img src = "../images/att_image/Book/Nam_1.jpg"></td>
+                <td><img src = "../images/att_image/Book/Nam_2.jpg"></td>
+                <td><img src = "../images/att_image/Book/Nam_3.jpg"></td>   
             </table>  
             
             - 장소: 서울 용산구 남산공원길 105
@@ -547,9 +550,9 @@
              <h3>3. 북촌 한옥 마을<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button>  </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Book/Chon_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Chon_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Chon_3.jpg"></td>   
+                <td><img src = "../images/att_image/Book/Chon_1.jpg"></td>
+                <td><img src = "../images/att_image/Book/Chon_2.jpg"></td>
+                <td><img src = "../images/att_image/Book/Chon_3.jpg"></td>   
             </table>  
             
               - 장소: 서울 종로구 계동길 37
@@ -568,9 +571,9 @@
              <h3>4. 북서울 꿈의 숲<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Book/Seoul_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Seoul_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Seoul_3.jpg"></td>   
+                <td><img src = "../images/att_image/Book/Seoul_1.jpg"></td>
+                <td><img src = "../images/att_image/Book/Seoul_2.jpg"></td>
+                <td><img src = "../images/att_image/Book/Seoul_3.jpg"></td>   
             </table>  
             
              - 장소: 서울 강북구 월계로 173
@@ -588,9 +591,9 @@
              <h3>5. 낙산 공원<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/att_image/Book/Nak_1.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Nak_2.jpg"></td>
-                <td><img src = "resources/images/att_image/Book/Nak_3.jpg"></td>   
+                <td><img src = "../images/att_image/Book/Nak_1.jpg"></td>
+                <td><img src = "../images/att_image/Book/Nak_2.jpg"></td>
+                <td><img src = "../images/att_image/Book/Nak_3.jpg"></td>   
             </table>  
             
               - 장소: 서울 종로구 낙산길 41

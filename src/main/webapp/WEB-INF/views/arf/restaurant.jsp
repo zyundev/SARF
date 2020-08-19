@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -166,9 +169,9 @@
 
             
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-             <td><img src = "resources/images/res_image/Dong_2/Botai_1.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Botai_2.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Botai_3.png"></td>
+             <td><img src = "../images/res_image/Dong_2/Botai_1.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Botai_2.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Botai_3.png"></td>
             </table>
             
              - 장소: 서울 강동구 풍성로 90
@@ -185,9 +188,9 @@
             <h3>2. 봉래 면옥 <button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Dong_2/Bong_1.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Bong_2.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Bong_3.png"></td>
+               <td><img src = "../images/res_image/Dong_2/Bong_1.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Bong_2.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Bong_3.png"></td>
             </table>
                         
   - 장소: 서울 강동구 명일로 200-16
@@ -206,9 +209,9 @@
             <h3>3. 진미 한우 곱창<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Dong_2/Jin_1.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Jin_2.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Jin_3.png"></td>
+               <td><img src = "../images/res_image/Dong_2/Jin_1.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Jin_2.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Jin_3.png"></td>
             </table>
                         
   - 장소: 서울 강동구 천중로40길 50
@@ -225,9 +228,9 @@
              
             
            <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Dong_2/Coffee_1.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Coffee_2.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Coffee_3.png"></td>
+               <td><img src = "../images/res_image/Dong_2/Coffee_1.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Coffee_2.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Coffee_3.png"></td>
             </table>
         
             
@@ -244,9 +247,9 @@
             <h3> 5. 풍년상회 쪽갈비<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/res_image/Dong_2/Poong_1.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Poong_2.png"></td>
-                <td><img src = "resources/images/res_image/Dong_2/Poong_3.png"></td>   
+                <td><img src = "../images/res_image/Dong_2/Poong_1.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Poong_2.png"></td>
+                <td><img src = "../images/res_image/Dong_2/Poong_3.png"></td>   
             </table>
             
   - 장소: 서울 강동구 천호옛14길 23-6
@@ -267,9 +270,9 @@
 			<h3>1. 등촌 최월선 칼국수<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-             <td><img src = "resources/images/res_image/Seo_2/Cal_1.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Cal_2.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Cal_3.png"></td>
+             <td><img src = "../images/res_image/Seo_2/Cal_1.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Cal_2.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Cal_3.png"></td>
             </table>
             
   - 장소: 서울 강서구 화곡로64길 68
@@ -285,9 +288,9 @@
             <h3>2. 발산 삼계탕<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Seo_2/Sam_1.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Sam_2.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Sam_3.png"></td>
+               <td><img src = "../images/res_image/Seo_2/Sam_1.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Sam_2.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Sam_3.png"></td>
             </table>
                         
   - 장소: 서울 강서구 강서로 344
@@ -306,9 +309,9 @@
             <h3>3. 영양족발 순대국<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Seo_2/Young_1.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Young_2.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Young_3.png"></td>
+               <td><img src = "../images/res_image/Seo_2/Young_1.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Young_2.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Young_3.png"></td>
             </table>
                         
   - 장소: 서울 강서구 초록마을로2길 48 1층 화곡영양족발
@@ -325,9 +328,9 @@
              
             
            <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Seo_2/Na_1.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Na_2.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Na_3.png"></td>
+               <td><img src = "../images/res_image/Seo_2/Na_1.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Na_2.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Na_3.png"></td>
             </table>
         
             
@@ -344,9 +347,9 @@
             <h3> 5. 형제 돈부리<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/res_image/Seo_2/Don_1.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Don_2.png"></td>
-                <td><img src = "resources/images/res_image/Seo_2/Don_3.png"></td>   
+                <td><img src = "../images/res_image/Seo_2/Don_1.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Don_2.png"></td>
+                <td><img src = "../images/res_image/Seo_2/Don_3.png"></td>   
             </table>
             
   - 장소: 서울 강서구 마곡중앙로 161-8 두산더랜드파크 A동 221호
@@ -369,9 +372,9 @@
 			<h3>1. 로바타탄요<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-             <td><img src = "resources/images/res_image/Nam_2/Ro_1.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Ro_2.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Ro_3.png"></td>
+             <td><img src = "../images/res_image/Nam_2/Ro_1.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Ro_2.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Ro_3.png"></td>
             </table>
             
   - 장소: 서울 강남구 압구정로28길 49
@@ -387,9 +390,9 @@
             <h3>2. 소이연남마오<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Nam_2/Soi_1.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Soi_2.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Soi_3.png"></td>
+               <td><img src = "../images/res_image/Nam_2/Soi_1.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Soi_2.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Soi_3.png"></td>
             </table>
                         
   - 장소: 서울 강남구 도산대로53길 30
@@ -408,9 +411,9 @@
             <h3>3. 시라카와 덴푸라<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Nam_2/Sira_1.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Sira_2.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Sira_3.png"></td>
+               <td><img src = "../images/res_image/Nam_2/Sira_1.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Sira_2.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Sira_3.png"></td>
             </table>
                         
   - 장소: 서울 강남구 선릉로161길 7 1층 시라카와
@@ -427,9 +430,9 @@
              
             
            <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Nam_2/Ichi_1.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Ichi_2.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Ichi_3.png"></td>
+               <td><img src = "../images/res_image/Nam_2/Ichi_1.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Ichi_2.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Ichi_3.png"></td>
             </table>
         
             
@@ -446,9 +449,9 @@
             <h3> 5. 쿠이신보<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3> 
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/res_image/Nam_2/Cui_1.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Cui_2.png"></td>
-                <td><img src = "resources/images/res_image/Nam_2/Cui_3.png"></td>   
+                <td><img src = "../images/res_image/Nam_2/Cui_1.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Cui_2.png"></td>
+                <td><img src = "../images/res_image/Nam_2/Cui_3.png"></td>   
             </table>
             
   - 장소: 서울 강남구 도산대로55길 40 1층
@@ -471,9 +474,9 @@
 		<h3>1. 미성옥<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-             <td><img src = "resources/images/res_image/Book_2/Mi_1.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/Mi_2.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/Mi_3.png"></td>
+             <td><img src = "../images/res_image/Book_2/Mi_1.png"></td>
+                <td><img src = "../images/res_image/Book_2/Mi_2.png"></td>
+                <td><img src = "../images/res_image/Book_2/Mi_3.png"></td>
             </table>
             
   - 장소: 서울 중구 명동길 25-11
@@ -489,9 +492,9 @@
             <h3>2. 산울림 1992<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Book_2/San_1.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/San_2.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/San_3.png"></td>
+               <td><img src = "../images/res_image/Book_2/San_1.png"></td>
+                <td><img src = "../images/res_image/Book_2/San_2.png"></td>
+                <td><img src = "../images/res_image/Book_2/San_3.png"></td>
             </table>
                         
   - 장소: 서울 마포구 서강로9길 60 산울림1992
@@ -510,9 +513,9 @@
             <h3>3. 오레노 라멘<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Book_2/Oh_1.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/Oh_2.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/Oh_3.png"></td>
+               <td><img src = "../images/res_image/Book_2/Oh_1.png"></td>
+                <td><img src = "../images/res_image/Book_2/Oh_2.png"></td>
+                <td><img src = "../images/res_image/Book_2/Oh_3.png"></td>
             </table>
                         
   - 장소: 서울 마포구 독막로6길 14
@@ -529,9 +532,9 @@
              
             
            <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/res_image/Book_2/Ohs_1.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/Ohs_2.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/Ohs_3.png"></td>
+               <td><img src = "../images/res_image/Book_2/Ohs_1.png"></td>
+                <td><img src = "../images/res_image/Book_2/Ohs_2.png"></td>
+                <td><img src = "../images/res_image/Book_2/Ohs_3.png"></td>
             </table>
         
             
@@ -548,9 +551,9 @@
             <h3> 5. 진만두<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/res_image/Book_2/Jinman_1.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/Jinman_2.png"></td>
-                <td><img src = "resources/images/res_image/Book_2/Jinman_3.png"></td>   
+                <td><img src = "../images/res_image/Book_2/Jinman_1.png"></td>
+                <td><img src = "../images/res_image/Book_2/Jinman_2.png"></td>
+                <td><img src = "../images/res_image/Book_2/Jinman_3.png"></td>   
             </table>
             
   - 장소: 서울 마포구 와우산로29길 4-42

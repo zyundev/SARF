@@ -1,3 +1,6 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -162,9 +165,9 @@
              <h3>1. 정월 대보름 한마당, 달집 태우기<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>  
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/fes_image/Dong_3/Moon_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/Moon_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/Moon_3.jpg"></td>
+               <td><img src = "../images/fes_image/Dong_3/Moon_1.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/Moon_2.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/Moon_3.jpg"></td>
             </table>
                         
              - 일시: 매년 2월
@@ -180,9 +183,9 @@
                <h3>2. 다문화 가족 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Dong_3/Da_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/Da_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/Da_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Dong_3/Da_1.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/Da_2.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/Da_3.jpg"></td>   
             </table>
             
              - 일시: 매년 4월
@@ -197,9 +200,9 @@
                 <h3>3. 강동 어린이 대축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                       
            <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/fes_image/Dong_3/Child_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/Child_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/Child_3.jpg"></td>
+               <td><img src = "../images/fes_image/Dong_3/Child_1.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/Child_2.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/Child_3.jpg"></td>
             </table>
         
             
@@ -218,9 +221,9 @@
             <h3>4. 별의 별 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-               <td><img src = "resources/images/fes_image/Dong_3/Star_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/Star_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/Star_3.jpg"></td>
+               <td><img src = "../images/fes_image/Dong_3/Star_1.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/Star_2.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/Star_3.jpg"></td>
             </table>
                         
              - 일시: 매년 9월
@@ -237,9 +240,9 @@
             <h3>5. 강동 선사문화 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
                 
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-             <td><img src = "resources/images/fes_image/Dong_3/SunSa_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/SunSa_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Dong_3/SunSa_3.jpg"></td>
+             <td><img src = "../images/fes_image/Dong_3/SunSa_1.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/SunSa_2.jpg"></td>
+                <td><img src = "../images/fes_image/Dong_3/SunSa_3.jpg"></td>
             </table>
             
             - 일시: 매년 10월
@@ -265,9 +268,9 @@
 			<h3>1. 개화산 봄꽃 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>
             
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Seo_3/Gae_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Gae_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Gae_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Seo_3/Gae_1.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Gae_2.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Gae_3.jpg"></td>   
             </table>       
 
              - 일시: 매년 4월
@@ -282,9 +285,9 @@
             <h3>2. 강서 어린이 동화 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Seo_3/Hwa_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Hwa_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Hwa_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Seo_3/Hwa_1.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Hwa_2.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Hwa_3.jpg"></td>   
             </table>  
             
             - 일시: 매년 10월
@@ -299,9 +302,9 @@
              <h3>3. 서울세계 불꽃축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Seo_3/Han_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Han_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Han_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Seo_3/Han_1.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Han_2.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Han_3.jpg"></td>   
             </table>  
             
             - 일시: 매년 10월
@@ -316,9 +319,9 @@
              <h3>4. 허준 축제 </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Seo_3/Hu_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Hu_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Hu_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Seo_3/Hu_1.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Hu_2.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Hu_3.jpg"></td>   
             </table>  
             
             - 일시: 매년 10월
@@ -333,9 +336,9 @@
              <h3>5. 강서 송년 음악회<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Seo_3/Song_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Song_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Seo_3/Song_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Seo_3/Song_1.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Song_2.jpg"></td>
+                <td><img src = "../images/fes_image/Seo_3/Song_3.jpg"></td>   
             </table>  
             
             - 일시: 매년 12월
@@ -357,9 +360,9 @@
 			<h3>1. 양재천 벚꽃 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>
             
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Nam_3/Yang_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Yang_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Yang_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Nam_3/Yang_1.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Yang_2.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Yang_3.jpg"></td>   
             </table>
               - 일시: 매년 4월
             <br>
@@ -374,9 +377,9 @@
              <h3>2. 코엑스 Eat the Seoul<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Nam_3/Eat_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Eat_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Eat_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Nam_3/Eat_1.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Eat_2.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Eat_3.jpg"></td>   
             </table>  
               - 일시: 매년 4월
             <br>
@@ -392,9 +395,9 @@
             <h3>3. 국악 어울림 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Nam_3/Guk_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Guk_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Guk_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Nam_3/Guk_1.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Guk_2.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Guk_3.jpg"></td>   
             </table>  
               - 일시: 매년 5월
             <br>
@@ -409,9 +412,9 @@
              <h3>4. 서울 패션 페스티벌<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Nam_3/Fashion_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Fashion_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Fashion_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Nam_3/Fashion_1.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Fashion_2.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Fashion_3.jpg"></td>   
             </table>  
             
               - 일시: 매년 5월
@@ -427,9 +430,9 @@
              <h3>5. 석촌 호수 단풍 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button>   </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Nam_3/Seok_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Seok_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Nam_3/Seok_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Nam_3/Seok_1.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Seok_2.jpg"></td>
+                <td><img src = "../images/fes_image/Nam_3/Seok_3.jpg"></td>   
             </table>  
               - 일시: 매년 11월
             <br>
@@ -454,9 +457,9 @@
              <h3>1. 대학로 거리 공연 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Book_3/Dae_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Dae_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Dae_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Book_3/Dae_1.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Dae_2.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Dae_3.jpg"></td>   
             </table>  
             
               - 일시: 매년 5~6월
@@ -471,9 +474,9 @@
             <h3>2. 창덕궁 달빛 기행<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>
             
             <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Book_3/Chang_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Chang_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Chang_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Book_3/Chang_1.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Chang_2.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Chang_3.jpg"></td>   
             </table>       
 
             
@@ -489,9 +492,9 @@
             <h3>3. 신촌 맥주 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Book_3/Beer_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Beer_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Beer_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Book_3/Beer_1.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Beer_2.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Beer_3.jpg"></td>   
             </table>
             
             - 일시: 매년 9월
@@ -510,9 +513,9 @@
              <h3>4. 서울 억새 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button> </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Book_3/Uk_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Uk_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Uk_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Book_3/Uk_1.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Uk_2.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Uk_3.jpg"></td>   
             </table>  
             
        - 일시: 매년 10월
@@ -527,9 +530,9 @@
                <h3>5. 서울 빛초롱 축제<button class = "button_1">수정</button>&nbsp;<button class = "button_2">삭제</button>  </h3>   
              
              <table> <!-- 300 * 225 픽셀의 이미지 고정 -->
-                <td><img src = "resources/images/fes_image/Book_3/Light_1.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Light_2.jpg"></td>
-                <td><img src = "resources/images/fes_image/Book_3/Light_3.jpg"></td>   
+                <td><img src = "../images/fes_image/Book_3/Light_1.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Light_2.jpg"></td>
+                <td><img src = "../images/fes_image/Book_3/Light_3.jpg"></td>   
             </table>  
             
           - 일시: 매년 11월
