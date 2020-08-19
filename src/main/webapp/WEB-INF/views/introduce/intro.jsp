@@ -96,7 +96,7 @@
 	</div>
     <div class="char-wrapper">
         <img class="chasing-img" src="resources/images/char_lion.png">
-        <span class="bubble"></span>
+        <span class="speech-bubble"></span>
         <span class="bubble-content">만든 제작자들입니다~</span>
         <span class="semi-bubble_1"></span>
         <span class="semi-bubble_2"></span>
