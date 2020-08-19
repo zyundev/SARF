@@ -25,4 +25,11 @@ public class BoardDAOImpl implements BoardDAO{
 		System.out.println("asdasd");
 	}
 
+	@Override
+	public BoardVO read(int bno) throws Exception {
+		
+		return sqlSession.selectOne("boardMapper.read", bno);
+
+
+	}
 }

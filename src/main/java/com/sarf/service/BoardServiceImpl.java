@@ -27,5 +27,9 @@ public class BoardServiceImpl implements BoardService {
 	public void write(BoardVO boardVO) throws Exception {
 		dao.write(boardVO);
 	}
+	@Override
+	public BoardVO read(int bno) throws Exception {
+		return null;
+	}
 
 }

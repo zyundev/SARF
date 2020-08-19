@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,6 +29,7 @@
 				<h2>
 					박영원<span> 팀원</span>
 				</h2>
+
 				<p>부트스트링이 어려웠어요. 하지만 꾸준한 연구 끝에 좋은 결과를 보게 되었어요.부트스트링이 어려웠어요. 하지만
 					꾸준한 연구 끝에 좋은 결과를 보게 되었어요.</p>
 			</div>

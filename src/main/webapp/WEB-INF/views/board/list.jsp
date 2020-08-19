@@ -11,7 +11,6 @@
 <link rel="stylesheet" href="/resources/css/list.css">
 </head>
 <body>
-	<!--게시판 외형 -->
 	<!-- location  -->
 	<div class="board_list_wrap">
 		<div class="loction">
