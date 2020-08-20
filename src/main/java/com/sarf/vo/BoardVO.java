@@ -3,13 +3,14 @@ package com.sarf.vo;
 import java.util.Date;
 
 public class BoardVO {
-	private int bno; 				// 게시물 번호
+	private int bno; 			// 게시물 번호
 	private String name; 		// 작성자
-	private String subject; 		// 제목
-	private String content; 		// 내용
+	private String subject; 	// 제목
+	private String content; 	// 내용
 	private Date regdate;		// 날짜
-	private String fileupload;	//파일
+	private String fileupload;	// 파일
 	private int readcount; 		// 조회수
+	
 	public int getBno() {
 		return bno;
 	}

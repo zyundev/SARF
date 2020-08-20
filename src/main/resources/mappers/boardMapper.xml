@@ -12,8 +12,34 @@
 	<!-- 게시판 글 작성 -->
 	<insert id="write" >
 		INSERT INTO F_BOARD(BNO, SUBJECT, NAME, CONTENT)
-		VALUES( F_BOARD_SEQ.NEXTVAL, #{subject}, #{name}, #{content})
+		VALUES(F_BOARD_SEQ.NEXTVAL, #{subject}, #{name}, #{content})
 	</insert>
+	
+	<!-- 게시물 조회 -->
+	<select id="read" parameterType="int" resultType="com.sarf.vo.BoardVO">
+		SELECT	BNO
+			  , SUBJECT
+			  , CONTENT
+			  , NAME
+			  , REGDATE
+		 FROM F_BOARD
+		 WHERE BNO = #{bno}
+	</select>
+	
+	<!-- 게시물 수정 -->
+	<update id="update" parameterType="com.sarf.vo.BoardVO">
+		UPDATE F_BOARD
+		   SET SUBJECT = #{subject},
+		   	   CONTENT = #{content}
+		 WHERE BNO = #{bno} 
+	</update>
+	
+	<!-- 게시물 삭제 -->
+	<delete id="delete" parameterType="int">
+		DELETE 
+		  FROM F_BOARD
+		 WHERE BNO = #{bno}
+	</delete>
 </mapper>
 
 
