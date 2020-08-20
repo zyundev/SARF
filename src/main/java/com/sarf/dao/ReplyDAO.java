@@ -11,12 +11,12 @@ public interface ReplyDAO {
 	public void writeReply(ReplyVO vo) throws Exception;
 		
 	// 댓글 수정
-	//public void updateReply(ReplyVO vo) throws Exception;
+	public void updateReply(ReplyVO vo) throws Exception;
 	
 	// 댓글 삭제
-	//public void deleteReply(ReplyVO vo) throws Exception;
+	public void deleteReply(ReplyVO vo) throws Exception;
 	 
 	// 선택된 게시판 댓글 조회
-	//public ReplyVO selectReply(int rno) throws Exception;
+	public ReplyVO selectReply(int rno) throws Exception;
 		
 }

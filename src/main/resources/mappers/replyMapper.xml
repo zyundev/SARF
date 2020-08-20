@@ -18,4 +18,24 @@
 							#{content} )
 	</insert>
 
+	<!-- 댓글 수정 -->
+	<update id="updateReply" parameterType="com.sarf.vo.ReplyVO">
+		UPDATE F_BOARD_R SET 
+		CONTENT = #{content}
+		WHERE RNO = #{rno}
+	</update>
+	
+	<!-- 선택된 댓글 조회 -->	
+	<select id="selectReply" resultType="com.sarf.vo.ReplyVO">
+		SELECT
+		BNO, RNO, CONTENT, NAME, REGDATE
+		FROM F_BOARD_R
+		WHERE RNO = #{rno}
+	</select>
+	
+	<!-- 댓글 삭제 -->
+	<delete id="deleteReply" parameterType="com.sarf.vo.ReplyVO">
+		DELETE FROM F_BOARD_R
+		WHERE RNO = #{rno}
+	</delete>
 </mapper>
