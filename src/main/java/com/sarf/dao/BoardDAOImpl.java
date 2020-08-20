@@ -24,4 +24,13 @@ public class BoardDAOImpl implements BoardDAO{
 	public void write(BoardVO boardVO) throws Exception {
 		sqlSession.insert("boardMapper.write", boardVO);
 	}
+	
+	// 게시물 조회
+	@Override
+	public BoardVO read(int bno) throws Exception {
+		
+		return sqlSession.selectOne("boardMapper.read", bno);
+	}
+	
+	
 }

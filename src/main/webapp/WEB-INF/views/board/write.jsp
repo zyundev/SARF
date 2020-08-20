@@ -33,8 +33,7 @@
 				<div>
 					<button type='submit' class='BaseButton'
 						onclick="location.href='history.go(-1)'">취소</button>
-					<button type='submit' class='BaseButton'
-						onclick="location.href='list.html'">등록</button>
+					<button type='submit' class='BaseButton'>등록</button>
 					<!-- 경로 재설정 -->
 				</div>
 			</div>

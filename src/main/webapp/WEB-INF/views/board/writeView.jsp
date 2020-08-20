@@ -29,7 +29,7 @@
 				<div style="border: 1px solid black;">
 					<div>
 						<button type='submit' class='BaseButton' onclick='/board/list'>취소</button>
-						<button type='submit' class='BaseButton' onclick="/board/list">등록</button>
+						<button type='submit' class='BaseButton' >등록</button>
 						<!-- 경로 재설정 -->
 					</div>
 				</div>

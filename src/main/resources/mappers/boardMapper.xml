@@ -14,6 +14,17 @@
 		INSERT INTO F_BOARD(BNO, SUBJECT, NAME, CONTENT)
 		VALUES( F_BOARD_SEQ.NEXTVAL, #{subject}, #{name}, #{content})
 	</insert>
+	
+		<select id="read" parameterType="int" resultType="com.sarf.vo.BoardVO">
+		SELECT   BNO
+			   , SUBJECT
+			   , CONTENT
+			   , NAME
+			   , REGDATE
+		  FROM F_BOARD
+		 WHERE BNO = #{bno}
+		 
+	</select>
 </mapper>
 
 

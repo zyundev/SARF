@@ -10,6 +10,7 @@ public class BoardVO {
 	private Date regdate;		// 날짜
 	private String fileupload;	//파일
 	private int readcount; 		// 조회수
+	
 	public int getBno() {
 		return bno;
 	}
