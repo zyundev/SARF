@@ -13,6 +13,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import com.sarf.service.BoardService;
 import com.sarf.service.ReplyService;
 import com.sarf.vo.ReplyVO;
+import com.sarf.vo.SearchCriteria;
 
 @Controller
 @RequestMapping("/board/*")
@@ -25,11 +26,17 @@ public class ReplyController {
 	
 	// 댓글 작성
 	@RequestMapping(value = "/replyWrite", method = RequestMethod.POST)
-	public String replyWrite(ReplyVO vo, RedirectAttributes rttr) throws Exception {
+	public String replyWrite(ReplyVO vo, SearchCriteria scri,RedirectAttributes rttr) throws Exception {
 		
 		logger.info("reply Write");
 		
 		service.writeReply(vo);
+		
+		rttr.addAttribute("bno", vo.getBno());
+		rttr.addAttribute("page", scri.getPage());
+		rttr.addAttribute("perPageNum", scri.getPerPageNum());
+		rttr.addAttribute("searchType", scri.getSearchType());
+		rttr.addAttribute("keyword", scri.getKeyword());
 		
 		return "redirect:/board/view";
 		
