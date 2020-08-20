@@ -28,6 +28,7 @@
 				</div>
 				<div style="border: 1px solid black;">
 					<div>
+
 						<button type='submit' class='BaseButton' onclick='history.go(-1)'>취소</button>
 						<button type='submit' class='BaseButton' onclick="/board/write">등록</button>
 						<!-- 경로 재설정 -->

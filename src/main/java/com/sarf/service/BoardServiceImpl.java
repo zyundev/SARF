@@ -26,5 +26,12 @@ public class BoardServiceImpl implements BoardService {
 	public void write(BoardVO boardVO) throws Exception {
 		dao.write(boardVO);
 	}
+	
+	// 게시물 조회
+	@Override
+	public BoardVO read(int bno) throws Exception {
+
+		return dao.read(bno);
+	}
 
 }
