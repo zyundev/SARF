@@ -39,7 +39,7 @@ public class BoardController {
 		
 	}
 	
-	@RequestMapping(value="write", method = RequestMethod.POST)
+	@RequestMapping(value="/write", method = RequestMethod.POST)
 	public String write(BoardVO boardVO, HttpSession session) throws Exception {
 		logger.info("작성완료");
 		
@@ -48,6 +48,6 @@ public class BoardController {
 		boardVO.setName(boardId);
 		
 		service.write(boardVO);
-		return "/board/list";
+		return "redirect:/board/list";
 	}
 }

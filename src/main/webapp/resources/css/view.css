@@ -97,3 +97,10 @@ div[contenteditable=true] {
 	line-height: 18px;
 	resize: none;
 }
+
+.submit-pos {
+    position: absolute;
+    bottom: 1vh;
+    right: 1vw;
+    vertical-align: bottom;
+}

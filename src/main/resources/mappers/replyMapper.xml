@@ -17,6 +17,7 @@
 							#{name},
 							#{content} )
 	</insert>
+
 	<!-- 댓글 수정 -->
 	<update id="updateReply" parameterType="com.sarf.vo.ReplyVO">
 		UPDATE F_BOARD_R SET 

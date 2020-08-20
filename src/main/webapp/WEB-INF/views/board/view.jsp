@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -39,21 +40,45 @@
 			<hr size="1" color="c0c0c0">
 			<div class="comment_box">
 				<!-- 댓글 출력창-->
-				<div>댓글 출력창~~</div>
+				<div>
+					<c:forEach items="${replyList}" var="replyList">
+						<form name="replyList" action="/board/replyList">
+							<div class="reply_input"
+								style="border: 1px solid -internal-light-dark">
+								<div class="input_id" style="display: inline-block;">
+									<input type="hidden" name="BOARD_NUM" value="${replyList.rno}">
+									<span>
+										작성자 : <c:out value="${replyList.name}"></c:out> 
+									</span>
+									<span>
+										작성 날짜 : <c:out value="${replyList.regdate}"></c:out> 
+									</span>
+								</div>
+								<div class="comment_writer cmt_write_box">
+								<c:out value="${replyList.content}"></c:out>
+								</div>
+								<div>
+									<button type="submit" name="replyWrite"
+										class="basebutton skin size submit-pos">작성</button>
+								</div>
+							</div>
+						</form>
+					</c:forEach>
+				</div>
 				<!-- 댓글 입력창-->
-				<form>
+				<form name="replyWrite" action="/board/replyWrite">
 					<div class="reply_input"
 						style="border: 1px solid -internal-light-dark">
 						<div class="input_id" style="display: inline-block;">
-							<input type="hidden" name="BOARD_NUM" value=""> <input
-								type="text" maxlength="20" placeholder="닉네임" name="REPLY_NAME"
-								style="display: block;"> <input maxlength="20"
-								placeholder="비밀번호" name="REPLY_PASS" style="display: block;">
+							<input type="hidden" name="BOARD_NUM" value="">
+							<input type="text" maxlength="20" placeholder="닉네임" name="REPLY_NAME" style="display: block;">
 						</div>
-					</div>
 					<div class="comment_writer">
 						<textarea class="cmt_write_box" placeholder="댓글을 남겨보세요"></textarea>
-
+					</div>
+					<div>
+						<button type="submit" name="replyWrite" class="basebutton skin size submit-pos">작성</button>
+					</div>
 					</div>
 				</form>
 			</div>

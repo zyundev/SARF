@@ -11,6 +11,7 @@
 <link rel="stylesheet" href="/resources/css/list.css">
 </head>
 <body>
+
 	<!-- location  -->
 	<div class="board_list_wrap">
 		<div class="loction">
