@@ -1,6 +1,6 @@
 package com.sarf.dao;
 
-import java.util.List;	
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -8,6 +8,7 @@ import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
 import com.sarf.vo.BoardVO;
+import com.sarf.vo.SearchCriteria;
 
 @Repository	// 하지 않아서 bean을 생성못함
 public class BoardDAOImpl implements BoardDAO{
@@ -16,8 +17,14 @@ public class BoardDAOImpl implements BoardDAO{
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<BoardVO> list() throws Exception {
-		return sqlSession.selectList("boardMapper.list");
+	public List<BoardVO> list(SearchCriteria scri) throws Exception {
+		return sqlSession.selectList("boardMapper.listPage", scri);
+	}
+	
+	// 게시물 총 갯수
+	@Override
+	public int listCount(SearchCriteria scri) throws Exception {
+		return sqlSession.selectOne("boardMapper.listCount", scri);
 	}
 
 	@Override

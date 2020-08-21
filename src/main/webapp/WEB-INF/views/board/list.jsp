@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/list.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -48,7 +49,7 @@
 			<button class="write_btn" onclick="location.href='/board/writeView'">글쓰기</button>
 		</div>     
 		<div class="paging">
-			<ul>
+			<ul class="paging-ul">
 				<c:if test="${pageMaker.prev}">
 					<li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
 				</c:if> 
@@ -68,12 +69,12 @@
 	<div align="center">
 
 			<select class="srch_select" name="srchfield">
-				<option value="t"<c:out value="${scri.searchType eq 't' ? 'selected' : ''}"/>>제목</option>
+				<option value="s"<c:out value="${scri.searchType eq 's' ? 'selected' : ''}"/>>제목</option>
 				<option value="c"<c:out value="${scri.searchType eq 'c' ? 'selected' : ''}"/>>내용</option>
-				<option value="w"<c:out value="${scri.searchType eq 'w' ? 'selected' : ''}"/>>작성자</option>
-				<option value="tc"<c:out value="${scri.searchType eq 'tc' ? 'selected' : ''}"/>>제목+내용</option>
-			</select> <span class='green_window'> <input type='text'
-				class='input_text' />
+				<option value="n"<c:out value="${scri.searchType eq 'n' ? 'selected' : ''}"/>>작성자</option>
+				<option value="sc"<c:out value="${scri.searchType eq 'sc' ? 'selected' : ''}"/>>제목+내용</option>
+			</select> <span class='green_window'> 
+			<input name="keyword" id="keywordInput" value="${scri.keyword}" type='text' class='input_text' />
 			</span>
 			<button id="searchBtn" type="button" class='sch_smit'>검색</button>
 
@@ -81,7 +82,7 @@
 	
 	<script>
 		 $(function(){
-			 $('#searchBtn').click(function() {
+			 $('#searchBtn').on('click', function() {
 			 	self.location = "list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 			 });
 		 });   
