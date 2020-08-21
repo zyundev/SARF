@@ -1,22 +1,66 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 
+<!DOCTYPE html>
 <html>
 <head>
-	<!-- 합쳐지고 최소화된 최신 CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<!-- 부가적인 테마 -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
- 	
-	 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 	<title>게시판</title>
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>댓글 수정</title>
+<!-- <link href="/resources/css/view.css" rel="stylesheet" type="text/css" /> -->
+<style>
+.view_list{
+  position: relative;
+  width: 280px;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+.view_content{
+  padding: 29px;
+  border: 1px solid green;
+  border-radius: 6px;
+}
+.comment_box{
+	display: inline-block;
+}
+
+.input_button{
+	display: inline-block;
+    min-width: 35px;
+    height: 34px;
+    font-size: 15px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+	float: right;
+	border: 1px solid green;
+    background: #22B600;
+    color: black;
+    margin-left: 10px;
+}
+
+.cmt_write_box {
+	width: 700px;
+	height: 78px;
+	padding: 13px;
+	margin-top: 10px;
+	border: 1px solid #cecdce;
+	background: #fff;
+	line-height: 18px;
+	resize: none;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(function(){
 		var formObj = $("form[name='updateForm']");
+		
 		$(".cancel_btn").on("click", function(){
-			location.href = "/board/readView?bno=${replyDelete.bno}"
+			location.href = "/board/readView?bno=${replyUpdate.bno}"
 				   + "&page=${scri.page}"
 				   + "&perPageNum=${scri.perPageNum}"
 				   + "&searchType=${scri.searchType}"
@@ -24,30 +68,29 @@
 		})
 	})
 </script>
+</head>
 <body>
-	<div id="root">
-		<header>
-			<h1> 게시판</h1>
-		</header>
-		<hr>
-		<section id="container">
-			<form name="updateForm" role="form" method="post" action="/board/replyDelete">
-				<input type="hidden" name="bno" value="${replyDelete.bno}" readonly="readonly"/>
-				<input type="hidden" id="rno" name="rno" value="${replyDelete.rno}" />
-				<!-- 
-				<input type="hidden" id="page" name="page" value="${scri.page}"> 
-				<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
-				<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
-				<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
-				 -->	
-				<div>
-					<p>삭제 하시겠습니까?</p>
-					<button type="submit" class="delete_btn">예 삭제합니다.</button>
-					<button type="button" class="cancel_btn">아니오. 삭제하지 않습니다.</button>
-				</div>
-			</form>
-		</section>
-		<hr>
+	<div class="view_list">
+		<div class="view_content">
+			<div class="comment_box">
+				<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글을 삭제하시겠습니까?</p>
+				<form name="updateForm" role="form" method="post" action="/board/replyDelete">
+					<input type="hidden" name="bno" value="${replyDelete.bno}"/>
+					<input type="hidden" id="rno" name="rno" value="${replyDelete.rno}" />
+					<!-- 
+					<input type="hidden" id="page" name="page" value="${scri.page}"> 
+					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
+					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
+					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
+					 -->
+					<!-- <textarea id="content" class="cmt_write_box" name="content" readonly>${replyDelete.content}</textarea> --> 	
+					<div>
+						<button type="button" class="cancel_btn input_button">뒤로</button>
+						<button type="submit" class="delete_btn input_button">삭제</button>
+					</div>
+				</form>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
