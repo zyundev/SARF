@@ -81,6 +81,10 @@ input+div {
 	bottom: 131px;
 }
 
+.container_id_input{
+    width: 80%;
+}
+
 .container_join_input {
 	width: 60%;
 	min-width: 120px;
@@ -92,4 +96,14 @@ input+div {
 	font-size: 13px;
 	height: 42px;
 	padding: 11px 25px 12px 25px;
+}
+.idcheck{
+    float: right;
+    margin-right: 5px;
+	background: #4f9f4f;
+	border: solid 1px #4f9f4f;
+	border-radius: 22px;
+	color: #fff;
+	cursor: pointer;
+	padding: 7px 10px 7px 10px;
 }
