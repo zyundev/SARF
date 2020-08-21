@@ -1,5 +1,7 @@
 package com.sarf.web;
 
+import java.util.List;
+
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -32,7 +34,7 @@ public class BoardController {
 		logger.info("박수빈");
 		
 		model.addAttribute("list",service.list(scri));
-		
+
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(scri);
 		pageMaker.setTotalCount(service.listCount(scri));
