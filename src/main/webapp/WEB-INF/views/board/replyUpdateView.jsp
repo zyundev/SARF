@@ -1,18 +1,63 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+
+<!DOCTYPE html>
 <html>
 <head>
-	<!-- 합쳐지고 최소화된 최신 CSS -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
-	<!-- 부가적인 테마 -->
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
- 	
- 	<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
- 	<title>게시판</title>
-</head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<title>댓글 수정</title>
+<!-- <link href="/resources/css/view.css" rel="stylesheet" type="text/css" /> -->
+<style>
+.view_list{
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 15px;
+}
+
+.view_content{
+  padding: 29px;
+  border: 1px solid green;
+  border-radius: 6px;
+}
+.comment_box{
+	display: inline-block;
+    margin-top: 10px;
+}
+
+.input_button{
+	display: inline-block;
+    min-width: 35px;
+    height: 34px;
+    font-size: 15px;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+	float: right;
+	border: 1px solid green;
+    background: #22B600;
+    color: black;
+    margin-left: 10px;
+}
+
+.cmt_write_box {
+	width: 700px;
+	height: 78px;
+	padding: 13px;
+	margin-top: 10px;
+	border: 1px solid #cecdce;
+	background: #fff;
+	line-height: 18px;
+	resize: none;
+}
+</style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-	$(document).ready(function(){
+	$(function(){
 		var formObj = $("form[name='updateForm']");
 		
 		$(".cancel_btn").on("click", function(){
@@ -22,18 +67,18 @@
 				   + "&searchType=${scri.searchType}"
 				   + "&keyword=${scri.keyword}";
 		})
-		
 	})
 </script>
+</head>
+
 <body>
-	<div id="root">
-		<header>
-			<h1> 게시판</h1>
-		</header>
-		<hr>
-		<section id="container">
-			<form name="updateForm" role="form" method="post" action="replyUpdate">
-				<input type="hidden" name="bno" value="${replyUpdate.bno}" readonly="readonly"/>
+	<div class="view_list">
+		<div class="view_content">
+			<div class="comment_box">
+			<!-- 댓글 입력창-->
+			<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글 수정</p>
+			<form name="updateForm" role="form" method="post" action="/board/replyUpdate">
+				<input type="hidden" name="bno" value="${replyUpdate.bno}"/>
 				<input type="hidden" id="rno" name="rno" value="${replyUpdate.rno}" />
 				<!-- 
 				<input type="hidden" id="page" name="page" value="${scri.page}"> 
@@ -41,22 +86,14 @@
 				<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
 				<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
 				 -->
-				<table>
-					<tbody>
-						<tr>
-							<td>
-								<label for="content">댓글 내용</label><input type="text" id="content" name="content" value="${replyUpdate.content}"/>
-							</td>
-						</tr>	
-					</tbody>			
-				</table>
+				<textarea id="content" class="cmt_write_box" name="content">${replyUpdate.content}</textarea>
 				<div>
-					<button type="submit" class="update_btn">저장</button>
-					<button type="button" class="cancel_btn">취소</button>
+					<button type="button" class="cancel_btn input_button">취소</button>
+					<button type="submit" class="update_btn input_button">저장</button>
 				</div>
 			</form>
-		</section>
-		<hr>
+			</div>
+		</div>
 	</div>
 </body>
 </html>
