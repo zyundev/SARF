@@ -51,23 +51,23 @@
 		<div class="board">
 			<a href="/board/list">게시판</a>
 			<div>
-				<button class="bd">- 자유 게시판</button>
+				<button class="bd menubar-button">- 자유 게시판</button>
 				<br>
 				
 				<p>
-					<button class="bd">- 명소 게시판</button>
+					<button class="bd menubar-button">- 명소 게시판</button>
 				</p>
 				
 				<br>
 				
 				<p>
-					<button class="bd">- 맛집 게시판</button>
+					<button class="bd menubar-button">- 맛집 게시판</button>
 				</p>
 				
 				<br>
 				
 				<p>
-					<button class="bd">- 축제 게시판</button>
+					<button class="bd menubar-button">- 축제 게시판</button>
 				</p>
 				
 				<br>
@@ -160,7 +160,7 @@
         e.preventDefault();
         
         window.scrollTo({
-	        top:550, 
+	        top:700, 
 	        behavior:'smooth'
 	    });
 
@@ -169,7 +169,7 @@
         e.preventDefault();
         
         window.scrollTo({
-	        top:550, 
+	        top:700, 
 	        behavior:'smooth'
 	    });
 
@@ -178,7 +178,7 @@
         e.preventDefault();
         
         window.scrollTo({
-	        top:550, 
+	        top:700, 
 	        behavior:'smooth'
 	    });
 
@@ -187,7 +187,7 @@
         e.preventDefault();
         
         window.scrollTo({
-	        top:550, 
+	        top:700, 
 	        behavior:'smooth'
 	    });
 
