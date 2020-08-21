@@ -111,14 +111,18 @@ div[textarea]{
     background: white;
 	float: right;
 }
-.cmt_write_box{
-	width: 700px;
-    padding: 8px;
-  	line-height: 18px;
-    resize: none;
-	overflow: hidden;
-	border: 0px solid #aaa;
+
+.cmt_write_box {
+	width: 500px;
+	height: 78px;
+	padding: 13px;
+	margin-top: 10px;
+	border: 1px solid #cecdce;
+	background: #fff;
+	line-height: 18px;
+	resize: none;
 }
+
 .reply_input{
 	margin: 0;
 	width: 740px;
@@ -144,21 +148,3 @@ a:link {text-decoration: none;}
 a:visited {text-decoration: none;}
 a:hover {text-decoration: none;}
 
-
-.cmt_write_box {
-	width: 500px;
-	height: 78px;
-	padding: 13px;
-	margin-top: 10px;
-	border: 1px solid #cecdce;
-	background: #fff;
-	line-height: 18px;
-	resize: none;
-}
-
-.submit-pos {
-    position: absolute;
-    bottom: 1vh;
-    right: 1vw;
-    vertical-align: bottom;
-}

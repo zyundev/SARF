@@ -24,9 +24,9 @@ public class ReplyController {
 	
 	// 댓글 작성
 	@RequestMapping(value = "/replyWrite", method = RequestMethod.POST)
-	public String replyWrite(ReplyVO vo, SearchCriteria scri,RedirectAttributes rttr) throws Exception {
+	public String replyWrite(ReplyVO vo, SearchCriteria scri, RedirectAttributes rttr) throws Exception {
 		
-		logger.info("reply Write");
+		logger.info("~~~~~~~~~post replyWrite~~~~~~~~~");
 		
 		service.writeReply(vo);
 		
@@ -60,7 +60,7 @@ public class ReplyController {
 		
 		rttr.addAttribute("bno", vo.getBno());
 		
-		return "redirect:/board/readView";
+		return "redirect:/board/view";
 	}
 	
 	//댓글 삭제 GET
@@ -82,6 +82,6 @@ public class ReplyController {
 		
 		rttr.addAttribute("bno", vo.getBno());
 		
-		return "redirect:/board/readView";
+		return "redirect:/board/view";
 	}
 }

@@ -3,7 +3,14 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="replyMapper">
-
+	
+	<!-- 댓글 조회 -->
+	<select id="readReply" resultType="com.sarf.vo.ReplyVO">
+		SELECT RNO, NAME, CONTENT, REGDATE
+		FROM F_BOARD_R
+		WHERE BNO = #{bno}
+	</select>
+	
 	<!-- 댓글 작성 -->
 	<insert id="writeReply">
 	INSERT INTO F_BOARD_R(
@@ -13,7 +20,7 @@
 							CONTENT
 									)
 				VALUES(		#{bno},
-							SEQ_F_BOARD_R.NEXTVAL,
+							F_BOARD_R_SEQ.NEXTVAL,
 							#{name},
 							#{content} )
 	</insert>
