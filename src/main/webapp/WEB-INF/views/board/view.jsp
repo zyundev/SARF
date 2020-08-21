@@ -66,7 +66,7 @@
 	
 			<!-- 작성 시간 -->
 			<div>작성 날짜:
-			<fmt:formatDate value="${read.regdate}" pattern="yyyy-MM-dd" />	
+			<fmt:formatDate value="${read.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />	
 			</div>
 			<br>
 		
@@ -109,10 +109,28 @@
 		
 		<div class="top_btn" style="padding-bottom: 13px">
 			<div class="left_area">
-				<!-- 이전글 -->
-				<a class="basebutton skin size" role="button">이전글</a>
-				<!-- 다음글-->
-				<a class="basebutton skin size">다음글</a>
+	<!-- 이전글 -->
+	
+	<c:if test="${dto.prevNum ne 0 }">
+	<a class = "basebutton skin size" 
+	href="view?num=${dto.prevNum }&condition=${condition}&keyword=${encodedKeyword}">
+	 이전글</a>
+	</c:if>		
+		<!-- 다음글-->
+	
+	<c:if test="${dto.nextNum ne 0 }">
+		<a class = "basebutton skin size"
+		href="view?num=${dto.nextNum }&condition=${condition}&keyword=${encodedKeyword}">
+		다음글</a>
+	</c:if>
+	
+		
+<!-- 					<a class="basebutton skin size">이전글</a>
+		
+				<a class="basebutton skin size">다음글</a> -->
+				
+				
+				
 				<!-- 목록 -->
 				<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
 			</div>
