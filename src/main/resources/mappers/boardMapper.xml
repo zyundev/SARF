@@ -80,7 +80,13 @@
 			<if test="searchType == 'sc'.toString()">AND (SUBJECT LIKE '%' || #{keyword} || '%') or (CONTENT LIKE '%' || #{keyword} || '%')</if>
 		</if>
 	</sql>
-
+	
+	<!-- 조회수 증가 -->
+	<update id="updateCount" parameterType="int">
+		UPDATE F_BOARD SET
+		READCOUNT = READCOUNT+1
+		WHERE BNO = #{BNO}
+	</update>
 </mapper>
 
 

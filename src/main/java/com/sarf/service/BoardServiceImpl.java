@@ -37,6 +37,7 @@ public class BoardServiceImpl implements BoardService {
 	// 게시물 조회
 	@Override
 	public BoardVO read(int bno) throws Exception {
+		dao.updateReadCount(bno); // 조회수 증가
 		return dao.read(bno);
 	}
 
