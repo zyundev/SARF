@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import com.sarf.dao.BoardDAO;
 import com.sarf.vo.BoardVO;
+import com.sarf.vo.SearchCriteria;
 
 @Service
 public class BoardServiceImpl implements BoardService {
@@ -15,16 +16,22 @@ public class BoardServiceImpl implements BoardService {
 	@Inject
 	private BoardDAO dao;
 	
-	// 게시물 작성
+	// 게시물 목록 조회
+	@Override
+	public List<BoardVO> list(SearchCriteria scri) throws Exception {
+		return dao.list(scri);
+	}
+	
+	// 게시물 총 갯수
+	@Override
+	public int listCount(SearchCriteria scri) throws Exception {
+		return dao.listCount(scri);
+	}
+	
+	// 게시글 작성
 	@Override
 	public void write(BoardVO boardVO) throws Exception {
 		dao.write(boardVO);
-	}
-	
-	// 게시물 목록 조회
-	@Override
-	public List<BoardVO> list() throws Exception {
-		return dao.list();
 	}
 
 	// 게시물 조회

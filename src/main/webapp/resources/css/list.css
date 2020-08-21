@@ -54,6 +54,12 @@ a {
 	padding-top: 20px;
 }
 
+.paging-ul{
+	display:flex;
+	width:100%;
+	margin-left:50%;
+}
+
 .board_list_wrap .paging a {
 	display: inline-block;
 	margin-left: 10px;
