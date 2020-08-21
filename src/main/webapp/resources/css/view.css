@@ -120,8 +120,7 @@ div[contenteditable=true] {
 	display: inline-block;
     min-width: 35px;
     height: 34px;
-    font-size: 15px;
-    color: #b7b7b7;
+    font-size: 13px;
     border-radius: 6px;
     box-sizing: border-box;
     font-weight: 700;

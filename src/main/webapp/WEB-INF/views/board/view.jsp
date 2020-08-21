@@ -96,7 +96,7 @@
 							<em class="comment_inbox_name">${member.id}</em>
 							<textarea placeholder="댓글을 남겨보세요"></textarea>
 							<div class="input_box">
-								<button class="input_button" onclick="alert('댓글을 적어주세요');return false;">등록</button>
+								<button class="input_button basebutton skin size" onclick="alert('댓글을 적어주세요');return false;">등록</button>
 							</div>
 						</div>
 					</div>
