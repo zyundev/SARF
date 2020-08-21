@@ -47,13 +47,15 @@
 		        SUBJECT	, 
 		        CONTENT,
 		        NAME, 
-		        REGDATE
+		        REGDATE,
+		        READCOUNT
 		 FROM ( 
 		        SELECT BNO, 
 		               SUBJECT, 
 		               CONTENT, 
 		               NAME, 
 		               REGDATE, 
+		               READCOUNT,
 		               ROW_NUMBER() OVER(ORDER BY BNO DESC) AS RNUM
 		         FROM F_BOARD
 		         WHERE 1=1 
