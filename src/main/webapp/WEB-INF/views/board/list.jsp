@@ -33,11 +33,9 @@
 				<c:forEach items="${list}" var="list">
 					<tr>
 						<td><c:out value="${list.bno}"></c:out></td>
-						<td>	
-									
-						<a href="/board/view?bno=${list.bno}">	
-						<c:out value="${list.subject}"></c:out></a></td>
-				
+						<td class="tit">
+							<a href="/board/view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
+						</td>
 						<td><c:out value="${list.name}"></c:out></td>
 						<td><fmt:formatDate value="${list.regdate}"	pattern="yyyy-MM-dd" /></td>
 						<td><c:out value="${list.readcount}"></c:out></td>
