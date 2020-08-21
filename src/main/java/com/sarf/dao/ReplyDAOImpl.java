@@ -1,5 +1,7 @@
 package com.sarf.dao;
 
+import java.util.List;
+
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
@@ -12,6 +14,12 @@ public class ReplyDAOImpl implements ReplyDAO{
 
 	@Inject
 	private SqlSession sql;
+	
+	// 댓글 조회
+	@Override
+	public List<ReplyVO> readReply(int bno) throws Exception {
+		return sql.selectList("replyMapper.readReply", bno);
+	}
 	
 	//댓글 작성
 	@Override
@@ -31,8 +39,10 @@ public class ReplyDAOImpl implements ReplyDAO{
 		return sql.selectOne("replyMapper.selectReply", rno);
 	}
 
+	// 댓글 삭제
 	@Override
 	public void deleteReply(ReplyVO vo) throws Exception {
 		sql.delete("replyMapper.deleteReply", vo);
 	}
+
 }

@@ -63,17 +63,16 @@
 			<div>닉네임:
 			<label> ${read.name} </label>
 			</div>
-	
+
 			<!-- 작성 시간 -->
 			<div>작성 날짜:
 			<fmt:formatDate value="${read.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />	
+
 			</div>
 			<br>
-		
-			
-			<hr size="1" color="c0c0c0">
-			
-		
+
+
+			<hr size="1" color="c0c0c0">		
 	<!-- 내용 -->
 	<label>${read.content}
 	</label>
@@ -94,11 +93,10 @@
 					<!-- 댓글 출력창--> 
  					<div class="comment_writer">
 						<div class="comment_inbox">
-							<em class="comment_inbox_name">닉네임값</em>
-							<textarea class="cmt_write_box" placeholder="댓글을 남겨보세요"></textarea>
+							<em class="comment_inbox_name">${member.id}</em>
+							<textarea placeholder="댓글을 남겨보세요"></textarea>
 							<div class="input_box">
-								<a class="input_button" href="#" role="button"
-									onclick="alert('댓글을 적어주세요');return false;">등록</a>
+								<button class="input_button" onclick="alert('댓글을 적어주세요');return false;">등록</button>
 							</div>
 						</div>
 					</div>

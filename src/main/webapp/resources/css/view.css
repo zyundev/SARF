@@ -98,14 +98,16 @@ div[contenteditable=true] {
     background: white;
 	float: right;
 }
-.cmt_write_box{
-	width: 700px;
-    padding: 8px;
-  	line-height: 18px;
-    resize: none;
-	overflow: hidden;
-	border: 0px solid #aaa;
+
+.comment_inbox textarea {
+	width: 500px;
+	padding: 13px;
+	border: 0px solid #cecdce;
+	background: #fff;
+	line-height: 18px;
+	resize: none;
 }
+
 .reply_input{
 	margin: 0;
 	width: 740px;
