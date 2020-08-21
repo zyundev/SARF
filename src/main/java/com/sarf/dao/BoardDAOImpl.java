@@ -34,9 +34,14 @@ public class BoardDAOImpl implements BoardDAO{
 	
 	// 게시물 조회
 	@Override
-	public BoardVO read(int bno) throws Exception {
-		
+	public BoardVO read(int bno) throws Exception {	
 		return sqlSession.selectOne("boardMapper.read", bno);
+	}
+	
+	// 게시물 조회수 증가
+	@Override
+	public int updateReadCount(int bno) throws Exception {
+		return sqlSession.update("boardMapper.updateCount", bno);
 	}
 	
 	
