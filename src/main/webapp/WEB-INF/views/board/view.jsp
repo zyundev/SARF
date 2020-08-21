@@ -93,10 +93,10 @@
 					<!-- 댓글 출력창--> 
  					<div class="comment_writer">
 						<div class="comment_inbox">
-							<em class="comment_inbox_name">닉네임값</em>
+							<em class="comment_inbox_name">${member.id}</em>
 							<textarea placeholder="댓글을 남겨보세요"></textarea>
 							<div class="input_box">
-								<button class="input_button" role="button" onclick="alert('댓글을 적어주세요');return false;">등록</button>
+								<button class="input_button" onclick="alert('댓글을 적어주세요');return false;">등록</button>
 							</div>
 						</div>
 					</div>
