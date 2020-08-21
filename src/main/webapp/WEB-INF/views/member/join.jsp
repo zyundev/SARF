@@ -40,6 +40,7 @@ function jusoCallBack(roadFullAddr){
             <div class="container_id">
                 <input class="container_id_input" type="text" name="id">
                 <div class="container_id_div">아이디</div>
+                <button type="button" class="idcheck">중복 확인</button>
             </div>
             <div class="container_pw">
                 <input class="container_pw_input" type="password" name="pw">
@@ -54,7 +55,7 @@ function jusoCallBack(roadFullAddr){
                 <div class="container_name_div">이름</div>
             </div>
             <div class="container_addr">
-                <input class="container_addr_input" type="text" name="addr" onclick="goPopup()">
+                <input class="container_addr_input" type="text" name="addr" onclick="goPopup()" readonly>
                 <div class="container_addr_div">주소</div>
             </div>
             <div class="container_email">
@@ -71,5 +72,12 @@ function jusoCallBack(roadFullAddr){
         </div>
     </form>
     <script src="/resources/js/join.js"></script>
+    <script>
+	$('.idcheck').on('click', function(){
+		var url = "/member/idcheck?id=" + $('.container_id_input').val();
+		
+   		window.open(url, "idchk", "width=570,height=420, scrollbars=yes, resizable=yes");
+	}) 
+    </script>
 </body>
 </html>

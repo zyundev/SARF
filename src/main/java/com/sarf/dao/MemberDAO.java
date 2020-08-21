@@ -20,4 +20,7 @@ public interface MemberDAO {
 	
 	// 비밀번호 찾기
 	public MemberVO findPw(MemberVO vo) throws Exception;
+	
+	// 아이디 찾기
+	public String idcheck(String id) throws Exception;
 }

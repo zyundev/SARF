@@ -49,4 +49,9 @@ public class MemberDAOImpl implements MemberDAO {
 	public MemberVO findPw(MemberVO vo) throws Exception {
 		return sql.selectOne("memberMapper.findPw", vo);
 	}
+
+	@Override
+	public String idcheck(String id) throws Exception {
+		return sql.selectOne("memberMapper.idcheck", id);
+	}
 }
