@@ -9,6 +9,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/list.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
@@ -48,26 +49,43 @@
 			<button class="write_btn" onclick="location.href='/board/writeView'">글쓰기</button>
 		</div>     
 		<div class="paging">
-			<!-- spring 클래스 하나 생성해서 조작해야하는 구간 -->
-			<a href="#" class="bt">첫 페이지</a> <a href="#" class="bt">이전 페이지</a>?>
-			<a href="#" class="num on">1</a> <a href="#" class="num">2</a> <a
-				href="#" class="num">3</a> <a href="#" class="bt">다음 페이지</a> <a
-				href="#" class="bt">마지막 페이지</a>
+			<ul class="paging-ul">
+				<c:if test="${pageMaker.prev}">
+					<li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+				</c:if> 
+							
+				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
+					<li <c:out value="${pageMaker.cri.page == idx ? 'class=info' : ''}" />>
+					<a href="list${pageMaker.makeSearch(idx)}">${idx}</a></li>
+				</c:forEach>
+							
+				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+					<li><a href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+				</c:if> 
+			</ul>
 		</div>
 	</div>
 
 	<div align="center">
-		<form method="post" action="boardlist.html" name="srchform">
+
 			<select class="srch_select" name="srchfield">
-				<option value="all">모두</option>
-				<option value="sub">제목</option>
-				<option value="writer">글쓴이</option>
-				<option value="content">내용</option>
-			</select> <span class='green_window'> <input type='text'
-				class='input_text' />
+				<option value="s"<c:out value="${scri.searchType eq 's' ? 'selected' : ''}"/>>제목</option>
+				<option value="c"<c:out value="${scri.searchType eq 'c' ? 'selected' : ''}"/>>내용</option>
+				<option value="n"<c:out value="${scri.searchType eq 'n' ? 'selected' : ''}"/>>작성자</option>
+				<option value="sc"<c:out value="${scri.searchType eq 'sc' ? 'selected' : ''}"/>>제목+내용</option>
+			</select> <span class='green_window'> 
+			<input name="keyword" id="keywordInput" value="${scri.keyword}" type='text' class='input_text' />
 			</span>
-			<button type='submit' class='sch_smit'>검색</button>
-		</form>
+			<button id="searchBtn" type="button" class='sch_smit'>검색</button>
+
 	</div>
+	
+	<script>
+		 $(function(){
+			 $('#searchBtn').on('click', function() {
+			 	self.location = "list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+			 });
+		 });   
+	</script>
 </body>
 </html>
