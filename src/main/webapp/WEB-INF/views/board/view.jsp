@@ -10,18 +10,61 @@
 <meta name="viewport" content="width=device-width">
 <title>상세 보기</title>
 <link href="/resources/css/view.css" rel="stylesheet" type="text/css" />
+<<<<<<< HEAD
+=======
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+>>>>>>> branch 'master' of https://github.com/LifeIT-web/SARF
 </head>
+
+<script type="text/javascript">
+		$(document).ready(function(){
+			var formObj = $("form[name='readForm']");
+			
+			// 수정 
+			$("#update_btn").on("click", function(){
+				formObj.attr("action", "/board/updateView");
+				formObj.attr("method", "get");
+				formObj.submit();				
+			})
+			
+			// 삭제
+			$("#delete_btn").on("click", function(){
+				formObj.attr("action", "/board/delete");
+				formObj.attr("method", "post");
+				formObj.submit();
+			})
+			
+			// 취소
+			$("#list_btn").on("click", function(){
+				
+				location.href = "/board/list";
+			})
+		})
+</script>
+	
 <body>
+<section id="container">
 	<div class="view_list">
 		<div class="view_content">
 			<!-- 게시판이름 -->
 			<div>
 				<b>자유 게시판</b>
 			</div>
-			<!-- 제목 -->
-
-			<div>
-				제목: <label> ${read.subject} </label>
+			
+			<!-- 번호 -->
+			<form name="readForm" role="form" method="post">
+				<input type="hidden" id="bno" name="bno" value="${read.bno}" />
+			</form>
+			
+			<!-- 제목 -->			
+			<div>제목:
+			<label> ${read.subject} </label>
+			</div>
+				
+			<!-- 닉네임, 작성시간 -->	
+			<div>닉네임:
+			<label> ${read.name} </label>
 			</div>
 			<!-- 닉네임, 작성시간 -->
 
@@ -37,14 +80,16 @@
 			<br>
 
 
-			<hr size="1" color="c0c0c0">
-			<!-- 내용 -->
-
-
-
-			<label>${read.content} </label> <br> <br> <br> <br>
-
-			<br>
+			<hr size="1" color="c0c0c0">		
+	<!-- 내용 -->
+	<label>${read.content}
+	</label>
+	<br>
+	<br>
+	<br>
+	<br> 	
+	 	
+	 	<br>	
 			<hr size="1" color="c0c0c0">
 
 			<div class="comment_box">
@@ -52,9 +97,9 @@
 				<!-- 댓글 입력창-->
 				<p
 					style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
-				<form>
-					<!-- 댓글 출력창-->
-					<div class="comment_writer">
+ 				<form>
+					<!-- 댓글 출력창--> 
+ 					<div class="comment_writer">
 						<div class="comment_inbox">
 							<em class="comment_inbox_name">닉네임값</em>
 							<textarea class="cmt_write_box" placeholder="댓글을 남겨보세요"></textarea>
@@ -68,6 +113,7 @@
 			</div>
 
 		</div>
+		
 		<div class="top_btn" style="padding-bottom: 13px">
 			<div class="left_area">
 				<!-- 이전글 -->
@@ -75,16 +121,18 @@
 				<!-- 다음글-->
 				<a class="basebutton skin size">다음글</a>
 				<!-- 목록 -->
-				<a href="list.html" class="basebutton skin size">목록</a>
+				<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
 			</div>
 			<div class="right_area">
 				<!-- 수정 -->
-				<a href="modify.html" class="basebutton skin size">수정</a>
+				<button type="submit" class="basebutton skin size" id="update_btn">수정</button>
 				<!-- 삭제 -->
-				<a href="delete.bo" class="basebutton skin size">삭제</a>
+				<button type="submit" class="basebutton skin size" id="delete_btn">삭제</button>
 			</div>
 		</div>
+
 	</div>
+</section>
 
 </body>
 </html>
