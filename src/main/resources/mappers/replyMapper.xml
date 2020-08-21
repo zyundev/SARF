@@ -9,10 +9,11 @@
 		SELECT RNO, NAME, CONTENT, REGDATE
 		FROM F_BOARD_R
 		WHERE BNO = #{bno}
+		ORDER BY REGDATE
 	</select>
 	
 	<!-- 댓글 작성 -->
-	<insert id="writeReply">
+	<insert id="writeReply" parameterType="com.sarf.vo.ReplyVO">
 	INSERT INTO F_BOARD_R(
 							BNO,
 							RNO,

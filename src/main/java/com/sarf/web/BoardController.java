@@ -14,9 +14,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sarf.service.BoardService;
+import com.sarf.service.ReplyService;
 import com.sarf.vo.BoardVO;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.PageMaker;
+import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
 @Controller
@@ -27,6 +29,9 @@ public class BoardController {
 	
 	@Inject
 	BoardService service;
+	
+	@Inject
+	ReplyService replyService;
 	
 	// 게시판 목록 조회
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -65,11 +70,15 @@ public class BoardController {
 		
 	// 게시물 조회
 	@RequestMapping(value = "/view", method = RequestMethod.GET)
-	public String read(BoardVO boardVO, Model model) throws Exception{
+	public String read(BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
 		logger.info("뷰");
 			
 		model.addAttribute("read", service.read(boardVO.getBno()));
-			
+		model.addAttribute("scri", scri);
+		
+		List<ReplyVO> replyList = replyService.readReply(boardVO.getBno());
+		model.addAttribute("replyList", replyList);
+		
 		return "board/view";
 	}
 	
