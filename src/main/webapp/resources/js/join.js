@@ -128,6 +128,25 @@ phone_input.on({
 	}
 });
 
+$('.container_join_input').on('click' , function(){
+	if ($('.idcheck').css('backgroundColor') != "rgb(192, 192, 192)"){
+		alert('아이디 중복 체크를 해주세요');
+		
+		return false;
+	}
+	if ((id_input.val() == "") || (pw_input.val() == "") || (pwcheck_input.val() == "") || (name_input.val() == "") || (addr_input.val() == "") || (email_input.val() == "") || (phone_input.val() == "")) {
+        alert("빈 항목을 작성해주세요");
+
+        return false;
+    } else if (pwcheck_input.val() != pw_input.val()) {
+        alert("비밀번호가 일치하지 않습니다.");
+
+        return false;
+    } else {
+        return true;
+    }
+})
+/*
 function joinchk() {
     if ((id_input.val() == "") || (pw_input.val() == "") || (pwcheck_input.val() == "") || (name_input.val() == "") || (addr_input.val() == "") || (email_input.val() == "") || (phone_input.val() == "")) {
         alert("빈 항목을 작성해주세요");
@@ -141,3 +160,4 @@ function joinchk() {
         return true;
     }
 }
+*/

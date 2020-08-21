@@ -8,8 +8,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sarf.service.MemberService;
@@ -221,5 +223,24 @@ public class MemberController {
 		rttr.addFlashAttribute("find_pw_msg", true);
 		
 		return "redirect:login";
+	}
+	
+	// 아이디 중복 체크 get
+	@RequestMapping(value = "idcheck", method = RequestMethod.GET)
+	public String getidcheck(@RequestParam String id, Model model) throws Exception{
+		// LOG
+		if (debug == 1) {
+			logger.info("~~~get idcheck~~~");
+		}
+
+		String idcheck = service.idcheck(id);
+		System.out.println("idcheck 출력~~~" + idcheck);
+		if(idcheck != null) {
+			model.addAttribute("idcheck", false);
+			return "member/idcheck";
+		}else {
+			model.addAttribute("idcheck", true);
+			return "member/idcheck";
+		}
 	}
 }
