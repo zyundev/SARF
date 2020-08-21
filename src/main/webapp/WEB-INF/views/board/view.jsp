@@ -126,10 +126,10 @@
 								<div class="right_area">
 								
 								<button type="button" id="replyUpdate_btn"
-										class="basebutton skin size">수정</button>
+										class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
 
 								<button type="button" id="replyDelete_btn"
-										class="basebutton skin size">삭제</button>
+										class="basebutton skin size replyDelete_btn" data-rno="${replyList.rno}">삭제</button>
 								</div>
 							</div>
 						</div>
@@ -176,6 +176,21 @@
 
 		</div>
 </section>
+<script>
+	$('.replyUpdate_btn').on('click', function(){
+		var urlparam = "?rno=" + $(this).attr('data-rno');
+		location.href='replyUpdateView' + urlparam;
+	})
+	$('.replyDelete_btn').on('click', function(){
+		var check = confirm('정말 삭제하시겠습니까?');
 
+		if(check){
+			var urlparam = "?rno=" + $(this).attr('data-rno') + "&bno=" + $('#bno').val();
+			location.href='replyDelete' + urlparam;
+		}
+		return false;
+	})
+	
+</script>
 </body>
 </html>

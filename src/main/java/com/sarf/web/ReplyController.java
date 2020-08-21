@@ -7,6 +7,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sarf.service.ReplyService;
@@ -59,7 +60,7 @@ public class ReplyController {
 		service.updateReply(vo);
 		
 		rttr.addAttribute("bno", vo.getBno());
-		
+
 		return "redirect:/board/view";
 	}
 	
@@ -74,9 +75,9 @@ public class ReplyController {
 	}
 
 	//댓글 삭제
-	@RequestMapping(value="/replyDelete", method = RequestMethod.POST)
+	@RequestMapping(value="/replyDelete", method = RequestMethod.GET)
 	public String replyDelete(ReplyVO vo, RedirectAttributes rttr) throws Exception {
-		logger.info("reply Write");
+		logger.info("~~~get replyDelete~~~");
 		
 		service.deleteReply(vo);
 		
