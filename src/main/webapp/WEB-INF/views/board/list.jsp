@@ -10,8 +10,82 @@
 <title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/list.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
+	<style>
+	
+	#container {
+			width:980px;
+			margin:0 auto;
+			text-align:left;
+		}
+		
+	.tab {
+           font-family: 'Noto Sans KR', sans-serif;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+            
+		}
+		
+		.tab li {
+			float: left;
+		}
+		
+		.tab li a {
+			display: inline-block;
+			color: #000;
+			text-align: center;
+			text-decoration: none;
+			padding: 14px 16px;
+			font-size: 17px;
+			transition:0.3s;
+            width: 208px;
+
+		}
+		
+	  /* 위에 박스 밑줄 효과 */
+        
+        .cool-link::after {
+            
+            content: '';
+            display: block;
+            width: 0;
+            height: 5px;
+            background: #000;
+                
+        
+        }
+        
+        .cool-link:hover::after {
+            width: 100%;
+            
+        }	
+	
+		
+	</style>
+<!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
+
+
+
+
+
+
 </head>
 <body>
+
+<!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
+   <div id = "container">
+		<ul class="tab">
+            <li  data-tab="tab1" class = "cool-link"><a href="/board/list_1"><b>자유 게시판</b></a></li>
+            <li data-tab="tab2" class = "cool-link" ><a href="/board/list_2"><b>명소 게시판</b> </a></li>
+			<li data-tab="tab3" class = "cool-link" ><a href="/board/list_3"><b>맛집 게시판</b></a></li>
+			<li data-tab="tab4" class = "cool-link" ><a href="/board/list_4"><b>축제 게시판</b></a></li>
+		</ul>
+	</div>
+<!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
+
 
 	<!-- location  -->
 	<div class="board_list_wrap">
