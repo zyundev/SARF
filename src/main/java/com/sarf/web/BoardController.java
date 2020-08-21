@@ -85,7 +85,7 @@ public class BoardController {
 	// 게시물 삭제
 	@RequestMapping(value = "/delete", method = RequestMethod.POST)
 	public String delete(BoardVO boardVO) throws Exception{
-		logger.info("delete");
+		logger.info("딜리트");
 			
 		service.delete(boardVO.getBno());
 			
