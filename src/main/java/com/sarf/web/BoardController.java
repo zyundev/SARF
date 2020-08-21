@@ -41,38 +41,15 @@ public class BoardController {
 		
 		return "/board/list";
 	}
-	// 게시판 글 작성 화면
-	@RequestMapping(value = "/writeView", method = RequestMethod.GET)
-	public void writeView() throws Exception{
-		logger.info("작성화면");
-		
-		
-		
-		
-	}
-	
-	
-	
-	// 게시판 내용 읽기
-	@RequestMapping(value = "/view", method = RequestMethod.GET)
-	public String read(BoardVO boardVO, Model model) throws Exception{
-		logger.info("read");
-		
-		System.out.println("보드 넘버 나옴" + boardVO.getBno());
-		model.addAttribute("read", service.read(boardVO.getBno()));
-		
-		/*
-		 * List<ReplyVO> replyList = replyService.readReply(boardVO.getBno());
-		 * model.addAttribute("replyList", replyList);
-		 */
-		
-		return "board/view";
-	
-	}
-	
-		
-	@RequestMapping(value="write", method = RequestMethod.POST)
 
+	// 게시판 글 작성 화면
+	@RequestMapping(value = "/board/writeView", method = RequestMethod.GET)
+	public void writeView() throws Exception{
+		logger.info("작성화면");	
+	}
+	
+	// 게시판 글 작성
+	@RequestMapping(value="/board/write", method = RequestMethod.POST)
 	public String write(BoardVO boardVO, HttpSession session) throws Exception {
 		logger.info("작성완료");
 		
@@ -82,6 +59,46 @@ public class BoardController {
 		
 		service.write(boardVO);
 		return "redirect:/board/list";
-
 	}
+		
+	// 게시물 조회
+	@RequestMapping(value = "/view", method = RequestMethod.GET)
+	public String read(BoardVO boardVO, Model model) throws Exception{
+		logger.info("뷰");
+			
+		model.addAttribute("read", service.read(boardVO.getBno()));
+			
+		return "board/view";
+	}
+	
+	// 게시물 수정뷰
+	@RequestMapping(value = "/updateView", method = RequestMethod.GET)
+	public String updateView(BoardVO boardVO, Model model) throws Exception{
+		logger.info("없데이트뷰");
+			
+		model.addAttribute("update", service.read(boardVO.getBno()));
+			
+		return "board/updateView";
+	}
+		
+	// 게시물 수정
+	@RequestMapping(value = "/update", method = RequestMethod.POST)
+	public String update(BoardVO boardVO) throws Exception{
+		logger.info("없데이트");
+			
+		service.update(boardVO);
+			
+		return "redirect:/board/list";
+	}
+
+	// 게시물 삭제
+	@RequestMapping(value = "/delete", method = RequestMethod.POST)
+	public String delete(BoardVO boardVO) throws Exception{
+		logger.info("딜리트");
+			
+		service.delete(boardVO.getBno());
+			
+		return "redirect:/board/list";
+	}
+	
 }
