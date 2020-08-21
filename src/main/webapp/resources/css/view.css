@@ -99,12 +99,10 @@ div[contenteditable=true] {
 	float: right;
 }
 
-.cmt_write_box {
+.comment_inbox textarea {
 	width: 500px;
-	height: 78px;
 	padding: 13px;
-	margin-top: 10px;
-	border: 1px solid #cecdce;
+	border: 0px solid #cecdce;
 	background: #fff;
 	line-height: 18px;
 	resize: none;

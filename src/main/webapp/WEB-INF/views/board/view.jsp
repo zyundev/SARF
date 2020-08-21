@@ -10,11 +10,8 @@
 <meta name="viewport" content="width=device-width">
 <title>상세 보기</title>
 <link href="/resources/css/view.css" rel="stylesheet" type="text/css" />
-<<<<<<< HEAD
-=======
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
->>>>>>> branch 'master' of https://github.com/LifeIT-web/SARF
 </head>
 
 <script type="text/javascript">
@@ -66,11 +63,6 @@
 			<div>닉네임:
 			<label> ${read.name} </label>
 			</div>
-			<!-- 닉네임, 작성시간 -->
-
-			<div>
-				닉네임: <label> ${read.name} </label>
-			</div>
 
 			<!-- 작성 시간 -->
 			<div>
@@ -102,10 +94,9 @@
  					<div class="comment_writer">
 						<div class="comment_inbox">
 							<em class="comment_inbox_name">닉네임값</em>
-							<textarea class="cmt_write_box" placeholder="댓글을 남겨보세요"></textarea>
+							<textarea placeholder="댓글을 남겨보세요"></textarea>
 							<div class="input_box">
-								<a class="input_button" href="#" role="button"
-									onclick="alert('댓글을 적어주세요');return false;">등록</a>
+								<button class="input_button" role="button" onclick="alert('댓글을 적어주세요');return false;">등록</button>
 							</div>
 						</div>
 					</div>
