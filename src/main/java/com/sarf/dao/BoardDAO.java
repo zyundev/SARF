@@ -28,5 +28,4 @@ public interface BoardDAO {
 	// 게시물 총 갯수
 	public int listCount(SearchCriteria scri) throws Exception;
 	
-
 }
