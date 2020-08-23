@@ -17,19 +17,16 @@
 			<form name="writeForm" method="post" action="/board/write">
 				<div class="WritingTitle">자유 게시판</div>
 				<div>
-					<textarea class="textarea_input" placeholder="제목을 입력해 주세요."
-						name="subject" style="height: 40px;"></textarea>
+					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
 				</div>
 
-				<div
-					style="height: 400px; padding: 5px 13px 5px 13px; border: 1px solid #ebecef;">
-					<textarea placeholder="내용을 입력해 주세요." name="content"
-						style="resize: none; font-size: 15px;"></textarea>
+				<div style="height: 400px; padding: 5px 13px 5px 13px; border: 1px solid #ebecef;">
+					<textarea placeholder="내용을 입력해 주세요." name="content" style="resize: none; font-size: 15px;"></textarea>
 				</div>
 				<div style="border: 1px solid black;">
 					<div>
-						<button type='submit' class='BaseButton' onclick='/board/list'>취소</button>
-						<button type='submit' class='BaseButton' onclick="/board/list">등록</button>
+						<button type='submit' class='BaseButton' >취소</button>
+						<button type='submit' class='BaseButton' >등록</button>
 						<!-- 경로 재설정 -->
 					</div>
 				</div>

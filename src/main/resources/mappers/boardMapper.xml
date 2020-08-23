@@ -14,6 +14,27 @@
 		INSERT INTO F_BOARD(BNO, SUBJECT, NAME, CONTENT)
 		VALUES( F_BOARD_SEQ.NEXTVAL, #{subject}, #{name}, #{content})
 	</insert>
+	
+	<!-- 게시글 조회 -->
+	<select id="read" parameterType="int" resultType="com.sarf.vo.BoardVO">
+      SELECT BNO
+            , SUBJECT
+            , CONTENT
+            , NAME
+            , REGDATE
+        FROM F_BOARD
+       WHERE BNO = #{bno}
+   </select>
+	
+	<!-- 게시판 글 수정 -->
+	<update id="modify" parameterType="com.sarf.vo.BoardVO">
+		UPDATE F_BOARD SET
+            SUBJECT = #{subject},
+            NAME = #{name},
+            CONTENT = #{content},
+            REGDATE = sysdate
+       WHERE BNO = #{bno}
+	</update>
 </mapper>
 
 

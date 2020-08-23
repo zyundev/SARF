@@ -1,6 +1,6 @@
 package com.sarf.dao;
 
-import java.util.List;	
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -23,5 +23,15 @@ public class BoardDAOImpl implements BoardDAO{
 	@Override
 	public void write(BoardVO boardVO) throws Exception {
 		sqlSession.insert("boardMapper.write", boardVO);
+	}
+	
+	@Override
+	public BoardVO read(int bno) throws Exception {
+		return sqlSession.selectOne("boardMapper.read", bno);
+	}
+
+	@Override
+	public void modify(BoardVO boardVO) throws Exception {
+		sqlSession.update("boardMapper.modify", boardVO);
 	}
 }
