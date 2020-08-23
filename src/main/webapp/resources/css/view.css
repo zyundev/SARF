@@ -90,7 +90,7 @@ div[contenteditable=true] {
 }
 .comment_writer {
 	width: 740px;
-	height: 130px;
+	height: 150px;
     padding: 10px;
     border: 2px solid #ddd;
     border-radius: 6px;
@@ -98,28 +98,29 @@ div[contenteditable=true] {
     background: white;
 	float: right;
 }
-.cmt_write_box{
-	width: 700px;
-    padding: 8px;
-  	line-height: 18px;
-    resize: none;
-	overflow: hidden;
-	border: 0px solid #aaa;
+
+.comment_inbox textarea {
+	width: 650px;
+	padding: 13px;
+	border: 0px solid #cecdce;
+	background: #fff;
+	line-height: 18px;
+	resize: none;
 }
+
 .reply_input{
 	margin: 0;
 	width: 740px;
 }
 .input_box{
 	display: inline-block;
-	width: 710px;
+	width: 720px;
 }
 .input_button{
 	display: inline-block;
     min-width: 35px;
     height: 34px;
-    font-size: 15px;
-    color: #b7b7b7;
+    font-size: 13px;
     border-radius: 6px;
     box-sizing: border-box;
     font-weight: 700;

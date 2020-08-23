@@ -117,8 +117,7 @@ footer {
 	animation: rdoor 6.5s forwards;
 }
 
-@
-keyframes ldoor {
+@keyframes ldoor {
 	from {left: 0%
 }
 
@@ -127,8 +126,8 @@ to {
 }
 
 }
-@
-keyframes rdoor {
+
+@keyframes rdoor {
 	from {right: 0%
 }
 

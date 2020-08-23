@@ -1,14 +1,15 @@
+// 회원 정보 테이블
 CREATE TABLE MEMBER(
-	ID VARCHAR2(10) PRIMARY KEY,
+	ID VARCHAR2(20) PRIMARY KEY,
 	PW VARCHAR2(100) NOT NULL,
 	NAME VARCHAR2(10) NOT NULL,
 	ADDR VARCHAR2(100) NOT NULL,
-	EMAIL VARCHAR2(30) NOT NULL,
+	EMAIL VARCHAR2(30) NOT NULL UNIQUE,
 	PHONE VARCHAR2(20) NOT NULL,
 	REGDATE DATE DEFAULT SYSDATE
 );
 
---DROP TABLE MEMBER;
+--DROP TABLE MEMBER PURGE;
 게시판 DB(4종) ▶ C_(J, A, R, F)_BOARD 
 [Community, Attraction, Restaurant, Festival ]
     [자유게시판,   명소,       맛집,       축제]
@@ -24,4 +25,25 @@ CREATE TABLE F_BOARD(
 	READCOUNT NUMBER DEFAULT 0
 );
 
+--DROP TABLE F_BOARD PURGE;
+
 create sequence f_board_seq;
+--DROP sequence f_board_seq;
+
+// 답변 테이블
+CREATE TABLE F_BOARD_R(
+    BNO NUMBER,
+    RNO NUMBER PRIMARY KEY,
+    NAME VARCHAR2(10),
+    CONTENT VARCHAR2(2000) NOT NULL,
+    REGDATE DATE DEFAULT SYSDATE
+);
+
+--DROP TABLE F_BOARD_R PURGE;
+
+create sequence f_board_r_seq;
+--DROP sequence f_board_r_seq;
+
+// 자유게시판 댓글 제약조건 설정
+alter table f_board_r add constraint f_board_r_bno foreign key(bno)
+references f_board(bno);
