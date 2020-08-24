@@ -26,6 +26,10 @@
             text-align: center;
             margin-top: 15px;
         }
+        
+        .logo{
+        	cursor: pointer;
+        }
 
         .container {
             position: absolute;
