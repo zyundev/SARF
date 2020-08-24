@@ -35,7 +35,9 @@ h3 {
 	border: 1px solid #ebecef;
 }
 
-input:focus {outline:none;}
+input:focus {
+	outline:none;
+}
 
 .textarea_input {
 	display: block;
@@ -47,11 +49,20 @@ input:focus {outline:none;}
 	overflow: hidden;
 	resize: none;
 	word-break: break-all;
-	font-size: 15px;
+	font-size: 1em;
 	letter-spacing: -.23px;
 	line-height: 17px;
 	outline: none;
 	border-bottom: 1px solid black;
+}
+
+.subject_input {
+	font-size: 1em;
+	margin-left: 10px;
+}
+
+textarea {
+	margin-top: 5px;
 }
 
 .BaseButton {
