@@ -24,8 +24,7 @@
         .logo {
         	height: 40%;
             text-align: center;
-            margin-top: 50px;
-            margin-bottom: -35px;
+            margin-top: 15px;
         }
         
         .logo{

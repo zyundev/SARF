@@ -89,9 +89,10 @@
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
 		<ul class="tab">
-            <li data-tab="tab1" class = "cool-link-always"><a href="/board/list"><b>자유 게시판</b></a></li>
-            <li data-tab="tab2" class = "cool-link" ><a href="/board/list_2"><b>명소 게시판</b> </a></li>
-			<li data-tab="tab3" class = "cool-link" ><a href="/board/list_3"><b>맛집 게시판</b></a></li>
+
+            <li  data-tab="tab1" class = "cool-link-always"><a href="/board/list"><b>자유 게시판</b></a></li>
+            <li data-tab="tab2" class = "cool-link" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
+			<li data-tab="tab3" class = "cool-link" ><a href="/r_board/r_list"><b>맛집 게시판</b></a></li>
 			<li data-tab="tab4" class = "cool-link" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
 		</ul>
 	</div>

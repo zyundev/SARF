@@ -5,16 +5,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-<title>글쓰기</title>
+<title>맛집 글쓰기</title>
 <link rel="stylesheet" href="/resources/css/write.css"/>
 </head>
 <body>
 	<div class="base-layout">
 		<div class="WritingHeader">
-			<h3>게시판 글쓰기</h3>
+			<h3>맛집 게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
-			<form name="writeForm" method="post" action="/n_board/write">
+			<form name="writeForm" method="post" action="/r_board/r_write">
 				<div class="WritingTitle">자유 게시판</div>
 				<div>
 					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
@@ -25,12 +25,12 @@
 				</div>
 				<div style="border: 1px solid black;">
 					<div>
-						<button class='BaseButton' onclick="location.href='/n_board/list'">취소</button>
 						<button type='submit' class='BaseButton'>등록</button>
 						<!-- 경로 재설정 -->
 					</div>
 				</div>
 			</form>
+				<button class='BaseButton' onclick="location.href='/r_board/r_list'">취소</button>
 		</div>
 	</div>
 </body>
