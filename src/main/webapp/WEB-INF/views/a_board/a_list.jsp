@@ -62,6 +62,15 @@
             width: 100%;
             
         }	
+		.cool-link-always::after{
+		        
+		    content: '';
+		    display: block;
+		    width: 100%;
+		    height: 5px;
+		    background: #000;
+		            
+		}
 	
 		
 	</style>
@@ -79,7 +88,7 @@
    <div id = "container">
 		<ul class="tab">
             <li  data-tab="tab1" class = "cool-link"><a href="/board/list"><b>자유 게시판</b></a></li>
-            <li data-tab="tab2" class = "cool-link" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
+            <li data-tab="tab2" class = "cool-link-always" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
 			<li data-tab="tab3" class = "cool-link" ><a href="/r_board/r_list"><b>맛집 게시판</b></a></li>
 			<li data-tab="tab4" class = "cool-link" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
 		</ul>
@@ -89,8 +98,8 @@
 
 	<!-- location  -->
 	<div class="board_list_wrap">
-		<div class="loction">
-			<span class="ar">&gt;</span>여행지 <span class="ar">&gt;</span> <span>명소</span>
+		<div style="margin-bottom:15px;">
+			<h2>명소 게시판</h2>
 		</div>
 		<table class="board_list">
 			<caption>게시판 목록</caption>
