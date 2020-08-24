@@ -129,7 +129,7 @@
 			</tbody>
 		</table>
 		<div style="float: right">
-			<button class="write_btn" onclick="location.href='/board/writeView'">글쓰기</button>
+			<button class="write_btn" onclick="location.href='/r_board/r_writeView'">글쓰기</button>
 		</div>     
 		<div class="paging">
 			<ul class="paging-ul">
