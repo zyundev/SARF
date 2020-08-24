@@ -23,8 +23,7 @@ input+div {
 .logo {
 	height: 40%;
 	text-align: center;
-	margin-top: 50px;
-	margin-bottom: -30px;
+	margin-top: 15px;
 }
 
 .logo img{

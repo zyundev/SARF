@@ -167,3 +167,19 @@ create sequence v_board_r_seq;
 // 축제 게시판 댓글 제약조건 설정
 alter table v_board_r add constraint v_board_r_bno foreign key(bno)
 references v_board(bno) ON DELETE CASCADE;
+
+/************************/
+// 공지사항 테이블
+/************************/
+CREATE TABLE N_BOARD(
+    BNO       NUMBER PRIMARY KEY,
+   NAME      VARCHAR2(20) ,
+    SUBJECT   VARCHAR2(30) NOT NULL,
+   CONTENT   VARCHAR2(2000) NOT NULL,
+   REGDATE   DATE DEFAULT SYSDATE,
+   IMG      VARCHAR(100),
+   READCOUNT NUMBER DEFAULT 0
+);
+
+CREATE SEQUENCE N_BOARD_SEQ;
+// 공지사항은 답변이 없음
