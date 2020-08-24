@@ -119,7 +119,7 @@
 					<tr>
 						<td><c:out value="${list.bno}"></c:out></td>
 						<td class="tit">
-							<a href="/board/view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
+							<a href="/r_board/r_view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
 						</td>
 						<td><c:out value="${list.name}"></c:out></td>
 						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
