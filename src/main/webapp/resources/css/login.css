@@ -6,6 +6,9 @@ input {
 	height: 40%;
 	text-align: center;
 	margin-top: 15px;
+}
+
+.logo img{
 	cursor: pointer;
 }
 

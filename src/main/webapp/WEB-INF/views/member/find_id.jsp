@@ -26,6 +26,10 @@ input+div {
 	margin-top: 15px;
 }
 
+.logo img{
+	cursor: pointer;
+}
+
 .container {
 	position: absolute;
 	width: 500px;
