@@ -17,17 +17,18 @@
 <script type="text/javascript">
 		$(document).ready(function(){
 			var formObj = $("form[name='readForm']");
+			var text = $(".text");
 			
 			// 수정 
 			$("#update_btn").on("click", function(){
-				formObj.attr("action", "/board/updateView");
+				formObj.attr("action", "/a_board/a_updateView");
 				formObj.attr("method", "get");
 				formObj.submit();				
 			})
 			
 			// 삭제
 			$("#delete_btn").on("click", function(){
-				formObj.attr("action", "/board/delete");
+				formObj.attr("action", "/a_board/a_delete");
 				formObj.attr("method", "post");
 				formObj.submit();
 			})
@@ -35,13 +36,13 @@
 			// 취소
 			$("#list_btn").on("click", function(){
 				
-				location.href = "/board/list";
+				location.href = "/a_board/a_list";
 			})
 			
 			// 답변 글쓰기
 			$("#replyWrite_btn").on("click", function(){
 				var replyFormObj = $("form[name='replyForm']");
-				replyFormObj.attr("action", "/board/replyWrite");
+				replyFormObj.attr("action", "/a_board/a_replyWrite");
 				replyFormObj.submit();
 			})
 		})
@@ -53,7 +54,7 @@
 			<div class="view_content">
 				<!-- 게시판이름 -->
 				<div>
-					<b>자유 게시판</b>
+					<b>명소 게시판</b>
 				</div>
 
 				<!-- 번호 -->
@@ -86,11 +87,11 @@
 				<label>${read.content} </label> <br> <br> <br> <br>
 
 				<br>
+
 				<div class="comment_box">
-				<c:choose>
-				<c:when test="${member.id != null}">
 					<!-- 댓글 입력창-->
-					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>
+					<p
+						style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>
 					<form name="replyForm" method="post" role="form">
 						<input type="hidden" id="bno" name="bno" value="${read.bno}" />					
 						<input type="hidden" id="name" name="name" value="${member.id}" />
@@ -107,13 +108,8 @@
 							</div>
 						</div>
 					</form>
-				</c:when>
-				<c:otherwise>
-					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인 해야 답글 작성 가능합니다.</p>
-					<!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
-				</c:otherwise>
-				</c:choose>
 				</div>
+
 				<!-- 댓글 출력창-->
 			 	<div class="comment_box">
 					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
@@ -128,7 +124,7 @@
 								</p>
 								${replyList.content}
 								<div class="right_area">
-								<!-- 내가 작성한 답글만 나오게 버튼 만들까? -->
+								
 								<button type="button" id="replyUpdate_btn"
 										class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
 
@@ -145,7 +141,22 @@
 
 			<div class="top_btn" style="padding-bottom: 13px">
 				<div class="left_area">
-					
+					<!-- 이전글 -->
+
+					<c:if test="${dto.prevNum ne 0 }">
+						<a class="basebutton skin size"
+							href="a_view?num=${dto.prevNum }&condition=${condition}&keyword=${encodedKeyword}">
+							이전글</a>
+					</c:if>
+					<!-- 다음글-->
+
+					<c:if test="${dto.nextNum ne 0 }">
+						<a class="basebutton skin size"
+							href="a_view?num=${dto.nextNum }&condition=${condition}&keyword=${encodedKeyword}">
+							다음글</a>
+					</c:if>
+
+
 					<!-- 					<a class="basebutton skin size">이전글</a>
 		
 				<a class="basebutton skin size">다음글</a> -->
@@ -166,19 +177,16 @@
 		</div>
 </section>
 <script>
-	// 수정 권한 주기
 	$('.replyUpdate_btn').on('click', function(){
 		var urlparam = "?rno=" + $(this).attr('data-rno');
-		location.href='replyUpdateView' + urlparam;
+		location.href='a_replyUpdateView' + urlparam;
 	})
-	
-	// 삭제 권한 주기 
 	$('.replyDelete_btn').on('click', function(){
 		var check = confirm('정말 삭제하시겠습니까?');
 
 		if(check){
 			var urlparam = "?rno=" + $(this).attr('data-rno') + "&bno=" + $('#bno').val();
-			location.href='replyDelete' + urlparam;
+			location.href='a_replyDelete' + urlparam;
 		}
 		return false;
 	})
