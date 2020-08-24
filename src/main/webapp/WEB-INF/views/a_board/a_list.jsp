@@ -26,6 +26,8 @@
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
+			margin-top:30px;
+			margin-bottom:-20px;
             
 		}
 		
@@ -55,13 +57,22 @@
             height: 5px;
             background: #000;
                 
-        
         }
         
         .cool-link:hover::after {
             width: 100%;
             
-        }	
+        }
+        
+        .cool-link-always::after{
+        
+        	content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #000;
+            
+        }
 	
 		
 	</style>
@@ -78,10 +89,10 @@
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
 		<ul class="tab">
-            <li  data-tab="tab1" class = "cool-link"><a href="/board/list_1"><b>자유 게시판</b></a></li>
-            <li data-tab="tab2" class = "cool-link" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
-			<li data-tab="tab3" class = "cool-link" ><a href="/board/list_3"><b>맛집 게시판</b></a></li>
-			<li data-tab="tab4" class = "cool-link" ><a href="/board/list_4"><b>축제 게시판</b></a></li>
+            <li  data-tab="tab1" class = "cool-link"><a href="/board/list"><b>자유 게시판</b></a></li>
+            <li data-tab="tab2" class = "cool-link-always" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
+			<li data-tab="tab3" class = "cool-link" ><a href="/r_board/r_list"><b>맛집 게시판</b></a></li>
+			<li data-tab="tab4" class = "cool-link" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
 		</ul>
 	</div>
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
@@ -89,8 +100,8 @@
 
 	<!-- location  -->
 	<div class="board_list_wrap">
-		<div class="loction">
-			<span class="ar">&gt;</span>여행지 <span class="ar">&gt;</span> <span>명소</span>
+		<div style="margin-bottom:15px;">
+			<h2>명소 게시판</h2>
 		</div>
 		<table class="board_list">
 			<caption>게시판 목록</caption>

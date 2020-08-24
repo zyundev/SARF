@@ -42,7 +42,7 @@
 			// 답변 글쓰기
 			$("#replyWrite_btn").on("click", function(){
 				var replyFormObj = $("form[name='replyForm']");
-				replyFormObj.attr("action", "/r_board/r_replyWrite");
+				replyFormObj.attr("action", "/r_board/replyWrite");
 				replyFormObj.submit();
 			})
 		})
@@ -54,7 +54,7 @@
 			<div class="view_content">
 				<!-- 게시판이름 -->
 				<div>
-					<b>자유 게시판</b>
+					<b>맛집 게시판</b>
 				</div>
 
 				<!-- 번호 -->
