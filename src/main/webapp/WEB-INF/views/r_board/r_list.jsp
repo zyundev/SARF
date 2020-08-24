@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>커뮤니티</title>
+<title>맛집 커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/list.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -108,7 +108,7 @@
 					<tr>
 						<td><c:out value="${list.bno}"></c:out></td>
 						<td class="tit">
-							<a href="/board/view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
+							<a href="/r_board/r_view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
 						</td>
 						<td><c:out value="${list.name}"></c:out></td>
 						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
@@ -118,7 +118,7 @@
 			</tbody>
 		</table>
 		<div style="float: right">
-			<button class="write_btn" onclick="location.href='/board/writeView'">글쓰기</button>
+			<button class="write_btn" onclick="location.href='/r_board/r_writeView'">글쓰기</button>
 		</div>     
 		<div class="paging">
 			<ul class="paging-ul">

@@ -51,23 +51,23 @@
 		<div class="board">
 			<a href="/board/list">게시판</a>
 			<div>
-				<button class="bd menubar-button">- 자유 게시판</button>
+				<a href="/board/list"><button class="bd menubar-button">- 자유 게시판</button></a>
 				<br>
 				
 				<p>
-					<button class="bd menubar-button">- 명소 게시판</button>
+					<a href="/a_board/a_list"><button class="bd menubar-button">- 명소 게시판</button></a>
 				</p>
 				
 				<br>
 				
 				<p>
-					<button class="bd menubar-button">- 맛집 게시판</button>
+					<a href="/r_board/r_list"><button class="bd menubar-button">- 맛집 게시판</button></a>
 				</p>
 				
 				<br>
 				
 				<p>
-					<button class="bd menubar-button">- 축제 게시판</button>
+					<a href="/v_board/v_list"><button class="bd menubar-button">- 축제 게시판</button></a>
 				</p>
 				
 				<br>

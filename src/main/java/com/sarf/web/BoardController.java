@@ -53,13 +53,13 @@ public class BoardController {
 	}
 
 	// 게시판 글 작성 화면
-	@RequestMapping(value = "/board/writeView", method = RequestMethod.GET)
+	@RequestMapping(value = "/writeView", method = RequestMethod.GET)
 	public void writeView() throws Exception{
 		logger.info("작성화면");	
 	}
 	
 	// 게시판 글 작성
-	@RequestMapping(value="/board/write", method = RequestMethod.POST)
+	@RequestMapping(value="/write", method = RequestMethod.POST)
 	public String write(BoardVO boardVO, HttpSession session) throws Exception {
 		logger.info("작성완료");
 
@@ -102,7 +102,7 @@ public class BoardController {
 			
 		service.update(boardVO);
 			
-		return "redirect:/board/list";
+		return "redirect:/board/view?bno=${update.bno}";
 	}
 
 	// 게시물 삭제
