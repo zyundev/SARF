@@ -21,6 +21,7 @@ input+div {
 }
 
 .logo {
+	height: 40%;
 	text-align: center;
 	margin-top: 15px;
 }
@@ -28,9 +29,9 @@ input+div {
 .container {
 	position: absolute;
 	width: 500px;
-	height: 500px;
+	height: 600px;
 	left: 50%;
-	top: 50%;
+	top: 30%;
 	margin-top: -250px;
 	margin-left: -250px;
 }
@@ -90,13 +91,13 @@ input+div {
 }
 
 .container_name_div {
-	bottom: 362px;
+	bottom: 188px;
 	left: 3px;
 	border-bottom: 0;
 }
 
 .container_email_div {
-	bottom: 264px;
+	bottom: 80px;
 	left: 3px;
 }
 </style>
@@ -107,26 +108,26 @@ input+div {
 	<c:if test="${msg == false}">
 		<script>alert('일치하는 아이디가 없습니다.');</script>
 	</c:if>
-    <div class="logo">
-        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
-    </div>
    	<form action="find_id" method="post">
 	    <div class="container">
-		        <div class="container_main">아이디 찾기</div>
-		        <div class="container_name">
-		            <input class="container_name_container_email_input container_name_input" type="text" name="name">
-		            <div class="container_name_div">이름</div>
-		        </div>
-		        <div class="container_email">
-		            <input class="container_name_container_email_input container_email_input" type="email" name="email">
-		            <div class="container_email_div">이메일 주소</div>
-		        </div>
-		        <div class="container_login">
-		            <input type="submit" value="조회 하기">
-		        </div>
-		        <c:if test="${findid != null}">
-    				<div>아이디는 : ${findid.getId()} 입니다.</div>
-    			</c:if>
+		    <div class="logo">
+		        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
+		    </div>
+	        <div class="container_main">아이디 찾기</div>
+	        <div class="container_name">
+	            <input class="container_name_container_email_input container_name_input" type="text" name="name">
+	            <div class="container_name_div">이름</div>
+	        </div>
+	        <div class="container_email">
+	            <input class="container_name_container_email_input container_email_input" type="email" name="email">
+	            <div class="container_email_div">이메일 주소</div>
+	        </div>
+	        <div class="container_login">
+	            <input type="submit" value="조회 하기">
+	        </div>
+	        <c:if test="${findid != null}">
+   				<div>아이디는 : ${findid.getId()} 입니다.</div>
+   			</c:if>
 	    </div>
     </form>
     
@@ -140,7 +141,7 @@ input+div {
             focus: function() {
             	name_div.css({
                     'fontSize': '10px',
-                    'bottom': '392px'
+                    'bottom': '218px'
                 });
                 name_input.css('borderBottom', '2px solid #4f9f4f');
             },
@@ -148,7 +149,7 @@ input+div {
                 if (name_input.val() == "") {
                 	name_div.css({
                         'fontSize': '16px',
-                        'bottom': '362px'
+                        'bottom': '188px'
                     });
                 	name_input.css('borderBottom', '1px solid #c0c0c0');
                 }
@@ -158,7 +159,7 @@ input+div {
             focus: function() {
             	email_div.css({
                     'fontSize': '10px',
-                    'bottom': '294px'
+                    'bottom': '110px'
                 });
             	email_input.css('borderBottom', '2px solid #4f9f4f');
             },
@@ -166,7 +167,7 @@ input+div {
                 if (email_input.val() == "") {
                 	email_div.css({
                         'fontSize': '16px',
-                        'bottom': '264px'
+                        'bottom': '80px'
                     });
                 	email_input.css('borderBottom', '2px solid #c0c0c0');
                 }
