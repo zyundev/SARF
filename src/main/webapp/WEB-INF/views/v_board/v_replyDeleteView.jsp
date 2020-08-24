@@ -11,7 +11,7 @@
 <style>
 .view_list{
   position: relative;
-  width: 800px;
+  width: 280px;
   margin: 0 auto;
   margin-top: 30px;
   font-size: 15px;
@@ -24,7 +24,6 @@
 }
 .comment_box{
 	display: inline-block;
-    margin-top: 10px;
 }
 
 .input_button{
@@ -61,39 +60,35 @@
 		var formObj = $("form[name='updateForm']");
 		
 		$(".cancel_btn").on("click", function(){
-			location.href = "/r_board/r_view?bno=${replyUpdate.bno}";
-			/*
+			location.href = "/v_board/readView?bno=${replyUpdate.bno}"
 				   + "&page=${scri.page}"
 				   + "&perPageNum=${scri.perPageNum}"
 				   + "&searchType=${scri.searchType}"
 				   + "&keyword=${scri.keyword}";
-			   */
 		})
 	})
 </script>
 </head>
-
 <body>
 	<div class="view_list">
 		<div class="view_content">
 			<div class="comment_box">
-			<!-- 댓글 입력창-->
-			<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글 수정</p>
-			<form name="updateForm" role="form" method="post" action="/r_board/replyUpdate">
-				<input type="hidden" name="bno" value="${replyUpdate.bno}"/>
-				<input type="hidden" id="rno" name="rno" value="${replyUpdate.rno}" />
-				<!-- 
-				<input type="hidden" id="page" name="page" value="${scri.page}"> 
-				<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
-				<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
-				<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
-				 -->
-				<textarea id="content" class="cmt_write_box" name="content">${replyUpdate.content}</textarea>
-				<div>
-					<button type="button" class="cancel_btn input_button">취소</button>
-					<button type="submit" class="update_btn input_button">저장</button>
-				</div>
-			</form>
+				<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글을 삭제하시겠습니까?</p>
+				<form name="updateForm" role="form" method="post" action="/v_board/replyDelete">
+					<input type="hidden" name="bno" value="${replyDelete.bno}"/>
+					<input type="hidden" id="rno" name="rno" value="${replyDelete.rno}" />
+					<!-- 
+					<input type="hidden" id="page" name="page" value="${scri.page}"> 
+					<input type="hidden" id="perPageNum" name="perPageNum" value="${scri.perPageNum}"> 
+					<input type="hidden" id="searchType" name="searchType" value="${scri.searchType}"> 
+					<input type="hidden" id="keyword" name="keyword" value="${scri.keyword}"> 
+					 -->
+					<!-- <textarea id="content" class="cmt_write_box" name="content" readonly>${replyDelete.content}</textarea> --> 	
+					<div>
+						<button type="button" class="cancel_btn input_button">뒤로</button>
+						<button type="submit" class="delete_btn input_button">삭제</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

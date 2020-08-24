@@ -42,7 +42,7 @@
 			// 답변 글쓰기
 			$("#replyWrite_btn").on("click", function(){
 				var replyFormObj = $("form[name='replyForm']");
-				replyFormObj.attr("action", "/r_board/r_replyWrite");
+				replyFormObj.attr("action", "/r_board/replyWrite");
 				replyFormObj.submit();
 			})
 		})
