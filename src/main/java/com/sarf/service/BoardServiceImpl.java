@@ -21,13 +21,13 @@ public class BoardServiceImpl implements BoardService {
 	public List<BoardVO> list(SearchCriteria scri) throws Exception {
 		return dao.list(scri);
 	}
-	
+
 	// 게시물 총 갯수
 	@Override
 	public int listCount(SearchCriteria scri) throws Exception {
 		return dao.listCount(scri);
 	}
-	
+
 	// 게시글 작성
 	@Override
 	public void write(BoardVO boardVO) throws Exception {
@@ -52,5 +52,5 @@ public class BoardServiceImpl implements BoardService {
 	public void delete(int bno) throws Exception {
 		dao.delete(bno);
 	}
-	
+
 }

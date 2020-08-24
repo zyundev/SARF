@@ -111,8 +111,8 @@
 							<a href="/board/view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
 						</td>
 						<td><c:out value="${list.name}"></c:out></td>
-						<td><fmt:formatDate value="${list.regdate}"	pattern="yyyy-MM-dd" /></td>
-						<td><c:out value="${list.readcount}"></c:out></td>
+						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
+						<td><c:out value="${list.readcount}"></c:out></td> 
 					</tr> 
 				</c:forEach>
 			</tbody>
