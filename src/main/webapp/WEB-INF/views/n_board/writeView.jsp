@@ -15,7 +15,7 @@
 		</div>
 		<div class="WritingContent">
 			<form name="writeForm" method="post" action="/n_board/write">
-				<div class="WritingTitle">자유 게시판</div>
+				<div class="WritingTitle">공 지 사 항</div>
 				<div>
 					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
 				</div>
@@ -25,12 +25,12 @@
 				</div>
 				<div style="border: 1px solid black;">
 					<div>
-						<button class='BaseButton' onclick="location.href='/n_board/list'">취소</button>
 						<button type='submit' class='BaseButton'>등록</button>
 						<!-- 경로 재설정 -->
 					</div>
 				</div>
 			</form>
+				<button class='BaseButton' onclick="location.href='/n_board/notice'">취소</button>
 		</div>
 	</div>
 </body>

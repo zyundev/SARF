@@ -61,7 +61,7 @@
 		var formObj = $("form[name='updateForm']");
 		
 		$(".cancel_btn").on("click", function(){
-			location.href = "/r_board/r_view?bno=${replyUpdate.bno}";
+			location.href = "/a_board/a_view?bno=${replyUpdate.bno}";
 			/*
 				   + "&page=${scri.page}"
 				   + "&perPageNum=${scri.perPageNum}"
@@ -79,7 +79,7 @@
 			<div class="comment_box">
 			<!-- 댓글 입력창-->
 			<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글 수정</p>
-			<form name="updateForm" role="form" method="post" action="/r_board/replyUpdate">
+			<form name="updateForm" role="form" method="post" action="/a_board/replyUpdate">
 				<input type="hidden" name="bno" value="${replyUpdate.bno}"/>
 				<input type="hidden" id="rno" name="rno" value="${replyUpdate.rno}" />
 				<!-- 

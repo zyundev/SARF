@@ -3,7 +3,6 @@ package com.sarf.web;
 import java.util.List;
 
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -13,14 +12,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sarf.service.A_BoardService;
-import com.sarf.service.ReplyService;
+import com.sarf.service.A_ReplyService;
+import com.sarf.vo.A_ReplyVO;
 import com.sarf.vo.BoardVO;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.PageMaker;
-import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
 @Controller
@@ -33,7 +31,7 @@ public class A_BoardController {
 	A_BoardService service;
 	
 	@Inject
-	ReplyService replyService;
+	A_ReplyService replyService;
 
 	// 게시판 목록 조회
 	@RequestMapping(value = "/a_list", method = RequestMethod.GET)
@@ -79,7 +77,7 @@ public class A_BoardController {
 		model.addAttribute("read", service.read(boardVO.getBno()));
 		model.addAttribute("scri", scri);
 		
-		List<ReplyVO> replyList = replyService.readReply(boardVO.getBno());
+		List<A_ReplyVO> replyList = replyService.readReply(boardVO.getBno());
 		model.addAttribute("replyList", replyList);
 		
 		return "a_board/a_view";

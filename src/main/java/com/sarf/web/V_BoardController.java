@@ -17,11 +17,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sarf.service.V_BoardService;
+import com.sarf.service.V_ReplyService;
 import com.sarf.service.ReplyService;
 import com.sarf.vo.V_BoardVO;
+import com.sarf.vo.V_ReplyVO;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.PageMaker;
-import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
 @Controller
@@ -34,7 +35,7 @@ public class V_BoardController {
 	V_BoardService service;
 	
 	@Inject
-	ReplyService replyService;
+	V_ReplyService replyService;
 
 	// 게시판 목록 조회
 	@RequestMapping(value = "/v_list", method = RequestMethod.GET)
@@ -73,18 +74,18 @@ public class V_BoardController {
 	 
 	
 	  // 게시물 조회
-	  
-	  @RequestMapping(value = "/v_view", method = RequestMethod.GET) public String
-	  read(V_BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model
-	  model) throws Exception{ logger.info("뷰");
+	  @RequestMapping(value = "/v_view", method = RequestMethod.GET) 
+	  public String read(V_BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{ 
+		  logger.info("뷰");
 	 
-	  model.addAttribute("read", service.read(boardVO.getBno()));
-	  model.addAttribute("scri", scri);
-	  
-	 List<ReplyVO> replyList = replyService.readReply(boardVO.getBno());
-	  model.addAttribute("replyList", replyList);
-	 
-	  return "v_board/v_view"; }
+		  model.addAttribute("read", service.read(boardVO.getBno()));
+		  model.addAttribute("scri", scri);
+
+		  List<V_ReplyVO> replyList = replyService.readReply(boardVO.getBno());
+		  model.addAttribute("replyList", replyList);
+		 
+		  return "v_board/v_view"; 
+	  }
 	 
 	
 	  // 게시물 수정뷰
