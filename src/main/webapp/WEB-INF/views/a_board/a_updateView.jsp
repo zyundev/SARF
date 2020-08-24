@@ -26,7 +26,7 @@
 		<nav>홈 - 글 작성</nav>
 		<div class="UpdateContent">
 			<form name="updateForm" role="form" method="post" action="/a_board/a_update">
-				<div class="UpdateTitle">자유 게시판</div>
+				<div class="UpdateTitle">명소 게시판</div>
 				<input type="hidden" name="bno" value="${update.bno}" readonly="readonly" />
 				<div>
 					<input type="text" class="textarea_input" placeholder="제목을 입력하세요." id="subject" name="subject" value="${update.subject}" style="height: 40px;"/>
