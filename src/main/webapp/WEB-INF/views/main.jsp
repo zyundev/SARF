@@ -45,7 +45,7 @@
 		</label>
 
 		<div class="sidebar">
-			<a href="#">공지사항</a>
+			<a href="/n_board/notice">공지사항</a>
 			<hr>
 		
 		<div class="board">
