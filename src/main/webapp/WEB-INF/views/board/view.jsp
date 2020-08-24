@@ -145,22 +145,7 @@
 
 			<div class="top_btn" style="padding-bottom: 13px">
 				<div class="left_area">
-					<!-- 이전글 -->
-
-					<c:if test="${dto.prevNum ne 0 }">
-						<a class="basebutton skin size"
-							href="view?num=${dto.prevNum }&condition=${condition}&keyword=${encodedKeyword}">
-							이전글</a>
-					</c:if>
-					<!-- 다음글-->
-
-					<c:if test="${dto.nextNum ne 0 }">
-						<a class="basebutton skin size"
-							href="view?num=${dto.nextNum }&condition=${condition}&keyword=${encodedKeyword}">
-							다음글</a>
-					</c:if>
-
-
+					
 					<!-- 					<a class="basebutton skin size">이전글</a>
 		
 				<a class="basebutton skin size">다음글</a> -->
@@ -187,7 +172,7 @@
 		location.href='replyUpdateView' + urlparam;
 	})
 	
-	// 삭제 권한 주기 (단, admin도)
+	// 삭제 권한 주기 
 	$('.replyDelete_btn').on('click', function(){
 		var check = confirm('정말 삭제하시겠습니까?');
 
