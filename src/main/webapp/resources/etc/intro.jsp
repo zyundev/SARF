@@ -6,12 +6,12 @@
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <title>운영진 소개</title>
-<link rel="stylesheet" type="text/css" href="resources/css/intro.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/intro.css">
 <body>
 	<div class="card-wrapper">
 		<div class="card_1">
 			<div class="imgBx">
-				<img src="resources/images/pf_1.png">
+				<img src="/resources/images/pf_1.png">
 			</div>
 			<div class="details">
 				<h2>
@@ -23,7 +23,7 @@
 		</div>
 		<div class="card_2">
 			<div class="imgBx">
-				<img src="resources/images/pf_2.png">
+				<img src="/resources/images/pf_2.png">
 			</div>
 			<div class="details">
 				<h2>
@@ -36,7 +36,7 @@
 		</div>
 		<div class="card_3">
 			<div class="imgBx">
-				<img src="resources/images/pf_3.png">
+				<img src="/resources/images/pf_3.png">
 			</div>
 			<div class="details">
 				<h2>
@@ -48,7 +48,7 @@
 		</div>
 		<div class="card_4">
 			<div class="imgBx">
-				<img src="resources/images/pf_4.png">
+				<img src="/resources/images/pf_4.png">
 			</div>
 			<div class="details">
 				<h2>
@@ -60,7 +60,7 @@
 		</div>
 		<div class="card_5">
 			<div class="imgBx">
-				<img src="resources/images/pf_5.png">
+				<img src="/resources/images/pf_5.png">
 			</div>
 			<div class="details">
 				<h2>
@@ -72,7 +72,7 @@
 		</div>
 		<div class="card_6">
 			<div class="imgBx">
-				<img src="resources/images/pf_6.jpg">
+				<img src="/resources/images/pf_6.jpg">
 			</div>
 			<div class="details">
 				<h2>
@@ -84,7 +84,7 @@
 		</div>
 		<div class="card_7">
 			<div class="imgBx">
-				<img src="resources/images/pf_7.png">
+				<img src="/resources/images/pf_7.png">
 			</div>
 			<div class="details">
 				<h2>
@@ -96,7 +96,7 @@
 		</div>
 	</div>
     <div class="char-wrapper">
-        <img class="chasing-img" src="resources/images/char_lion.png">
+        <img class="chasing-img" src="/resources/images/char_lion.png">
         <span class="speech-bubble"></span>
         <span class="bubble-content">만든 제작자들입니다~</span>
         <span class="semi-bubble_1"></span>

@@ -1,63 +1,114 @@
-* {
-	margin: 0;
-	padding: 0;
+*{
+   margin: 0;
+   padding: 0;
 }
 
-div {
-	display: block;
+div{
+   display: block;
+   font-family: 16px/1.3 'Nanum Gothic', sans-serif;
+    font-weight: 500;
 }
-
-.infor {
-	width: 100%;
-	max-width: 1000px;
-	margin: 0 auto;
+#container {
+    width: 1200px;
+    overflow: hidden;
 }
-
-.txt {
-	font-size: 36px;
-	font-weight: 600;
-	color: #333;
-	letter-spacing: -1px;
-	word-break: keep-all;
-	text-align: center;
+.infor{
+    width: 100%;
+    max-width: 1000px;
+    margin: 0 auto;
 }
-
+.txt{
+    font-size: 36px;
+    font-weight: 600;
+    color: #333;
+    letter-spacing: -1px;
+    word-break: keep-all;
+   text-align: center;
+}
 .faq_txt {
-	background: #e5f2f9;
-	color: #007bc0;
-	text-align: center;
-	position: relative;
-	padding: 20px 20px 20px 120px !important;
-	font-size: 16px;
-	line-height: 1.6em;
+    
+    background: #e5f2f9;
+    color: #007bc0;
+   text-align: center;
+   position: relative;
+    padding: 20px 20px 20px 120px !important;
+    font-size: 16px;
+    line-height: 1.6em;
 }
-
 strong {
-	font-weight: 700;
-	font-size: 18px;
+    font-weight: 700;
+   font-size: 18px;
 }
-
 .faq_list {
-	border-top: 1px solid #333;
-	margin-top: 70px;
+    border-top: 1px solid #333;
+    margin-top: 70px;
 }
-
-.page {
-	text-align: center;
+.page{
+   text-align: center;
+   padding-top: 20px;
+   height: 80px;
+   font-family: 'Nanum Barun Gothic',sans-serif;
+    font-size: 17px;
 }
-
-.faq-list div a {
-	display: block;
-	padding: 20px 20px 20px 70px;
-	position: relative;
-	border-bottom: 1px solid #ddd;
+.faq-list div a{
+   padding: 20px 20px 20px 70px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
 }
-
 .faq-list-cont {
-	overflow: hidden;
+    overflow: hidden;
+}
+.tab_box {
+  display:none;
+  padding:20px;
+}
+.hidden{
+  display: none;
+}
+ul,li{
+   list-style:none;
+}
+.trigger{
+    padding: 13px 10px 5px 5px;
+    position: relative;
+    border-bottom: 1px solid #ddd;
+   line-height: 50px;
+}
+.article{
+   display: block;
+   font-size: 18px;
+   color: #0066eb;
+}
+.hidden{
+   padding: 40px 40px 40px 85px;
+    background-color: #f6f6f6;
+    font-size: 18px;
+    color: #333;
+    line-height: 26px;
+}
+.qfont{
+   padding: 0px 40px 0px 10px;
+   display: inline-block;
+   font-family: 'Judson', serif;
+   font-size: 40px;
+   font-weight: 600;
+}
+.afont{
+   padding: 0px 30px 25px 5px;
+   display: inline-block;
+   font-family: 'Judson', serif;
+   font-size: 40px;
+   font-weight: 600;
+   float: left;
+   line-height: 40px;
+   text-align: center;
 }
 
-.tab_box {
-	display: none;
-	padding: 20px;
+.pagebtn {
+   vertical-align:top;
+}
+a{
+   text-decoration-line: none;
+   font-weight: 600;
+   color: #888888;
 }
