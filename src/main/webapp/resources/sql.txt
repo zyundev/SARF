@@ -1,4 +1,6 @@
+/************************/
 // 회원 정보 테이블
+/************************/
 CREATE TABLE MEMBER(
 	ID VARCHAR2(20) PRIMARY KEY,
 	PW VARCHAR2(100) NOT NULL,
@@ -10,11 +12,15 @@ CREATE TABLE MEMBER(
 );
 
 --DROP TABLE MEMBER PURGE;
-게시판 DB(4종) ▶ C_(J, A, R, F)_BOARD 
+게시판 DB(4종) ▶ (F, A, R, V)_BOARD 
 [Community, Attraction, Restaurant, Festival ]
     [자유게시판,   명소,       맛집,       축제]
 
-//자유 게시판 테이블
+
+
+/************************/
+// 자유 게시판 테이블
+/************************/
 CREATE TABLE F_BOARD(
     BNO       NUMBER PRIMARY KEY,
 	NAME      VARCHAR2(20) ,
@@ -30,7 +36,7 @@ CREATE TABLE F_BOARD(
 create sequence f_board_seq;
 --DROP sequence f_board_seq;
 
-// 답변 테이블
+// 자유 게시판 답변 테이블
 CREATE TABLE F_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -46,4 +52,118 @@ create sequence f_board_r_seq;
 
 // 자유게시판 댓글 제약조건 설정
 alter table f_board_r add constraint f_board_r_bno foreign key(bno)
-references f_board(bno);
+references f_board(bno) ON DELETE CASCADE;
+
+
+
+/************************/
+// 명소 게시판 테이블
+/************************/
+CREATE TABLE A_BOARD(
+    BNO       NUMBER PRIMARY KEY,
+	NAME      VARCHAR2(20) ,
+    SUBJECT   VARCHAR2(30) NOT NULL,
+	CONTENT   VARCHAR2(2000) NOT NULL,
+	REGDATE   DATE DEFAULT SYSDATE,
+	IMG      VARCHAR(100),
+	READCOUNT NUMBER DEFAULT 0
+);
+
+--DROP TABLE A_BOARD PURGE;
+
+create sequence a_board_seq;
+--DROP sequence a_board_seq;
+
+// 명소 게시판 답변 테이블
+CREATE TABLE A_BOARD_R(
+    BNO NUMBER,
+    RNO NUMBER PRIMARY KEY,
+    NAME VARCHAR2(10),
+    CONTENT VARCHAR2(2000) NOT NULL,
+    REGDATE DATE DEFAULT SYSDATE
+);
+
+--DROP TABLE A_BOARD_R PURGE;
+
+create sequence a_board_r_seq;
+--DROP sequence a_board_r_seq;
+
+// 명소 게시판 댓글 제약조건 설정
+alter table a_board_r add constraint a_board_r_bno foreign key(bno)
+references a_board(bno) ON DELETE CASCADE;
+
+
+
+/************************/
+// 맛집 게시판 테이블
+/************************/
+CREATE TABLE R_BOARD(
+    BNO       NUMBER PRIMARY KEY,
+	NAME      VARCHAR2(20) ,
+    SUBJECT   VARCHAR2(30) NOT NULL,
+	CONTENT   VARCHAR2(2000) NOT NULL,
+	REGDATE   DATE DEFAULT SYSDATE,
+	IMG      VARCHAR(100),
+	READCOUNT NUMBER DEFAULT 0
+);
+
+--DROP TABLE R_BOARD PURGE;
+
+create sequence r_board_seq;
+--DROP sequence r_board_seq;
+
+// 맛집 게시판 답변 테이블
+CREATE TABLE R_BOARD_R(
+    BNO NUMBER,
+    RNO NUMBER PRIMARY KEY,
+    NAME VARCHAR2(10),
+    CONTENT VARCHAR2(2000) NOT NULL,
+    REGDATE DATE DEFAULT SYSDATE
+);
+
+--DROP TABLE R_BOARD_R PURGE;
+
+create sequence r_board_r_seq;
+--DROP sequence r_board_r_seq;
+
+// 맛집 게시판 댓글 제약조건 설정
+alter table r_board_r add constraint r_board_r_bno foreign key(bno)
+references r_board(bno) ON DELETE CASCADE;
+
+
+
+/************************/
+// 축제 게시판 테이블
+/************************/
+CREATE TABLE V_BOARD(
+    BNO       NUMBER PRIMARY KEY,
+	NAME      VARCHAR2(20) ,
+    SUBJECT   VARCHAR2(30) NOT NULL,
+	CONTENT   VARCHAR2(2000) NOT NULL,
+	REGDATE   DATE DEFAULT SYSDATE,
+	IMG      VARCHAR(100),
+	READCOUNT NUMBER DEFAULT 0
+);
+
+--DROP TABLE V_BOARD PURGE;
+
+create sequence v_board_seq;
+--DROP sequence v_board_seq;
+
+// 축제 게시판 답변 테이블
+CREATE TABLE V_BOARD_R(
+    BNO NUMBER,
+    RNO NUMBER PRIMARY KEY,
+    NAME VARCHAR2(10),
+    CONTENT VARCHAR2(2000) NOT NULL,
+    REGDATE DATE DEFAULT SYSDATE
+);
+
+--DROP TABLE V_BOARD_R PURGE;
+
+create sequence v_board_r_seq;
+--DROP sequence v_board_r_seq;
+
+// 축제 게시판 댓글 제약조건 설정
+alter table v_board_r add constraint v_board_r_bno foreign key(bno)
+references v_board(bno) ON DELETE CASCADE;
