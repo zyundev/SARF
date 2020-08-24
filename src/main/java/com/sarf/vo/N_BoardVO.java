@@ -2,7 +2,8 @@ package com.sarf.vo;
 
 import java.util.Date;
 
-public class BoardVO {
+public class N_BoardVO {
+
 	private int bno; 			// 게시물 번호
 	private String name; 		// 작성자
 	private String subject; 	// 제목

@@ -2,7 +2,7 @@ package com.sarf.vo;
 
 import java.util.Date;
 
-public class BoardVO {
+public class R_BoardVO {
 	private int bno; 			// 게시물 번호
 	private String name; 		// 작성자
 	private String subject; 	// 제목
@@ -10,8 +10,21 @@ public class BoardVO {
 	private Date regdate;		// 날짜
 	private String fileupload;	// 파일
 	private int readcount; 		// 조회수
-
+	private int prevNum; // 이전 글의 글 번호 담을 필드
+	private int nextNum; // 다음 글의 글 번호를 담을 필드
 	
+	public int getPrevNum() {
+		return prevNum;
+	}
+	public void setPrevNum(int prevNum) {
+		this.prevNum = prevNum;
+	}
+	public int getNextNum() {
+		return nextNum;
+	}
+	public void setNextNum(int nextNum) {
+		this.nextNum = nextNum;
+	}
 	public int getBno() {
 		return bno;
 	}
@@ -56,7 +69,7 @@ public class BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "BoardVO [bno=" + bno + ", name=" + name + ", subject=" + subject + ", content=" + content + ", regdate="
+		return "R_BoardVO [bno=" + bno + ", name=" + name + ", subject=" + subject + ", content=" + content + ", regdate="
 				+ regdate + ", fileupload=" + fileupload + ", readcount=" + readcount + "]";
 	}
 }
