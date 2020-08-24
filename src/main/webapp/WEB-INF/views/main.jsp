@@ -51,7 +51,7 @@
 		<div class="board">
 			<a class="cursor">게시판</a>
 			<div>
-				<button class="bd menubar-button" onclick="location.href='board/list'">- 자유 게시판</button>
+				<button class="bd menubar-button" onclick="location.href='/board/list'">- 자유 게시판</button>
 				<br>
 				
 				<p>

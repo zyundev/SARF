@@ -77,7 +77,7 @@
 
 	<!-- location  -->
 	<div class="board_list_wrap">
-		<div class="loction">
+		<div style="margin-bottom:15px;">
 			<h2>공지사항</h2>
 		</div>
 		<table class="board_list">
