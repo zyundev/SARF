@@ -42,7 +42,7 @@
 			// 답변 글쓰기
 			$("#replyWrite_btn").on("click", function(){
 				var replyFormObj = $("form[name='replyForm']");
-				replyFormObj.attr("action", "/a_board/a_replyWrite");
+				replyFormObj.attr("action", "/a_board/replyWrite");
 				replyFormObj.submit();
 			})
 		})
@@ -179,14 +179,14 @@
 <script>
 	$('.replyUpdate_btn').on('click', function(){
 		var urlparam = "?rno=" + $(this).attr('data-rno');
-		location.href='a_replyUpdateView' + urlparam;
+		location.href='replyUpdateView' + urlparam;
 	})
 	$('.replyDelete_btn').on('click', function(){
 		var check = confirm('정말 삭제하시겠습니까?');
 
 		if(check){
 			var urlparam = "?rno=" + $(this).attr('data-rno') + "&bno=" + $('#bno').val();
-			location.href='a_replyDelete' + urlparam;
+			location.href='replyDelete' + urlparam;
 		}
 		return false;
 	})

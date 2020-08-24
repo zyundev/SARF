@@ -10,24 +10,24 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.sarf.service.R_ReplyService;
-import com.sarf.vo.R_ReplyVO;
+import com.sarf.service.A_ReplyService;
+import com.sarf.vo.A_ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
 @Controller
-@RequestMapping("/r_board/*")
-public class R_ReplyController {
+@RequestMapping("/a_board/*")
+public class A_ReplyController {
 
-	private static final Logger logger = LoggerFactory.getLogger(R_ReplyController.class);
+	private static final Logger logger = LoggerFactory.getLogger(A_ReplyController.class);
 	
 	@Inject
-	R_ReplyService service;
+	A_ReplyService service;
 	
 	// 댓글 작성
 	@RequestMapping(value = "/replyWrite", method = RequestMethod.POST)
-	public String replyWrite(R_ReplyVO r_vo, SearchCriteria scri, RedirectAttributes rttr) throws Exception {
+	public String replyWrite(A_ReplyVO r_vo, SearchCriteria scri, RedirectAttributes rttr) throws Exception {
 		
-		logger.info("~~~~~~~~~post r_replyWrite~~~~~~~~~");
+		logger.info("~~~~~~~~~post a_replyWrite~~~~~~~~~");
 		
 		service.writeReply(r_vo);
 		
@@ -37,52 +37,52 @@ public class R_ReplyController {
 		rttr.addAttribute("searchType", scri.getSearchType());
 		rttr.addAttribute("keyword", scri.getKeyword());
 		
-		return "redirect:/r_board/r_view";
+		return "redirect:/a_board/a_view";
 		
 	}
 	
 	//댓글 수정 GET
 	@RequestMapping(value="/replyUpdateView", method = RequestMethod.GET)
-	public String replyUpdateView(R_ReplyVO r_vo, Model model) throws Exception {
+	public String replyUpdateView(A_ReplyVO r_vo, Model model) throws Exception {
 		logger.info("~~~get r_replyUpdateView~~~");
 		
 		model.addAttribute("replyUpdate", service.selectReply(r_vo.getRno()));
 		
-		return "r_board/r_replyUpdateView";
+		return "a_board/a_replyUpdateView";
 	}
 	
 	
 	//댓글 수정 POST
 	@RequestMapping(value="/replyUpdate", method = RequestMethod.POST)
-	public String replyUpdate(R_ReplyVO r_vo, RedirectAttributes rttr) throws Exception {
+	public String replyUpdate(A_ReplyVO r_vo, RedirectAttributes rttr) throws Exception {
 		logger.info("~~~post replyUpdate~~~");
 		
 		service.updateReply(r_vo);
 		
 		rttr.addAttribute("bno", r_vo.getBno());
 
-		return "redirect:/r_board/r_view";
+		return "redirect:/a_board/a_view";
 	}
 	
 	//댓글 삭제 GET
 	@RequestMapping(value="/replyDeleteView", method = RequestMethod.GET)
-	public String replyDeleteView(R_ReplyVO r_vo, Model model) throws Exception {
-		logger.info("~~~get replyDeleteView~~~");
+	public String replyDeleteView(A_ReplyVO r_vo, Model model) throws Exception {
+		logger.info("~~~get a_replyDeleteView~~~");
 		
 		model.addAttribute("replyDelete", service.selectReply(r_vo.getRno()));
 
-		return "board/r_replyDeleteView";
+		return "a_board/a_replyDeleteView";
 	}
 
 	//댓글 삭제
 	@RequestMapping(value="/replyDelete", method = RequestMethod.GET)
-	public String r_replyDelete(R_ReplyVO r_vo, RedirectAttributes rttr) throws Exception {
-		logger.info("~~~get replyDelete~~~");
+	public String r_replyDelete(A_ReplyVO r_vo, RedirectAttributes rttr) throws Exception {
+		logger.info("~~~get a_replyDelete~~~");
 		
 		service.deleteReply(r_vo);
 		
 		rttr.addAttribute("bno", r_vo.getBno());
 		
-		return "redirect:/r_board/r_view";
+		return "redirect:/a_board/a_view";
 	}
 }
