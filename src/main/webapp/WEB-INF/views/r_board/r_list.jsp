@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>맛집 커뮤니티</title>
+<title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/list.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -26,6 +26,8 @@
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
+			margin-top:30px;
+			margin-bottom:-20px;
             
 		}
 		
@@ -55,20 +57,21 @@
             height: 5px;
             background: #000;
                 
-        
         }
         
         .cool-link:hover::after {
             width: 100%;
             
-        }	
+        }
         
         .cool-link-always::after{
+        
         	content: '';
             display: block;
             width: 100%;
             height: 5px;
             background: #000;
+            
         }
 	
 		
@@ -97,9 +100,9 @@
 
 	<!-- location  -->
 	<div class="board_list_wrap">
-	 <div style="margin-bottom:15px;">
+		<div style="margin-bottom:15px;">
 			<h2>맛집 게시판</h2>
-		</div>		</div>
+		</div>
 		<table class="board_list">
 			<caption>게시판 목록</caption>
 			<thead>
@@ -116,7 +119,7 @@
 					<tr>
 						<td><c:out value="${list.bno}"></c:out></td>
 						<td class="tit">
-							<a href="/r_board/r_view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
+							<a href="/board/view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
 						</td>
 						<td><c:out value="${list.name}"></c:out></td>
 						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
@@ -126,7 +129,7 @@
 			</tbody>
 		</table>
 		<div style="float: right">
-			<button class="write_btn" onclick="location.href='/r_board/r_writeView'">글쓰기</button>
+			<button class="write_btn" onclick="location.href='/board/writeView'">글쓰기</button>
 		</div>     
 		<div class="paging">
 			<ul class="paging-ul">
