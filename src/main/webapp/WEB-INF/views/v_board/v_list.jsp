@@ -71,7 +71,8 @@
 
 </head>
 <body>
-
+<br>
+<br>
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
 		<ul class="tab">
@@ -88,7 +89,7 @@
 	<div class="board_list_wrap">
 	 <div style="margin-bottom:15px;">
 			<h2>축제 게시판</h2>
-		</div>		</div>
+		</div>		
 		<table class="board_list">
 			<caption>게시판 목록</caption>
 			<thead>
