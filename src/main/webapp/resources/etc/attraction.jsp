@@ -113,6 +113,10 @@
             
         }
         
+        .cool-link:checked::after{
+        	width:100%;
+        }
+        
         /* 위에 박스 밑줄 효과 */
          
          .button_1 {
