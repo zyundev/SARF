@@ -7,7 +7,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>맛집 커뮤니티</title>
+<title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/list.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
@@ -79,9 +79,9 @@
    <div id = "container">
 		<ul class="tab">
             <li  data-tab="tab1" class = "cool-link"><a href="/board/list"><b>자유 게시판</b></a></li>
-            <li data-tab="tab2" class = "cool-link" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
-			<li data-tab="tab3" class = "cool-link-always" ><a href="/r_board/r_list"><b>맛집 게시판</b></a></li>
-			<li data-tab="tab4" class = "cool-link" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
+            <li data-tab="tab2" class = "cool-link" ><a href="/board/list_2"><b>명소 게시판</b> </a></li>
+			<li data-tab="tab3" class = "cool-link" ><a href="/board/list_3"><b>맛집 게시판</b></a></li>
+			<li data-tab="tab4" class = "cool-link-always" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
 		</ul>
 	</div>
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
@@ -90,7 +90,7 @@
 	<!-- location  -->
 	<div class="board_list_wrap">
 		<div class="loction">
-			<span class="ar">&gt;</span>여행지 <span class="ar">&gt;</span> <span>명소</span>
+			<span class="ar">&gt;</span>게시판 <span class="ar">&gt;</span> <span>축제 게시판</span>
 		</div>
 		<table class="board_list">
 			<caption>게시판 목록</caption>
@@ -104,21 +104,21 @@
 				</tr>
 			</thead>
 			<tbody>   
-				<c:forEach items="${list}" var="list">
+				<c:forEach items="${v_list}" var="v_list">
 					<tr>
-						<td><c:out value="${list.bno}"></c:out></td>
+						<td><c:out value="${v_list.bno}"></c:out></td>
 						<td class="tit">
-							<a href="/r_board/r_view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
+							<a href="/v_board/v_view?bno=${v_list.bno}"><c:out value="${v_list.subject}"/></a>
 						</td>
-						<td><c:out value="${list.name}"></c:out></td>
-						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
-						<td><c:out value="${list.readcount}"></c:out></td> 
+						<td><c:out value="${v_list.name}"></c:out></td>
+						<td><fmt:formatDate value="${v_list.regdate}" pattern="yyyy-MM-dd" /></td>
+						<td><c:out value="${v_list.readcount}"></c:out></td> 
 					</tr> 
 				</c:forEach>
 			</tbody>
 		</table>
 		<div style="float: right">
-			<button class="write_btn" onclick="location.href='/r_board/r_writeView'">글쓰기</button>
+			<button class="write_btn" onclick="location.href='/v_board/v_writeView'">글쓰기</button>
 		</div>     
 		<div class="paging">
 			<ul class="paging-ul">
