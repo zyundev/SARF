@@ -28,6 +28,10 @@
 	margin-right: 30px;
 }
 
+.cursor{
+	cursor:Default;
+}
+
 /* main-article1 */
 .map {
 	text-align: center;
