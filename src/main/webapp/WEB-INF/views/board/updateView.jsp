@@ -4,9 +4,13 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>게시판</title>
+<style>
+	textarea:focus {
+		outline: none;
+	}
+</style>
 </head>
 <script type="text/javascript">
 	$(document).ready(function() {
@@ -29,10 +33,10 @@
 				<div class="UpdateTitle">자유 게시판</div>
 				<input type="hidden" name="bno" value="${update.bno}" readonly="readonly" />
 				<div>
-					<input type="text" class="textarea_input" placeholder="제목을 입력하세요." id="subject" name="subject" value="${update.subject}" style="height: 40px;"/>
+					<label for="content" class="textarea_input"><b>제목 : </b><input type="text" placeholder="제목을 입력하세요." id="subject" name="subject" class="subject_input" value="${update.subject}" /></label>
 				</div>
 				<div style="height: 400px; padding: 5px 13px 5px 13px; border: 1px solid #ebecef;">
-					<input type="text" placeholder="내용을 입력하세요." id="content" name="content" value="${update.content}" style="font-size:15px; "/>
+					<textarea id="content" name="content" cols="130" rows="26" placeholder="내용을 입력해주세요." style="resize:none;"><c:out value="${update.content}" /></textarea>
 				</div>
 				<div>
 					<label for="name">작성자 </label><input type="text" id="name" name="name" value="${update.name}" readonly="readonly" />
