@@ -56,8 +56,8 @@ a {
 
 .paging-ul{
 	display:flex;
-	width:100%;
-	margin-left:50%;
+	flex-direction:row;
+	justify-content:center;
 }
 
 .board_list_wrap .paging a {
