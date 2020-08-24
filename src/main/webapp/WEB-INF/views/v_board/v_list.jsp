@@ -26,7 +26,6 @@
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
-            
 		}
 		
 		.tab li {
@@ -42,44 +41,32 @@
 			font-size: 17px;
 			transition:0.3s;
             width: 208px;
-
 		}
 		
 	  /* 위에 박스 밑줄 효과 */
         
         .cool-link::after {
-            
             content: '';
             display: block;
             width: 0;
             height: 5px;
             background: #000;
-                
-        
         }
         
         .cool-link:hover::after {
             width: 100%;
-            
         }	
         
-             .cool-link-always::after{
-        
+        .cool-link-always::after{
         	content: '';
             display: block;
             width: 100%;
             height: 5px;
             background: #000;
-            
         }
-	
 		
 	</style>
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
-
-
-
-
 
 
 </head>
