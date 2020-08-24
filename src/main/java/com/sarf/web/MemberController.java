@@ -234,7 +234,6 @@ public class MemberController {
 		}
 
 		String idcheck = service.idcheck(id);
-		System.out.println("idcheck 출력~~~" + idcheck);
 		if(idcheck != null) {
 			model.addAttribute("idcheck", false);
 			return "member/idcheck";

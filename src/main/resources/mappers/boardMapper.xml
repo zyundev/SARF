@@ -47,13 +47,15 @@
 		        SUBJECT	, 
 		        CONTENT,
 		        NAME, 
-		        REGDATE
+		        REGDATE,
+		        READCOUNT
 		 FROM ( 
 		        SELECT BNO, 
 		               SUBJECT, 
 		               CONTENT, 
 		               NAME, 
 		               REGDATE, 
+		               READCOUNT,
 		               ROW_NUMBER() OVER(ORDER BY BNO DESC) AS RNUM
 		         FROM F_BOARD
 		         WHERE 1=1 
@@ -80,7 +82,13 @@
 			<if test="searchType == 'sc'.toString()">AND (SUBJECT LIKE '%' || #{keyword} || '%') or (CONTENT LIKE '%' || #{keyword} || '%')</if>
 		</if>
 	</sql>
-
+	
+	<!-- 조회수 증가 -->
+	<update id="updateCount" parameterType="int">
+		UPDATE F_BOARD SET
+		READCOUNT = READCOUNT+1
+		WHERE BNO = #{BNO}
+	</update>
 </mapper>
 
 

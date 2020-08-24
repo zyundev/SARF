@@ -79,7 +79,7 @@
    <div id = "container">
 		<ul class="tab">
             <li  data-tab="tab1" class = "cool-link"><a href="/board/list_1"><b>자유 게시판</b></a></li>
-            <li data-tab="tab2" class = "cool-link" ><a href="/board/list_2"><b>명소 게시판</b> </a></li>
+            <li data-tab="tab2" class = "cool-link" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
 			<li data-tab="tab3" class = "cool-link" ><a href="/board/list_3"><b>맛집 게시판</b></a></li>
 			<li data-tab="tab4" class = "cool-link" ><a href="/board/list_4"><b>축제 게시판</b></a></li>
 		</ul>
@@ -111,8 +111,8 @@
 							<a href="/board/view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
 						</td>
 						<td><c:out value="${list.name}"></c:out></td>
-						<td><fmt:formatDate value="${list.regdate}"	pattern="yyyy-MM-dd" /></td>
-						<td><c:out value="${list.readcount}"></c:out></td>
+						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
+						<td><c:out value="${list.readcount}"></c:out></td> 
 					</tr> 
 				</c:forEach>
 			</tbody>

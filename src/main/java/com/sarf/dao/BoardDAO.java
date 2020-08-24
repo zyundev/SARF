@@ -15,7 +15,10 @@ public interface BoardDAO {
 	
 	// 게시물 조회
 	public BoardVO read(int bno) throws Exception;	
-	
+
+	// 게시글 조회수 증가
+	public int updateReadCount(int bno) throws Exception;
+
 	// 게시물 수정
 	public void update(BoardVO boardVO) throws Exception;
 		
@@ -24,5 +27,5 @@ public interface BoardDAO {
 	
 	// 게시물 총 갯수
 	public int listCount(SearchCriteria scri) throws Exception;
-
+	
 }

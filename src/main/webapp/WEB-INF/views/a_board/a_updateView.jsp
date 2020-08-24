@@ -13,7 +13,7 @@
 
 		$(".cancel_btn").on("click", function() {
 			event.preventDefault();
-			location.href = "/board/list";
+			location.href = "/a_board/a_list";
 		})
 	})
 </script>
@@ -25,7 +25,7 @@
 		</div>
 		<nav>홈 - 글 작성</nav>
 		<div class="UpdateContent">
-			<form name="updateForm" role="form" method="post" action="/board/update">
+			<form name="updateForm" role="form" method="post" action="/a_board/a_update">
 				<div class="UpdateTitle">자유 게시판</div>
 				<input type="hidden" name="bno" value="${update.bno}" readonly="readonly" />
 				<div>
