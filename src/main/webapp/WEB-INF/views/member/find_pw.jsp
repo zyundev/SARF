@@ -22,6 +22,7 @@
         }
 
         .logo {
+        	height: 40%;
             text-align: center;
             margin-top: 15px;
         }
@@ -29,9 +30,9 @@
         .container {
             position: absolute;
             width: 500px;
-            height: 500px;
+            height: 600px;
             left: 50%;
-            top: 50%;
+            top: 30%;
             margin-top: -250px;
             margin-left: -250px;
         }
@@ -91,14 +92,14 @@
 		}
 
         .container_id_div {
-            bottom: 362px;
+            bottom: 188px;
             left: 3px;
             border-bottom: 0;
 
         }
 
         .container_email_div {
-            bottom: 264px;
+            bottom: 80px;
             left: 3px;
         }
 
@@ -111,11 +112,11 @@
 	<c:if test="${find_pw_msg == false}">
 		<script>alert('일치하는 아이디 또는 이메일이 없습니다.');</script>
 	</c:if>
-    <div class="logo">
-        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
-    </div>
    	<form action="find_pw" method="post">
 	    <div class="container">
+		    <div class="logo">
+      	  		<img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
+    		</div>
 	        <div class="container_main">비밀번호 찾기</div>
 	        <div class="container_name">
 	            <input class="container_id_container_email_input container_id_input" type="text" name="id">
@@ -141,7 +142,7 @@
             focus: function() {
             	id_div.css({
                     'fontSize': '10px',
-                    'bottom': '392px'
+                    'bottom': '218px'
                 });
                 id_input.css('borderBottom', '2px solid #4f9f4f');
             },
@@ -149,7 +150,7 @@
                 if (id_input.val() == "") {
                 	id_div.css({
                         'fontSize': '16px',
-                        'bottom': '362px'
+                        'bottom': '188px'
                     });
                 	id_input.css('borderBottom', '1px solid #c0c0c0');
                 }
@@ -159,7 +160,7 @@
             focus: function() {
             	email_div.css({
                     'fontSize': '10px',
-                    'bottom': '294px'
+                    'bottom': '110px'
                 });
             	email_input.css('borderBottom', '2px solid #4f9f4f');
             },
@@ -167,7 +168,7 @@
                 if (email_input.val() == "") {
                 	email_div.css({
                         'fontSize': '16px',
-                        'bottom': '264px'
+                        'bottom': '80px'
                     });
                 	email_input.css('borderBottom', '2px solid #c0c0c0');
                 }
