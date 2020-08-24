@@ -62,6 +62,16 @@
             width: 100%;
             
         }	
+        
+             .cool-link-always::after{
+        
+        	content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #000;
+            
+        }
 	
 		
 	</style>
@@ -81,7 +91,7 @@
             <li  data-tab="tab1" class = "cool-link"><a href="/board/list"><b>자유 게시판</b></a></li>
             <li data-tab="tab2" class = "cool-link" ><a href="/board/list_2"><b>명소 게시판</b> </a></li>
 			<li data-tab="tab3" class = "cool-link" ><a href="/board/list_3"><b>맛집 게시판</b></a></li>
-			<li data-tab="tab4" class = "cool-link" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
+			<li data-tab="tab4" class = "cool-link-always" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
 		</ul>
 	</div>
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
@@ -89,9 +99,9 @@
 
 	<!-- location  -->
 	<div class="board_list_wrap">
-		<div class="loction">
-			<span class="ar">&gt;</span>게시판 <span class="ar">&gt;</span> <span>축제 게시판</span>
-		</div>
+	 <div style="margin-bottom:15px;">
+			<h2>축제 게시판</h2>
+		</div>		</div>
 		<table class="board_list">
 			<caption>게시판 목록</caption>
 			<thead>
