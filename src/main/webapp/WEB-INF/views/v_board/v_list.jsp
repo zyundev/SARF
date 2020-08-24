@@ -26,8 +26,6 @@
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
-			margin-top:30px;
-			margin-bottom:-20px;
             
 		}
 		
@@ -57,22 +55,13 @@
             height: 5px;
             background: #000;
                 
+        
         }
         
         .cool-link:hover::after {
             width: 100%;
             
-        }
-        
-        .cool-link-always::after{
-        
-        	content: '';
-            display: block;
-            width: 100%;
-            height: 5px;
-            background: #000;
-            
-        }
+        }	
 	
 		
 	</style>
@@ -89,8 +78,7 @@
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
 		<ul class="tab">
-
-            <li data-tab="tab1" class = "cool-link-always"><a href="/board/list"><b>자유 게시판</b></a></li>
+            <li  data-tab="tab1" class = "cool-link"><a href="/board/list"><b>자유 게시판</b></a></li>
             <li data-tab="tab2" class = "cool-link" ><a href="/board/list_2"><b>명소 게시판</b> </a></li>
 			<li data-tab="tab3" class = "cool-link" ><a href="/board/list_3"><b>맛집 게시판</b></a></li>
 			<li data-tab="tab4" class = "cool-link" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
@@ -101,8 +89,8 @@
 
 	<!-- location  -->
 	<div class="board_list_wrap">
-		<div style="margin-bottom:15px;">
-			<h2>자유 게시판</h2>
+		<div class="loction">
+			<span class="ar">&gt;</span>게시판 <span class="ar">&gt;</span> <span>축제 게시판</span>
 		</div>
 		<table class="board_list">
 			<caption>게시판 목록</caption>
@@ -116,21 +104,21 @@
 				</tr>
 			</thead>
 			<tbody>   
-				<c:forEach items="${list}" var="list">
+				<c:forEach items="${v_list}" var="v_list">
 					<tr>
-						<td><c:out value="${list.bno}"></c:out></td>
+						<td><c:out value="${v_list.bno}"></c:out></td>
 						<td class="tit">
-							<a href="/board/view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
+							<a href="/v_board/v_view?bno=${v_list.bno}"><c:out value="${v_list.subject}"/></a>
 						</td>
-						<td><c:out value="${list.name}"></c:out></td>
-						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
-						<td><c:out value="${list.readcount}"></c:out></td> 
+						<td><c:out value="${v_list.name}"></c:out></td>
+						<td><fmt:formatDate value="${v_list.regdate}" pattern="yyyy-MM-dd" /></td>
+						<td><c:out value="${v_list.readcount}"></c:out></td> 
 					</tr> 
 				</c:forEach>
 			</tbody>
 		</table>
 		<div style="float: right">
-			<button class="write_btn" onclick="location.href='/board/writeView'">글쓰기</button>
+			<button class="write_btn" onclick="location.href='/v_board/v_writeView'">글쓰기</button>
 		</div>     
 		<div class="paging">
 			<ul class="paging-ul">

@@ -45,7 +45,7 @@
 		</label>
 
 		<div class="sidebar">
-			<a href="#">공지사항</a>
+			<a href="/n_board/notice">공지사항</a>
 			<hr>
 		
 		<div class="board">
@@ -67,7 +67,7 @@
 				<br>
 				
 				<p>
-					<button class="bd menubar-button">- 축제 게시판</button>
+					<a href="/v_board/v_list"><button class="bd menubar-button">- 축제 게시판</button></a>
 				</p>
 				
 				<br>
