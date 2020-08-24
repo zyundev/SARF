@@ -30,7 +30,7 @@
 					</div>
 				</div>
 			</form>
-				<button class='BaseButton' onclick="location.href='/n_board/list'">취소</button>
+				<button class='BaseButton' onclick="location.href='/n_board/notice'">취소</button>
 		</div>
 	</div>
 </body>
