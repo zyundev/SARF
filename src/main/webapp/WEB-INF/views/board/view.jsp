@@ -17,7 +17,6 @@
 <script type="text/javascript">
 		$(document).ready(function(){
 			var formObj = $("form[name='readForm']");
-			var text = $(".text");
 			
 			// 수정 
 			$("#update_btn").on("click", function(){
@@ -87,11 +86,11 @@
 				<label>${read.content} </label> <br> <br> <br> <br>
 
 				<br>
-
 				<div class="comment_box">
+				<c:choose>
+				<c:when test="${member.id != null}">
 					<!-- 댓글 입력창-->
-					<p
-						style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>
+					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>
 					<form name="replyForm" method="post" role="form">
 						<input type="hidden" id="bno" name="bno" value="${read.bno}" />					
 						<input type="hidden" id="name" name="name" value="${member.id}" />
@@ -108,8 +107,13 @@
 							</div>
 						</div>
 					</form>
+				</c:when>
+				<c:otherwise>
+					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인 해야 답글 작성 가능합니다.</p>
+					<!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
+				</c:otherwise>
+				</c:choose>
 				</div>
-
 				<!-- 댓글 출력창-->
 			 	<div class="comment_box">
 					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
@@ -124,7 +128,7 @@
 								</p>
 								${replyList.content}
 								<div class="right_area">
-								
+								<!-- 내가 작성한 답글만 나오게 버튼 만들까? -->
 								<button type="button" id="replyUpdate_btn"
 										class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
 
@@ -177,10 +181,13 @@
 		</div>
 </section>
 <script>
+	// 수정 권한 주기
 	$('.replyUpdate_btn').on('click', function(){
 		var urlparam = "?rno=" + $(this).attr('data-rno');
 		location.href='replyUpdateView' + urlparam;
 	})
+	
+	// 삭제 권한 주기 (단, admin도)
 	$('.replyDelete_btn').on('click', function(){
 		var check = confirm('정말 삭제하시겠습니까?');
 
