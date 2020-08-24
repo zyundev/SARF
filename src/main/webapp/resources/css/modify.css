@@ -1,0 +1,125 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+div {
+  display: block;
+}
+[contenteditable=true]:empty:before{
+  content: attr(placeholder);
+  display: block;
+}
+div[contenteditable=true] {
+  border: 1px solid #ddd;
+  color : #333;
+  font-size: 12px;
+  width: 718px;
+  height: 300px;
+  padding: 12px 10px 12px 10px;
+  margin-top: 1em;
+}
+.modify_list{
+  position: relative;
+  width: 800px;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 15px;
+}
+.top_btn{
+    margin-top: 6px;
+	padding: 0 0 15px;
+}
+.top_btn:after {
+    display: block;
+    clear: both;
+}
+.left_area{
+  float: left;
+}
+.right_area{
+  float: right;
+}
+.basebutton{
+    display: inline-block;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+}
+.basebutton2{
+    display: inline-block;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+	float: right;
+}
+
+.skin {
+    border: 1px solid green;
+    background: #22B600;
+    color: black;
+}
+.size{
+  padding: 0 12px;
+  font-size: 13px;
+  line-height: 35px;
+}
+.modify_content{
+  padding: 29px;
+  border: 1px solid green;
+  border-radius: 6px;
+}
+.comment_box{
+	display: inline-block;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+}
+.comment_inbox {
+    position: relative;
+    margin-bottom: 10px;
+}
+.comment_inbox_name {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 13px;
+	padding: 8px 8px 0px 8px;;
+}
+.comment_writer {
+	width: 740px;
+	height: 130px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: white;
+	float: right;
+}
+.cmt_write_box{
+	width: 700px;
+    padding: 8px;
+  	line-height: 18px;
+    resize: none;
+	overflow: hidden;
+	border: 0px solid #aaa;
+}
+.input_button{
+	display: inline-block;
+    min-width: 35px;
+    height: 34px;
+    font-size: 15px;
+    color: #b7b7b7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+	float: right;
+}
+a:link {text-decoration: none;}
+a:visited {text-decoration: none;}
+a:hover {text-decoration: none;}
+
