@@ -62,6 +62,14 @@
             width: 100%;
             
         }	
+        
+        .cool-link-always::after{
+        	content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #000;
+        }
 	
 		
 	</style>
@@ -89,9 +97,9 @@
 
 	<!-- location  -->
 	<div class="board_list_wrap">
-		<div class="loction">
-			<span class="ar">&gt;</span>여행지 <span class="ar">&gt;</span> <span>명소</span>
-		</div>
+	 <div style="margin-bottom:15px;">
+			<h2>맛집 게시판</h2>
+		</div>		</div>
 		<table class="board_list">
 			<caption>게시판 목록</caption>
 			<thead>

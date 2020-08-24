@@ -26,7 +26,6 @@
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
-            
 		}
 		
 		.tab li {
@@ -42,44 +41,32 @@
 			font-size: 17px;
 			transition:0.3s;
             width: 208px;
-
 		}
 		
 	  /* 위에 박스 밑줄 효과 */
         
         .cool-link::after {
-            
             content: '';
             display: block;
             width: 0;
             height: 5px;
             background: #000;
-                
-        
         }
         
         .cool-link:hover::after {
             width: 100%;
-            
         }	
         
-             .cool-link-always::after{
-        
+        .cool-link-always::after{
         	content: '';
             display: block;
             width: 100%;
             height: 5px;
             background: #000;
-            
         }
-	
 		
 	</style>
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
-
-
-
-
 
 
 </head>
@@ -89,8 +76,8 @@
    <div id = "container">
 		<ul class="tab">
             <li  data-tab="tab1" class = "cool-link"><a href="/board/list"><b>자유 게시판</b></a></li>
-            <li data-tab="tab2" class = "cool-link" ><a href="/board/list_2"><b>명소 게시판</b> </a></li>
-			<li data-tab="tab3" class = "cool-link" ><a href="/board/list_3"><b>맛집 게시판</b></a></li>
+            <li data-tab="tab2" class = "cool-link" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
+			<li data-tab="tab3" class = "cool-link" ><a href="/r_board/r_list"><b>맛집 게시판</b></a></li>
 			<li data-tab="tab4" class = "cool-link-always" ><a href="/v_board/v_list"><b>축제 게시판</b></a></li>
 		</ul>
 	</div>
