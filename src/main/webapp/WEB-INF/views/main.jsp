@@ -67,7 +67,7 @@
 				<br>
 				
 				<p>
-					<button class="bd menubar-button">- 축제 게시판</button>
+					<a href="/v_board/v_list"><button class="bd menubar-button">- 축제 게시판</button></a>
 				</p>
 				
 				<br>
