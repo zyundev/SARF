@@ -45,13 +45,13 @@
 		</label>
 
 		<div class="sidebar">
-			<a href="#">공지사항</a>
+			<a href="/n_board/notice">공지사항</a>
 			<hr>
 		
 		<div class="board">
-			<a href="/board/list">게시판</a>
+			<a class="cursor">게시판</a>
 			<div>
-				<button class="bd menubar-button">- 자유 게시판</button>
+				<button class="bd menubar-button" onclick="location.href='board/list'">- 자유 게시판</button>
 				<br>
 				
 				<p>

@@ -7,7 +7,7 @@ id_input.on({
     focus: function() {
         id_div.css({
             'fontSize': '10px',
-            'bottom': '392px'
+            'bottom': '218px'
         });
         id_input.css('borderBottom', '2px solid #4f9f4f');
     },
@@ -15,7 +15,7 @@ id_input.on({
         if (id_input.val() == "") {
             id_div.css({
                 'fontSize': '16px',
-                'bottom': '362px'
+                'bottom': '188px'
             });
             id_input.css('borderBottom', '1px solid #c0c0c0');
         }
@@ -26,7 +26,7 @@ pw_input.on({
     focus: function() {
         pw_div.css({
             'fontSize': '10px',
-            'bottom': '294px'
+            'bottom': '110px'
         });
         pw_input.css('borderBottom', '2px solid #4f9f4f');
     },
@@ -34,7 +34,7 @@ pw_input.on({
         if (pw_input.val() == "") {
             pw_div.css({
                 'fontSize': '16px',
-                'bottom': '264px'
+                'bottom': '80px'
             });
             pw_input.css('borderBottom', '2px solid #c0c0c0');
         }

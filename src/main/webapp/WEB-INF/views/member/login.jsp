@@ -19,11 +19,11 @@
 	<c:if test="${find_pw_msg == true}">
 		<script>alert('이메일로 임시비밀번호를 전송했습니다.');</script>
 	</c:if>
-    <div class="logo">
-        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
-    </div>
     <form action="/member/login" method="post">
 		<div class="container">
+		    <div class="logo">
+		        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
+		    </div>
 	        <div class="container_main">로그인</div>
 	        <div class="container_id">
 	            <input class="container_id_input" type="text" name="id">
