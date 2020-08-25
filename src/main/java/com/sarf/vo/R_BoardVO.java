@@ -10,21 +10,8 @@ public class R_BoardVO {
 	private Date regdate;		// 날짜
 	private String fileupload;	// 파일
 	private int readcount; 		// 조회수
-	private int prevNum; // 이전 글의 글 번호 담을 필드
-	private int nextNum; // 다음 글의 글 번호를 담을 필드
+
 	
-	public int getPrevNum() {
-		return prevNum;
-	}
-	public void setPrevNum(int prevNum) {
-		this.prevNum = prevNum;
-	}
-	public int getNextNum() {
-		return nextNum;
-	}
-	public void setNextNum(int nextNum) {
-		this.nextNum = nextNum;
-	}
 	public int getBno() {
 		return bno;
 	}
