@@ -17,7 +17,9 @@ a {
 }
 
 .board_list_wrap {
+	width: 1024px;
 	padding: 50px;
+	margin: auto;
 }
 
 .board_list {
