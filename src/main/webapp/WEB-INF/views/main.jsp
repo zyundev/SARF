@@ -36,7 +36,7 @@
 <header>
     <!-- 로고 -->
       <div class="logo">
-         <img src="/resources/images/logo.jpg" alt="로고" width="300px">
+        <a href="../"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
       </div>
 
 		<!-- 메뉴 -->
@@ -137,18 +137,19 @@
 		<!-- 개발자 소개 -->
 		<article class="intro">
 			<p>SARF 전문가와 만나보세요</p>
-			<button onclick="location.href='introduce/OurDeveloper.jsp'">Contact
-				us</button>
+			<button onclick="location.href='/resources/etc/intro.jsp'">Contact us</button>
 		</article>
 	</main>
 
 	<!-- 회사 소개 -->
 	<footer>
 		<p>
-			㈜메타넷티플랫폼 I 주소 : 서울 종로구 종로 33길 15 (연지동, 연강빌딩)<br> Tel :
-			02-3218-6300 I Fax : 02-518-1969
+			(주)미래능력개발교육원 / 대표자:이충기 / 사업자번호:212-81-85877<br>
+			왕십리캠퍼스 : 서울시 성동구 왕십리로 303 4층<br>
+			강동캠퍼스 : 서울시 강동구 천호대로 1095 현대코아 3층<br>
+			Tel : 02-441-6006 / Fax : 02-428-9694 / 대표 E-mail : hongyoung81@daum.net / 개인정보보호책임자:김홍영
 		</p>
-		<p>Copyright © 2020 Metanet Tplatform. All Rights Reserved.</p>
+		<p>Copyright &copy; 1986 (주)미래능력개발교육원 All Rights Reserved..</p>
 	</footer>
 	<script>
     $(".west").on("click", function(e){

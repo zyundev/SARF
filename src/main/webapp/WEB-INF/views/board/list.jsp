@@ -14,6 +14,20 @@
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
 	<style>
 	
+	html, body {
+		height: 100%;
+		margin: 0;
+	}
+	
+	.main-tab {
+		min-height: 100%;
+	}
+	
+	footer {
+		width: 100%;
+		padding-bottom: 10px;
+	}
+	
 	#container {
 			width:980px;
 			margin:0 auto;
@@ -73,7 +87,12 @@
             background: #000;
             
         }
-	
+        
+        header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
+        
 		
 	</style>
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
@@ -85,6 +104,10 @@
 
 </head>
 <body>
+
+<header>
+	<%@ include file="head.jsp"%>
+</header>
 
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
@@ -171,5 +194,12 @@
 			 });
 		 });   
 	</script>
+	
+	<div class="wrapper">
+		<footer>
+			<%@ include file="footer.jsp" %>
+		</footer>
+	</div>
+	
 </body>
 </html>

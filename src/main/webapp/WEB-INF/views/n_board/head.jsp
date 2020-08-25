@@ -18,7 +18,7 @@
 <body>
 <!-- 로고 -->
       <div class="logo">
-         <a href="/"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
+        <a href="../"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
       </div>
 
 		<!-- 메뉴 -->
@@ -27,44 +27,39 @@
 		</label>
 
 		<div class="sidebar">
-			<a href="#">공지사항</a>
+			<a href="/n_board/notice">공지사항</a>
 			<hr>
 		
 		<div class="board">
-			<a href="/board/list">게시판</a>
+			<a class="cursor">게시판</a>
 			<div>
-				<button class="bd">- 자유 게시판</button>
-				<br>
-				
+				<a href="/board/list"><button class="bd menubar-button">- 자유 게시판</button></a>
+				<br>				
 				<p>
-					<button class="bd">- 명소 게시판</button>
-				</p>
-				
-				<br>
-				
+					<a href="/a_board/a_list"><button class="bd menubar-button">- 명소 게시판</button></a>
+				</p>				
+				<br>				
 				<p>
-					<button class="bd">- 맛집 게시판</button>
-				</p>
-				
-				<br>
-				
+					<a href="/r_board/r_list"><button class="bd menubar-button">- 맛집 게시판</button></a>
+				</p>				
+				<br>			
 				<p>
-					<button class="bd">- 축제 게시판</button>
+					<a href="/v_board/v_list"><button class="bd menubar-button">- 축제 게시판</button></a>
 				</p>
 				
 				<br>
 			</div>
 		</div>
 			<hr>
-			<a href="#">명소</a>
+			<a href="/resources/etc/attraction.jsp">명소</a>
 			<hr>
-			<a href="#">맛집</a>
+			<a href="/resources/etc/restaurant.jsp">맛집</a>
 			<hr>
-			<a href="#">축제</a>
+			<a href="/resources/etc/festival.jsp">축제</a>
 			<hr>
-			<a href="#">고객센터</a>
+			<a href="/resources/etc/faq.jsp">고객센터</a>
 			<hr>
-			<a href="#">운영진 소개</a>
+			<a href="/resources/etc/intro.jsp">운영진 소개</a>
 			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
 			<c:choose>
          	<c:when test="${member == null}">

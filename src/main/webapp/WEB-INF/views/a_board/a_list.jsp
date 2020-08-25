@@ -73,6 +73,11 @@
             background: #000;
             
         }
+        
+        header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
 	
 		
 	</style>
@@ -85,6 +90,12 @@
 
 </head>
 <body>
+
+<header>
+	<%@ include file="../board/head.jsp"%>
+</header>
+
+<div class="main-tab">
 
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
@@ -170,5 +181,14 @@
 			 });
 		 });   
 	</script>
+	
+	</div>
+	
+	<div class="wrapper">
+		<footer>
+			<%@ include file="../board/footer.jsp" %>
+		</footer>
+	</div>
+	
 </body>
 </html>

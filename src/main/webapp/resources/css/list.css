@@ -3,6 +3,20 @@
 	padding: 0;
 }
 
+html, body { 
+	height: 100%;
+} 
+
+footer { 
+	positive: absolute;
+	bottom: 10px;
+}
+
+.wrapper { 
+	positive: relatvie;
+	min-height: 100%; 
+}
+
 table {
 	border-collapse: collapse;
 }
