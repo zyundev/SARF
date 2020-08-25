@@ -1,13 +1,31 @@
-﻿if(typeof window.nhn=='undefined') window.nhn = {};
+﻿// 이 부분은 nhn 객체가 없으면 빈 nhn객체를 생성하고 그 속성인 husky객체를 생성합니다.
+if(typeof window.nhn=='undefined') window.nhn = {};
 if (!nhn.husky) nhn.husky = {};
 
+/*
+============================================================================
+이 부분은 husky의 속성인 EZCreator 객체를 생성하는 부분입니다. 
+EZCreator객체는 아래와 같은 속성을 가집니다.
+
+- createInIFrame( JSONObject )
+- createInIFrame( oAppRef, elPlaceHolder, sSkinURI, fCreator, fOnAppLoad, bUseBlocker, htParams )
+- showBlocker()
+- hideBlocker()
+============================================================================
+*/
 /**
  * @fileOverview This file contains application creation helper function, which would load up an HTML(Skin) file and then execute a specified create function.
  * @name HuskyEZCreator.js
  */
 nhn.husky.EZCreator = new (function(){
 	this.nBlockerCount = 0;
-
+	/*
+	========================================================================
+	이 부분은 메서드 createInIFrame()를 정의하는 것입니다. 
+	이 함수는 전달 인수가 하나인 경우 JSON 객체 형식으로 인수를 받는 방법과 
+	이전 버전과의 호환성을 위해 각각의 인자를 받아 들이는 방식 두 가지가 있습니다.
+	========================================================================
+	*/
 	this.createInIFrame = function(htOptions){
 		if(arguments.length == 1){
 			var oAppRef = htOptions.oAppRef;
@@ -30,6 +48,14 @@ nhn.husky.EZCreator = new (function(){
 
 		if(bUseBlocker) nhn.husky.EZCreator.showBlocker();
 
+		/*
+		=====================================================================
+		이 부분은 이벤트 핸들러를 태그에 추가하는 함수 입니다. 
+		비 익스플로러와 익스플로러용 두 부분으로 구성되어 있습니다.
+		태그 객체에 addEventListener가 있으면 비 익스플로러, 
+		그렇지 않으면 익스플로러용으로 구분합니다.
+		=====================================================================
+		*/
 		var attachEvent = function(elNode, sEvent, fHandler){ 
 			if(elNode.addEventListener){
 				elNode.addEventListener(sEvent, fHandler, false);
@@ -37,18 +63,25 @@ nhn.husky.EZCreator = new (function(){
 				elNode.attachEvent("on"+sEvent, fHandler);
 			}
 		} 
-
+		
+		// TEXTAREA 태그의 id가 지정되지 않았으면 경고 메시지를 표시합니다.
 		if(!elPlaceHolder){
 			alert("Placeholder is required!");
 			return;
 		}
 
+		// elPlaceHolder가 객체가 아니면 id로 간주하고 해당 id의 객체를 가져와 다시 지정합니다.
 		if(typeof(elPlaceHolder) != "object")
 			elPlaceHolder = document.getElementById(elPlaceHolder);
 
 		var elIFrame, nEditorWidth, nEditorHeight;
 		 
-
+		/*
+		=====================================================================
+		이 부분은 TEXTAREA를 대체할 IFRAME을 생성합니다. 
+		페이지 로드 후에 스마트 에디터를 생성하고 사용할 수 있도록 합니다.
+		=====================================================================
+		*/
 		try{
 			elIFrame = document.createElement("<IFRAME frameborder=0 scrolling=no>");
 		}catch(e){

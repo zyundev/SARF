@@ -173,8 +173,10 @@ public class BoardController {
              filename_ext = filename_ext.toLowerCase();
              //파일 기본경로
              String dftFilePath = request.getSession().getServletContext().getRealPath("/");
+             System.out.println("@@@@@파일 기본경로" + dftFilePath);
              //파일 기본경로 _ 상세경로
              String filePath = dftFilePath + "resources" + File.separator + "photo_upload" + File.separator;
+             System.out.println("@@@@@파일 상세경로" + filePath);
              File file = new File(filePath);
              if(!file.exists()) {
                 file.mkdirs();
@@ -184,6 +186,7 @@ public class BoardController {
              String today= formatter.format(new java.util.Date());
              realFileNm = today+UUID.randomUUID().toString() + filename.substring(filename.lastIndexOf("."));
              String rlFileNm = filePath + realFileNm;
+             System.out.println("@@@@@파일 경로, 파일명"+ rlFileNm);
              ///////////////// 서버에 파일쓰기 ///////////////// 
              InputStream is = request.getInputStream();
              OutputStream os=new FileOutputStream(rlFileNm);
