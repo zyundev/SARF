@@ -194,6 +194,18 @@ while(se.hasMoreElements()){
 
 			<div class="top_btn" style="padding-bottom: 13px">
 				<div class="left_area">
+<<<<<<< HEAD
+
+
+
+					<!-- 					<a class="basebutton skin size">이전글</a>
+		
+				<a class="basebutton skin size">다음글</a> -->
+
+
+
+=======
+>>>>>>> branch 'master' of https://github.com/LifeIT-web/SARF.git
 					<!-- 목록 -->
 					<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
 				</div>
