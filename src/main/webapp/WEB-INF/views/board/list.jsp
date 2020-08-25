@@ -2,6 +2,19 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<!-- 세션값 확인 -->
+<%@page import="java.util.Enumeration"%>
+<% 
+Enumeration se = session.getAttributeNames();
+
+while(se.hasMoreElements()){
+	String getse = se.nextElement()+"";
+	System.out.println("@@@@@@@ session : "+getse+" : "+session.getAttribute(getse));
+}
+%>
+<!-- 세션값 확인 끝 -->
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -13,21 +26,7 @@
 
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
 	<style>
-	
-	html, body {
-		height: 100%;
-		margin: 0;
-	}
-	
-	.main-tab {
-		min-height: 100%;
-	}
-	
-	footer {
-		width: 100%;
-		padding-bottom: 10px;
-	}
-	
+
 	#container {
 			width:980px;
 			margin:0 auto;
@@ -58,7 +57,6 @@
 			font-size: 17px;
 			transition:0.3s;
             width: 208px;
-
 		}
 		
 	  /* 위에 박스 밑줄 효과 */
@@ -95,13 +93,8 @@
         
 		
 	</style>
+
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
-
-
-
-
-
-
 </head>
 <body>
 
@@ -112,7 +105,6 @@
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
 		<ul class="tab">
-
             <li  data-tab="tab1" class = "cool-link-always"><a href="/board/list"><b>자유 게시판</b></a></li>
             <li data-tab="tab2" class = "cool-link" ><a href="/a_board/a_list"><b>명소 게시판</b> </a></li>
 			<li data-tab="tab3" class = "cool-link" ><a href="/r_board/r_list"><b>맛집 게시판</b></a></li>
@@ -120,7 +112,6 @@
 		</ul>
 	</div>
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
-
 
 	<!-- location  -->
 	<div class="board_list_wrap">
@@ -141,58 +132,61 @@
 			<tbody>   
 				<c:forEach items="${list}" var="list">
 					<tr>
-						<td><c:out value="${list.bno}"></c:out></td>
+						<td><c:out value="${list.bno}"/></td>
 						<td class="tit">
 							<a href="/board/view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
 						</td>
-						<td><c:out value="${list.name}"></c:out></td>
+						<td><c:out value="${list.name}"/></td>
 						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
-						<td><c:out value="${list.readcount}"></c:out></td> 
+						<td><c:out value="${list.readcount}"/></td> 
 					</tr> 
 				</c:forEach>
 			</tbody>
 		</table>
 		<div style="float: right">
-			<button class="write_btn" onclick="location.href='/board/writeView'">글쓰기</button>
+			<button class="write_btn">글쓰기</button>
 		</div>     
 		<div class="paging">
 			<ul class="paging-ul">
 				<c:if test="${pageMaker.prev}">
 					<li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
 				</c:if> 
-							
 				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
 					<li <c:out value="${pageMaker.cri.page == idx ? 'class=info' : ''}" />>
 					<a href="list${pageMaker.makeSearch(idx)}">${idx}</a></li>
 				</c:forEach>
-							
 				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 					<li><a href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
 				</c:if> 
 			</ul>
 		</div>
 	</div>
-
 	<div align="center">
-
-			<select class="srch_select" name="srchfield">
-				<option value="s"<c:out value="${scri.searchType eq 's' ? 'selected' : ''}"/>>제목</option>
-				<option value="c"<c:out value="${scri.searchType eq 'c' ? 'selected' : ''}"/>>내용</option>
-				<option value="n"<c:out value="${scri.searchType eq 'n' ? 'selected' : ''}"/>>작성자</option>
-				<option value="sc"<c:out value="${scri.searchType eq 'sc' ? 'selected' : ''}"/>>제목+내용</option>
-			</select> <span class='green_window'> 
+		<select class="srch_select" name="srchfield">
+			<option value="s"<c:out value="${scri.searchType eq 's' ? 'selected' : ''}"/>>제목</option>
+			<option value="c"<c:out value="${scri.searchType eq 'c' ? 'selected' : ''}"/>>내용</option>
+			<option value="n"<c:out value="${scri.searchType eq 'n' ? 'selected' : ''}"/>>작성자</option>
+			<option value="sc"<c:out value="${scri.searchType eq 'sc' ? 'selected' : ''}"/>>제목+내용</option>
+		</select> 
+		<span class='green_window'> 
 			<input name="keyword" id="keywordInput" value="${scri.keyword}" type='text' class='input_text' />
-			</span>
-			<button id="searchBtn" type="button" class='sch_smit'>검색</button>
-
+		</span>
+		<button id="searchBtn" type="button" class='sch_smit'>검색</button>
 	</div>
-	
 	<script>
-		 $(function(){
-			 $('#searchBtn').on('click', function() {
-			 	self.location = "list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
-			 });
-		 });   
+		$(function(){
+			$('#searchBtn').on('click', function() {
+				self.location = "list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+			});
+			$('.write_btn').on('click', function(){
+				if(${logincheck} == false){
+					alert('로그인해주세요.');
+					location.href='/member/login';
+				}else{
+		 			location.href='/board/writeView';
+				}
+ 			});
+		});
 	</script>
 	
 	<div class="wrapper">
