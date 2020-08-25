@@ -41,9 +41,18 @@
 			
 			// 답변 글쓰기
 			$("#replyWrite_btn").on("click", function(){
+				var content = $(".content").val();
 				var replyFormObj = $("form[name='replyForm']");
-				replyFormObj.attr("action", "/r_board/replyWrite");
-				replyFormObj.submit();
+				
+				if(content == ''){
+					alert('내용을 입력하세요');
+					return "redirect:/r_board/r_view?bno=" + ${read.bno} ;
+
+				} 
+				else {
+					replyFormObj.attr("action", "/r_board/replyWrite");
+					replyFormObj.submit();
+				}
 			})
 		})
 </script>
@@ -102,7 +111,7 @@
 							<div class="comment_inbox">
 								
 								<em class="comment_inbox_name" >작성자 : ${member.id}</em>
-								<textarea name="content"></textarea>
+								<textarea class="content" name="content"></textarea>
 								<div class="input_box">
 									<button type="button" id="replyWrite_btn"
 										class="input_button basebutton skin size">등록</button>
