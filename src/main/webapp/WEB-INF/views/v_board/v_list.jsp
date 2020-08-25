@@ -2,6 +2,19 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<!-- 세션값 확인 -->
+<%@page import="java.util.Enumeration"%>
+<% 
+Enumeration se = session.getAttributeNames();
+
+while(se.hasMoreElements()){
+	String getse = se.nextElement()+"";
+	System.out.println("@@@@@@@ session : "+getse+" : "+session.getAttribute(getse));
+}
+%>
+<!-- 세션값 확인 끝 -->
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -160,6 +173,14 @@
 			 $('#searchBtn').on('click', function() {
 			 	self.location = "v_list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 			 });
+			 $('.write_btn').on('click', function(){
+				if(${logincheck} == false){
+					alert('로그인해주세요.');
+					location.href='/member/login';
+				}else{
+		 			location.href='/v_board/v_writeView';
+				}
+ 			});
 		 });   
 	</script>
 </body>
