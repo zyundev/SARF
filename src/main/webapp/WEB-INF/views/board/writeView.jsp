@@ -22,9 +22,20 @@
 				<div>
 					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
 				</div>
+				<!-- 
+					아래 부분의 TEXTAREA는 스마트 에디터에 의해 편집되는 내용을 담는 것으로
+					기본적인 정보와 크기, 화면표시(표시되지 않음)으로 설정되어 있습니다. 이 부분에
+					스마트 에디터가 표시될 것입니다.
+				-->
 				<textarea id="content" name="content" class="content" placeholder="내용을 입력해 주세요."></textarea>
 				<!-- SmartEditor2 -->
 				<script type="text/javascript">
+				/*
+				============================================================================
+				이 부분은 위 부분의 TEXTAREA 테그에 씌워질 스마트 에디터 프래임을 만드는 일을 합니다. 
+				createInIFrame 함수의 인자로 전달되는 정보는 JSON 객체 방식으로 전달합니다.
+				============================================================================
+				*/
 			        var oEditors = [];
 			        nhn.husky.EZCreator.createInIFrame({
 			            oAppRef: oEditors,
@@ -59,8 +70,8 @@
 					</div>
 				</div>
 				<div>
-					<button type='submit' class='BaseButton' onclick='/board/list'>취소</button>
-					<button id="BaseButton"type='submit' class='BaseButton'>등록</button>
+					<button type="button" class="BaseButton" onclick="location.href='/board/list'">취소</button>
+					<button id="BaseButton"type="submit" class="BaseButton">등록</button>
 				</div>
 			</form>
 		</div>
