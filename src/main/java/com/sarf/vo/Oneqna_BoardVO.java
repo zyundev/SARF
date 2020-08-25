@@ -2,7 +2,8 @@ package com.sarf.vo;
 
 import java.util.Date;
 
-public class R_BoardVO {
+public class Oneqna_BoardVO {
+	
 	private int bno; 			// 게시물 번호
 	private String name; 		// 작성자
 	private String subject; 	// 제목
@@ -56,7 +57,8 @@ public class R_BoardVO {
 	}
 	@Override
 	public String toString() {
-		return "R_BoardVO [bno=" + bno + ", name=" + name + ", subject=" + subject + ", content=" + content + ", regdate="
+		return "BoardVO [bno=" + bno + ", name=" + name + ", subject=" + subject + ", content=" + content + ", regdate="
 				+ regdate + ", fileupload=" + fileupload + ", readcount=" + readcount + "]";
 	}
+
 }
