@@ -120,6 +120,8 @@ while(se.hasMoreElements()){
 				<br>
 
 				<div class="comment_box">
+				<c:choose>
+				<c:when test="${member.id != null}">
 					<!-- 댓글 입력창-->
 					<p
 						style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>
@@ -139,6 +141,12 @@ while(se.hasMoreElements()){
 							</div>
 						</div>
 					</form>
+				</c:when>
+				<c:otherwise>
+					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인 해야 답글 작성 가능합니다.</p>
+					<!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
+				</c:otherwise>
+				</c:choose>
 				</div>
 
 				<!-- 댓글 출력창-->
@@ -172,28 +180,6 @@ while(se.hasMoreElements()){
 
 			<div class="top_btn" style="padding-bottom: 13px">
 				<div class="left_area">
-					<!-- 이전글 -->
-
-					<c:if test="${dto.prevNum ne 0 }">
-						<a class="basebutton skin size"
-							href="view?num=${dto.prevNum }&condition=${condition}&keyword=${encodedKeyword}">
-							이전글</a>
-					</c:if>
-					<!-- 다음글-->
-
-					<c:if test="${dto.nextNum ne 0 }">
-						<a class="basebutton skin size"
-							href="view?num=${dto.nextNum }&condition=${condition}&keyword=${encodedKeyword}">
-							다음글</a>
-					</c:if>
-
-
-					<!-- 					<a class="basebutton skin size">이전글</a>
-		
-				<a class="basebutton skin size">다음글</a> -->
-
-
-
 					<!-- 목록 -->
 					<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
 				</div>
