@@ -103,7 +103,7 @@ while(se.hasMoreElements()){
 	
 	<div class="board_list_wrap">
 		<div style="margin-bottom:15px;">
-			<h2>자유 게시판</h2>
+			<h2>축제 게시판</h2>
 		</div>
 		<table class="board_list">
 		<colgroup>
