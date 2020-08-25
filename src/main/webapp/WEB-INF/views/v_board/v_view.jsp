@@ -168,12 +168,17 @@ while(se.hasMoreElements()){
 								</p>
 								${replyList.content}
 								<div class="right_area">
+								<c:choose>
+								<c:when test="${member.id == replyList.name}">
 								<!-- 내가 작성한 답글만 나오게 버튼 만들까? -->
 								<button type="button" id="replyUpdate_btn"
 										class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
 
 								<button type="button" id="replyDelete_btn"
 										class="basebutton skin size replyDelete_btn" data-rno="${replyList.rno}">삭제</button>
+								</c:when>
+								<c:otherwise></c:otherwise>
+								</c:choose>
 								</div>
 							</div>
 						</div>

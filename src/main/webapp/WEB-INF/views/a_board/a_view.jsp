@@ -173,11 +173,16 @@ while(se.hasMoreElements()){
 								${replyList.content}
 								<div class="right_area">
 								
+								<c:choose>
+								<c:when test="${member.id == replyList.name}">
 								<button type="button" id="replyUpdate_btn"
 										class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
 
 								<button type="button" id="replyDelete_btn"
 										class="basebutton skin size replyDelete_btn" data-rno="${replyList.rno}">삭제</button>
+								</c:when>
+								<c:otherwise></c:otherwise>
+								</c:choose>
 								</div>
 							</div>
 						</div>
