@@ -21,7 +21,7 @@ public class V_ReplyDAOImpl implements V_ReplyDAO{
 		return sql.selectList("v_replyMapper.readReply", bno);
 	}
 	
-	//댓글 작성
+	// 댓글 작성
 	@Override
 	public void writeReply(V_ReplyVO vo) throws Exception {
 		sql.insert("v_replyMapper.writeReply", vo);
