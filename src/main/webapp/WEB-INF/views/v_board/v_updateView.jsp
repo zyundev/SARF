@@ -27,9 +27,8 @@
 <body>
 	<div class="base-layout">
 		<div class="UpdateHeader">
-			<h3>게시판 글쓰기</h3>
+			<h3>축제 게시판 글쓰기</h3>
 		</div>
-		<nav>홈 - 글 작성</nav>
 		<div class="UpdateContent">
 			<form name="updateForm" role="form" method="post" action="/v_board/v_update">
 				<div class="UpdateTitle">축제 게시판</div>
