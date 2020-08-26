@@ -15,8 +15,6 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="/resources/js/main.js"></script>
-
 </head>
 <body>
 
@@ -36,7 +34,7 @@
 <header>
     <!-- 로고 -->
       <div class="logo">
-        <a href="../"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
+		<img src="/resources/images/logo.jpg" alt="로고" width="300px">
       </div>
 
 		<!-- 메뉴 -->

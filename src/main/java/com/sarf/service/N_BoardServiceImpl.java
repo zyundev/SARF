@@ -7,7 +7,6 @@ import javax.inject.Inject;
 import org.springframework.stereotype.Service;
 
 import com.sarf.dao.N_BoardDAO;
-import com.sarf.vo.BoardVO;
 import com.sarf.vo.N_BoardVO;
 import com.sarf.vo.SearchCriteria;
 

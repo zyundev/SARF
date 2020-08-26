@@ -1,7 +1,5 @@
 package com.sarf.web;
 
-import java.util.List;
-
 import javax.inject.Inject;
 import javax.servlet.http.HttpSession;
 
@@ -18,7 +16,6 @@ import com.sarf.service.ReplyService;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.N_BoardVO;
 import com.sarf.vo.PageMaker;
-import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
 @Controller

@@ -7,7 +7,7 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.sarf.vo.BoardVO;
+import com.sarf.vo.A_BoardVO;
 import com.sarf.vo.SearchCriteria;
 
 @Repository	// 하지 않아서 bean을 생성못함
@@ -17,24 +17,24 @@ public class A_BoardDAOImpl implements A_BoardDAO{
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<BoardVO> list(SearchCriteria scri) throws Exception {
+	public List<A_BoardVO> list(SearchCriteria scri) throws Exception {
 		return sqlSession.selectList("a_boardMapper.listPage", scri);
 	}
 	
 	// 게시물 총 갯수
 	@Override
 	public int listCount(SearchCriteria scri) throws Exception {
-		return sqlSession.selectOne("boardMapper.listCount", scri);
+		return sqlSession.selectOne("a_boardMapper.listCount", scri);
 	}
 
 	@Override
-	public void write(BoardVO boardVO) throws Exception {
+	public void write(A_BoardVO boardVO) throws Exception {
 		sqlSession.insert("a_boardMapper.write", boardVO);
 	}
 
 	// 게시물 조회
 	@Override
-	public BoardVO read(int bno) throws Exception {
+	public A_BoardVO read(int bno) throws Exception {
 		return sqlSession.selectOne("a_boardMapper.read", bno);
 	}
 	
@@ -45,7 +45,7 @@ public class A_BoardDAOImpl implements A_BoardDAO{
 	}
 
 	@Override
-	public void update(BoardVO boardVO) throws Exception {
+	public void update(A_BoardVO boardVO) throws Exception {
 		sqlSession.update("a_boardMapper.update", boardVO);
 	}
 

@@ -13,13 +13,12 @@
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="/resources/js/main.js"></script>
 </head>
-<body>`
+<body>
 <!-- 로고 -->
-      <div class="logo">
-        <img src="/resources/images/logo.jpg" alt="로고" width="300px">
-      </div>
+		<div class="logo">
+			<img src="/resources/images/logo.jpg" alt="로고" width="300px">
+		</div>
 
 		<!-- 메뉴 -->
 		<input type="checkbox" id="menuicon"> <label for="menuicon">
@@ -67,7 +66,7 @@
          		<button class="menubar-button" id="login" onclick="location.href='/member/login'">로그인</button>
          	</c:when>
 	        <c:otherwise>
-	        	<div>${member.getId()} 님</div>
+	        	<div class="member-id-info">${member.getId()} 님</div>
 	        	<button class="menubar-button" id="updateuser" onclick="location.href='/member/updatemember'">회원정보수정</button>
 				<button class="menubar-button" id="logout" onclick="location.href='/member/logout'">로그아웃</button>
 			</c:otherwise>

@@ -17,6 +17,7 @@ input[id="menuicon"]+label {
 	height: 40px;
 	position: fixed;
 	right: 10px;
+	margin-top: 7px;
 	top: 10;
 	transition: all .35s;
 	cursor: pointer;

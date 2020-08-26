@@ -125,5 +125,10 @@
                  </div><!-- page -->
       </div><!-- content -->
    </div>
+   
+<footer>
+	<%@ include file="footer.jsp"%>
+</footer>
+
    </body>
 </html>
