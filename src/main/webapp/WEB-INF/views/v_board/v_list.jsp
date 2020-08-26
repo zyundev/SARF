@@ -81,6 +81,11 @@ while(se.hasMoreElements()){
             height: 5px;
             background: #000;
         }
+        
+        header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
 		
 	</style>
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
@@ -88,6 +93,13 @@ while(se.hasMoreElements()){
 
 </head>
 <body>
+
+<header>
+	<%@ include file="../board/head.jsp"%>
+</header>
+
+<div class="main-tab">
+
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
 		<ul class="tab">
@@ -183,5 +195,14 @@ while(se.hasMoreElements()){
  			});
 		 });   
 	</script>
+	
+	</div>
+	
+	<div class="wrapper">
+		<footer>
+			<%@ include file="../board/footer.jsp" %>
+		</footer>
+	</div>
+	
 </body>
 </html>

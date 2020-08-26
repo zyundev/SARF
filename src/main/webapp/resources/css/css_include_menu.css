@@ -2,8 +2,9 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-body {
+#menuicon {
 	font-family: 'Jua', sans-serif;
+	top: -3px;
 }
 
 /* 메뉴 아이콘 모양 설정 */
@@ -17,7 +18,6 @@ input[id="menuicon"]+label {
 	height: 40px;
 	position: fixed;
 	right: 10px;
-	margin-top: 7px;
 	top: 10;
 	transition: all .35s;
 	cursor: pointer;
@@ -67,10 +67,11 @@ div[class="sidebar"] {
 	height: 100%;
 	background: #F1F1F1;
 	position: fixed;
-	top: 0;
+	top: -6.5px;
 	right: -300px;
 	z-index: 1;
 	transition: all .35s;
+	font-family: 'Jua', sans-serif;
 }
 
 /* �޴� �������� Ŭ���Ǹ� ���̵�ٰ� ȭ�鿡 ������ */
@@ -103,11 +104,14 @@ div[class="sidebar"] a:hover {
 
 hr {
 	width: 80%;
+	margin: 0 auto;
 }
 
 .menubar-button {
 	float: right;
 	margin-right: 10px;
+	margin-top: -5px;
+	padding-left: 9px;
 	border: 0;
 	outline: 0;
 	font-family: Jua;
@@ -115,9 +119,19 @@ hr {
 	color: #B1B1B1;
 }
 
+.member-id-info {
+	margin-top: -12px;
+	padding-bottom: 7px;
+}
+
 button:hover {
 	color: #000;
 	cursor: pointer;
+}
+
+.sidebar a {
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
 .sidebar .board div {
@@ -132,5 +146,9 @@ button:hover {
 
 .bd {
 	margin-right: 95px;
+	font-family: 'Jua', sans-serif;
+}
+
+footer {
 	font-family: 'Jua', sans-serif;
 }

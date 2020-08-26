@@ -2,7 +2,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-body {
+#menuicon {
 	font-family: 'Jua', sans-serif;
 }
 
@@ -16,9 +16,8 @@ input[id="menuicon"]+label {
 	width: 60px;
 	height: 40px;
 	position: fixed;
-	right: 10px;
-	margin-top: 7px;
-	top: 10;
+	right: 26.7px;
+	top: 14.5px;
 	transition: all .35s;
 	cursor: pointer;
 }
@@ -71,6 +70,7 @@ div[class="sidebar"] {
 	right: -300px;
 	z-index: 1;
 	transition: all .35s;
+	font-family: 'Jua', sans-serif;
 }
 
 /* �޴� �������� Ŭ���Ǹ� ���̵�ٰ� ȭ�鿡 ������ */
@@ -103,6 +103,7 @@ div[class="sidebar"] a:hover {
 
 hr {
 	width: 80%;
+	align-items: center;
 }
 
 .menubar-button {
@@ -132,5 +133,9 @@ button:hover {
 
 .bd {
 	margin-right: 95px;
+	font-family: 'Jua', sans-serif;
+}
+
+footer {
 	font-family: 'Jua', sans-serif;
 }

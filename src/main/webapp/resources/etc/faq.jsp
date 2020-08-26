@@ -7,11 +7,6 @@
    <title>FAQ 게시판</title>
 <link rel="stylesheet" href="/resources/css/faq.css">
 
-<!-- 구글 나눔고딕-->
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">
-<!-- Q A 폰트-->
-<link href="https://fonts.googleapis.com/css2?family=Judson:ital@1&display=swap" rel="stylesheet">
-
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
         $(function() {
@@ -38,8 +33,19 @@
             });
         });
     </script>
+    <style>
+    	header {
+        	padding-top: 15px;
+        	padding-bottom: 150px;
+        }
+    </style>
 </head>
 <body>
+
+<header>
+	<%@ include file="head.jsp"%>
+</header>
+
    <div class="container">
       <div class="infor">
              <h3 class="txt">FAQ</h3>
@@ -119,5 +125,10 @@
                  </div><!-- page -->
       </div><!-- content -->
    </div>
-   </body>
+   
+<footer>
+	<%@ include file="footer.jsp"%>
+</footer>
+
+</body>
 </html>
