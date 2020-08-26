@@ -9,17 +9,14 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.sarf.service.Qna_BoardService;
 import com.sarf.service.Qna_ReplyService;
 import com.sarf.vo.MemberVO;
-import com.sarf.vo.PageMaker;
 import com.sarf.vo.Qna_BoardVO;
 import com.sarf.vo.Qna_ReplyVO;
-import com.sarf.vo.SearchCriteria;
 
 @Controller
 @RequestMapping("/qna_board/*")
@@ -34,18 +31,18 @@ public class Qna_BoardController {
 	Qna_ReplyService replyService;
 
 	// 게시판 목록 조회
+	@RequestMapping(value = "/faq", method = RequestMethod.GET)
+
+	public String list()  throws Exception{
+		logger.info("박수빈");
+		
+		return "/qna_board/faq";
+	}
+	// 게시판 목록 조회
 	@RequestMapping(value = "/qna_list", method = RequestMethod.GET)
 
-	public String list(Model model, @ModelAttribute("scri") SearchCriteria scri) throws Exception{
+	public String list(Qna_BoardVO boardVO, Model model)  throws Exception{
 		logger.info("박수빈");
-
-		model.addAttribute("list",service.list(scri));
-
-		PageMaker pageMaker = new PageMaker();
-		pageMaker.setCri(scri);
-		pageMaker.setTotalCount(service.listCount(scri));
-		
-		model.addAttribute("pageMaker", pageMaker);
 		
 		return "/qna_board/qna_list";
 	}
@@ -70,12 +67,11 @@ public class Qna_BoardController {
 	}
 		
 	// 게시물 조회
-	@RequestMapping(value = "/a_view", method = RequestMethod.GET)
-	public String read(Qna_BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
+	@RequestMapping(value = "/qna_view", method = RequestMethod.GET)
+	public String read(Qna_BoardVO boardVO, Model model) throws Exception{
 		logger.info("뷰");
 			
 		model.addAttribute("read", service.read(boardVO.getBno()));
-		model.addAttribute("scri", scri);
 		
 		List<Qna_ReplyVO> replyList = replyService.readReply(boardVO.getBno());
 		model.addAttribute("replyList", replyList);
@@ -83,34 +79,4 @@ public class Qna_BoardController {
 		return "qna_board/qna_view";
 	}
 	
-	// 게시물 수정뷰
-	@RequestMapping(value = "/qna_updateView", method = RequestMethod.GET)
-	public String updateView(Qna_BoardVO boardVO, Model model) throws Exception{
-		logger.info("없데이트뷰");
-			
-		model.addAttribute("update", service.read(boardVO.getBno()));
-			
-		return "qna_board/qna_updateView";
-	}
-		
-	// 게시물 수정
-	@RequestMapping(value = "/qna_update", method = RequestMethod.POST)
-	public String update(Qna_BoardVO boardVO) throws Exception{
-		logger.info("없데이트");
-			
-		service.update(boardVO);
-			
-		return "redirect:/qna_board/qna_list";
-	}
-
-	// 게시물 삭제
-	@RequestMapping(value = "/qna_delete", method = RequestMethod.POST)
-	public String delete(Qna_BoardVO boardVO) throws Exception{
-		logger.info("딜리트");
-			
-		service.delete(boardVO.getBno());
-			
-		return "redirect:/qna_board/qna_list";
-	}
-
 }

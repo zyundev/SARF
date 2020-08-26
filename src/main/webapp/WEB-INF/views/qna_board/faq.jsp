@@ -97,27 +97,10 @@
                 </div>
           </div>                            
         </ul>
-      
-               <!-- 페이징 -->
-               <div class="page">
-    <!-- 처음 -->
-       <img src="https://bimg.nexon.com/images/career_imgs/NEW/page_first.jpg" width="30" height="30" alt="첫 페이지" class="pagebtn"/>
-    <!-- 이전 n개 -->
-       <img src="https://bimg.nexon.com/images/career_imgs/NEW/page_prev.jpg" width="30" height="30" alt="이전 페이지" class="pagebtn"/>
-    <span>
-        <!-- 페이지 번호 -->
-                        <a class="on" ><strong>1</strong></a>
-                        <a href="javascript:{goPage('1');}">2</a>
-                        <a href="javascript:{goPage('2');}">3</a>
-    </span>
-    <!-- 다음 n개 -->
-       <a class="next" href="javascript:{goPage('1');}" >
-       <img src="https://bimg.nexon.com/images/career_imgs/NEW/page_next_on.jpg" width="30" height="30" alt="다음 페이지" class="pagebtn" /></a>
-    <!-- 마지막 -->
-       <a class="last" href="javascript:{goPage('2');}" >
-       <img src="https://bimg.nexon.com/images/career_imgs/NEW/page_last_on.png" width="30" height="30" alt="마지막 페이지" class="pagebtn"/></a>
-                 </div><!-- page -->
-      </div><!-- content -->
+      	    <div>
+      	    	<button class="btn" onclick="location.href='/qna_board/qna_list'">문의하기</button>
+			</div>      
+      </div>
    </div>
    </body>
 </html>
