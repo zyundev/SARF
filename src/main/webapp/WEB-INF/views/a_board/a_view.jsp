@@ -194,6 +194,7 @@ while(se.hasMoreElements()){
 
 			<div class="top_btn" style="padding-bottom: 13px">
 				<div class="left_area">
+
 					<!-- 목록 -->
 					<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
 				</div>
