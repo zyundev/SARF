@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>tab example</title>
+	<title>명소 소개</title>
 	<style>
 		#container {
 			width:960px;
@@ -128,6 +128,18 @@
              left: 70%;
         }
         
+        header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
+        
+        .view-line {
+        	border: solid 3px black;
+        	width: 100%;
+        }
+        
+        
+        
     
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -135,6 +147,10 @@
 
 </head>
 <body>
+
+<header>
+	<%@ include file="head.jsp"%>
+</header>
     
     
     <br>
@@ -152,7 +168,7 @@
 	<div id="container">
 		<h2>명소</h2>
         <br>
-        <hr style = "border: solid 3px black"; />
+        <hr class="view-line" />
         <br>
         <br>
 
@@ -633,5 +649,10 @@
 			})
 		});
 	</script>
+	
+	<footer>
+		<%@ include file="footer.jsp" %>
+	</footer>
+	
 </body>
 </html>

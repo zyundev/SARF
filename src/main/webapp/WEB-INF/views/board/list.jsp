@@ -26,62 +26,82 @@ while(se.hasMoreElements()){
 
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
 	<style>
-#container {
-	width:980px;
-	margin:0 auto;
-	text-align:left;
-}
-	
-.tab {
-	font-family: 'Noto Sans KR', sans-serif;
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	overflow: hidden;
-	margin-top:30px;
-	margin-bottom:-20px;
-}
-	
-.tab li {
-	float: left;
-}
-	
-.tab li a {
-	display: inline-block;
-	color: #000;
-	text-align: center;
-	text-decoration: none;
-	padding: 14px 16px;
-	font-size: 17px;
-	transition:0.3s;
-    width: 208px;
 
-}
-	
- /* 위에 박스 밑줄 효과 */
-.cool-link::after {
-    content: '';
-    display: block;
-    width: 0;
-    height: 5px;
-    background: #000;
-}
+	#container {
+			width:980px;
+			margin:0 auto;
+			text-align:left;
+		}
+		
+	.tab {
+           font-family: 'Noto Sans KR', sans-serif;
+			list-style: none;
+			margin: 0;
+			padding: 0;
+			overflow: hidden;
+			margin-top:30px;
+			margin-bottom:-20px;
+            
+		}
+		
+		.tab li {
+			float: left;
+		}
+		
+		.tab li a {
+			display: inline-block;
+			color: #000;
+			text-align: center;
+			text-decoration: none;
+			padding: 14px 16px;
+			font-size: 17px;
+			transition:0.3s;
+            width: 208px;
+		}
+		
+	  /* 위에 박스 밑줄 효과 */
+        
+        .cool-link::after {
+            
+            content: '';
+            display: block;
+            width: 0;
+            height: 5px;
+            background: #000;
+                
+        }
+        
+        .cool-link:hover::after {
+            width: 100%;
+            
+        }
+        
+        .cool-link-always::after{
+        
+        	content: '';
+            display: block;
+            width: 100%;
+            height: 5px;
+            background: #000;
+            
+        }
+        
+        header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
+        
+		
+	</style>
 
-.cool-link:hover::after {
-    width: 100%;
-}
-
-.cool-link-always::after{
-	content: '';
-    display: block;
-    width: 100%;
-    height: 5px;
-    background: #000;
-}
-</style>
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
 </head>
 <body>
+
+<header>
+	<%@ include file="head.jsp"%>
+</header>
+
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
 		<ul class="tab">
@@ -94,27 +114,19 @@ while(se.hasMoreElements()){
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
 
 	<!-- location  -->
-	
 	<div class="board_list_wrap">
 		<div style="margin-bottom:15px;">
 			<h2>자유 게시판</h2>
 		</div>
 		<table class="board_list">
-		<colgroup>
-   <col width="10%">
-   <col width="45%">
-   <col width="15%">
-   <col width="15%">
-   <col width="15%">
-   </colgroup>
 			<caption>게시판 목록</caption>
 			<thead>
 				<tr>
-					<th scope="col">번호</th	>
-					<th scope="col">제목</th>
-					<th scope="col">글쓴이</th>
-					<th scope="col">작성일</th>
-					<th scope="col">조회</th>
+					<th>번호</th>
+					<th>제목</th>
+					<th>글쓴이</th>
+					<th>작성일</th>
+					<th>조회</th>
 				</tr>
 			</thead>
 			<tbody>   
@@ -176,5 +188,12 @@ while(se.hasMoreElements()){
  			});
 		});
 	</script>
+	
+	<div class="wrapper">
+		<footer>
+			<%@ include file="footer.jsp" %>
+		</footer>
+	</div>
+	
 </body>
 </html>
