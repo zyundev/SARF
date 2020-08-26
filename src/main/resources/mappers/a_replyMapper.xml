@@ -9,7 +9,7 @@
 		SELECT RNO, NAME, CONTENT, REGDATE
 		FROM A_BOARD_R
 		WHERE BNO = #{bno}
-		ORDER BY REGDATE DESC
+		ORDER BY REGDATE
 	</select>
 	
 	<!-- 댓글 작성 -->

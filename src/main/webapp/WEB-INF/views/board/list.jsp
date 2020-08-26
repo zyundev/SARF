@@ -94,27 +94,19 @@ while(se.hasMoreElements()){
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
 
 	<!-- location  -->
-	
 	<div class="board_list_wrap">
 		<div style="margin-bottom:15px;">
 			<h2>자유 게시판</h2>
 		</div>
 		<table class="board_list">
-		<colgroup>
-   <col width="10%">
-   <col width="45%">
-   <col width="15%">
-   <col width="15%">
-   <col width="15%">
-   </colgroup>
 			<caption>게시판 목록</caption>
 			<thead>
 				<tr>
-					<th scope="col">번호</th	>
-					<th scope="col">제목</th>
-					<th scope="col">글쓴이</th>
-					<th scope="col">작성일</th>
-					<th scope="col">조회</th>
+					<th>번호</th>
+					<th>제목</th>
+					<th>글쓴이</th>
+					<th>작성일</th>
+					<th>조회</th>
 				</tr>
 			</thead>
 			<tbody>   
