@@ -15,8 +15,6 @@ public class V_ReplyDAOImpl implements V_ReplyDAO{
 	@Inject
 	private SqlSession sql;
 	
-	String mapper = "v_replyMapper.";
-	
 	// 댓글 조회
 	@Override
 	public List<V_ReplyVO> readReply(int bno) throws Exception {

@@ -2,7 +2,7 @@ package com.sarf.vo;
 
 import java.util.Date;
 
-public class Oneqna_ReplyVO {
+public class Qna_ReplyVO {
 	
 	private int bno;
 	private int rno;
