@@ -2,48 +2,48 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="a_replyMapper">
+<mapper namespace="qna_replyMapper">
 	
 	<!-- 댓글 조회 -->
-	<select id="readReply" resultType="com.sarf.vo.A_ReplyVO">
+	<select id="readReply" resultType="com.sarf.vo.Qna_ReplyVO">
 		SELECT RNO, NAME, CONTENT, REGDATE
-		FROM A_BOARD_R
+		FROM Qna_BOARD_R
 		WHERE BNO = #{bno}
 		ORDER BY REGDATE
 	</select>
 	
 	<!-- 댓글 작성 -->
-	<insert id="writeReply" parameterType="com.sarf.vo.A_ReplyVO">
-	INSERT INTO A_BOARD_R(
+	<insert id="writeReply" parameterType="com.sarf.vo.Qna_ReplyVO">
+	INSERT INTO Qna_BOARD_R(
 							BNO,
 							RNO,
 							NAME,
 							CONTENT
 									)
 				VALUES(		#{bno},
-							A_BOARD_R_SEQ.NEXTVAL,
+							Qna_BOARD_R_SEQ.NEXTVAL,
 							#{name},
 							#{content} )
 	</insert>
 
 	<!-- 댓글 수정 -->
-	<update id="updateReply" parameterType="com.sarf.vo.A_ReplyVO">
-		UPDATE A_BOARD_R SET 
+	<update id="updateReply" parameterType="com.sarf.vo.Qna_ReplyVO">
+		UPDATE Qna_BOARD_R SET 
 		CONTENT = #{content}
 		WHERE RNO = #{rno}
 	</update>
 	
 	<!-- 선택된 댓글 조회 -->	
-	<select id="selectReply" resultType="com.sarf.vo.A_ReplyVO">
+	<select id="selectReply" resultType="com.sarf.vo.Qna_ReplyVO">
 		SELECT
 		BNO, RNO, CONTENT, NAME, REGDATE
-		FROM A_BOARD_R
+		FROM Qna_BOARD_R
 		WHERE RNO = #{rno}
 	</select>
 	
 	<!-- 댓글 삭제 -->
-	<delete id="deleteReply" parameterType="com.sarf.vo.A_ReplyVO">
-		DELETE FROM A_BOARD_R
+	<delete id="deleteReply" parameterType="com.sarf.vo.Qna_ReplyVO">
+		DELETE FROM Qna_BOARD_R
 		WHERE RNO = #{rno}
 	</delete>
 </mapper>
