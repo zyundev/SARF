@@ -20,12 +20,6 @@ public class Qna_BoardDAOImpl implements Qna_BoardDAO{
 	public List<Qna_BoardVO> list(SearchCriteria scri) throws Exception {
 		return sqlSession.selectList("qna_boardMapper.listPage", scri);
 	}
-	
-	// 게시물 총 갯수
-	@Override
-	public int listCount(SearchCriteria scri) throws Exception {
-		return sqlSession.selectOne("qna_boardMapper.listCount", scri);
-	}
 
 	@Override
 	public void write(Qna_BoardVO boardVO) throws Exception {
@@ -36,17 +30,6 @@ public class Qna_BoardDAOImpl implements Qna_BoardDAO{
 	@Override
 	public Qna_BoardVO read(int bno) throws Exception {
 		return sqlSession.selectOne("qna_boardMapper.read", bno);
-	}
-	
-	// 게시물 조회수 증가
-	@Override
-	public int updateReadCount(int bno) throws Exception {
-		return sqlSession.update("qna_boardMapper.updateCount", bno);
-	}
-
-	@Override
-	public void update(Qna_BoardVO boardVO) throws Exception {
-		sqlSession.update("qna_boardMapper.update", boardVO);
 	}
 
 	@Override
