@@ -17,7 +17,7 @@
 <body>
 <!-- 로고 -->
       <div class="logo">
-        <img src="/resources/images/logo.jpg" alt="로고" width="300px">
+        <a href="../../"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
       </div>
 
 		<!-- 메뉴 -->

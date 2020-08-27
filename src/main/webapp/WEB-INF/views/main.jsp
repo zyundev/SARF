@@ -30,11 +30,12 @@
          <img class="imgsize" src="/resources/images/rdoorimage.jpg">
       </div>
    </div>
+   
    <!-- 로고 메뉴-->
 <header>
     <!-- 로고 -->
       <div class="logo">
-		<img src="/resources/images/logo.jpg" alt="로고" width="300px">
+		<a href="./"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
       </div>
 
 		<!-- 메뉴 -->
