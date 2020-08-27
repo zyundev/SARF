@@ -8,18 +8,17 @@
 <meta charset="UTF-8">
 <title></title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/main.css" />
-<link rel="stylesheet" href="/resources/css/css_menu.css" />
+<link rel="stylesheet" href="/resources/css/include_main.css" />
+<link rel="stylesheet" href="/resources/css/css_include_menu.css" />
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<script src="/resources/js/main.js"></script>
 </head>
 <body>
 <!-- 로고 -->
-      <div class="logo">
-         <a href="/"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
-      </div>
+		<div class="logo">
+			<a href="../"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
+		</div>
 
 		<!-- 메뉴 -->
 		<input type="checkbox" id="menuicon"> <label for="menuicon">
@@ -27,44 +26,39 @@
 		</label>
 
 		<div class="sidebar">
-			<a href="#">공지사항</a>
+			<a href="/n_board/notice">공지사항</a>
 			<hr>
 		
 		<div class="board">
-			<a href="/board/list">게시판</a>
+			<a class="cursor">게시판</a>
 			<div>
-				<button class="bd">- 자유 게시판</button>
-				<br>
-				
+				<a href="/board/list"><button class="bd menubar-button">- 자유 게시판</button></a>
+				<br>				
 				<p>
-					<button class="bd">- 명소 게시판</button>
-				</p>
-				
-				<br>
-				
+					<a href="/a_board/a_list"><button class="bd menubar-button">- 명소 게시판</button></a>
+				</p>				
+				<br>				
 				<p>
-					<button class="bd">- 맛집 게시판</button>
-				</p>
-				
-				<br>
-				
+					<a href="/r_board/r_list"><button class="bd menubar-button">- 맛집 게시판</button></a>
+				</p>				
+				<br>			
 				<p>
-					<button class="bd">- 축제 게시판</button>
+					<a href="/v_board/v_list"><button class="bd menubar-button">- 축제 게시판</button></a>
 				</p>
 				
 				<br>
 			</div>
 		</div>
 			<hr>
-			<a href="#">명소</a>
+			<a href="/resources/etc/attraction.jsp">명소</a>
 			<hr>
-			<a href="#">맛집</a>
+			<a href="/resources/etc/restaurant.jsp">맛집</a>
 			<hr>
-			<a href="#">축제</a>
+			<a href="/resources/etc/festival.jsp">축제</a>
 			<hr>
-			<a href="#">고객센터</a>
+			<a href="/resources/etc/faq.jsp">고객센터</a>
 			<hr>
-			<a href="#">운영진 소개</a>
+			<a href="/resources/etc/intro.jsp">운영진 소개</a>
 			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
 			<c:choose>
          	<c:when test="${member == null}">
@@ -72,7 +66,7 @@
          		<button class="menubar-button" id="login" onclick="location.href='/member/login'">로그인</button>
          	</c:when>
 	        <c:otherwise>
-	        	<div>${member.getId()} 님</div>
+	        	<div class="member-id-info">${member.getId()} 님</div>
 	        	<button class="menubar-button" id="updateuser" onclick="location.href='/member/updatemember'">회원정보수정</button>
 				<button class="menubar-button" id="logout" onclick="location.href='/member/logout'">로그아웃</button>
 			</c:otherwise>

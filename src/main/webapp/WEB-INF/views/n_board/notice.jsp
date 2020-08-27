@@ -13,7 +13,7 @@
 
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
 	<style>
-	
+
 	#container {
 			width:980px;
 			margin:0 auto;
@@ -62,18 +62,24 @@
             width: 100%;
             
         }	
+        
+        header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
 	
 		
 	</style>
-<!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
-
-
-
-
 
 
 </head>
 <body>
+
+<header>
+	<%@ include file="head.jsp"%>
+</header>
+
+<div class="main-tab">
 
 	<!-- location  -->
 	<div class="board_list_wrap">
@@ -149,5 +155,14 @@
 			 });
 		 });   
 	</script>
+	
+	</div>
+	
+	<div class="wrapper">
+		<footer>
+			<%@ include file="../board/footer.jsp" %>
+		</footer>
+	</div>
+	
 </body>
 </html>

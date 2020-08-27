@@ -4,7 +4,7 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>tab example</title>
+	<title>명소 소개</title>
 	<style>
 		#container {
 			width:960px;
@@ -113,6 +113,10 @@
             
         }
         
+        .cool-link:checked::after{
+        	width:100%;
+        }
+        
         /* 위에 박스 밑줄 효과 */
          
          .button_1 {
@@ -124,6 +128,48 @@
              left: 70%;
         }
         
+        header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
+        
+        .view-line {
+        	border: solid 3px black;
+        	width: 100%;
+        }
+     
+     /* 버튼 */   
+     
+     
+        .top {
+        		width: 120px;
+        		height: 40px;
+        		background-color:
+        		#004fff;
+        		
+        		color: white;
+        		
+        		box-shadow: 0 4px 16px
+        		rgba(0, 79, 255, 0.3);
+        		
+        		font-size: 16px;
+        		font-weight: bold;
+        		
+				border-radius: 20px;
+			
+			
+			  	position: absolute;
+			  	
+			  	left: 48%;    		
+        		
+        		
+        		
+        
+        }
+     
+        
+        
+        
     
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -131,6 +177,10 @@
 
 </head>
 <body>
+
+<header>
+	<%@ include file="head.jsp"%>
+</header>
     
     
     <br>
@@ -148,7 +198,7 @@
 	<div id="container">
 		<h2>명소</h2>
         <br>
-        <hr style = "border: solid 3px black"; />
+        <hr class="view-line" />
         <br>
         <br>
 
@@ -607,11 +657,18 @@
             <br>
             <br>
             
+           
+            
             
             
   
             
 		  </div>
+		  
+		  <br>
+		  <br>
+		  
+		   <button class = "top"  onclick="scrollWindow_2()"> Top </button>
 	
 	</div>
 
@@ -628,6 +685,20 @@
 				$('#' + activeTab).addClass('current');
 			})
 		});
+
+
+		 function scrollWindow_2() {
+	 		 
+	          window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+	          
+	    	 }
+
+    	 
 	</script>
+	
+	<footer>
+		<%@ include file="footer.jsp" %>
+	</footer>
+	
 </body>
 </html>
