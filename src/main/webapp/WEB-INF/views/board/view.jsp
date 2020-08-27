@@ -3,6 +3,18 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
+<%-- 세션값 확인 --%>
+<%@page import="java.util.Enumeration"%>
+<% 
+Enumeration se = session.getAttributeNames();
+
+while(se.hasMoreElements()){
+	String getse = se.nextElement()+"";
+	System.out.println("@@@@@@@ session : "+getse+" : "+session.getAttribute(getse));
+}
+%>
+<%-- 세션값 확인 끝 --%>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,6 +32,15 @@
 			
 			// 수정 
 			$("#update_btn").on("click", function(){
+				if(${logincheck} == false){
+					alert('로그인해주세요.');
+					location.href='/member/login';
+					return false;
+				}
+				if("${member.getId()}" != "${read.getName()}"){
+					alert('다른사용자의 글을 수정할 수 없습니다.');
+					return false;
+				}
 				formObj.attr("action", "/board/updateView");
 				formObj.attr("method", "get");
 				formObj.submit();				
@@ -27,6 +48,15 @@
 			
 			// 삭제
 			$("#delete_btn").on("click", function(){
+				if(${logincheck} == false){
+					alert('로그인해주세요.');
+					location.href='/member/login';
+					return false;
+				}
+				if("${member.getId()}" != "${read.getName()}"){
+					alert('다른사용자의 글을 삭제할 수 없습니다.');
+					return false;
+				}
 				formObj.attr("action", "/board/delete");
 				formObj.attr("method", "post");
 				formObj.submit();
@@ -40,9 +70,18 @@
 			
 			// 답변 글쓰기
 			$("#replyWrite_btn").on("click", function(){
+				var content = $(".content").val();
 				var replyFormObj = $("form[name='replyForm']");
-				replyFormObj.attr("action", "/board/replyWrite");
-				replyFormObj.submit();
+				
+				if(content == ''){
+					alert('내용을 입력하세요');
+					return "redirect:/board/view?bno=" + ${read.bno} ;
+
+				} 
+				else {
+					replyFormObj.attr("action", "/board/replyWrite");
+					replyFormObj.submit();
+				}
 			})
 		})
 </script>
@@ -99,7 +138,7 @@
 							<div class="comment_inbox">
 								
 								<em class="comment_inbox_name" >작성자 : ${member.id}</em>
-								<textarea name="content"></textarea>
+								<textarea class="content" name="content"></textarea>
 								<div class="input_box">
 									<button type="button" id="replyWrite_btn"
 										class="input_button basebutton skin size">등록</button>
@@ -128,12 +167,18 @@
 								</p>
 								${replyList.content}
 								<div class="right_area">
+								
 								<!-- 내가 작성한 답글만 나오게 버튼 만들까? -->
+								<c:choose>
+								<c:when test="${member.id == replyList.name}">
 								<button type="button" id="replyUpdate_btn"
 										class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
 
 								<button type="button" id="replyDelete_btn"
 										class="basebutton skin size replyDelete_btn" data-rno="${replyList.rno}">삭제</button>
+								</c:when>
+								<c:otherwise></c:otherwise>
+								</c:choose>
 								</div>
 							</div>
 						</div>

@@ -2,6 +2,19 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
+
+<!-- 세션값 확인 -->
+<%@page import="java.util.Enumeration"%>
+<% 
+Enumeration se = session.getAttributeNames();
+
+while(se.hasMoreElements()){
+	String getse = se.nextElement()+"";
+	System.out.println("@@@@@@@ session : "+getse+" : "+session.getAttribute(getse));
+}
+%>
+<!-- 세션값 확인 끝 -->
+
 <!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -73,6 +86,11 @@
             background: #000;
             
         }
+        
+        header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
 	
 		
 	</style>
@@ -85,6 +103,12 @@
 
 </head>
 <body>
+
+<header>
+	<%@ include file="../board/head.jsp"%>
+</header>
+
+<div class="main-tab">
 
 <!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
    <div id = "container">
@@ -129,21 +153,21 @@
 			</tbody>
 		</table>
 		<div style="float: right">
-			<button class="write_btn" onclick="location.href='/a_board/a_writeView'">글쓰기</button>
+			<button class="write_btn">글쓰기</button>
 		</div>     
 		<div class="paging">
 			<ul class="paging-ul">
 				<c:if test="${pageMaker.prev}">
-					<li><a href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+					<li><a href="a_list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
 				</c:if> 
 							
 				<c:forEach begin="${pageMaker.startPage}" end="${pageMaker.endPage}" var="idx">
 					<li <c:out value="${pageMaker.cri.page == idx ? 'class=info' : ''}" />>
-					<a href="list${pageMaker.makeSearch(idx)}">${idx}</a></li>
+					<a href="a_list${pageMaker.makeSearch(idx)}">${idx}</a></li>
 				</c:forEach>
 							
 				<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-					<li><a href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+					<li><a href="a_list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
 				</c:if> 
 			</ul>
 		</div>
@@ -168,7 +192,24 @@
 			 $('#searchBtn').on('click', function() {
 			 	self.location = "a_list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
 			 });
+			 $('.write_btn').on('click', function(){
+				if(${logincheck} == false){
+					alert('로그인해주세요.');
+					location.href='/member/login';
+				}else{
+		 			location.href='/a_board/a_writeView';
+				}
+	 		});
 		 });   
 	</script>
+	
+	</div>
+	
+	<div class="wrapper">
+		<footer>
+			<%@ include file="../board/footer.jsp" %>
+		</footer>
+	</div>
+	
 </body>
 </html>

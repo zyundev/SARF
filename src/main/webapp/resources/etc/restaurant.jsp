@@ -125,7 +125,15 @@
              left: 70%;
         }
          
-         
+       header {
+        	padding-top: 15px;
+        	padding-bottom: 75px;
+        }
+        
+      .view-line {
+        	border: solid 3px black;
+        	width: 100%;
+        }
         
     
 	</style>
@@ -134,6 +142,10 @@
 
 </head>
 <body>
+
+<header>
+	<%@ include file="head.jsp"%>
+</header>
     
     
     <br>
@@ -151,7 +163,7 @@
 	<div id="container">
 		<h2>맛집</h2> 
         <br>
-        <hr style = "border: solid 3px black"; />
+        <hr class="view-line" />
         <br>
         <br>
 
@@ -583,5 +595,10 @@
 			})
 		});
 	</script>
+	
+	<footer>
+		<%@ include file="footer.jsp" %>
+	</footer>
+	
 </body>
 </html>

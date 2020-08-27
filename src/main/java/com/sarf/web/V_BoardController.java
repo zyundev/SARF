@@ -2,9 +2,7 @@ package com.sarf.web;
 
 import java.util.List;
 
-
 import javax.inject.Inject;
-import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -14,16 +12,14 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sarf.service.V_BoardService;
 import com.sarf.service.V_ReplyService;
-import com.sarf.service.ReplyService;
-import com.sarf.vo.V_BoardVO;
-import com.sarf.vo.V_ReplyVO;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.PageMaker;
 import com.sarf.vo.SearchCriteria;
+import com.sarf.vo.V_BoardVO;
+import com.sarf.vo.V_ReplyVO;
 
 @Controller
 @RequestMapping("/v_board/*")

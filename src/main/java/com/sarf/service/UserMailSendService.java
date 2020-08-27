@@ -12,8 +12,6 @@ import javax.servlet.http.HttpServletRequest;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.stereotype.Service;
 
-import com.sarf.dao.MemberDAO;
-
 @Service
 public class UserMailSendService {
 	@Inject
