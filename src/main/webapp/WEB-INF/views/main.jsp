@@ -17,10 +17,7 @@
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<<<<<<< HEAD
 <script src="/resources/js/main.js"></script>
-=======
->>>>>>> branch 'master' of https://github.com/LifeIT-web/SARF
 </head>
 <body>
 
