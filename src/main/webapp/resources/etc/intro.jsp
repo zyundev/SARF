@@ -8,6 +8,11 @@
 <title>운영진 소개</title>
 <link rel="stylesheet" type="text/css" href="/resources/css/intro.css">
 <body>
+
+<header>
+	<%@ include file="head.jsp"%>
+</header>
+
 	<div class="card-wrapper">
 		<div class="card_1">
 			<div class="imgBx">
@@ -143,21 +148,10 @@
 	<br>
 	<br>
 	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-	<br>
-
+	
+<footer>
+	<%@ include file="footer.jsp"%>
+</footer>
 
 </body>
 </head>

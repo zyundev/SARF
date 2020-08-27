@@ -1,3 +1,8 @@
+<!-- 구글 나눔고딕-->
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap');
+<!-- Q A 폰트-->
+@import url('https://fonts.googleapis.com/css2?family=Judson:ital@1&display=swap" rel="stylesheet');
+
 *{
    margin: 0;
    padding: 0;
@@ -107,7 +112,7 @@ ul,li{
 .pagebtn {
    vertical-align:top;
 }
-a{
+.page a{
    text-decoration-line: none;
    font-weight: 600;
    color: #888888;

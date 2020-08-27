@@ -1,0 +1,141 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
+
+#menuicon {
+	font-family: 'Jua', sans-serif;
+}
+
+/* 메뉴 아이콘 모양 설정 */
+input[id="menuicon"] {
+	display: none;
+}
+
+input[id="menuicon"]+label {
+	display: block;
+	width: 60px;
+	height: 40px;
+	position: fixed;
+	right: 26.7px;
+	top: 14.5px;
+	transition: all .35s;
+	cursor: pointer;
+}
+
+input[id="menuicon"]+label span {
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	border-radius: 30px;
+	background: #B1B1B1;
+	transition: all .35s;
+}
+
+input[id="menuicon"]+label span:nth-child(1) {
+	top: 0;
+}
+
+input[id="menuicon"]+label span:nth-child(2) {
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+input[id="menuicon"]+label span:nth-child(3) {
+	bottom: 0;
+}
+
+/* 메뉴 아이콘 누르면 X로 변화 */
+input[id="menuicon"]:checked+label span:nth-child(1) {
+	top: 50%;
+	transform: translateY(-50%) rotate(45deg);
+}
+
+input[id="menuicon"]:checked+label span:nth-child(2) {
+	opacity: 0;
+}
+
+input[id="menuicon"]:checked+label span:nth-child(3) {
+	bottom: 50%;
+	transform: translateY(50%) rotate(-45deg);
+}
+
+/* ���̵�� ����(ȭ�鿡�� �Ⱥ���) */
+div[class="sidebar"] {
+	width: 300px;
+	height: 100%;
+	background: #F1F1F1;
+	position: fixed;
+	top: 0;
+	right: -300px;
+	z-index: 1;
+	transition: all .35s;
+	font-family: 'Jua', sans-serif;
+}
+
+/* �޴� �������� Ŭ���Ǹ� ���̵�ٰ� ȭ�鿡 ������ */
+input[id="menuicon"]:checked+label+div {
+	right: 0;
+}
+
+/* ���̵�ٰ� �������鼭 �޴� �����ܵ� ���̵�� �ʺ�ŭ �̵� */
+input[id="menuicon"]:checked+label {
+	z-index: 2;
+	right: 300px;
+}
+
+/* ���̵�� ���� �޴� ����*/
+div[class="sidebar"] a {
+	position: relative;
+	display: block;
+	font-size: 30px;
+	line-height: 83px;
+	color: #000;
+	text-decoration: none;
+	text-align: center;
+}
+
+div[class="sidebar"] a:hover {
+	background-color: #555;
+	color: white;
+	transition: all .35s;
+}
+
+hr {
+	width: 80%;
+	align-items: center;
+}
+
+.menubar-button {
+	float: right;
+	margin-right: 10px;
+	border: 0;
+	outline: 0;
+	font-family: Jua;
+	font-size: 20px;
+	color: #B1B1B1;
+}
+
+button:hover {
+	color: #000;
+	cursor: pointer;
+}
+
+.sidebar .board div {
+	max-height: 0;
+	transition: all .35s;
+	overflow: hidden;
+}
+
+.sidebar .board:hover div {
+	max-height: 150px;
+}
+
+.bd {
+	margin-right: 95px;
+	font-family: 'Jua', sans-serif;
+}
+
+footer {
+	font-family: 'Jua', sans-serif;
+}
