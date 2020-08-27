@@ -108,6 +108,7 @@
 	<br>
 	<!-- 지도, 팝업, 소개 -->
 	
+	
 	<main>
 	
 	  <div class = "graphic">
@@ -119,7 +120,7 @@
           
     
     강북
-    <path class ="Gangbuk" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" 
+    <path class ="Gangbuk" onclick="scrollWindow()" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" value = "ScrollBy" onclick = "ScrollWindow()"
           
     d="M964.064,164.667
    c-1.447,9.018-0.285,18.105-2.002,27.506c-2.068,11.332-9.018,22.101-11.502,33.507c-0.867,3.979-0.977,9.201-1.5,14.003
@@ -277,7 +278,7 @@
 
     강서
 
-    <path class="Gangseo" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M134.875,530.751
+    <path class="Gangseo" onclick="scrollWindow()" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M134.875,530.751
    c14.186,7.902,28.88,17.473,41.509,27.006c4.251,3.209,9.459,6.075,13.003,9.502c4.232,4.093,7.689,10.18,11.502,15.004
    c3.918,4.956,7.421,10.604,11.503,15.003c6.56,7.07,15.108,12.175,21.505,19.005c8.05,8.595,12.902,20.3,21.505,29.006
    c6.374,6.451,17.3,10.128,26.006,15.003c3.432,1.921,6.93,4.513,10.502,6.501c3.87,2.155,8.53,3.593,11.502,6.001
@@ -380,7 +381,7 @@
 
 
     강동
-    <path class ="Gangdong" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M1169.111,741.299
+    <path class ="Gangdong" onclick="scrollWindow()" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M1169.111,741.299
    c5.732-6.754,13.379-10.111,22.004-15.504c8.936-5.586,14.174-12.908,26.506-13.003c10.67-0.333,22.672,0.667,32.508-0.5
    c18.525-4.354,29.406-16.417,44.01-25.006c8.764-5.154,19.996-8.898,28.506-14.003c0,1.667,0,3.334,0,5.001
    c0.326,2.509-0.654,6.323,0.502,8.002c-0.258,11.092,11.025,10.646,17.004,15.504c1.512,1.154,5.158,0.176,7.5,0.5
@@ -416,7 +417,7 @@
 
 
     강남
-    <path class="Gangnam" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M809.529,885.332
+    <path class="Gangnam" onclick="scrollWindow()" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" d="M809.529,885.332
    c3.344-3.51,7.164-6.168,11.002-9.502c3.58-3.111,6.844-7.933,11.002-9.503c3.145-1.187,8.471-1.302,12.504-2.001
    c10.121-1.754,17.617-2.169,29.006-1.5c15.992,0.939,26.063,3.173,37.008,8.002c26.447,11.669,47.611,32.773,78.518,36.008
    c1.088,2.58,0.227,7.111,0.502,10.503c0,3.334,0,6.668,0,10.003c0.32,2.012-0.65,5.317,0.5,6.501c0,2.834,0,5.668,0,8.502
@@ -613,6 +614,8 @@
 	
 	</div>
 		<!-- 지도 -->
+	
+	
 		
 
 		<!-- 개발자 소개 -->
@@ -638,13 +641,17 @@
     /* 문열림 효과, 새로고침시 항상 위로 */
     
     
+    
      $(function() {
+         
          $('.Gangdong').click(function() {
+
              $('#tab1').show();
              $('#tab2').hide();
              $('#tab3').hide();
              $('#tab4').hide();
          })
+         
          $('.Gangseo').click(function() {
              $('#tab2').show();
              $('#tab1').hide();
@@ -664,8 +671,59 @@
              $('#tab3').hide();
          })
       });
-        
+
+
+      function scrollWindow() {
+
+       window.scroll({ top: 1500, left: 0, behavior: 'smooth' });
+      	
+
+        }
+
+     
     
+/*      $(".Gangdong").on("click", function(e){
+         e.preventDefault();
+         
+         window.scrollTo({
+            top:700, 
+            behavior:'smooth'
+        });
+
+     });
+     $(".Gangseo").on("click", function(e){
+         e.preventDefault();
+         
+         window.scrollTo({
+            top:700, 
+            behavior:'smooth'
+        });
+
+     });
+     $(".Gangnam").on("click", function(e){
+         e.preventDefault();
+         
+         window.scrollTo({
+            top:700, 
+            behavior:'smooth'
+        });
+
+     });
+     
+     $(".Gangbuk").on("click", function(e){
+         e.preventDefault();
+         
+         window.scrollTo({
+            top:700, 
+            behavior:'smooth'
+        });
+         */
+     
+
+
+     
+   
+         
     $(window).on('load', function() {
     	$('.loading-container').fadeOut();
         setTimeout(function(){
@@ -673,6 +731,7 @@
         }, 100);
         $('.loading-container');
     });
+
 
     
     AOS.init();
