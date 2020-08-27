@@ -110,7 +110,7 @@ public class BoardController {
 			
 		service.update(boardVO);
 			
-		return "redirect:/board/list";
+		return "redirect:/board/view?bno=" + boardVO.getBno();
 	}
 
 	// 게시물 삭제
