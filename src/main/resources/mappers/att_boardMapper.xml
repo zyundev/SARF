@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="att_boardMapper">
+
+	<!-- 게시판 목록 조회
+	<select id="list" resultType="com.sarf.vo.Att_BoardVO">
+		SELECT *	
+		FROM ATT_BOARD
+		ORDER BY BNO DESC
+	</select>
+	 -->
+
+	<!-- 게시판 글 작성 -->
+ 	<insert id="write" >
+		INSERT INTO ATT_BOARD
+		VALUES(ATT_BOARD_SEQ.NEXTVAL, #{key}, #{subject}, #{img1}, #{img2}, #{img3}, #{content}, #{link})
+	</insert> 
+
+	<!-- 게시물 수정 -->
+ 	<update id="update" parameterType="com.sarf.vo.Att_BoardVO">
+		UPDATE ATT_BOARD
+		   SET SUBJECT = #{subject},
+		   	   CONTENT = #{content},
+		   	   KEY = #{key},
+		   	   LINK = #{link}
+		 WHERE BNO = #{bno}
+	</update>
+	
+	<!-- 게시물 수정뷰 조회 -->
+ 	<select id="updateview" resultType="com.sarf.vo.Att_BoardVO" parameterType="int" >
+		SELECT *
+		FROM ATT_BOARD
+		WHERE BNO = #{bno}
+	</select> 
+	
+	<!-- 게시물 삭제 -->
+ 	<delete id="delete" parameterType="int">
+		DELETE FROM ATT_BOARD
+		WHERE BNO = #{bno}
+	</delete>
+	
+	<!-- 명소게시판 강동페이지 -->
+	<select id="listPage1" resultType="com.sarf.vo.Att_BoardVO">
+		SELECT *	
+		FROM ATT_BOARD
+		WHERE KEY = 'EAST'
+		ORDER BY BNO DESC
+	</select>
+	
+	<!-- 명소게시판 강서페이지 -->
+	<select id="listPage2" resultType="com.sarf.vo.Att_BoardVO">
+		SELECT *	
+		FROM ATT_BOARD
+		WHERE KEY = 'WEST'
+		ORDER BY BNO DESC
+	</select>
+	
+	<!-- 명소게시판 강남페이지 -->
+	<select id="listPage3" resultType="com.sarf.vo.Att_BoardVO">
+		SELECT *	
+		FROM ATT_BOARD
+		WHERE KEY = 'SOUTH'
+		ORDER BY BNO DESC
+	</select>
+	
+	<!-- 명소게시판 강북페이지 -->
+	<select id="listPage4" resultType="com.sarf.vo.Att_BoardVO">
+		SELECT *	
+		FROM ATT_BOARD
+		WHERE KEY = 'NORTH'
+		ORDER BY BNO DESC
+	</select>
+</mapper>

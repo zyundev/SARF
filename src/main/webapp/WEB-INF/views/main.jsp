@@ -69,7 +69,7 @@
 			</div>
 		</div>
 			<hr>
-			<a href="/resources/etc/attraction.jsp">명소</a>
+			<a href="/attraction/list">명소</a>
 			<hr>
 			<a href="/resources/etc/restaurant.jsp">맛집</a>
 			<hr>
