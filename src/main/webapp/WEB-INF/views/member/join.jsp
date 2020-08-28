@@ -76,7 +76,7 @@ function jusoCallBack(roadFullAddr){
 	$('.idcheck').on('click', function(){
 		var url = "/member/idcheck?id=" + $('.container_id_input').val();
 		
-   		window.open(url, "idchk", "width=570,height=420, scrollbars=yes, resizable=yes");
+   		window.open(url, "idchk", "width=275, height=120, left=800, top=300, scrollbars=no, resizable=no");
 	}) 
     </script>
 </body>
