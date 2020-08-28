@@ -16,7 +16,5 @@ public interface Qna_BoardService {
 	// 게시물 조회
 	public Qna_BoardVO read(int bno) throws Exception;
 
-	// 게시물 삭제
-	public void delete(int bno) throws Exception;
 
 }

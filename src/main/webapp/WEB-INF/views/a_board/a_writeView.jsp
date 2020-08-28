@@ -18,7 +18,7 @@
 		</div>
 		<div class="WritingContent">
 			<form name="writeForm" method="post" action="/a_board/a_write">
-				<div class="WritingTitle">자유 게시판</div>
+				<div class="WritingTitle">명소 게시판</div>
 				<div>
 					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
 				</div>

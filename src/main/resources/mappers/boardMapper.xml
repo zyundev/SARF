@@ -64,7 +64,7 @@
 		WHERE RNUM BETWEEN #{rowStart} AND #{rowEnd}
 		ORDER BY BNO DESC
 	</select>
-	
+
 	<!-- 게시글 검색 -->
 	<select id="listCount" parameterType="com.sarf.vo.SearchCriteria" resultType="int">
 		SELECT COUNT(BNO)
@@ -73,7 +73,7 @@
 		<include refid="search"></include>	
 		   AND BNO > 0
 	</select>
-	
+
 	<sql id="search">
 		<if test="searchType != null">
 			<if test="searchType == 's'.toString()">AND SUBJECT LIKE '%' || #{keyword} || '%'</if>
@@ -82,7 +82,7 @@
 			<if test="searchType == 'sc'.toString()">AND (SUBJECT LIKE '%' || #{keyword} || '%') or (CONTENT LIKE '%' || #{keyword} || '%')</if>
 		</if>
 	</sql>
-	
+
 	<!-- 조회수 증가 -->
 	<update id="updateCount" parameterType="int">
 		UPDATE F_BOARD SET

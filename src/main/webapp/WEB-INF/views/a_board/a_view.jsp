@@ -188,8 +188,7 @@ while(se.hasMoreElements()){
 						</div>
 					</c:forEach>
 				</div>
-
-
+				
 			</div>
 
 			<div class="top_btn" style="padding-bottom: 13px">

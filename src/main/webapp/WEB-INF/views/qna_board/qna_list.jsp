@@ -41,17 +41,20 @@ while(se.hasMoreElements()){
         	</tr>
     	</thead>
     	<tbody>
-	        <tr>
-	            <td>1</td>
-    	        <td>Clothing</td>
-        	    <td>Jacket</td>
-	           	<td>11</td>
-    	        <td>답변안됨</td>
-	        </tr>
+				<c:forEach items="${list}" var="list">
+					<tr>
+						<td><c:out value="${list.bno}"></c:out></td>
+						<td class="tit">
+							<a href="/qna_board/qna_view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
+						</td>
+						<td><c:out value="${list.name}"></c:out></td>
+						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
+					</tr> 
+				</c:forEach>
 	    </tbody>
 	</table>
 	            <div style="float:right">
-				  <button class="write_btn" onclick="location.href='write.html'">등 록</button> 
+				  <button class="write_btn" onclick="location.href='/qna_board/qna_writeView'">글쓰기</button> 
 			      </div>
 	
 	</div>
