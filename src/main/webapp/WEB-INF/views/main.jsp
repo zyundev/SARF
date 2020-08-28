@@ -90,6 +90,7 @@
 		</div>
 			<hr>
 			<a href="/resources/etc/intro.jsp">운영진 소개</a>
+			<hr>
 			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
 			<c:choose>
          	<c:when test="${member == null}">
@@ -97,7 +98,7 @@
          		<button class="menubar-button" id="login" onclick="location.href='/member/login'">로그인</button>
          	</c:when>
 	        <c:otherwise>
-	        	<div>${member.getId()} 님</div>
+	        	<div id="user-id-info">${member.getId()} 님</div>
 	        	<button class="menubar-button" id="updateuser" onclick="location.href='/member/updatemember'">회원정보수정</button>
 				<button class="menubar-button" id="logout" onclick="location.href='/member/logout'">로그아웃</button>
 			</c:otherwise>
