@@ -43,11 +43,18 @@ public class Qna_BoardController {
 
 		PageMaker pageMaker = new PageMaker();
 		pageMaker.setCri(scri);
-		pageMaker.setTotalCount(service.listCount(scri));
 		
 		model.addAttribute("pageMaker", pageMaker);
 		
 		return "/qna_board/qna_list";
+	}
+	
+	// 게시판 목록 조회
+	@RequestMapping(value = "/faq", method = RequestMethod.GET)
+	
+	public String list() throws Exception{
+		
+		return "/qna_board/faq";
 	}
 
 	// 게시판 글 작성 화면
@@ -64,13 +71,12 @@ public class Qna_BoardController {
 		MemberVO memberVO = (MemberVO) session.getAttribute("member");
 		String boardId = memberVO.getId();
 		boardVO.setName(boardId);
-
 		service.write(boardVO);
 		return "redirect:/qna_board/qna_list";
 	}
 		
 	// 게시물 조회
-	@RequestMapping(value = "/a_view", method = RequestMethod.GET)
+	@RequestMapping(value = "/qna_view", method = RequestMethod.GET)
 	public String read(Qna_BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
 		logger.info("뷰");
 			
@@ -92,25 +98,6 @@ public class Qna_BoardController {
 			
 		return "qna_board/qna_updateView";
 	}
-		
-	// 게시물 수정
-	@RequestMapping(value = "/qna_update", method = RequestMethod.POST)
-	public String update(Qna_BoardVO boardVO) throws Exception{
-		logger.info("없데이트");
-			
-		service.update(boardVO);
-			
-		return "redirect:/qna_board/qna_list";
-	}
 
-	// 게시물 삭제
-	@RequestMapping(value = "/qna_delete", method = RequestMethod.POST)
-	public String delete(Qna_BoardVO boardVO) throws Exception{
-		logger.info("딜리트");
-			
-		service.delete(boardVO.getBno());
-			
-		return "redirect:/qna_board/qna_list";
-	}
 
 }

@@ -1,0 +1,104 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+div{
+	width: 1024px;
+	margin: auto;
+}
+a:link, a:visited {
+	text-decoration: none; 
+	color: #656565;
+} 
+.board_view {
+	width:100%;
+	border-bottom:1px solid #ccc;
+    border-collapse: collapse;
+	margin-top: 30px;
+} 
+.board_view tbody th {
+	text-align:left;
+	background:#f7f7f7;
+	color:#3b3a3a;
+	
+} 
+.board_view tbody th, .board_view tbody td {
+	padding:15px 0 16px 16px;
+	border-bottom:1px solid #ccc;
+} 
+
+.btn {
+	border-radius:3px;
+	padding:5px 11px;
+	color:#fff !important; 
+	display:inline-block; 
+	background-color:#6b9ab8; 
+	border:1px solid #56819d;
+	vertical-align:middle;
+	float: right;
+	margin-top: 10px;
+	margin-left: 5px;
+}
+}
+.comment_box{
+	display: inline-block;
+    margin-top: 10px;
+    border-top: 1px solid #ddd;
+}
+.comment_inbox {
+    position: relative;
+    margin-bottom: 10px;
+}
+.comment_inbox_name {
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 13px;
+	padding: 8px 8px 0px 8px;;
+}
+.comment_writer {
+	border-top: 30px;
+	width: 95%;
+	height: 270px;
+    padding: 10px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    box-sizing: border-box;
+    background: white;
+	margin-top: 20px;
+}
+.cmt_write_box{
+	width: 700px;
+    padding: 8px;
+  	line-height: 18px;
+  	resize: none;
+	overflow: hidden;
+	border: 0px solid #aaa;
+	width: 935px;
+	height: 170px;
+}
+.input_box{
+	display: inline-block;
+	width: 940px;
+	height: 30px;
+}
+.input_button{
+	display: inline-block;
+    min-width: 35px;
+    height: 34px;
+    font-size: 15px;
+    color: #b7b7b7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    font-weight: 700;
+    text-align: center;
+    vertical-align: top;
+	float: right;
+}
+.comment_inbox_name {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 13px;
+	padding: 8px 8px 0px 8px;;
+}
