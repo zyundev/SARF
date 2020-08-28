@@ -168,9 +168,11 @@ while(se.hasMoreElements()){
 			<option value="n"<c:out value="${scri.searchType eq 'n' ? 'selected' : ''}"/>>작성자</option>
 			<option value="sc"<c:out value="${scri.searchType eq 'sc' ? 'selected' : ''}"/>>제목+내용</option>
 		</select> 
+
 		<span class='green_window'> 
-			<input name="keyword" id="keywordInput" value="${scri.keyword}" type='text' class='input_text' />
+			<input name="keyword" id="keywordInput" value="${scri.keyword}" type='text' onkeypress="if( event.keyCode==13 ){goSearch();}" class='input_text' />
 		</span>
+
 		<button id="searchBtn" type="button" class='sch_smit'>검색</button>
 	</div>
 	<script>
@@ -187,6 +189,11 @@ while(se.hasMoreElements()){
 				}
  			});
 		});
+
+		function goSearch(){
+			//..
+				self.location = "list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+			}
 	</script>
 	
 	<div class="wrapper">
