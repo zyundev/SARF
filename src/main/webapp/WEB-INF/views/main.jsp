@@ -77,6 +77,7 @@
 			<hr>
 			<a href="/resources/etc/festival.jsp">축제</a>
 			<hr>
+
 		<div class="board">
 			<a class="cursor">고객센터</a>
 			<div>

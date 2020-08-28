@@ -7,7 +7,7 @@
 	<title>Document</title>
 
 <link rel="stylesheet" href="/resources/css/qna_write.css">
-<link rel="stylesheet" href="/resources/css/qna.css">
+
 <!-- 구글 나눔고딕-->
  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap">	
 </head>
@@ -32,6 +32,9 @@
         </tr>  
 		<tr class="namemail">
           <th>이메일</th><td>${member.email}</td>
+        </tr>  
+		<tr>
+          <th>내용</th><td><textarea name="content" placeholder="문의할 내용을 적어주세요."></textarea></td>
 
 	</table>
 			<div>
