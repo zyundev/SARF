@@ -26,21 +26,6 @@
 		 FROM QNA_BOARD
 		 WHERE BNO = #{bno}
 	</select>
-
-	<!-- 게시물 수정 -->
- 	<update id="update" parameterType="com.sarf.vo.Qna_BoardVO">
-		UPDATE QNA_BOARD
-		   SET SUBJECT = #{subject},
-		   	   CONTENT = #{content}
-		 WHERE BNO = #{bno} 
-	</update>
-	
-	<!-- 게시물 삭제 -->
- 	<delete id="delete" parameterType="int">
-		DELETE 
-		  FROM QNA_BOARD
-		 WHERE BNO = #{bno}
-	</delete>
 	
 	<!-- 게시판 페이지 -->
 	<select id="listPage" resultType="com.sarf.vo.Qna_BoardVO" parameterType="com.sarf.vo.SearchCriteria">
@@ -81,8 +66,6 @@
 			<if test="searchType == 'sc'.toString()">AND (SUBJECT LIKE '%' || #{keyword} || '%') or (CONTENT LIKE '%' || #{keyword} || '%')</if>
 		</if>
 	</sql>
-
-	
 </mapper>
 
 

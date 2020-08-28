@@ -40,6 +40,7 @@
     </script>
 </head>
 <body>
+<<<<<<< HEAD
 
 <header>
 	<%@ include file="../board/head.jsp"%>
@@ -110,6 +111,7 @@
    <footer>
 	<%@ include file="../board/footer.jsp"%>
    </footer>
+
 
    </body>
 </html>

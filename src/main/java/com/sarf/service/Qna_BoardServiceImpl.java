@@ -1,6 +1,6 @@
 package com.sarf.service;
 
-import java.util.List;	
+import java.util.List;
 
 import javax.inject.Inject;
 
@@ -28,8 +28,11 @@ public class Qna_BoardServiceImpl implements Qna_BoardService{
 		dao.write(boardVO);
 	}
 
+
+	// 게시물 조회
 	@Override
 	public Qna_BoardVO read(int bno) throws Exception {
+
 		return dao.read(bno);
 	}
 }

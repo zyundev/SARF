@@ -21,7 +21,6 @@ public class Qna_BoardDAOImpl implements Qna_BoardDAO{
 		return sqlSession.selectList("qna_boardMapper.list", scri);
 	}
 
-
 	@Override
 	public void write(Qna_BoardVO boardVO) throws Exception {
 		sqlSession.insert("qna_boardMapper.write", boardVO);
@@ -32,7 +31,6 @@ public class Qna_BoardDAOImpl implements Qna_BoardDAO{
 	public Qna_BoardVO read(int bno) throws Exception {
 		return sqlSession.selectOne("qna_boardMapper.read", bno);
 	}
-
 
 	
 }
