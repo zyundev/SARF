@@ -18,8 +18,9 @@ public class Qna_BoardDAOImpl implements Qna_BoardDAO{
 	
 	@Override
 	public List<Qna_BoardVO> list(SearchCriteria scri) throws Exception {
-		return sqlSession.selectList("qna_boardMapper.listPage", scri);
+		return sqlSession.selectList("qna_boardMapper.list", scri);
 	}
+
 
 	@Override
 	public void write(Qna_BoardVO boardVO) throws Exception {
@@ -32,9 +33,6 @@ public class Qna_BoardDAOImpl implements Qna_BoardDAO{
 		return sqlSession.selectOne("qna_boardMapper.read", bno);
 	}
 
-	@Override
-	public void delete(int bno) throws Exception {
-		sqlSession.delete("qna_boardMapper.delete", bno);
-	}
+
 	
 }

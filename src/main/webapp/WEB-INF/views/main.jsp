@@ -77,9 +77,9 @@
 			<hr>
 			<a href="/resources/etc/festival.jsp">축제</a>
 			<hr>
-			
+
 		<div class="board">
-			<a href="/qna_board/faq">고객센터</a>
+			<a class="cursor">고객센터</a>
 			<div>
 				<a href="/qna_board/faq"><button style="margin-right:120px" class="bd menubar-button">- QnA</button></a>
 				<br>				
@@ -88,7 +88,6 @@
 				</p>				
 			</div>
 		</div>
-			
 			<hr>
 			<a href="/resources/etc/intro.jsp">운영진 소개</a>
 			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
