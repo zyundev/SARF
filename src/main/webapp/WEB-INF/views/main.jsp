@@ -503,35 +503,17 @@
             <br>
             <br>
     
-            <img src="/resources/images/att_image/Dong/Am_1.jpg" alt="강동3" width="300px"
+            <img class = "Dong_1" src="/resources/images/att_image/Dong/Am_1.jpg" alt="강동3" width="350px"
 					height="300px">  
                 
-         &nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp; 
-               &nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;&nbsp; 
-                     &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        
-                        &nbsp;&nbsp;&nbsp; 
-                        
-                        &nbsp;&nbsp;&nbsp; 
-                        
-           <img src="/resources/images/res_image/Dong_2/Bong_1.png" alt="강동3" width="300px"
+
+           <img class = "Dong_2" src="/resources/images/res_image/Dong_2/Bong_1.png" alt="강동3" width="350px"
 					height="300px">    
-          &nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp; 
-               &nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;&nbsp; 
-                     &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
+   
+   
                         
                         
-                        
-                        
-          <img src="/resources/images/fes_image/Dong_3/Moon_1.jpg" alt="강동3" width="300px"
+          <img class = "Dong_3" src="/resources/images/fes_image/Dong_3/Moon_1.jpg" alt="강동3" width="350px"
 					height="300px">    
             <br>
             <br>
@@ -545,36 +527,19 @@
             <br>
             <br>
     
-            <img src="/resources/images/att_image/Seo/Hu_1.jpg" alt="강서" width="350px"
+            <img class = "Seo_1" src="/resources/images/att_image/Seo/Hu_1.jpg" alt="강서" width="350px"
 					height="300px">  
 					
-					          &nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp; 
-               &nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;&nbsp; 
-                     &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        
-                
+					    
            
-           
-           <img src="/resources/images/res_image/Seo_2/Cal_1.png" alt="강서" width="350px"
+           <img class = "Seo_2" src="/resources/images/res_image/Seo_2/Cal_1.png" alt="강서" width="350px"
 					height="300px">  
 					
-					          &nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp; 
-               &nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;&nbsp; 
-                     &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
+					
                           
                 
                 
-          <img src="/resources/images/fes_image/Seo_3/Han_1.jpg" alt="강서" width="350px"
+          <img class = "Seo_3" src="/resources/images/fes_image/Seo_3/Han_1.jpg" alt="강서" width="350px"
 					height="300px">    
             
             
@@ -591,36 +556,20 @@
             <br>
             <br>
     
-            <img src="/resources/images/att_image/Nam/Aqua_1.jpg" alt="강남" width="350px"
+            <img class = "Nam_1" src="/resources/images/att_image/Nam/Aqua_1.jpg" alt="강남" width="350px"
 					height="300px">  
                 
-                
-                          &nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp; 
-               &nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;&nbsp; 
-                     &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
+               
                         
            
            
-           <img src="/resources/images/res_image/Nam_2/Ro_1.png" alt="강남" width="350px"
+           <img class = "Nam_2" src="/resources/images/res_image/Nam_2/Ro_1.png" alt="강남" width="350px"
 					height="300px">    
 					
-					          &nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp; 
-               &nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;&nbsp; 
-                     &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        
+		
                 
                 
-          <img src="/resources/images/fes_image/Nam_3/Eat_1.jpg" alt="강남" width="350px"
+          <img class = "Nam_3" src="/resources/images/fes_image/Nam_3/Eat_1.jpg" alt="강남" width="350px"
 					height="300px">    
             
             
@@ -638,36 +587,19 @@
             <br>
             <br>
     
-            <img src="/resources/images/att_image/Book/Gyeong_1.jpg" alt="강북" width="350px"
+            <img class = "Buk_1" src="/resources/images/att_image/Book/Gyeong_1.jpg" alt="강북" width="350px"
 					height="300px">  
 					
-					          &nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp; 
-               &nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;&nbsp; 
-                     &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        
-                
+				
            
            
-           <img src="/resources/images/res_image/Book_2/Mi_1.png" alt="강북" width="350px"
+           <img class = "Buk_2" src="/resources/images/res_image/Book_2/Mi_1.png" alt="강북" width="350px"
 					height="300px">    
 					
-					          &nbsp;&nbsp;&nbsp; 
-            &nbsp;&nbsp;&nbsp; 
-               &nbsp;&nbsp;&nbsp; 
-                  &nbsp;&nbsp;&nbsp; 
-                     &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        &nbsp;&nbsp;&nbsp; 
-                        
+		
                 
                 
-          <img src="/resources/images/fes_image/Book_3/Light_1.jpg" alt="강북" width="350px"
+          <img  class = "Buk_3" src="/resources/images/fes_image/Book_3/Light_1.jpg" alt="강북" width="350px"
 					height="300px">    
             
             
