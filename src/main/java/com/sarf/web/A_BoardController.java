@@ -35,7 +35,7 @@ import com.sarf.vo.SearchCriteria;
 @RequestMapping("/a_board/*")
 public class A_BoardController {
 
-	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
+	private static final Logger logger = LoggerFactory.getLogger(A_BoardController.class);
 
 	@Inject
 	A_BoardService service;

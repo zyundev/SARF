@@ -10,39 +10,55 @@ import com.sarf.dao.Att_BoardDAO;
 import com.sarf.vo.Att_BoardVO;
 
 @Service
-public class Att_BoardServiceImpl implements Att_BoardService{
-
+public class Att_BoardServiceImpl implements Att_BoardService {
 	@Inject
 	private Att_BoardDAO dao;
 	
-	// 댓글 목록
+	// 게시물 목록 조회 강동
 	@Override
-	public List<Att_BoardVO> readReply(int bno) throws Exception {
-		return dao.readReply(bno);
+	public List<Att_BoardVO> list1() throws Exception {
+		return dao.list1();
 	}
 	
-	// 댓글 작성
+	// 게시물 목록 조회 강서
 	@Override
-	public void writeReply(Att_BoardVO vo) throws Exception {
-		dao.writeReply(vo);
-	}
-
-	// 댓글 수정
-	@Override
-	public void updateReply(Att_BoardVO vo) throws Exception {
-		dao.updateReply(vo);
+	public List<Att_BoardVO> list2() throws Exception {
+		return dao.list2();
 	}
 	
-	// 선택된 댓글 조회
+	// 게시물 목록 조회 강남
 	@Override
-	public Att_BoardVO selectReply(int rno) throws Exception {
-		return dao.selectReply(rno);
+	public List<Att_BoardVO> list3() throws Exception {
+		return dao.list3();
+	}
+	
+	// 게시물 목록 조회 강북
+	@Override
+	public List<Att_BoardVO> list4() throws Exception {
+		return dao.list4();
+	}
+	
+	// 게시물 수정뷰 조회
+	@Override
+	public Att_BoardVO updateview(int bno) throws Exception {
+		return dao.updateview(bno);
 	}
 
-	// 댓글 삭제
+	// 게시글 작성
 	@Override
-	public void deleteReply(Att_BoardVO vo) throws Exception {
-		dao.deleteReply(vo);
+	public void write(Att_BoardVO boardVO) throws Exception {
+		dao.write(boardVO);
 	}
 
+	// 게시물 수정
+	@Override
+	public void update(Att_BoardVO boardVO) throws Exception {
+		dao.update(boardVO);
+	}
+
+	// 게시물 삭제
+	@Override
+	public void delete(int bno) throws Exception {
+		dao.delete(bno);
+	}
 }
