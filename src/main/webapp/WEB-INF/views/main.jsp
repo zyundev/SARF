@@ -5,6 +5,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+#container #Dong {
+  font-family: 'Noto Sans KR', sans-serif;
+  
+  font-size: 20px;
+}
+#container #Seo {
+  font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+  
+}
+#container #Nam {
+  font-family: 'Noto Sans KR', sans-serif;
+   font-size: 20px;
+  
+}
+
+#container #Buk {
+
+  font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+  
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -12,6 +37,7 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link rel="stylesheet" href="/resources/css/main.css" />
 <link rel="stylesheet" href="/resources/css/css_menu.css" />
+
 <link href = "https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel = "stylesheet">
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -485,10 +511,10 @@
     
 	<div id="container">
    
-    <div id = "Dong"> * 강동</div>
-    <div id = "Seo"> * 강서</div>
-    <div id = "Nam"> * 강남</div>
-    <div id = "Buk"> * 강북</div>
+    <div id = "Dong"> ※ 강동</div>
+    <div id = "Seo"> ※ 강서</div>
+    <div id = "Nam"> ※ 강남</div>
+    <div id = "Buk"> ※ 강북</div>
 
 		<ul class="tab">
 		
@@ -705,7 +731,7 @@
 
       function scrollWindow() {
 
-       window.scroll({ top: 710, left: 0, behavior: 'smooth' });
+       window.scroll({ top: 735, left: 0, behavior: 'smooth' });
       	
 
         }

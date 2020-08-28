@@ -30,11 +30,11 @@ $(document).ready(function() {
 			$("#sub").focus();
 			return false;
 		}
-		if($("#content").val().length == 0) {
+		/* if($("#content").val().length == 0) {
 			alert("내용을 입력해주세요.");
 			$("#content").focus();
 			return false;
-		}
+		} */
 	})
 })
 </script>
@@ -70,6 +70,10 @@ $(document).ready(function() {
 			            elPlaceHolder: "content",
 			            sSkinURI: "/se2/SmartEditor2Skin.html",
 			            fCreator: "createSEditor2",
+			            htParams: { 
+			            	bUseVerticalResizer : false,
+			            	fOnBeforeUnload : function(){}
+			            }  
 			        });
 			        function submitContents(elClickedObj) {
 			            // 에디터의 내용이 textarea에 적용됩니다.
