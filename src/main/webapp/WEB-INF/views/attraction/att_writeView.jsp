@@ -121,9 +121,9 @@ h3 {
 				<div style="height: 400px; padding: 5px 13px 5px 13px; border: 1px solid #ebecef;">
 					<textarea placeholder="내용을 입력해 주세요." name="content" style="resize: none; font-size: 15px;"></textarea>
 				</div>
-				<!-- 더알아보기  -->
+				<!-- 더 알아보기  -->
 				<div>
-					<input type="text" name="link" placeholder="더알아보기 링크">
+					<input type="text" name="link" placeholder="더 알아보기 링크" value="http://">
 				</div>
 				<!-- 이미지 업로드 -->
 				<input type="file" name="file">
