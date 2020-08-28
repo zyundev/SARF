@@ -481,10 +481,16 @@
 </div> 
     
     
+    
 	<div id="container">
    
+    <div id = "Dong"> * 강동</div>
+    <div id = "Seo"> * 강서</div>
+    <div id = "Nam"> * 강남</div>
+    <div id = "Buk"> * 강북</div>
 
 		<ul class="tab">
+		
             <li  data-tab="tab1" class = "cool-link">#명소</li>
             <li data-tab="tab2" class = "cool-link" >#맛집</li>
 			<li data-tab="tab3" class = "cool-link" >#축제</li>
@@ -497,7 +503,6 @@
         
         
         <div id="tab1" class="tabcontent current">
-            
             <Br>
             <br>
             <br>
@@ -639,9 +644,20 @@
     
     
      $(function() {
+
+		 $('#Dong').hide();
+    	 $('#Seo').hide();
+		 $('#Nam').hide();
+		 $('#Buk').hide();
+
+          
          
          $('.Gangdong').click(function() {
-
+			 $('#Dong').show();
+			 $('#Seo').hide();
+			 $('#Nam').hide();
+			 $('#Buk').hide();
+			 
              $('#tab1').show();
              $('#tab2').hide();
              $('#tab3').hide();
@@ -649,18 +665,35 @@
          })
          
          $('.Gangseo').click(function() {
-             $('#tab2').show();
+             $('#Seo').show();
+			 $('#Dong').hide();
+			 $('#Nam').hide();
+			 $('#Buk').hide();
+
+             $('#tab2').show();   
              $('#tab1').hide();
              $('#tab3').hide();
              $('#tab4').hide();
          })
          $('.Gangnam').click(function() {
+
+        	 $('#Nam').show();
+			 $('#Dong').hide();
+			 $('#Seo').hide();
+			 $('#Buk').hide();
+			 
              $('#tab3').show();
              $('#tab1').hide();
              $('#tab2').hide();
              $('#tab4').hide();
          })
          $('.Gangbuk').click(function() {
+
+        	 $('#Buk').show();
+			 $('#Dong').hide();
+			 $('#Seo').hide();
+			 $('#Nam').hide();
+			 
              $('#tab4').show();
              $('#tab1').hide();
              $('#tab2').hide();
@@ -671,7 +704,7 @@
 
       function scrollWindow() {
 
-       window.scroll({ top: 970, left: 0, behavior: 'smooth' });
+       window.scroll({ top: 710, left: 0, behavior: 'smooth' });
       	
 
         }
