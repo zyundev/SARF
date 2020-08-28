@@ -10,10 +10,9 @@
 </head>
 <script type="text/javascript">
    $(document).ready(function() {
-
       $(".cancel_btn").on("click", function() {
          event.preventDefault();
-         location.href = "/attraction/list"; /* action 경로 수정 */
+         location.href = "/attraction/list";
       })
    })
 </script>
@@ -28,9 +27,8 @@
          <form name="updateForm" method="post" action="/attraction/update"> 
             <div class="UpdateTitle">명소게시판 수정</div>
             <div>   
-            <!-- key 값 보내기 위함 -->
             <select name="newkey">
-            	<option>지역을 선택해주세요.</option>
+            	<option value="wrong" selected>지역을 선택해주세요.</option>
 				<option value="EAST">강동</option>
 				<option value="WEST">강서</option>
 				<option value="SOUTH">강남</option>
