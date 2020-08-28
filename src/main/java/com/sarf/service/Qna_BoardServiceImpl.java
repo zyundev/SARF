@@ -28,16 +28,8 @@ public class Qna_BoardServiceImpl implements Qna_BoardService{
 		dao.write(boardVO);
 	}
 
-	// 게시물 삭제
-	@Override
-	public void delete(int bno) throws Exception {
-		dao.delete(bno);
-	}
-
-	// 게시물 조회
 	@Override
 	public Qna_BoardVO read(int bno) throws Exception {
-
 		return dao.read(bno);
 	}
 }
