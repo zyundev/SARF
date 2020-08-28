@@ -60,5 +60,4 @@ public class Att_BoardDAOImpl implements Att_BoardDAO{
 	public void delete(int bno) throws Exception {
 		sqlSession.delete(mapper + ".delete", bno);
 	}
-
 }

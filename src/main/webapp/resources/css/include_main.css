@@ -1,0 +1,145 @@
+/*
+            *{border: 1px solid red;}
+        */
+@media ( max-width :1300px) {
+	body {
+		position: absolute;
+	}
+}
+
+/* Header */
+.header {
+	position: relative;
+	width: 100%;
+}
+
+.logo {
+	z-index: 1;
+	position: absolute;
+	margin-top: 2.5px;
+	left: 50%;
+	/* margin-left:-(濡쒓퀬width/2) */
+	margin-left: -150px;
+}
+
+.logo img {
+	cursor: pointer;
+}
+
+.menu {
+	float: right;
+	margin-top: 30px;
+	margin-right: 30px;
+}
+
+.cursor{
+	cursor:Default;
+}
+
+/* main-article1 */
+.map {
+	text-align: center;
+	padding: 120px;
+	padding-top: 110px;
+	padding-bottom: 50px;
+	margin-bottom: 30px;
+}
+
+.map img {
+	max-width: 1000px;
+	max-height: 755px;
+	min-width: 1000px;
+	min-height: 755px;
+	/*
+            min-width: 760px;
+            min-height: 600px;
+            */
+}
+
+/* main-article2 */
+.popup {
+	text-align: center;
+	font-size: 30px;
+	margin-top: 80px;
+	margin-bottom: 80px;
+}
+
+.popup div {
+	display: inline-block;
+	margin: 20px;
+}
+
+/* main-article3 */
+.intro {
+	background: url('../images/intro.jpg') no-repeat center center/cover;
+	padding: 100px 20px;
+	text-align: center;
+	margin-bottom: 50px;
+}
+
+.intro p {
+	text-align: center;
+	color: white;
+	font-size: 35px;
+}
+
+.intro button {
+	background: #eebd07;
+	font-size: 15px;
+	display: block;
+	max-width: 200px;
+	width: 100%;
+	margin: 20px auto 0;
+	color: #333;
+	border-radius: 50px;
+	padding: 12px 0;
+	font-weight: 500;
+}
+
+/* footer */
+footer {
+	margin-top: 100px;
+	text-align: center;
+	font-size: 15px;
+}
+
+/* 臾   뿴由  */
+.imgsize {
+	width: 100%;
+	height: 100%;
+}
+
+.ldoor {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	left: 0;
+	animation: ldoor 6.5s forwards;
+}
+
+.rdoor {
+	width: 50%;
+	height: 100%;
+	position: absolute;
+	right: 0;
+	animation: rdoor 6.5s forwards;
+}
+
+@keyframes ldoor {
+	from {left: 0%
+}
+
+to {
+	left: -50%
+}
+
+}
+
+@keyframes rdoor {
+	from {right: 0%
+}
+
+to {
+	right: -50%
+}
+}

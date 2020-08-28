@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
 body {
-    background-color: aliceblue;
     font-family: 'Jua', sans-serif;
 }
 .card-wrapper {
@@ -13,6 +12,7 @@ body {
 .char-wrapper {
     position: fixed;
     left: -0.8vw;
+    top: -10px;
 }
 
 .chasing-img {
@@ -23,14 +23,14 @@ body {
     position: absolute;
 }
 .speech-bubble {
-    background: #FFFFFF;
+    background: aliceblue;
 	border-radius: 50%;
 	box-shadow: 
-		#FFFFFF 125px -0px 0 -10px, 
-		#FFFFFF 50px -50px, 
-		#FFFFFF 60px 20px, 
-		#FFFFFF 120px 30px 0 -20px, 
-		#FFFFFF 170px 10px 0 -10px;
+		aliceblue 125px -0px 0 -10px, 
+		aliceblue 50px -50px, 
+		aliceblue 60px 20px, 
+		aliceblue 120px 30px 0 -20px, 
+		aliceblue 170px 10px 0 -10px;
     top: 43vh;
     left:5.5vw;
     position: absolute;
@@ -48,7 +48,7 @@ body {
     position: absolute;
 }
 .semi-bubble_1 {
-    background: #FFFFFF;
+    background: aliceblue;
     border: 1px solid transparent;
     top: 56vh;
     left:11vw;
@@ -58,7 +58,7 @@ body {
     border-radius: 100px;
 }
 .semi-bubble_2 {
-    background: #FFFFFF;
+    background: aliceblue;
     border: 1px solid transparent;
     top: 59vh;
     left:10vw;
@@ -67,22 +67,11 @@ body {
     position: absolute;
     border-radius: 100px;
 }
-.card_1 {
-    position: absolute;
-    top: 25.75em;
-    left: 40em;
-    transform: translate(-50%, -50%); 
-    width: 12.5em;
-    height: 18.75em;
-    background: #262626;
-    overflow: hidden;
+header {
+	padding-top: 15px;
+	padding-bottom: 75px;
 }
-
-.card-wrapper {
-	display: flex;
-}
-
-.card_1 {
+/* .card_1 {
 	position: absolute;
 	top: 23.75em;
 	left: 40em;
@@ -91,11 +80,25 @@ body {
 	height: 18.75em;
 	background: #262626;
 	overflow: hidden;
+} */
+
+.card-wrapper {
+	display: flex;
 }
 
+.card_1 {
+    position: absolute;
+    top: 26.75em;
+    left: 40em;
+    transform: translate(-50%, -50%); 
+    width: 12.5em;
+    height: 18.75em;
+    background: #262626;
+    overflow: hidden;
+}
 .card_2 {
     position: absolute;
-    top: 25.75em;
+    top: 26.75em;
     left: 53.125em;
     transform: translate(-50%, -50%);
     width: 12.5em;
@@ -106,7 +109,7 @@ body {
 
 .card_3 {
     position: absolute;
-    top: 25.75em;
+    top: 26.75em;
     left: 66.25em;
     transform: translate(-50%, -50%);
     width: 12.5em;
@@ -117,7 +120,7 @@ body {
 
 .card_4 {
     position: absolute;
-    top: 25.75em;
+    top: 26.75em;
     left: 79.375em;
     transform: translate(-50%, -50%);
     width: 12.5em;
@@ -128,8 +131,8 @@ body {
 
 .card_5 {
     position: absolute;
-    top: 45.125em;
-    left: 45.625em;
+    top: 46.125em;
+    left: 46.625em;
     transform: translate(-50%, -50%);
     width: 12.5em;
     height: 18.75em;
@@ -139,8 +142,8 @@ body {
 
 .card_6 {
     position: absolute;
-    top: 45.125em;
-    left: 58.75em;
+    top: 46.125em;
+    left: 59.75em;
     transform: translate(-50%, -50%);
     width: 12.5em;
     height: 18.75em;
@@ -150,8 +153,8 @@ body {
 
 .card_7 {
     position: absolute;
-    top: 45.125em;
-    left: 71.875em;
+    top: 46.125em;
+    left: 72.875em;
     transform: translate(-50%, -50%);
     width: 12.5em;
     height: 18.75em;

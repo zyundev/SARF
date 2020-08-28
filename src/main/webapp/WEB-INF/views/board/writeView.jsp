@@ -27,7 +27,7 @@
 					기본적인 정보와 크기, 화면표시(표시되지 않음)으로 설정되어 있습니다. 이 부분에
 					스마트 에디터가 표시될 것입니다.
 				-->
-				<textarea id="content" name="content" class="content" placeholder="내용을 입력해 주세요."></textarea>
+				<textarea id="content" name="content" class="textarea_input" placeholder="내용을 입력해 주세요."></textarea>
 				<!-- SmartEditor2 -->
 				<script type="text/javascript">
 				/*
@@ -61,17 +61,9 @@
 						});
 					})
 				</script>
-				<!-- <script type="text/javascript" src = "/resources/js/notice-write.js"></script> -->
-				<div>
-					<div class="inputArea">
-						<label for="img">이미지</label> 
-							<input id="img" type="file" name="file" />
-						<div class="select_img"><img src="" /></div>
-					</div>
-				</div>
 				<div>
 					<button type="button" class="BaseButton" onclick="location.href='/board/list'">취소</button>
-					<button id="BaseButton"type="submit" class="BaseButton">등록</button>
+					<button id="BaseButton" type="submit" class="BaseButton">등록</button>
 				</div>
 			</form>
 		</div>
