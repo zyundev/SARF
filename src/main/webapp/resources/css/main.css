@@ -113,7 +113,7 @@ footer {
 /* 명소, 맛집, 축제  파트 */
 #container {
         
-			width: 2500px;
+			width: 1500px;
             height: 1000px;
 			margin:0 auto;
 			text-align:left;
@@ -151,7 +151,7 @@ footer {
 			padding: 14px 16px;
 			font-size: 30px;
 			transition:0.3s;
-            width: 800px;
+            width: 465px;
 
 		}
         
