@@ -77,7 +77,7 @@
 			<a href="/resources/etc/faq.jsp">고객센터</a>
 			<hr>
 			<a href="/resources/etc/intro.jsp">운영진 소개</a>
-			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
+			
 			<c:choose>
          	<c:when test="${member == null}">
          		<button class="menubar-button" id="signup" onclick="location.href='/member/join'">회원가입</button>

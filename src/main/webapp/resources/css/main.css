@@ -113,6 +113,7 @@ footer {
 	position: absolute;
 	left: 0;
 	animation: ldoor 6.5s forwards;
+	z-index:100;
 }
 
 .rdoor {
@@ -121,6 +122,20 @@ footer {
 	position: absolute;
 	right: 0;
 	animation: rdoor 6.5s forwards;
+	z-index:100;
+}
+
+.logo {
+	-webkit-animation: fadein 10s; /* Safari and Chrome */
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
 }
 
 @keyframes ldoor {
@@ -139,5 +154,4 @@ to {
 
 to {
 	right: -50%
-}
 }

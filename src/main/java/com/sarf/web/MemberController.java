@@ -6,11 +6,13 @@ import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sarf.service.MemberService;
@@ -28,6 +30,10 @@ public class MemberController {
 	// 메일 관련 
 	@Inject
 	UserMailSendService mailsender;
+	
+	// 암호화 기능 사용
+	@Inject
+	BCryptPasswordEncoder pwdEncoder;
 	
 	// ENABLE LOG
 	// 0 is off, 1 is on
@@ -49,6 +55,10 @@ public class MemberController {
 		if (debug == 1) {
 			logger.info("~~~post join~~~");
 		}
+		
+		String inputPass = vo.getPw();
+		String pwd = pwdEncoder.encode(inputPass);
+		vo.setPw(pwd);
 		
 		service.join(vo);
 		
@@ -73,15 +83,17 @@ public class MemberController {
 		}
 		
 		HttpSession session = req.getSession();
+		session.getAttribute("member");
 		MemberVO login = service.login(vo);
+		boolean pwdMatch = pwdEncoder.matches(vo.getPw(), login.getPw());
 		
-		if(login == null) {
+		if(login != null && pwdMatch == true) {
+			session.setAttribute("logincheck", true);
+			session.setAttribute("member", login);
+		} else {
 			//session.setAttribute("member", null);
 			rttr.addFlashAttribute("msg", false);
 			return "redirect:login";
-		}else {
-			session.setAttribute("logincheck", true);
-			session.setAttribute("member", login);
 		}
 		return "main";
 	}
@@ -116,6 +128,11 @@ public class MemberController {
 		if (debug == 1) {
 			logger.info("~~~post updatemember~~~");
 		}
+		
+		String inputPass = vo.getPw();
+		String pwd = pwdEncoder.encode(inputPass);
+		vo.setPw(pwd);
+		
 		service.updateMember(vo);
 		session.invalidate();
 		
@@ -139,22 +156,25 @@ public class MemberController {
 			logger.info("~~~post deletemember~~~");
 		}
 		
-		//세션에 있는 member를 가져와 member 변수에 넣어줍니다.
+		// 세션에 있는 member를 가져와 member 변수에 넣어줍니다.
 		MemberVO member = (MemberVO) session.getAttribute("member");
 		
 		// 세션에 있는 비밀번호
 		String sessionPass = member.getPw();
-		System.out.println("sessionpass~~~" + sessionPass);
+		System.out.println("sessionpass~~~ " + sessionPass);
 		
-		// vo로 들어오는 비밀번호
+		// vo로 들어오는 비밀번호를 암호화
 		String voPass = vo.getPw();
-		System.out.println("voPass~~~" + voPass);
+		String pwd = pwdEncoder.encode(voPass);
 		
-		if (!(sessionPass.equals(voPass))) {
+		System.out.println("pwd~~~ " + pwd);
+		
+		if (!(pwdEncoder.matches(vo.getPw(), sessionPass))) {
 			rttr.addFlashAttribute("msg", false);
 			
 			return "redirect:/member/deletemember";
 		}
+		
 		rttr.addFlashAttribute("deletemsg", false);
 		service.deleteMember(vo);
 		session.invalidate();
@@ -240,5 +260,15 @@ public class MemberController {
 			model.addAttribute("idcheck", true);
 			return "member/idcheck";
 		}
+	}
+	
+	// 패스워드 체크
+	@ResponseBody
+	@RequestMapping(value="/passChk", method = RequestMethod.POST)
+	public boolean passChk(MemberVO vo) throws Exception {
+
+		MemberVO login = service.login(vo);
+		boolean pwdChk = pwdEncoder.matches(vo.getPw(), login.getPw());
+		return pwdChk;
 	}
 }
