@@ -102,28 +102,6 @@ div[class="sidebar"] a:hover {
 	transition: all .35s;
 }
 
-hr {
-	width: 80%;
-	margin: 0 auto;
-}
-
-.menubar-button {
-	float: right;
-	margin-right: 10px;
-	margin-top: -5px;
-	padding-left: 9px;
-	border: 0;
-	outline: 0;
-	font-family: Jua;
-	font-size: 20px;
-	color: #B1B1B1;
-}
-
-.member-id-info {
-	margin-top: -12px;
-	padding-bottom: 7px;
-}
-
 button:hover {
 	color: #000;
 	cursor: pointer;

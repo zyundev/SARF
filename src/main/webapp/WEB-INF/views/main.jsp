@@ -36,75 +36,8 @@
    
    <!-- 로고 메뉴-->
 <header>
-    <!-- 로고 -->
-      <div class="logo">
-		<a href="./"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
-      </div>
-
-		<!-- 메뉴 -->
-		<input type="checkbox" id="menuicon"> <label for="menuicon">
-			<span></span> <span></span> <span></span>
-		</label>
-
-		<div class="sidebar">
-			<a href="/n_board/notice">공지사항</a>
-			<hr>
-		
-		<div class="board">
-			<a class="cursor">게시판</a>
-			<div>
-				<a href="/board/list"><button class="bd menubar-button">- 자유 게시판</button></a>
-				<br>				
-				<p>
-					<a href="/a_board/a_list"><button class="bd menubar-button">- 명소 게시판</button></a>
-				</p>				
-				<br>				
-				<p>
-					<a href="/r_board/r_list"><button class="bd menubar-button">- 맛집 게시판</button></a>
-				</p>				
-				<br>			
-				<p>
-					<a href="/v_board/v_list"><button class="bd menubar-button">- 축제 게시판</button></a>
-				</p>
-				
-				<br>
-			</div>
-		</div>
-			<hr>
-			<a href="/attraction/list">명소</a>
-			<hr>
-			<a href="/resources/etc/restaurant.jsp">맛집</a>
-			<hr>
-			<a href="/resources/etc/festival.jsp">축제</a>
-			<hr>
-
-		<div class="board">
-			<a class="cursor">고객센터</a>
-			<div>
-				<a href="/qna_board/faq"><button style="margin-right:120px" class="bd menubar-button">- QnA</button></a>
-				<br>				
-				<p>
-					<a href="/qna_board/qna_list"><button class="bd menubar-button">- 묻고 답하기</button></a>
-				</p>				
-			</div>
-		</div>
-			<hr>
-			<a href="/resources/etc/intro.jsp">운영진 소개</a>
-			<hr>
-			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
-			<c:choose>
-         	<c:when test="${member == null}">
-         		<button class="menubar-button" id="signup" onclick="location.href='/member/join'">회원가입</button>
-         		<button class="menubar-button" id="login" onclick="location.href='/member/login'">로그인</button>
-         	</c:when>
-	        <c:otherwise>
-	        	<div id="user-id-info">${member.getId()} 님</div>
-	        	<button class="menubar-button" id="updateuser" onclick="location.href='/member/updatemember'">회원정보수정</button>
-				<button class="menubar-button" id="logout" onclick="location.href='/member/logout'">로그아웃</button>
-			</c:otherwise>
-		 </c:choose>
-		</div>
-	</header>
+	<%@ include file="./main/head.jsp" %>
+</header>
 	<br>
 	<!-- 지도, 팝업, 소개 -->
 	
@@ -621,17 +554,12 @@
 			<button onclick="location.href='/resources/etc/intro.jsp'">Contact us</button>
 		</article>
 	</main>
-
-	<!-- 회사 소개 -->
+	
 	<footer>
-		<p>
-			(주)미래능력개발교육원 / 대표자:이충기 / 사업자번호:212-81-85877<br>
-			왕십리캠퍼스 : 서울시 성동구 왕십리로 303 4층<br>
-			강동캠퍼스 : 서울시 강동구 천호대로 1095 현대코아 3층<br>
-			Tel : 02-441-6006 / Fax : 02-428-9694 / 대표 E-mail : hongyoung81@daum.net / 개인정보보호책임자:김홍영
-		</p>
-		<p>Copyright &copy; 1986 (주)미래능력개발교육원 All Rights Reserved..</p>
+		<%@ include file="./main/footer.jsp" %>
 	</footer>
+
+	
 	<script>
 	
     
