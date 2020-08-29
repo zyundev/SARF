@@ -252,6 +252,7 @@ CREATE TABLE FST_BOARD(
 CREATE SEQUENCE FST_BOARD_SEQ;
 --DROP sequence FST_BOARD_SEQ;
 
+
 /************************/
 // QNA 게시판 테이블
 /************************/
