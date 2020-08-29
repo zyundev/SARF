@@ -95,6 +95,7 @@ h3 {
 	background-color:#4f9f4f;
 }
 </style>
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 	<div class="base-layout">
@@ -105,8 +106,8 @@ h3 {
 			<form name="writeForm" method="post" action="/attraction/write" enctype="multipart/form-data"> 
 				<!-- 구역 구분 -->
 				<div class="WritingTitle">명소 게시판
-					<select name="key">
-						<option>지역을 선택해주세요.</option>
+					<select class="keychk" name="key">
+						<option value="wrong" selected>지역을 선택해주세요.</option>
 						<option value="EAST">강동</option>
 						<option value="WEST">강서</option>
 						<option value="SOUTH">강남</option>
@@ -121,20 +122,30 @@ h3 {
 				<div style="height: 400px; padding: 5px 13px 5px 13px; border: 1px solid #ebecef;">
 					<textarea placeholder="내용을 입력해 주세요." name="content" style="resize: none; font-size: 15px;"></textarea>
 				</div>
-				<!-- 더알아보기  -->
+				<!-- 더 알아보기  -->
 				<div>
-					<input type="text" name="link" placeholder="더알아보기 링크">
+					<label>더 알아보기</label>
+					<input type="text" name="link" value="http://">
 				</div>
 				<!-- 이미지 업로드 -->
-				<input type="file" name="file">
-				<input type="file" name="file2">
-				<input type="file" name="file3">
+				<label>썸네일 이미지 1 </label><input type="file" name="file"><br>
+				<label>썸네일 이미지 2 </label><input type="file" name="file2"><br>
+				<label>썸네일 이미지 3 </label><input type="file" name="file3">
 				<div style="border: 1px solid black;">
-					<button type="submit" class="BaseButton">등록</button>
+					<button type="button" class="BaseButton" onclick="write_btn()">등록</button>
 					<button type="button" class="BaseButton" onclick="location.href='/attraction/list'">취소</button> 
 				</div>
 			</form>
 		</div>
 	</div>
+	<script>
+		function write_btn(){
+			if($('.keychk').val() == "wrong"){
+				alert('지역을 선택해주세요.');
+			}else{
+				submit();
+			}
+		}
+	</script>
 </body>
 </html>

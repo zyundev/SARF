@@ -7,16 +7,42 @@
 <head>
 <meta charset="UTF-8">
 <title>아이디 확인</title>
+<style>
+.div_id{
+    margin-left: 22px;
+    margin-top: 10px;
+}
+.close_btn {
+	margin-top: 15px;
+	margin-left: 100px;
+	display: inline-block;
+	font-weight: 700;
+	width: 44px;
+	height: 39px;
+	background: #fff;
+	font-weight: bold;
+	border: 1px solid #4f9f4f;
+	border-radius: 6px;
+	cursor: pointer;
+	box-shadow: inset 0 0 0 1px #4f9f4f!important;
+	transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
+}
+
+.close_btn:hover{
+	color:#ffffff;
+	background-color:#4f9f4f;
+}
+</style>
 </head>
 <body>
 	<c:choose>
 		<c:when test="${idcheck == false }">
-			<div>이미 사용중인 아이디입니다. 다른 아이디를 입력해 주세요.</div>
-			<button type="button" onclick="popupcloseX()">닫기</button>
+			<div class="div_id"><font color="#ff4444"><b>이미 사용중인 아이디</b></font>입니다. <br>다른 아이디를 입력해 주세요.</div>
+			<button class="close_btn" type="button" onclick="popupcloseX()">닫기</button>
 		</c:when>
 		<c:when test="${idcheck == true }">
-			<div>사용할 수 있는 아이디 입니다.</div>
-			<button type="button" onclick="popupcloseY()">닫기</button>
+			<div class="div_id"><font color="#4f9f4f"><b>사용할 수 있는 아이디</b></font>입니다.</div>
+			<button class="close_btn" type="button" onclick="popupcloseY()">닫기</button>
 		</c:when>
 	</c:choose>
 	<script>

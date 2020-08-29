@@ -3,11 +3,11 @@
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="boardMapper">
-	<!-- 게시판 목록 조회 -->
-	<select id="list" resultType="com.sarf.vo.BoardVO">
-	   SELECT *	FROM F_BOARD
-			ORDER BY BNO DESC
-	</select>
+   <!-- 게시판 목록 조회 -->
+   <select id="list" resultType="com.sarf.vo.BoardVO">
+      SELECT *   FROM F_BOARD
+         ORDER BY BNO DESC
+   </select>
 
 	<!-- 게시판 글 작성 -->
 	<insert id="write" >
@@ -90,16 +90,6 @@
 		WHERE BNO = #{BNO}
 	</update>
 </mapper>
-
-
-
-
-
-
-
-
-
-
 
 
 

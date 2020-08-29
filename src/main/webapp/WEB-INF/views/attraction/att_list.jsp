@@ -140,7 +140,7 @@ while(se.hasMoreElements()){
 		            <input type="hidden" value="${gangdonglist.getKey()}"/>
 					<h3>
 						# ${gangdonglist.getSubject()}
-						<button type="button" name="link" onclick="location.href='${gangdonglist.getLink()}'">더 알아보기</button>
+						<a href="${gangdonglist.getLink()}" target="_blank"><button type="button" name="link">더 알아보기</button></a>
 						<button type="button" class="button_1 update_btn" data-key="${gangdonglist.getKey()}" data-bno="${gangdonglist.getBno()}">수정</button>&nbsp;
 						<button type="button" class="button_2 delete_btn" data-key="${gangdonglist.getKey()}" data-bno="${gangdonglist.getBno()}">삭제</button>
 					</h3>   
@@ -232,6 +232,15 @@ while(se.hasMoreElements()){
 			<button type="button" class="writebtn">글 쓰기</button>
 		</div>
 	</div>
+	<script>
+			function scrollWindow_2() {
+				window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+			}
+		</script>
+		<button class = "top"  onclick="scrollWindow_2()"> Top </button>
+		<footer>
+			<%@ include file="/resources/etc/footer.jsp" %>
+		</footer>
 	<script>
 		$(function() {
 			$('ul.tab li').click(function() {

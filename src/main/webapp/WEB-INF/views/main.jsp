@@ -5,6 +5,31 @@
 <!DOCTYPE html>
 <html>
 <head>
+<style>
+@import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);
+#container #Dong {
+  font-family: 'Noto Sans KR', sans-serif;
+  
+  font-size: 20px;
+}
+#container #Seo {
+  font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+  
+}
+#container #Nam {
+  font-family: 'Noto Sans KR', sans-serif;
+   font-size: 20px;
+  
+}
+
+#container #Buk {
+
+  font-family: 'Noto Sans KR', sans-serif;
+    font-size: 20px;
+  
+}
+</style>
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
@@ -12,6 +37,7 @@
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 <link rel="stylesheet" href="/resources/css/main.css" />
 <link rel="stylesheet" href="/resources/css/css_menu.css" />
+
 <link href = "https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel = "stylesheet">
 
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -90,6 +116,7 @@
 		</div>
 			<hr>
 			<a href="/resources/etc/intro.jsp">운영진 소개</a>
+			<hr>
 			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
 			<c:choose>
          	<c:when test="${member == null}">
@@ -97,7 +124,7 @@
          		<button class="menubar-button" id="login" onclick="location.href='/member/login'">로그인</button>
          	</c:when>
 	        <c:otherwise>
-	        	<div>${member.getId()} 님</div>
+	        	<div id="user-id-info">${member.getId()} 님</div>
 	        	<button class="menubar-button" id="updateuser" onclick="location.href='/member/updatemember'">회원정보수정</button>
 				<button class="menubar-button" id="logout" onclick="location.href='/member/logout'">로그아웃</button>
 			</c:otherwise>
@@ -481,10 +508,16 @@
 </div> 
     
     
+    
 	<div id="container">
    
+    <div id = "Dong"> ※ 강동</div>
+    <div id = "Seo"> ※ 강서</div>
+    <div id = "Nam"> ※ 강남</div>
+    <div id = "Buk"> ※ 강북</div>
 
 		<ul class="tab">
+		
             <li  data-tab="tab1" class = "cool-link">#명소</li>
             <li data-tab="tab2" class = "cool-link" >#맛집</li>
 			<li data-tab="tab3" class = "cool-link" >#축제</li>
@@ -497,7 +530,6 @@
         
         
         <div id="tab1" class="tabcontent current">
-            
             <Br>
             <br>
             <br>
@@ -639,9 +671,20 @@
     
     
      $(function() {
+
+		 $('#Dong').hide();
+    	 $('#Seo').hide();
+		 $('#Nam').hide();
+		 $('#Buk').hide();
+
+          
          
          $('.Gangdong').click(function() {
-
+			 $('#Dong').show();
+			 $('#Seo').hide();
+			 $('#Nam').hide();
+			 $('#Buk').hide();
+			 
              $('#tab1').show();
              $('#tab2').hide();
              $('#tab3').hide();
@@ -649,18 +692,35 @@
          })
          
          $('.Gangseo').click(function() {
-             $('#tab2').show();
+             $('#Seo').show();
+			 $('#Dong').hide();
+			 $('#Nam').hide();
+			 $('#Buk').hide();
+
+             $('#tab2').show();   
              $('#tab1').hide();
              $('#tab3').hide();
              $('#tab4').hide();
          })
          $('.Gangnam').click(function() {
+
+        	 $('#Nam').show();
+			 $('#Dong').hide();
+			 $('#Seo').hide();
+			 $('#Buk').hide();
+			 
              $('#tab3').show();
              $('#tab1').hide();
              $('#tab2').hide();
              $('#tab4').hide();
          })
          $('.Gangbuk').click(function() {
+
+        	 $('#Buk').show();
+			 $('#Dong').hide();
+			 $('#Seo').hide();
+			 $('#Nam').hide();
+			 
              $('#tab4').show();
              $('#tab1').hide();
              $('#tab2').hide();
@@ -671,7 +731,7 @@
 
       function scrollWindow() {
 
-       window.scroll({ top: 970, left: 0, behavior: 'smooth' });
+       window.scroll({ top: 735, left: 0, behavior: 'smooth' });
       	
 
         }
