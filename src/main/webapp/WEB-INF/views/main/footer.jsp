@@ -4,8 +4,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>회사 주소</title>
-<link rel="stylesheet" href="/resources/css/css_include_menu.css" />
+<title>footer</title>
+<link rel="stylesheet" href="/resources/css/css_menu.css" />
 </head>
 <body>
 

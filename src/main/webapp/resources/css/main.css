@@ -227,17 +227,6 @@ footer {
 
 		}
 		
-		#user-id-info {
-			font-size: 21pt;
-    		text-align: center;
-    		float: left;
-    		padding-left: 44px;
-		}
-		
-		#signup, #login, #user-id-info, #updateuser, #logout {
-			padding-top: 1.5em;
-		}
-		
 		#container #tab1 .Dong_1 {
 		
 		 margin: 10px 45px;
