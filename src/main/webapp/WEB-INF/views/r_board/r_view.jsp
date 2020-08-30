@@ -142,7 +142,7 @@ while(se.hasMoreElements()){
 							<div class="comment_inbox">
 								
 								<em class="comment_inbox_name" >작성자 : ${member.id}</em>
-								<textarea class="content" name="content"></textarea>
+								<textarea class="content" name="content" onkeydown="return limitLines(this, event)" rows="2" style="overflow: hidden; overflow-wrap: break-word;"></textarea>
 								<div class="input_box">
 									<button type="button" id="replyWrite_btn"
 										class="input_button basebutton skin size">등록</button>
@@ -157,8 +157,31 @@ while(se.hasMoreElements()){
 				</c:otherwise>
 				</c:choose>
 				</div>
+			</div>
 
+				<div class="top_btn" style="padding-bottom: 13px">
+				<div class="left_area">
+					
+					<!-- 					<a class="basebutton skin size">이전글</a>
+		
+				<a class="basebutton skin size">다음글</a> -->
+
+
+
+					<!-- 목록 -->
+					<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
+				</div>
+				<div class="right_area">
+					<!-- 수정 -->
+					<button type="submit" class="basebutton skin size" id="update_btn">수정</button>
+					<!-- 삭제 -->
+					<button type="submit" class="basebutton skin size" id="delete_btn">삭제</button>
+				</div>
+			</div>
+			
+			<br><br>
 				<!-- 댓글 출력창-->
+			<div class="view_content">			
 			 	<div class="comment_box">
 					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
 					<c:forEach items="${replyList}" var="replyList">
@@ -170,8 +193,8 @@ while(se.hasMoreElements()){
 									<fmt:formatDate value="${replyList.regdate}"
 										pattern="yyyy-MM-dd HH:mm:ss" />
 								</p>
-								${replyList.content}
-								<div class="right_area">
+								<textarea style="overflow: hidden; outline: none;" readonly="readonly">${replyList.content}</textarea>
+								<div class="right_area_reply">
 								<c:choose>
 								<c:when test="${member.id == replyList.name}">
 								<button type="button" id="replyUpdate_btn"
@@ -186,21 +209,6 @@ while(se.hasMoreElements()){
 							</div>
 						</div>
 					</c:forEach>
-				</div>
-
-
-			</div>
-
-			<div class="top_btn" style="padding-bottom: 13px">
-				<div class="left_area">
-					<!-- 목록 -->
-					<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
-				</div>
-				<div class="right_area">
-					<!-- 수정 -->
-					<button type="submit" class="basebutton skin size" id="update_btn">수정</button>
-					<!-- 삭제 -->
-					<button type="submit" class="basebutton skin size" id="delete_btn">삭제</button>
 				</div>
 			</div>
 
@@ -220,6 +228,15 @@ while(se.hasMoreElements()){
 		}
 		return false;
 	})
+	
+	function limitLines(obj, e){
+		var numberOfLines = (obj.value.match(/\n/g) || []).length + 1,
+			maxRows = obj.rows;
+
+		if(e.which === 13 && numberOfLines === maxRows){
+			return false;
+		}
+	}
 	
 </script>
 </body>
