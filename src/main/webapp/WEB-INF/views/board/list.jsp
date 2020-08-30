@@ -22,8 +22,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/list.css">
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
 <style>
