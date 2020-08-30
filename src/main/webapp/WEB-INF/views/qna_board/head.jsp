@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <title></title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/include_main.css" />
-<link rel="stylesheet" href="/resources/css/css_include_menu.css" />
+<link rel="stylesheet" href="/resources/css/include_faq.css" />
+<link rel="stylesheet" href="/resources/css/faq_include_menu.css" />
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -25,7 +25,7 @@
       </div>
 
 		<!-- 메뉴 -->
-		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:-126.5px; margin-right: 17px;">
+		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:-119px; margin-right: 0.5px;">
 			<span></span> <span></span> <span></span>
 		</label>
 
