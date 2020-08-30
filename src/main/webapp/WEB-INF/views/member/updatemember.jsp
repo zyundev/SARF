@@ -12,11 +12,11 @@
 </head>
 
 <body>
-    <div class="logo">
-        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
-    </div>
     <form onsubmit="return chk()" method="post" action="updatemember">
         <div class="container">
+		    <div class="logo">
+		        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
+		    </div>
             <div class="container_main">회원 정보 수정</div>
             <div class="container_id">
                 <input class="container_id_input" type="text" name="id" value="${member.getId()}" readonly>
@@ -44,7 +44,7 @@
             </div>
             <div class="container_phone">
                 <input class="container_phone_input" type="text" name="phone" value="${member.getPhone()}" maxlength="20">
-                <div class="container_phone_div">전화번호</div>
+                <div class="container_phone_div">휴대폰번호</div>
             </div>
             <div class="container_update">
                 <input class="container_update_input" type="submit" value="정보 수정">

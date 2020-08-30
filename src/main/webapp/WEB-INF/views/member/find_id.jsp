@@ -128,7 +128,7 @@ input+div {
 	            <div class="container_email_div">이메일 주소</div>
 	        </div>
 	        <div class="container_login">
-	            <input type="submit" value="조회 하기">
+	            <input type="button" class="find_id_btn" value="조회 하기">
 	        </div>
 	        <c:if test="${findid != null}">
    				<div>아이디는 : ${findid.getId()} 입니다.</div>
@@ -137,6 +137,11 @@ input+div {
     </form>
     
     <script type="text/javascript">
+	    $('.find_id_btn').on('click', function(){
+			var url = "/member/canuseid?name=" + $('.container_name_input').val() + "&email=" + $('.container_email_input').val();
+			
+	   		window.open(url, "canuseid", "width=300, height=120, left=800, top=300, scrollbars=no, resizable=no");
+		})
         var name_div = $('.container_name_div');
         var name_input = $('.container_name_input');
         var email_div = $('.container_email_div');

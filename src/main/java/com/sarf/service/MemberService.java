@@ -10,4 +10,5 @@ public interface MemberService {
 	public MemberVO findId(MemberVO vo) throws Exception;
 	public MemberVO findPw(MemberVO vo) throws Exception;
 	public String idcheck(String id) throws Exception;
+	public String emailcheck(String email) throws Exception;
 }

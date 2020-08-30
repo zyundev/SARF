@@ -46,4 +46,9 @@ public class MemberServiceImpl implements MemberService {
 	public String idcheck(String id) throws Exception {
 		return dao.idcheck(id);
 	}
+	
+	@Override
+	public String emailcheck(String email) throws Exception {
+		return dao.emailcheck(email);
+	}
 }
