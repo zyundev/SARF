@@ -27,7 +27,7 @@ input+div {
 	position: absolute;
 	width: 500px;
 	height: 800px;
-	top: 50%;
+	top: 43%;
 	left: 50%;
 	margin-top: -400px;
 	margin-left: -250px;
@@ -51,37 +51,38 @@ input+div {
 
 .container_id_div {
 	left: 3px;
-	bottom: 611px;
+	/*+54*/
+    bottom: 527px;
 }
 
 .container_pw_div {
 	left: 3px;
-	bottom: 531px;
+	bottom: 447px;
 }
 
 .container_pwcheck_div {
 	left: 3px;
-	bottom: 451px;
+	bottom: 367px;
 }
 
 .container_name_div {
 	left: 3px;
-	bottom: 371px;
+	bottom: 287px;
 }
 
 .container_addr_div {
 	left: 3px;
-	bottom: 291px;
+	bottom: 207px;
 }
 
 .container_email_div {
 	left: 3px;
-	bottom: 211px;
+	bottom: 127px;
 }
 
 .container_phone_div {
 	left: 3px;
-	bottom: 131px;
+	bottom: 47px;
 }
 
 .container_id_input{
@@ -122,4 +123,4 @@ input+div {
 .idcheck:hover{
 	color:#ffffff;
 	background-color:#4f9f4f;
-}
+}    
