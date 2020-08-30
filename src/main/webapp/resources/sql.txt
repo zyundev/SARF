@@ -196,7 +196,7 @@ DB(3개) Attraction, Restaurant, Festival -- admin 수정 삭제
 명소, 맛집, 축제   --> primary key( number )  * 미래능력개발교육
 
 CREATE TABLE ATT_BOARD(
-   NUM     NUMBER PRIMARY KEY,
+   BNO     NUMBER PRIMARY KEY,
    KEY VARCHAR2(100),
    SUBJECT VARCHAR2(1000) NOT NULL,
    IMG1 VARCHAR2(1000),
@@ -215,7 +215,7 @@ CREATE SEQUENCE ATT_BOARD_SEQ;
 -- 맛집 테이블
 /************************/
 CREATE TABLE RST_BOARD(
-   NUM NUMBER PRIMARY KEY,
+   BNO NUMBER PRIMARY KEY,
    KEY VARCHAR2(100),
    SUBJECT VARCHAR2(1000),
    IMG1 VARCHAR2(1000),
@@ -236,7 +236,7 @@ CREATE SEQUENCE RST_BOARD_SEQ;
 -- 축제 테이블
 /************************/
 CREATE TABLE FST_BOARD(
-   NUM NUMBER PRIMARY KEY,
+   BNO NUMBER PRIMARY KEY,
    KEY VARCHAR2(100),
    SUBJECT VARCHAR2(100),
    IMG1 VARCHAR2(1000),
@@ -286,3 +286,4 @@ select * from QNA_board_r;
 
 create sequence QNA_board_r_seq;
 --DROP sequence qna_board_r_seq;
+
