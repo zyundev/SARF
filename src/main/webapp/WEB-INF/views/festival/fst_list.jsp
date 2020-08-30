@@ -142,26 +142,26 @@ while(se.hasMoreElements()){
 		}
 		
 		.dsn_more_btn {
-		
+			display: inline-block;
+			margin-top: 5px;
+			font-weight: 700;
+			width: 92px;
+			height: 30px;
+			background: #fff;
 			font-weight: bold;
-	
-	width:120px;
-	height: 25px;
-	font-size: 13px;
-	border-radius:3px;
-	color:#fff !important; 
-	display:inline-block; 
-	background-color:#6b9ab8; 
-	border:1px solid #56819d;
-	vertical-align:middle;
-	cursor: pointer;
-	border: 0px;
+			border: 1px solid #4f9f4f;
+			border-radius: 6px;
+			cursor: pointer;
+			margin-left: 5px;
+			box-shadow: inset 0 0 0 1px #4f9f4f!important;
+			transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
 		}
 		
 		.dsn_more_btn:hover{
 			color:#ffffff;
-			background-color:#6b9aff;
+			background-color:#4f9f4f;
 		}
+		
 		.dsn_write_btn {
 			display: inline-block;
 			margin-top: 20px;
@@ -183,25 +183,24 @@ while(se.hasMoreElements()){
 			background-color:#4f9f4f;
 		}
 		
-		.dsn_top_btn {
-			display: inline-block;
-			margin-top: 20px;
-			font-weight: 700;
-			width: 44px;
-			height: 39px;
-			background: #fff;
-			font-weight: bold;
-			border: 1px solid #4f9f4f;
-			border-radius: 6px;
-			cursor: pointer;
-			margin-left: 30px;
-			box-shadow: inset 0 0 0 1px #4f9f4f!important;
-			transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
+	.dsn_more_btn {
+	
+	width:120px;
+	height: 25px;
+	font-size: 13px;
+	border-radius:3px;
+	color:#fff !important; 
+	display:inline-block; 
+	background-color:#6b9ab8; 
+	border:1px solid #56819d;
+	vertical-align:middle;
+	cursor: pointer;
+	border: 0px;
 		}
 		
-		.dsn_top_btn:hover{
+		.dsn_more_btn:hover{
 			color:#ffffff;
-			background-color:#4f9f4f;
+			background-color:#6b9aff;
 		}
 		
 		  .top {
@@ -229,24 +228,6 @@ while(se.hasMoreElements()){
         		
         
         }
-        
-        
-        .btn {
-	width:80px;
-	height: 35px;
-	font-size: 16px;
-	border-radius:3px;
-	color:#fff !important; 
-	display:inline-block; 
-	background-color:#6b9ab8; 
-	border:1px solid #56819d;
-	vertical-align:middle;
-	float: right;
-	margin-top: 10px;
-	margin-left: 5px;
-	cursor: pointer;
-	border: 0px;
-}
      
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
@@ -254,7 +235,7 @@ while(se.hasMoreElements()){
 </head>
 <body>
 	<div id="container">
-		<h2>명소</h2>
+		<h2>축제</h2>
         <hr style = "border: solid 3px black;" />
 		<ul class="tab">
             <li data-tab="tab1" class="cool-link"><a href="#none">#강동</a></li>
@@ -265,7 +246,7 @@ while(se.hasMoreElements()){
 		<!-- 강동탭 -->
         <div id="tab1" class="tabcontent current">
 	        <c:forEach items="${gangdonglist}" var="gangdonglist">
-	        	<form method="get" action="/attraction/updateView">
+	        	<form method="get" action="/festival/updateView">
 		            <input type="hidden" value="${gangdonglist.getBno()}"/>
 		            <input type="hidden" value="${gangdonglist.getKey()}"/>
 					<h3>
@@ -283,7 +264,8 @@ while(se.hasMoreElements()){
 							<td><img src = "${gangdonglist.getImg3()}"></td>
 						</tr>
 		            </table>
-				           <div style="white-space: pre-line;">${gangdonglist.getContent()}</div>
+
+<div style="white-space: pre-line;">${gangdonglist.getContent()}</div>
 	            </form>
 	        </c:forEach>    
 	        <c:if test="${member != null && member.getId() == 'admin'}">
@@ -295,7 +277,7 @@ while(se.hasMoreElements()){
 		<!-- 강서탭 -->
 		<div id="tab2" class="tabcontent2">
 			<c:forEach items="${gangseolist}" var="gangseolist">
-				<form method="get" action="/attraction/updateView">
+				<form method="get" action="/festival/updateView">
 					<input type="hidden" value="${gangseolist.getBno()}"/>
 					<input type="hidden" value="${gangseolist.getKey()}"/>
 					<h3>
@@ -325,7 +307,7 @@ while(se.hasMoreElements()){
 		<!-- 강남탭 -->
 		<div id="tab3" class="tabcontent3">
 			<c:forEach items="${gangnamlist}" var="gangnamlist">
-				<form method="get" action="/attraction/updateView">
+				<form method="get" action="/festival/updateView">
 					<input type="hidden" value="${gangnamlist.getBno()}"/>
 					<input type="hidden" value="${gangnamlist.getKey()}"/>
 					<h3>
@@ -355,7 +337,7 @@ while(se.hasMoreElements()){
 		<!-- 강북탭 -->
 		<div id="tab4" class="tabcontent4">
 		   <c:forEach items="${gangbuklist}" var="gangbuklist">
-			   <form method="get" action="/attraction/updateView">
+			   <form method="get" action="/festival/updateView">
 					<input type="hidden" value="${gangbuklist.getBno()}"/>
 					<input type="hidden" value="${gangbuklist.getKey()}"/>
 					<h3>
@@ -403,13 +385,13 @@ while(se.hasMoreElements()){
 				$('#' + activeTab).addClass('current');
 			})
 			$('.writebtn').click(function(){
-				location.href = '/attraction/writeView';
+				location.href = '/festival/writeView';
 			})
 		});
 		// 수정 버튼
 		$('.update_btn').on('click', function(){
 			var urlparam = "?bno=" + $(this).attr('data-bno');
-			location.href='/attraction/updateView' + urlparam;
+			location.href='/festival/updateView' + urlparam;
 		})
 		// 삭제 버튼 
 		$('.delete_btn').on('click', function(){

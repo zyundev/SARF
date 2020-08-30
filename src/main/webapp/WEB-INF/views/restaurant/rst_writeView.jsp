@@ -100,10 +100,10 @@ h3 {
 <body>
 	<div class="base-layout">
 		<div class="WritingHeader">
-			<h3>명소게시판 글쓰기</h3>
+			<h3>맛집게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
-			<form class="writeForm" name="writeForm" method="post" action="/attraction/write" enctype="multipart/form-data"> 
+			<form class="writeForm" name="writeForm" method="post" action="/restaurant/write" enctype="multipart/form-data"> 
 				<!-- 구역 구분 -->
 				<div class="WritingTitle">지역
 					<select class="keychk" name="key">
@@ -134,7 +134,7 @@ h3 {
 				<label>썸네일 이미지 2 </label><input type="file" name="file2"><br>
 				<label>썸네일 이미지 3 </label><input type="file" name="file3">
 				<div style="border: 1px solid black;">
-					<button type="button" class="BaseButton" onclick="location.href='/attraction/list'">취소</button> 
+					<button type="button" class="BaseButton" onclick="location.href='/restaurant/list'">취소</button> 
 					<button type="button" class="BaseButton" onclick="write_btn()">등록</button>
 				</div>
 			</form>

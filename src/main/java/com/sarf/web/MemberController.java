@@ -34,15 +34,13 @@ public class MemberController {
 	@Inject
 	BCryptPasswordEncoder pwdEncoder;
 	
-	// ENABLE LOG
-	// 0 is off, 1 is on
-	int debug = 1; 
+	boolean debug = true; 
 	
 	// 회원가입 get
 	@RequestMapping(value = "join", method = RequestMethod.GET)
 	public void getJoin() throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("get join");
 		}
 	}
@@ -51,7 +49,7 @@ public class MemberController {
 	@RequestMapping(value = "join", method = RequestMethod.POST)
 	public String postJoin(MemberVO vo) throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~post join~~~");
 		}
 		
@@ -68,7 +66,7 @@ public class MemberController {
 	@RequestMapping(value = "login", method = RequestMethod.GET)
 	public void getLogin() throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~get login~~~");
 		}
 	}
@@ -77,7 +75,7 @@ public class MemberController {
 	@RequestMapping(value = "login", method = RequestMethod.POST)
 	public String postLogin(MemberVO vo, HttpServletRequest req, RedirectAttributes rttr) throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~post login~~~");
 		}
 		
@@ -101,7 +99,7 @@ public class MemberController {
 	@RequestMapping(value = "logout", method = RequestMethod.GET)
 	public String getLogout(HttpSession session) throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~get logout~~~");
 		}
 		session.invalidate();
@@ -113,7 +111,7 @@ public class MemberController {
 	@RequestMapping(value = "updatemember", method = RequestMethod.GET)
 	public String getUpdateMember() throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~get updatemember~~~");
 		}
 		
@@ -124,7 +122,7 @@ public class MemberController {
 	@RequestMapping(value = "updatemember", method = RequestMethod.POST)
 	public String postUpdateMember(MemberVO vo, HttpSession session) throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~post updatemember~~~");
 		}
 		String inputPass = vo.getPw();
@@ -141,7 +139,7 @@ public class MemberController {
 	@RequestMapping(value = "deletemember", method = RequestMethod.GET)
 	public void getDeleteMember() throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~get deletemember~~~");
 		}
 	}
@@ -150,7 +148,7 @@ public class MemberController {
 	@RequestMapping(value = "deletemember", method = RequestMethod.POST)
 	public String postDeleteMember(MemberVO vo, HttpSession session, RedirectAttributes rttr) throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~post deletemember~~~");
 		}
 		
@@ -183,34 +181,35 @@ public class MemberController {
 	@RequestMapping(value = "find_id", method = RequestMethod.GET)
 	public void getFindId() throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~get find_id~~~");
 		}
 	}
 	
-	// 아이디 찾기 post
-	@RequestMapping(value = "find_id", method = RequestMethod.POST)
-	public String postFindId(MemberVO vo, RedirectAttributes rttr) throws Exception{
+	// 아이디 찾기 결과값 출력
+	@RequestMapping(value = "canuseid", method = RequestMethod.GET)
+	public String canuseid(MemberVO vo, Model model) throws Exception{
 		// LOG
-		if (debug == 1) {
-			logger.info("~~~post find_id~~~");
+		if (debug) {
+			logger.info("~~~get canuseid~~~");
 		}
+		System.out.println(vo.getEmail() + "@@@@@@" + vo.getName()+ "@@@@@@");
 		MemberVO findid = service.findId(vo);
-		
 		if(findid == null) {
-			rttr.addFlashAttribute("msg", false);
-			return "redirect:find_id";
+			model.addAttribute("find_id_chk", false);
+			return "member/find_id_result";
+		}else {
+			model.addAttribute("find_id_chk", true);
+			model.addAttribute("find_id", findid);
+			return "member/find_id_result";
 		}
-		
-		rttr.addFlashAttribute("findid", findid);
-		return "redirect:find_id";
 	}
 	
 	// 비밀번호 찾기 get
 	@RequestMapping(value = "find_pw", method = RequestMethod.GET)
 	public void getFindPw() throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~get find_pw~~~");
 		}
 	}
@@ -219,7 +218,7 @@ public class MemberController {
 	@RequestMapping(value = "find_pw", method = RequestMethod.POST)
 	public String postFindPw(MemberVO vo, RedirectAttributes rttr, Model model, HttpServletRequest request) throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~post find_pw~~~");
 		}
 		
@@ -245,7 +244,7 @@ public class MemberController {
 	@RequestMapping(value = "idcheck", method = RequestMethod.GET)
 	public String getidcheck(@RequestParam String id, Model model) throws Exception{
 		// LOG
-		if (debug == 1) {
+		if (debug) {
 			logger.info("~~~get idcheck~~~");
 		}
 
@@ -258,6 +257,26 @@ public class MemberController {
 			return "member/idcheck";
 		}
 	}
+	
+	// 이메일 중복 체크 get
+	@RequestMapping(value = "emailcheck", method = RequestMethod.GET)
+	public String getemailcheck(@RequestParam String email, Model model) throws Exception{
+		// LOG
+		if (debug) {
+			logger.info("~~~get emailcheck~~~");
+		}
+		System.out.println("이메일~~~" + email);
+		String emailcheck = service.emailcheck(email);
+		System.out.println("@@@@@@@@@@" + emailcheck);
+		if(emailcheck != null) {
+			model.addAttribute("emailcheck", false);
+			return "member/emailcheck";
+		}else {
+			model.addAttribute("emailcheck", true);
+			return "member/emailcheck";
+		}
+	}
+	
 	// 패스워드 체크
 	@ResponseBody
 	@RequestMapping(value = "/passChk", method = RequestMethod.POST)
