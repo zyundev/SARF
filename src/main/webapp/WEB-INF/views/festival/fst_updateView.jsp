@@ -4,13 +4,16 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <html>
 <head>
-<script
-   src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/smarteditor2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>게시판</title>
 </head>
 <link rel="stylesheet" href="/resources/css/update.css" />
 <style>
-
+#content{
+	width: 100%;
+	height:400px;
+}
 </style>
 <body>
    <div class="base-layout">
@@ -35,9 +38,38 @@
             <div>
                <input type="text" class="textarea_input" placeholder="제목을 입력하세요." id="subject" name="subject" value="${update.subject}" style="height: 40px;"/>
             </div>
-            <div style="height: 400px; padding: 5px 13px 5px 13px; border: 1px solid #ebecef;">
-               <input type="text" placeholder="내용을 입력하세요." id="content" name="content" value="${update.content}" style="font-size:15px; "/>
-            </div>
+               <textarea placeholder="내용을 입력하세요." id="content" name="content" value="${update.content}" style="font-size:15px; "></textarea>
+					<!-- SmartEditor2 -->
+					<script type="text/javascript">
+			        var oEditors = [];
+			        nhn.husky.EZCreator.createInIFrame({
+			            oAppRef: oEditors,
+			            elPlaceHolder: "content",
+			            sSkinURI: "/smarteditor2/SmartEditor2Skin.html",
+			            fCreator: "createSEditor2",
+			            htParams: { 
+			            	bUseVerticalResizer : false,
+			            	fOnBeforeUnload : function(){}
+			            }  
+			        });
+			        function submitContents(elClickedObj) {
+			            // 에디터의 내용이 textarea에 적용됩니다.
+			            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
+			            // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
+			 
+			            try {
+			                elClickedObj.form.submit();
+			            } catch(e) {}
+			       	}
+				</script>
+				<script>
+					$(function() {
+						$("#BaseButton").click(function() {
+							oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); 
+							//textarea의 id를 적어줍니다.
+						});
+					})
+				</script>                
             <div>
 				<label>더 알아보기</label>
 				<input type="text" name="link" placeholder="더알아보기 링크" value="${update.link}">
