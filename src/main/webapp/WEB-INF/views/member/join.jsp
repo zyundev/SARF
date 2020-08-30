@@ -31,27 +31,27 @@ function jusoCallBack(roadFullAddr){
 </script>
 
 <body>
-	<div class="logo">
-        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
-    </div>
     <form onsubmit="return joinchk()" method="post" action="join" name="form">
         <div class="container">
+            <div class="logo">
+                <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
+            </div>
             <div class="container_main">회원가입</div>
             <div class="container_id">
-                <input class="container_id_input" type="text" name="id" onkeyup="blank_chk(this)">
+                <input class="container_id_input" type="text" name="id" onkeyup="blank_chk(this)" maxlength="20">
                 <div class="container_id_div">아이디</div>
                 <button type="button" class="idcheck">중복 확인</button>
             </div>
             <div class="container_pw">
-                <input class="container_pw_input" type="password" name="pw">
+                <input class="container_pw_input" type="password" name="pw" maxlength="30">
                 <div class="container_pw_div">비밀번호</div>
             </div>
             <div class="container_pwcheck">
-                <input class="container_pwcheck_input" type="password">
+                <input class="container_pwcheck_input" type="password" maxlength="30">
                 <div class="container_pwcheck_div">비밀번호 확인</div>
             </div>
             <div class="container_name">
-                <input class="container_name_input" type="text" name="name">
+                <input class="container_name_input" type="text" name="name" maxlength="10">
                 <div class="container_name_div">이름</div>
             </div>
             <div class="container_addr">
@@ -59,11 +59,11 @@ function jusoCallBack(roadFullAddr){
                 <div class="container_addr_div">주소</div>
             </div>
             <div class="container_email">
-                <input class="container_email_input" type="email" name="email">
+                <input class="container_email_input" type="email" name="email" maxlength="40">
                 <div class="container_email_div">이메일</div>
             </div>
             <div class="container_phone">
-                <input class="container_phone_input" type="text" name="phone">
+                <input class="container_phone_input" type="text" name="phone" maxlength="20">
                 <div class="container_phone_div">전화번호</div>
             </div>
             <div class="container_join">
