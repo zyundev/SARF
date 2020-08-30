@@ -120,7 +120,9 @@ h3 {
 				</div>
 				<!-- 내용 -->
 				<div style="height: 400px; padding: 5px 13px 5px 13px; border: 1px solid #ebecef;">
-					<textarea placeholder="내용을 입력해 주세요." name="content" style="resize: none; font-size: 15px;"></textarea>
+
+				<textarea placeholder="내용을 입력해 주세요." name="content" style="resize: none; font-size: 15px; outline: none;" rows="22" cols="115"></textarea>
+
 				</div>
 				<!-- 더 알아보기  -->
 				<div>

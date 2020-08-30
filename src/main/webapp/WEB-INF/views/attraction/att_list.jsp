@@ -238,7 +238,7 @@ while(se.hasMoreElements()){
 							<td><img src = "${gangdonglist.getImg3()}"></td>
 						</tr>
 		            </table>
-		            <div>${gangdonglist.getContent()}</div>
+				           <div style="white-space: pre-line;">${gangdonglist.getContent()}</div>
 	            </form>
 	        </c:forEach>    
 	        <c:if test="${member != null && member.getId() == 'admin'}">
