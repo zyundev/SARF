@@ -54,7 +54,7 @@
 			</div>
 		</div>
 			<hr>
-			<a href="./attraction/list">명소</a>
+			<a href="./attraction/att_list">명소</a>
 			<hr>
 			<a href="./resources/etc/restaurant.jsp">맛집</a>
 			<hr>
@@ -87,6 +87,5 @@
 			</c:otherwise>
 		 </c:choose>
 		</div>
-	</header>
 </body>
 </html>
