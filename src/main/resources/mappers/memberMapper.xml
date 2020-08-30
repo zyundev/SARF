@@ -44,7 +44,7 @@
     
     <!-- 아이디 찾기 -->
 	<select id="findId" resultType="com.sarf.vo.MemberVO">
-	    SELECT id
+	    SELECT id, name
 	    FROM MEMBER
 	    WHERE name = #{name}
 	    AND email = #{email}
