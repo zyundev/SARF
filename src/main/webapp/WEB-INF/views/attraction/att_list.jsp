@@ -142,26 +142,26 @@ while(se.hasMoreElements()){
 		}
 		
 		.dsn_more_btn {
-			display: inline-block;
-			margin-top: 5px;
-			font-weight: 700;
-			width: 92px;
-			height: 30px;
-			background: #fff;
+		
 			font-weight: bold;
-			border: 1px solid #4f9f4f;
-			border-radius: 6px;
-			cursor: pointer;
-			margin-left: 5px;
-			box-shadow: inset 0 0 0 1px #4f9f4f!important;
-			transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
+	
+	width:120px;
+	height: 25px;
+	font-size: 13px;
+	border-radius:3px;
+	color:#fff !important; 
+	display:inline-block; 
+	background-color:#6b9ab8; 
+	border:1px solid #56819d;
+	vertical-align:middle;
+	cursor: pointer;
+	border: 0px;
 		}
 		
 		.dsn_more_btn:hover{
 			color:#ffffff;
-			background-color:#4f9f4f;
+			background-color:#6b9aff;
 		}
-		
 		.dsn_write_btn {
 			display: inline-block;
 			margin-top: 20px;
@@ -203,6 +203,51 @@ while(se.hasMoreElements()){
 			color:#ffffff;
 			background-color:#4f9f4f;
 		}
+		
+		  .top {
+        		width: 120px;
+        		height: 40px;
+        		background-color:
+        		#004fff;
+        		
+        		color: white;
+        		
+        		box-shadow: 0 4px 16px
+        		rgba(0, 79, 255, 0.3);
+        		
+        		font-size: 16px;
+        		font-weight: bold;
+        		
+				border-radius: 20px;
+			
+			
+			  	position: absolute;
+			  	
+			  	left: 48%;    		
+        		
+        		
+        		
+        
+        }
+        
+        
+        .btn {
+	width:80px;
+	height: 35px;
+	font-size: 16px;
+	border-radius:3px;
+	color:#fff !important; 
+	display:inline-block; 
+	background-color:#6b9ab8; 
+	border:1px solid #56819d;
+	vertical-align:middle;
+	float: right;
+	margin-top: 10px;
+	margin-left: 5px;
+	cursor: pointer;
+	border: 0px;
+}
+     
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
