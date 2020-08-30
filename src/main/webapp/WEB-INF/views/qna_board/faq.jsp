@@ -42,7 +42,7 @@
 <body>
 
 <header>
-	<%@ include file="../board/head.jsp"%>
+	<%@ include file="head.jsp"%>
 </header>
   
    <div class="container">
