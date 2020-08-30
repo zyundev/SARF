@@ -32,6 +32,10 @@
         	cursor: pointer;
         }
 
+		.logo {
+		   -webkit-animation: fadein 10s; /* Safari and Chrome */
+		}
+
         .container {
             position: absolute;
             width: 500px;

@@ -9,40 +9,55 @@ import org.springframework.stereotype.Repository;
 
 import com.sarf.vo.Att_BoardVO;
 
-@Repository
+@Repository	
 public class Att_BoardDAOImpl implements Att_BoardDAO{
-
 	@Inject
-	private SqlSession sql;
+	private SqlSession sqlSession;
 	
-	// 조회
+	String mapper = "att_boardMapper";
+	
+	// 게시판 목록 조회 강동
 	@Override
-	public List<Att_BoardVO> readReply(int bno) throws Exception {
-		return sql.selectList("att_boardMapper.readReply", bno);
+	public List<Att_BoardVO> list1() throws Exception {
+		return sqlSession.selectList(mapper + ".listPage1");
 	}
 	
-	// 작성
+	// 게시판 목록 조회 강서
 	@Override
-	public void writeReply(Att_BoardVO vo) throws Exception {
-		sql.insert("att_boardMapper.writeReply", vo);
+	public List<Att_BoardVO> list2() throws Exception {
+		return sqlSession.selectList(mapper + ".listPage2");
+	}
+	
+	// 게시판 목록 조회 강남
+	@Override
+	public List<Att_BoardVO> list3() throws Exception {
+		return sqlSession.selectList(mapper + ".listPage3");
+	}
+	
+	// 게시판 목록 조회 강북
+	@Override
+	public List<Att_BoardVO> list4() throws Exception {
+		return sqlSession.selectList(mapper + ".listPage4");
+	}
+	
+	// 게시판 수정뷰 조회
+	@Override
+	public Att_BoardVO updateview(int bno) throws Exception {
+		return sqlSession.selectOne(mapper + ".updateview", bno);
 	}
 
-	// 수정
 	@Override
-	public void updateReply(Att_BoardVO vo) throws Exception {
-		sql.update("att_boardMapper.updateReply", vo);
+	public void write(Att_BoardVO boardVO) throws Exception {
+		sqlSession.insert(mapper + ".write", boardVO);
 	}
 
-	// 댓글 조회
 	@Override
-	public Att_BoardVO selectReply(int rno) throws Exception {
-		return sql.selectOne("att_boardMapper.selectReply", rno);
+	public void update(Att_BoardVO boardVO) throws Exception {
+		sqlSession.update(mapper + ".update", boardVO);
 	}
 
-	// 삭제
 	@Override
-	public void deleteReply(Att_BoardVO vo) throws Exception {
-		sql.delete("att_boardMapper.deleteReply", vo);
+	public void delete(int bno) throws Exception {
+		sqlSession.delete(mapper + ".delete", bno);
 	}
-
 }

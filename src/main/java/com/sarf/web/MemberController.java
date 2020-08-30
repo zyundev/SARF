@@ -29,7 +29,7 @@ public class MemberController {
 	
 	// 메일 관련 
 	@Inject
-	UserMailSendService mailsender;
+	UserMailSendService mailsender;	
 	
 	// 암호화 기능 사용
 	@Inject
@@ -128,7 +128,6 @@ public class MemberController {
 		if (debug == 1) {
 			logger.info("~~~post updatemember~~~");
 		}
-		
 		String inputPass = vo.getPw();
 		String pwd = pwdEncoder.encode(inputPass);
 		vo.setPw(pwd);
@@ -166,7 +165,6 @@ public class MemberController {
 		// vo로 들어오는 비밀번호를 암호화
 		String voPass = vo.getPw();
 		String pwd = pwdEncoder.encode(voPass);
-		
 		System.out.println("pwd~~~ " + pwd);
 		
 		if (!(pwdEncoder.matches(vo.getPw(), sessionPass))) {
@@ -264,7 +262,7 @@ public class MemberController {
 	
 	// 패스워드 체크
 	@ResponseBody
-	@RequestMapping(value="/passChk", method = RequestMethod.POST)
+	@RequestMapping(value = "/passChk", method = RequestMethod.POST)
 	public boolean passChk(MemberVO vo) throws Exception {
 
 		MemberVO login = service.login(vo);

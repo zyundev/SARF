@@ -21,6 +21,7 @@ div{
     width: 100%;
     max-width: 1000px;
     margin: 0 auto;
+    padding-top:90px;
 }
 .txt{
     font-size: 36px;
@@ -116,4 +117,24 @@ ul,li{
    text-decoration-line: none;
    font-weight: 600;
    color: #888888;
+}
+
+.btn {
+	width:80px;
+	height: 35px;
+	font-size: 16px;
+	border-radius:3px;
+	color:#fff !important; 
+	display:inline-block; 
+	background-color:#6b9ab8; 
+	border:1px solid #56819d;
+	vertical-align:middle;
+	float: right;
+	margin-top: 10px;
+	margin-left: 5px;
+	cursor: pointer;
+	border: 0px;
+}
+button:focus {
+	outline: none;
 }

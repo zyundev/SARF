@@ -5,15 +5,16 @@
 <mapper namespace="qna_boardMapper">
 
 	<!-- 게시판 목록 조회 -->
-<!-- <select id="list" resultType="com.sarf.vo.Qna_BoardVO">
+
+	<select id="list" resultType="com.sarf.vo.Qna_BoardVO">
 	   SELECT *	FROM QNA_BOARD
 			ORDER BY BNO DESC
 	</select>
--->
+
 	<!-- 게시판 글 작성 -->
  	<insert id="write" >
-		INSERT INTO Qna_BOARD(BNO, SUBJECT, NAME, CONTENT)
-		VALUES(Qna_BOARD_SEQ.NEXTVAL, #{subject}, #{name}, #{content})
+		INSERT INTO QNA_BOARD(BNO, NAME, SUBJECT, CONTENT, REGDATE)
+		VALUES(QNA_BOARD_SEQ.NEXTVAL, #{name}, #{subject}, #{content}, sysdate)
 	</insert> 
 
 	<!-- 게시물 조회 -->
@@ -23,13 +24,13 @@
 			  , CONTENT
 			  , NAME
 			  , REGDATE
-		 FROM A_BOARD
+		 FROM QNA_BOARD
 		 WHERE BNO = #{bno}
 	</select>
 
 	<!-- 게시물 수정 -->
  	<update id="update" parameterType="com.sarf.vo.Qna_BoardVO">
-		UPDATE Qna_BOARD
+		UPDATE QNA_BOARD
 		   SET SUBJECT = #{subject},
 		   	   CONTENT = #{content}
 		 WHERE BNO = #{bno} 
@@ -38,7 +39,7 @@
 	<!-- 게시물 삭제 -->
  	<delete id="delete" parameterType="int">
 		DELETE 
-		  FROM Qna_BOARD
+		  FROM QNA_BOARD
 		 WHERE BNO = #{bno}
 	</delete>
 	
@@ -49,16 +50,14 @@
 		        CONTENT,
 		        NAME, 
 		        REGDATE,
-		        READCOUNT
 		 FROM ( 
 		        SELECT BNO, 
 		               SUBJECT, 
 		               CONTENT, 
 		               NAME, 
 		               REGDATE, 
-		               READCOUNT,
 		               ROW_NUMBER() OVER(ORDER BY BNO DESC) AS RNUM
-		         FROM Qna_BOARD
+		         FROM QNA_BOARD
 		         WHERE 1=1 
 		         	<include refid="search"></include>
 		                       ) MP
@@ -84,13 +83,6 @@
 		</if>
 	</sql>
 
-	<!-- 조회수 증가 -->
- 	<update id="updateCount" parameterType="int">
-		UPDATE QNA_BOARD SET
-		READCOUNT = READCOUNT+1
-		WHERE BNO = #{BNO}
-	</update>
-	
 </mapper>
 
 

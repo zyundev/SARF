@@ -174,22 +174,32 @@
 			<version>${org.springframework-version}</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-core -->
+		<!-- 파일 업로드 -->
+		 <dependency>
+			 <groupId>commons-io</groupId>
+			 <artifactId>commons-io</artifactId>
+			 <version>2.4</version>
+		 </dependency>
+		 
+		 <dependency>
+			 <groupId>commons-fileupload</groupId>
+			 <artifactId>commons-fileupload</artifactId>
+			 <version>1.2.2</version>
+		 </dependency>
+		 
+		 <!-- 비밀번호 암호화 -->
 		<dependency>
     		<groupId>org.springframework.security</groupId>
     		<artifactId>spring-security-core</artifactId>
     		<version>5.0.8.RELEASE</version>
 		</dependency>
 
-		
-		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-web -->
 		<dependency>
     		<groupId>org.springframework.security</groupId>
     		<artifactId>spring-security-web</artifactId>
     		<version>5.0.8.RELEASE</version>
 		</dependency>
 
-		<!-- https://mvnrepository.com/artifact/org.springframework.security/spring-security-config -->
 		<dependency>
     		<groupId>org.springframework.security</groupId>
     		<artifactId>spring-security-config</artifactId>

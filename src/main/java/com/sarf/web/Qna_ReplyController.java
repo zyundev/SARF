@@ -18,7 +18,7 @@ import com.sarf.vo.SearchCriteria;
 @RequestMapping("/qna_board/*")
 public class Qna_ReplyController {
 	
-	private static final Logger logger = LoggerFactory.getLogger(A_ReplyController.class);
+	private static final Logger logger = LoggerFactory.getLogger(Qna_ReplyController.class);
 	
 	@Inject
 	Qna_ReplyService service;
