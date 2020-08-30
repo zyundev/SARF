@@ -1,5 +1,5 @@
 /************************/
--- È¸¿ø Á¤º¸ Å×ÀÌºí
+-- È¸ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
 CREATE TABLE MEMBER(
    ID VARCHAR2(200) PRIMARY KEY,
@@ -12,14 +12,14 @@ CREATE TABLE MEMBER(
 );
 
 --DROP TABLE MEMBER PURGE;
-°Ô½ÃÆÇ DB(4Á¾) ¢º (F, A, R, V)_BOARD 
+ï¿½Ô½ï¿½ï¿½ï¿½ DB(4ï¿½ï¿½) ï¿½ï¿½ (F, A, R, V)_BOARD 
 [Community, Attraction, Restaurant, Festival ]
-    [ÀÚÀ¯°Ô½ÃÆÇ,   ¸í¼Ò,       ¸ÀÁý,       ÃàÁ¦]
+    [ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½,   ï¿½ï¿½ï¿½,       ï¿½ï¿½ï¿½ï¿½,       ï¿½ï¿½ï¿½ï¿½]
 
 
 
 /************************/
--- ÀÚÀ¯ °Ô½ÃÆÇ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
 CREATE TABLE F_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -36,7 +36,7 @@ CREATE TABLE F_BOARD(
 create sequence f_board_seq;
 --DROP sequence f_board_seq;
 
--- ÀÚÀ¯ °Ô½ÃÆÇ ´äº¯ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½äº¯ ï¿½ï¿½ï¿½Ìºï¿½
 CREATE TABLE F_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -50,14 +50,14 @@ CREATE TABLE F_BOARD_R(
 create sequence f_board_r_seq;
 --DROP sequence f_board_r_seq;
 
--- ÀÚÀ¯°Ô½ÃÆÇ ´ñ±Û Á¦¾àÁ¶°Ç ¼³Á¤
+-- ï¿½ï¿½ï¿½ï¿½ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 alter table f_board_r add constraint f_board_r_bno foreign key(bno)
 references f_board(bno) ON DELETE CASCADE;
 
 
 
 /************************/
--- ¸í¼Ò °Ô½ÃÆÇ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
 CREATE TABLE A_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -74,7 +74,7 @@ CREATE TABLE A_BOARD(
 create sequence a_board_seq;
 --DROP sequence a_board_seq;
 
--- ¸í¼Ò °Ô½ÃÆÇ ´äº¯ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½äº¯ ï¿½ï¿½ï¿½Ìºï¿½
 CREATE TABLE A_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -88,14 +88,14 @@ CREATE TABLE A_BOARD_R(
 create sequence a_board_r_seq;
 --DROP sequence a_board_r_seq;
 
--- ¸í¼Ò °Ô½ÃÆÇ ´ñ±Û Á¦¾àÁ¶°Ç ¼³Á¤
+-- ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 alter table a_board_r add constraint a_board_r_bno foreign key(bno)
 references a_board(bno) ON DELETE CASCADE;
 
 
 
 /************************/
--- ¸ÀÁý °Ô½ÃÆÇ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
 CREATE TABLE R_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -112,7 +112,7 @@ CREATE TABLE R_BOARD(
 create sequence r_board_seq;
 --DROP sequence r_board_seq;
 
--- ¸ÀÁý °Ô½ÃÆÇ ´äº¯ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½äº¯ ï¿½ï¿½ï¿½Ìºï¿½
 CREATE TABLE R_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -126,14 +126,14 @@ CREATE TABLE R_BOARD_R(
 create sequence r_board_r_seq;
 --DROP sequence r_board_r_seq;
 
--- ¸ÀÁý °Ô½ÃÆÇ ´ñ±Û Á¦¾àÁ¶°Ç ¼³Á¤
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 alter table r_board_r add constraint r_board_r_bno foreign key(bno)
 references r_board(bno) ON DELETE CASCADE;
 
 
 
 /************************/
--- ÃàÁ¦ °Ô½ÃÆÇ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
 CREATE TABLE V_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -150,7 +150,7 @@ CREATE TABLE V_BOARD(
 create sequence v_board_seq;
 --DROP sequence v_board_seq;
 
--- ÃàÁ¦ °Ô½ÃÆÇ ´äº¯ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½äº¯ ï¿½ï¿½ï¿½Ìºï¿½
 CREATE TABLE V_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -164,12 +164,12 @@ CREATE TABLE V_BOARD_R(
 create sequence v_board_r_seq;
 --DROP sequence v_board_r_seq;
 
--- ÃàÁ¦ °Ô½ÃÆÇ ´ñ±Û Á¦¾àÁ¶°Ç ¼³Á¤
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½Ô½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 alter table v_board_r add constraint v_board_r_bno foreign key(bno)
 references v_board(bno) ON DELETE CASCADE;
 
 /************************/
--- °øÁö»çÇ× Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
 CREATE TABLE N_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -185,15 +185,15 @@ CREATE TABLE N_BOARD(
 
 CREATE SEQUENCE N_BOARD_SEQ;
 --DROP sequence N_BOARD_SEQ;
--- °øÁö»çÇ×Àº ´äº¯ÀÌ ¾øÀ½
+-- ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½äº¯ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
 
 
 /************************/
--- ¸í¼Ò Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
-DB(3°³) Attraction, Restaurant, Festival -- admin ¼öÁ¤ »èÁ¦
-¸í¼Ò, ¸ÀÁý, ÃàÁ¦   --> primary key( number )  * ¹Ì·¡´É·Â°³¹ß±³À°
+DB(3ï¿½ï¿½) Attraction, Restaurant, Festival -- admin ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½, ï¿½ï¿½ï¿½ï¿½   --> primary key( number )  * ï¿½Ì·ï¿½ï¿½É·Â°ï¿½ï¿½ß±ï¿½ï¿½ï¿½
 
 CREATE TABLE ATT_BOARD(
    BNO     NUMBER PRIMARY KEY,
@@ -212,7 +212,7 @@ CREATE SEQUENCE ATT_BOARD_SEQ;
 
 
 /************************/
--- ¸ÀÁý Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
 CREATE TABLE RST_BOARD(
    BNO NUMBER PRIMARY KEY,
@@ -233,7 +233,7 @@ CREATE SEQUENCE RST_BOARD_SEQ;
 
 
 /************************/
--- ÃàÁ¦ Å×ÀÌºí
+-- ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ìºï¿½
 /************************/
 CREATE TABLE FST_BOARD(
    BNO NUMBER PRIMARY KEY,
@@ -253,7 +253,7 @@ CREATE SEQUENCE FST_BOARD_SEQ;
 --DROP sequence FST_BOARD_SEQ;
 
 
-<<<<<<< HEAD
+
 /************************/
 // QNA ê²Œì‹œíŒ í…Œì´ë¸”
 /************************/
@@ -288,7 +288,7 @@ select * from QNA_board_r;
 create sequence QNA_board_r_seq;
 --DROP sequence qna_board_r_seq;
 
-=======
+
 
 /************************/
 // QNA ê²Œì‹œíŒ í…Œì´ë¸”
@@ -323,4 +323,4 @@ select * from QNA_board_r;
 
 create sequence QNA_board_r_seq;
 --DROP sequence QNA_board_r_seq;
->>>>>>> branch 'master' of https://github.com/LifeIT-web/SARF.git
+
