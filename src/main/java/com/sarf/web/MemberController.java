@@ -186,22 +186,23 @@ public class MemberController {
 		}
 	}
 	
-	// 아이디 찾기 post
-	@RequestMapping(value = "find_id", method = RequestMethod.POST)
-	public String postFindId(MemberVO vo, RedirectAttributes rttr) throws Exception{
+	// 아이디 찾기 결과값 출력
+	@RequestMapping(value = "canuseid", method = RequestMethod.GET)
+	public String canuseid(MemberVO vo, Model model) throws Exception{
 		// LOG
 		if (debug) {
-			logger.info("~~~post find_id~~~");
+			logger.info("~~~get canuseid~~~");
 		}
+		System.out.println(vo.getEmail() + "@@@@@@" + vo.getName()+ "@@@@@@");
 		MemberVO findid = service.findId(vo);
-		
 		if(findid == null) {
-			rttr.addFlashAttribute("msg", false);
-			return "redirect:find_id";
+			model.addAttribute("find_id_chk", false);
+			return "member/find_id_result";
+		}else {
+			model.addAttribute("find_id_chk", true);
+			model.addAttribute("find_id", findid);
+			return "member/find_id_result";
 		}
-		
-		rttr.addFlashAttribute("findid", findid);
-		return "redirect:find_id";
 	}
 	
 	// 비밀번호 찾기 get
