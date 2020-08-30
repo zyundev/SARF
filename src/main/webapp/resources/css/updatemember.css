@@ -9,7 +9,10 @@ input {
 .logo {
 	text-align: center;
 	margin-top: 15px;
-	cursor: pointer;
+}
+
+.logo img{
+	cursor: pointer;	
 }
 
 input+div {
@@ -24,7 +27,7 @@ input+div {
 	position: absolute;
 	width: 500px;
 	height: 800px;
-	top: 50%;
+	top: 43%;
 	left: 50%;
 	margin-top: -400px;
 	margin-left: -250px;
@@ -49,41 +52,41 @@ input+div {
 .container_id_div {
 	font-size: 10px;
 	left: 3px;
-	bottom: 641px;
+	bottom: 557px;
 }
 
 .container_pw_div {
 	left: 3px;
-	bottom: 531px;
+	bottom: 447px;
 }
 
 .container_pwcheck_div {
 	left: 3px;
-	bottom: 451px;
+	bottom: 367px;
 }
 
 .container_name_div {
 	font-size: 10px;
 	left: 3px;
-	bottom: 401px;
+	bottom: 317px;
 }
 
 .container_addr_div {
 	font-size: 10px;
 	left: 3px;
-	bottom: 321px;
+	bottom: 237px;
 }
 
 .container_email_div {
 	font-size: 10px;
 	left: 3px;
-	bottom: 241px;
+	bottom: 157px;
 }
 
 .container_phone_div {
 	font-size: 10px;
 	left: 3px;
-	bottom: 161px;
+	bottom: 77px;
 }
 
 .container_update_input {
