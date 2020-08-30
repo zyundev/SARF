@@ -253,6 +253,42 @@ CREATE SEQUENCE FST_BOARD_SEQ;
 --DROP sequence FST_BOARD_SEQ;
 
 
+<<<<<<< HEAD
+/************************/
+// QNA 게시판 테이블
+/************************/
+CREATE TABLE QNA_BOARD(
+    BNO       NUMBER PRIMARY KEY,
+   NAME      VARCHAR2(20) ,
+    SUBJECT   VARCHAR2(30) NOT NULL,
+   CONTENT   VARCHAR2(2000) NOT NULL,
+   REGDATE   DATE DEFAULT SYSDATE
+);
+
+--DROP TABLE QNA_BOARD PURGE;
+
+select * from QNA_BOARD;
+
+create sequence QNA_board_seq;
+--DROP sequence QNA_board_seq;
+
+// QNA 게시판 답변 테이블
+CREATE TABLE QNA_BOARD_R(
+    BNO NUMBER,
+    RNO NUMBER PRIMARY KEY,
+    NAME VARCHAR2(10),
+    CONTENT VARCHAR2(2000) NOT NULL,
+    REGDATE DATE DEFAULT SYSDATE
+);
+
+select * from QNA_board_r;
+
+--DROP TABLE QNA_BOARD_R PURGE;
+
+create sequence QNA_board_r_seq;
+--DROP sequence qna_board_r_seq;
+
+=======
 
 /************************/
 // QNA 게시판 테이블
@@ -287,3 +323,4 @@ select * from QNA_board_r;
 
 create sequence QNA_board_r_seq;
 --DROP sequence QNA_board_r_seq;
+>>>>>>> branch 'master' of https://github.com/LifeIT-web/SARF.git
