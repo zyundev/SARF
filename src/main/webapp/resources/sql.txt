@@ -282,7 +282,7 @@ CREATE TABLE QNA_BOARD_R(
 
 select * from QNA_board_r;
 
---DROP TABLE A_BOARD_R PURGE;
+--DROP TABLE QNA_BOARD_R PURGE;
 
 create sequence QNA_board_r_seq;
---DROP sequence a_board_r_seq;
+--DROP sequence qna_board_r_seq;

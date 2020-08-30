@@ -38,7 +38,7 @@ function jusoCallBack(roadFullAddr){
         <div class="container">
             <div class="container_main">회원가입</div>
             <div class="container_id">
-                <input class="container_id_input" type="text" name="id">
+                <input class="container_id_input" type="text" name="id" onkeyup="blank_chk(this)">
                 <div class="container_id_div">아이디</div>
                 <button type="button" class="idcheck">중복 확인</button>
             </div>
@@ -78,6 +78,16 @@ function jusoCallBack(roadFullAddr){
 		
    		window.open(url, "idchk", "width=275, height=120, left=800, top=300, scrollbars=no, resizable=no");
 	}) 
+	//첫 글자 공백 사용 X
+	function blank_chk(obj) {                        
+	    if(obj.value == " ")
+	    {              
+	        alert("첫 단어로 공백을 사용할 수 없습니다.");
+	        obj.focus();
+	        obj.value = obj.value.replace(' ','');
+	        return false;
+	    }
+	}
     </script>
 </body>
 </html>

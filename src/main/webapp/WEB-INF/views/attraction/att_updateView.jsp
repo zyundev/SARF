@@ -8,15 +8,10 @@
    src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <title>게시판</title>
 </head>
-<script type="text/javascript">
-   $(document).ready(function() {
-      $(".cancel_btn").on("click", function() {
-         event.preventDefault();
-         location.href = "/attraction/list";
-      })
-   })
-</script>
 <link rel="stylesheet" href="/resources/css/update.css" />
+<style>
+
+</style>
 <body>
    <div class="base-layout">
       <div class="UpdateHeader">
@@ -24,16 +19,15 @@
       </div>
       <nav>홈 - 글 작성</nav>
       <div class="UpdateContent">
-         <form name="updateForm" method="post" action="/attraction/update"> 
-            <div class="UpdateTitle">명소게시판 수정</div>
-            <div>   
-            <select name="newkey">
-            	<option value="wrong" selected>지역을 선택해주세요.</option>
-				<option value="EAST">강동</option>
-				<option value="WEST">강서</option>
-				<option value="SOUTH">강남</option>
-				<option value="NORTH">강북</option>
-			</select>
+         <form name="updateForm" class="updateform" method="post" action="/attraction/update"> 
+            <div class="UpdateTitle">지역
+	            <select name="newkey" class="keychk">
+	            	<option value="wrong" selected>지역을 선택해주세요.</option>
+					<option value="EAST">강동</option>
+					<option value="WEST">강서</option>
+					<option value="SOUTH">강남</option>
+					<option value="NORTH">강북</option>
+				</select>
             </div>
             
             <input type="hidden" name="bno" value="${update.bno}" readonly="readonly" />
@@ -45,16 +39,34 @@
                <input type="text" placeholder="내용을 입력하세요." id="content" name="content" value="${update.content}" style="font-size:15px; "/>
             </div>
             <div>
+				<label>더 알아보기</label>
 				<input type="text" name="link" placeholder="더알아보기 링크" value="${update.link}">
 			</div>
             <div style="border: 1px solid black;">
             </div>
             <div>
-               <button type="submit" class="update_btn BaseButton">저장</button>
-               <button type="button" class="cancel_btn BaseButton">취소</button>
+               <button type="button" class="cancel_btn BaseButton" onclick="location.href='/attraction/list'">취소</button>
+               <button type="button" class="update_btn BaseButton">저장</button>
             </div>
          </form>
       </div>
    </div>
+<script type="text/javascript">
+$(document).ready(function() {
+	$('.update_btn').on('click', function(){
+		if($('.keychk').val() == "wrong"){
+			alert('지역을 선택해주세요.');
+			
+			return false;
+		}
+		if($('.textarea_input').val() == ""){
+			alert('제목을 입력해주세요.');
+			
+			return false;
+		}
+		$('.updateform').submit();
+	})
+})
+</script>
 </body>
 </html>
