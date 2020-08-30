@@ -43,7 +43,7 @@
 			</div>
 			<div class="container_login">
 				<input type="submit" value="로그인"> <input type="button"
-					value="회원 가입" onclick="location.href='join.html';">
+					value="회원 가입" onclick="location.href='join';">
 			</div>
 		</div>
 	</form>
