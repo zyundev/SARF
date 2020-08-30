@@ -61,6 +61,7 @@ function jusoCallBack(roadFullAddr){
             <div class="container_email">
                 <input class="container_email_input" type="email" name="email" maxlength="40">
                 <div class="container_email_div">이메일</div>
+                <button type="button" class="emailcheck">중복 확인</button>
             </div>
             <div class="container_phone">
                 <input class="container_phone_input" type="text" name="phone" maxlength="20">
@@ -77,6 +78,11 @@ function jusoCallBack(roadFullAddr){
 		var url = "/member/idcheck?id=" + $('.container_id_input').val();
 		
    		window.open(url, "idchk", "width=275, height=120, left=800, top=300, scrollbars=no, resizable=no");
+	}) 
+	$('.emailcheck').on('click', function(){
+		var url = "/member/emailcheck?email=" + $('.container_email_input').val();
+		
+   		window.open(url, "emailchk", "width=275, height=120, left=800, top=300, scrollbars=no, resizable=no");
 	}) 
 	//첫 글자 공백 사용 X
 	function blank_chk(obj) {                        
