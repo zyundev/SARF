@@ -50,8 +50,16 @@ public class MemberDAOImpl implements MemberDAO {
 		return sql.selectOne("memberMapper.findPw", vo);
 	}
 
+	// 아이디 중복 확인
 	@Override
 	public String idcheck(String id) throws Exception {
 		return sql.selectOne("memberMapper.idcheck", id);
+	}
+
+	// 이메일 중복 확인
+	@Override
+	public String emailcheck(String email) throws Exception {
+		System.out.println("@#$@#$@#$" + sql.selectOne("memberMapper.emailcheck", email));
+		return sql.selectOne("memberMapper.emailcheck", email);
 	}
 }

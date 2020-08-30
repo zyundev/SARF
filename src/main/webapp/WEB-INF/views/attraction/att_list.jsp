@@ -226,7 +226,7 @@ while(se.hasMoreElements()){
 					<h3>
 						# ${gangdonglist.getSubject()}
 						<a href="${gangdonglist.getLink()}" target="_blank"><button type="button" class="dsn_more_btn" name="link">더 알아보기</button></a>
-						<c:if test="${member != null && member.getId() == admin}">
+						<c:if test="${member != null && member.getId() == 'admin'}">
 							<button type="button" class="button_1 update_btn BaseButton" data-key="${gangdonglist.getKey()}" data-bno="${gangdonglist.getBno()}">수정</button>&nbsp;
 							<button type="button" class="button_2 delete_btn BaseButton" data-key="${gangdonglist.getKey()}" data-bno="${gangdonglist.getBno()}">삭제</button>
 						</c:if>
@@ -241,7 +241,7 @@ while(se.hasMoreElements()){
 		            <div>${gangdonglist.getContent()}</div>
 	            </form>
 	        </c:forEach>    
-	        <c:if test="${member != null && member.getId() == admin}">
+	        <c:if test="${member != null && member.getId() == 'admin'}">
 	        	<button type="button" class="writebtn dsn_write_btn">글 쓰기</button>
 	        </c:if>
 	        <button class="top dsn_top_btn" onclick="scrollWindow_2()"> Top </button>
@@ -256,7 +256,7 @@ while(se.hasMoreElements()){
 					<h3>
 						# ${gangseolist.getSubject()}
 						<button type="button" name="link" class="dsn_more_btn" onclick="location.href='${gangseolist.getLink()}'">더 알아보기</button>
-						<c:if test="${member != null && member.getId() == admin}">
+						<c:if test="${member != null && member.getId() == 'admin'}">
 							<button type="button" class="button_1 update_btn BaseButton" data-key="${gangseolist.getKey()}" data-bno="${gangseolist.getBno()}">수정</button>&nbsp;
 							<button type="button" class="button_2 delete_btn BaseButton" data-key="${gangseolist.getKey()}" data-bno="${gangseolist.getBno()}">삭제</button>
 						</c:if>
@@ -271,7 +271,7 @@ while(se.hasMoreElements()){
 					<div>${gangseolist.getContent()}</div>
 				</form>
 			</c:forEach>  
-			<c:if test="${member != null && member.getId() == admin}">
+			<c:if test="${member != null && member.getId() == 'admin'}">
 				<button type="button" class="writebtn dsn_write_btn">글 쓰기</button>
 			</c:if>
 			<button class="top dsn_top_btn" onclick="scrollWindow_2()"> Top </button>
@@ -286,7 +286,7 @@ while(se.hasMoreElements()){
 					<h3>
 						# ${gangnamlist.getSubject()}
 						<button type="button" name="link" class="dsn_more_btn" onclick="location.href='${gangnamlist.getLink()}'">더 알아보기</button>
-						<c:if test="${member != null && member.getId() == admin}">
+						<c:if test="${member != null && member.getId() == 'admin'}">
 							<button type="button" class="button_1 update_btn BaseButton" data-key="${gangnamlist.getKey()}" data-bno="${gangnamlist.getBno()}">수정</button>&nbsp;
 							<button type="button" class="button_2 delete_btn BaseButton" data-key="${gangnamlist.getKey()}" data-bno="${gangnamlist.getBno()}">삭제</button>
 						</c:if>
@@ -301,7 +301,7 @@ while(se.hasMoreElements()){
 					<div>${gangnamlist.getContent()}</div>
 				</form>
 			</c:forEach> 
-			<c:if test="${member != null && member.getId() == admin}"> 
+			<c:if test="${member != null && member.getId() == 'admin'}"> 
 				<button type="button" class="writebtn dsn_write_btn">글 쓰기</button>
 			</c:if>
 			<button class="top dsn_top_btn" onclick="scrollWindow_2()"> Top </button>
@@ -316,7 +316,7 @@ while(se.hasMoreElements()){
 					<h3>
 						# ${gangbuklist.getSubject()}
 						<button type="button" name="link" class="dsn_more_btn" onclick="location.href='${gangbuklist.getLink()}'">더 알아보기</button>
-						<c:if test="${member != null && member.getId() == admin}">
+						<c:if test="${member != null && member.getId() == 'admin'}">
 							<button type="button" class="button_1 update_btn BaseButton" data-key="${gangbuklist.getKey()}" data-bno="${gangbuklist.getBno()}">수정</button>&nbsp;
 							<button type="button" class="button_2 delete_btn BaseButton" data-key="${gangbuklist.getKey()}" data-bno="${gangbuklist.getBno()}">삭제</button>
 						</c:if>
@@ -331,7 +331,7 @@ while(se.hasMoreElements()){
 					<div>${gangbuklist.getContent()}</div>
 				</form>
 			</c:forEach>  
-			<c:if test="${member != null && member.getId() == admin}">
+			<c:if test="${member != null && member.getId() == 'admin'}">
 				<button type="button" class="writebtn dsn_write_btn">글 쓰기</button>
 			</c:if>
 			<button class="top dsn_top_btn" onclick="scrollWindow_2()"> Top </button>
