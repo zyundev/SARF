@@ -10,6 +10,21 @@
 <title>Login</title>
 <link rel="stylesheet" href="/resources/css/login.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+
+<script>
+	function login() {
+		var loginForm = document.loginForm;
+		var userId = loginForm.id.value;
+		var password = loginForm.pw.value;
+
+		if (!userId || !password) {
+			alert("아이디 또는 비밀번호를 모두 알맞게 입력해주세요.")
+		} else {
+			loginForm.submit();
+		}
+	}
+</script>
+
 </head>
 
 <body>
@@ -23,7 +38,7 @@
 			alert('이메일로 임시비밀번호를 전송했습니다.');
 		</script>
 	</c:if>
-	<form action="/member/login" method="post">
+	<form name="loginForm" action="/member/login" method="post">
 		<div class="container">
 			<div class="logo">
 				<img src="/resources/images/logo.jpg" alt="로고" width="200px"
@@ -42,11 +57,12 @@
 				<a href="find_id">아이디 찾기</a> | <a href="find_pw">비밀번호 찾기</a>
 			</div>
 			<div class="container_login">
-				<input type="submit" value="로그인"> <input type="button"
-					value="회원 가입" onclick="location.href='join';">
+				<input type="button" onclick="login()" value="로그인"> <input
+					type="button" value="회원 가입" onclick="location.href='join';">
 			</div>
 		</div>
 	</form>
+
 	<script src="/resources/js/login.js"></script>
 </body>
 </html>
