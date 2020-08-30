@@ -44,7 +44,7 @@
             </div>
             <div class="container_phone">
                 <input class="container_phone_input" type="text" name="phone" value="${member.getPhone()}" maxlength="20">
-                <div class="container_phone_div">전화번호</div>
+                <div class="container_phone_div">휴대폰번호</div>
             </div>
             <div class="container_update">
                 <input class="container_update_input" type="submit" value="정보 수정">

@@ -127,16 +127,35 @@ phone_input.on({
 	}
 });
 
-function chk() {
-    if ((id_input.val() == "") || (pw_input.val() == "") || (pwcheck_input.val() == "") || (name_input.val() == "") || (addr_input.val() == "") || (email_input.val() == "") || (phone_input.val() == "")) {
+$('.container_update_input').on('click' , function(){
+	// 정규표현식
+	var phonereg = /^01(0|1|[6-9]?)-?([0-9]{3,4})-?([0-9]{4})$/;
+	var emailreg = /^[0-9a-zA-Z]([-_\.]?[0-9a-zA-Z])*@[0-9a-zA-Z]*\.[a-zA-Z]{2,3}$/i;
+	
+	if ((id_input.val() == "") || (pw_input.val() == "") || (pwcheck_input.val() == "") || (name_input.val() == "") || (addr_input.val() == "") || (email_input.val() == "") || (phone_input.val() == "")) {
         alert("빈 항목을 작성해주세요");
 
         return false;
-    } else if (pwcheck_input.val() != pw_input.val()) {
+    }
+	
+	if(!(emailreg.test(email_input.val()))){
+		alert('올바르지 않은 이메일 주소입니다.');	
+		
+		return false;
+	}
+	
+	
+	if (pwcheck_input.val() != pw_input.val()) {
         alert("비밀번호가 일치하지 않습니다.");
 
         return false;
-    } else {
-        return true;
-    }
-}
+    } 
+	
+	if (!(phonereg.test(phone_input.val()))){
+		alert('올바르지 않은 휴대폰 번호입니다.');		
+		
+		return false;
+	} 
+	
+    return true;
+})
