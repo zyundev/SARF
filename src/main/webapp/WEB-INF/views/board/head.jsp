@@ -21,11 +21,11 @@
 	</div>
     <!-- 로고 -->
       <div class="logo">
-		<a href="./"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
+		<a href="../"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
       </div>
 
 		<!-- 메뉴 -->
-		<input type="checkbox" id="menuicon"> <label for="menuicon">
+		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:-126.5px; margin-right: 17px;">
 			<span></span> <span></span> <span></span>
 		</label>
 
@@ -36,38 +36,38 @@
 		<div class="board">
 			<a class="cursor" href="/board/list">게시판</a>
 			<div>
-				<a href="/board/list"><button class="bd menubar-button">- 자유 게시판</button></a>
+				<a href="./board/list"><button class="bd menubar-button">- 자유 게시판</button></a>
 				<br>				
 				<p>
-					<a href="/a_board/a_list"><button class="bd menubar-button">- 명소 게시판</button></a>
+					<a href="./a_board/a_list"><button class="bd menubar-button">- 명소 게시판</button></a>
 				</p>				
 				<br>				
 				<p>
-					<a href="/r_board/r_list"><button class="bd menubar-button">- 맛집 게시판</button></a>
+					<a href="./r_board/r_list"><button class="bd menubar-button">- 맛집 게시판</button></a>
 				</p>				
 				<br>			
 				<p>
-					<a href="/v_board/v_list"><button class="bd menubar-button">- 축제 게시판</button></a>
+					<a href="./v_board/v_list"><button class="bd menubar-button">- 축제 게시판</button></a>
 				</p>
 				
 				<br>
 			</div>
 		</div>
 			<hr>
-			<a href="/attraction/list">명소</a>
+			<a href="../attraction/att_list">명소</a>
 			<hr>
-			<a href="/resources/etc/restaurant.jsp">맛집</a>
+			<a href="./resources/etc/restaurant.jsp">맛집</a>
 			<hr>
-			<a href="/resources/etc/festival.jsp">축제</a>
+			<a href="./resources/etc/festival.jsp">축제</a>
 			<hr>
 
 		<div class="board">
-			<a class="cursor" href="/qna_board/faq">고객센터</a>
+			<a class="cursor" href="../qna_board/faq">고객센터</a>
 			<div>
-				<a href="/qna_board/faq"><button style="margin-right:120px" class="bd menubar-button">- QnA</button></a>
+				<a href="../qna_board/faq"><button style="margin-right:120px" class="bd menubar-button">- QnA</button></a>
 				<br>				
 				<p>
-					<a href="/qna_board/qna_list"><button class="bd menubar-button">- 묻고 답하기</button></a>
+					<a href="../qna_board/qna_list"><button class="bd menubar-button">- 묻고 답하기</button></a>
 				</p>				
 			</div>
 		</div>
@@ -87,6 +87,5 @@
 			</c:otherwise>
 		 </c:choose>
 		</div>
-	</header>
 </body>
 </html>
