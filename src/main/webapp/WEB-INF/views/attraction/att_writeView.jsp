@@ -103,9 +103,9 @@ h3 {
 			<h3>명소게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
-			<form name="writeForm" method="post" action="/attraction/write" enctype="multipart/form-data"> 
+			<form class="writeForm" name="writeForm" method="post" action="/attraction/write" enctype="multipart/form-data"> 
 				<!-- 구역 구분 -->
-				<div class="WritingTitle">명소 게시판
+				<div class="WritingTitle">지역
 					<select class="keychk" name="key">
 						<option value="wrong" selected>지역을 선택해주세요.</option>
 						<option value="EAST">강동</option>
@@ -132,8 +132,8 @@ h3 {
 				<label>썸네일 이미지 2 </label><input type="file" name="file2"><br>
 				<label>썸네일 이미지 3 </label><input type="file" name="file3">
 				<div style="border: 1px solid black;">
-					<button type="button" class="BaseButton" onclick="write_btn()">등록</button>
 					<button type="button" class="BaseButton" onclick="location.href='/attraction/list'">취소</button> 
+					<button type="button" class="BaseButton" onclick="write_btn()">등록</button>
 				</div>
 			</form>
 		</div>
@@ -142,9 +142,15 @@ h3 {
 		function write_btn(){
 			if($('.keychk').val() == "wrong"){
 				alert('지역을 선택해주세요.');
-			}else{
-				submit();
+				
+				return false;
 			}
+			if($('.textarea_input').val() == ""){
+				alert('제목을 입력해주세요.');
+				
+				return false;
+			}
+			$('.writeForm').submit();
 		}
 	</script>
 </body>
