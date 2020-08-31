@@ -10,6 +10,7 @@ import javax.mail.internet.MimeMessage;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -54,9 +55,11 @@ public class UserMailSendService {
 		String key = getKey(false, 10);
 
 		MimeMessage mail = mailSender.createMimeMessage();
+		MimeMessageHelper helper = new MimeMessageHelper(mail);
 		String htmlStr = "<h2>안녕하세요 SARF 입니다</h2><br><br>" 
 				+ "<h3>" + user_id + "님</h3>" + "<h3>임시 비밀번호는 : " + key + " 입니다. <br> 임시 비밀번호를 통해 다시 로그인 해주세요.</h3>";
 		try {
+			helper.setFrom(e_mail);
 			mail.setSubject("[비밀번호 찾기] SARF의 비밀번호 찾기 메일입니다", "utf-8");
 			mail.setText(htmlStr, "utf-8", "html");
 			mail.addRecipient(RecipientType.TO, new InternetAddress(e_mail));
