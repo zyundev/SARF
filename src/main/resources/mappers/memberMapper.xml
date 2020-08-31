@@ -21,7 +21,7 @@
 	    SELECT *
 	    FROM MEMBER
 	    WHERE id = #{id}
-	<!--AND pw = #{pw}-->
+	    <!-- AND pw = #{pw} -->
     </select>
    
 	<!-- 회원정보 수정 -->
@@ -39,7 +39,7 @@
 	<delete id="deleteMember">
 	    DELETE FROM MEMBER
 	    WHERE id = #{id}
-	<!--AND pw = ${pw}-->
+	    <!-- AND pw = ${pw} -->
     </delete>
     
     <!-- 아이디 찾기 -->
