@@ -1,5 +1,5 @@
 /************************/
--- 회원 정보 테이블
+-- ȸ�� ���� ���̺�
 /************************/
 CREATE TABLE MEMBER(
    ID VARCHAR2(200) PRIMARY KEY,
@@ -12,14 +12,14 @@ CREATE TABLE MEMBER(
 );
 
 --DROP TABLE MEMBER PURGE;
-게시판 DB(4종) ▶ (F, A, R, V)_BOARD 
+�Խ��� DB(4��) �� (F, A, R, V)_BOARD 
 [Community, Attraction, Restaurant, Festival ]
-    [자유게시판,   명소,       맛집,       축제]
+    [�����Խ���,   ���,       ����,       ����]
 
 
 
 /************************/
--- 자유 게시판 테이블
+-- ���� �Խ��� ���̺�
 /************************/
 CREATE TABLE F_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -36,7 +36,7 @@ CREATE TABLE F_BOARD(
 create sequence f_board_seq;
 --DROP sequence f_board_seq;
 
--- 자유 게시판 답변 테이블
+-- ���� �Խ��� �亯 ���̺�
 CREATE TABLE F_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -50,14 +50,14 @@ CREATE TABLE F_BOARD_R(
 create sequence f_board_r_seq;
 --DROP sequence f_board_r_seq;
 
--- 자유게시판 댓글 제약조건 설정
+-- �����Խ��� ��� �������� ����
 alter table f_board_r add constraint f_board_r_bno foreign key(bno)
 references f_board(bno) ON DELETE CASCADE;
 
 
 
 /************************/
--- 명소 게시판 테이블
+-- ��� �Խ��� ���̺�
 /************************/
 CREATE TABLE A_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -74,7 +74,7 @@ CREATE TABLE A_BOARD(
 create sequence a_board_seq;
 --DROP sequence a_board_seq;
 
--- 명소 게시판 답변 테이블
+-- ��� �Խ��� �亯 ���̺�
 CREATE TABLE A_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -88,14 +88,14 @@ CREATE TABLE A_BOARD_R(
 create sequence a_board_r_seq;
 --DROP sequence a_board_r_seq;
 
--- 명소 게시판 댓글 제약조건 설정
+-- ��� �Խ��� ��� �������� ����
 alter table a_board_r add constraint a_board_r_bno foreign key(bno)
 references a_board(bno) ON DELETE CASCADE;
 
 
 
 /************************/
--- 맛집 게시판 테이블
+-- ���� �Խ��� ���̺�
 /************************/
 CREATE TABLE R_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -112,7 +112,7 @@ CREATE TABLE R_BOARD(
 create sequence r_board_seq;
 --DROP sequence r_board_seq;
 
--- 맛집 게시판 답변 테이블
+-- ���� �Խ��� �亯 ���̺�
 CREATE TABLE R_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -126,14 +126,14 @@ CREATE TABLE R_BOARD_R(
 create sequence r_board_r_seq;
 --DROP sequence r_board_r_seq;
 
--- 맛집 게시판 댓글 제약조건 설정
+-- ���� �Խ��� ��� �������� ����
 alter table r_board_r add constraint r_board_r_bno foreign key(bno)
 references r_board(bno) ON DELETE CASCADE;
 
 
 
 /************************/
--- 축제 게시판 테이블
+-- ���� �Խ��� ���̺�
 /************************/
 CREATE TABLE V_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -150,7 +150,7 @@ CREATE TABLE V_BOARD(
 create sequence v_board_seq;
 --DROP sequence v_board_seq;
 
--- 축제 게시판 답변 테이블
+-- ���� �Խ��� �亯 ���̺�
 CREATE TABLE V_BOARD_R(
     BNO NUMBER,
     RNO NUMBER PRIMARY KEY,
@@ -164,12 +164,12 @@ CREATE TABLE V_BOARD_R(
 create sequence v_board_r_seq;
 --DROP sequence v_board_r_seq;
 
--- 축제 게시판 댓글 제약조건 설정
+-- ���� �Խ��� ��� �������� ����
 alter table v_board_r add constraint v_board_r_bno foreign key(bno)
 references v_board(bno) ON DELETE CASCADE;
 
 /************************/
--- 공지사항 테이블
+-- �������� ���̺�
 /************************/
 CREATE TABLE N_BOARD(
     BNO       NUMBER PRIMARY KEY,
@@ -185,18 +185,18 @@ CREATE TABLE N_BOARD(
 
 CREATE SEQUENCE N_BOARD_SEQ;
 --DROP sequence N_BOARD_SEQ;
--- 공지사항은 답변이 없음
+-- ���������� �亯�� ����
 
 
 
 /************************/
--- 명소 테이블
+-- ��� ���̺�
 /************************/
-DB(3개) Attraction, Restaurant, Festival -- admin 수정 삭제
-명소, 맛집, 축제   --> primary key( number )  * 미래능력개발교육
+DB(3��) Attraction, Restaurant, Festival -- admin ���� ����
+���, ����, ����   --> primary key( number )  * �̷��ɷ°��߱���
 
 CREATE TABLE ATT_BOARD(
-   NUM     NUMBER PRIMARY KEY,
+   BNO     NUMBER PRIMARY KEY,
    KEY VARCHAR2(100),
    SUBJECT VARCHAR2(1000) NOT NULL,
    IMG1 VARCHAR2(1000),
@@ -212,10 +212,10 @@ CREATE SEQUENCE ATT_BOARD_SEQ;
 
 
 /************************/
--- 맛집 테이블
+-- ���� ���̺�
 /************************/
 CREATE TABLE RST_BOARD(
-   NUM NUMBER PRIMARY KEY,
+   BNO NUMBER PRIMARY KEY,
    KEY VARCHAR2(100),
    SUBJECT VARCHAR2(1000),
    IMG1 VARCHAR2(1000),
@@ -233,10 +233,10 @@ CREATE SEQUENCE RST_BOARD_SEQ;
 
 
 /************************/
--- 축제 테이블
+-- ���� ���̺�
 /************************/
 CREATE TABLE FST_BOARD(
-   NUM NUMBER PRIMARY KEY,
+   BNO NUMBER PRIMARY KEY,
    KEY VARCHAR2(100),
    SUBJECT VARCHAR2(100),
    IMG1 VARCHAR2(1000),
@@ -251,6 +251,8 @@ CREATE TABLE FST_BOARD(
 
 CREATE SEQUENCE FST_BOARD_SEQ;
 --DROP sequence FST_BOARD_SEQ;
+
+
 
 /************************/
 // QNA 게시판 테이블
@@ -281,7 +283,44 @@ CREATE TABLE QNA_BOARD_R(
 
 select * from QNA_board_r;
 
---DROP TABLE A_BOARD_R PURGE;
+--DROP TABLE QNA_BOARD_R PURGE;
 
 create sequence QNA_board_r_seq;
---DROP sequence a_board_r_seq;
+--DROP sequence qna_board_r_seq;
+
+
+
+/************************/
+// QNA 게시판 테이블
+/************************/
+CREATE TABLE QNA_BOARD(
+    BNO       NUMBER PRIMARY KEY,
+   NAME      VARCHAR2(20) ,
+    SUBJECT   VARCHAR2(30) NOT NULL,
+   CONTENT   VARCHAR2(2000) NOT NULL,
+   REGDATE   DATE DEFAULT SYSDATE
+);
+
+--DROP TABLE QNA_BOARD PURGE;
+
+select * from QNA_BOARD;
+
+create sequence QNA_board_seq;
+--DROP sequence QNA_board_seq;
+
+// QNA 게시판 답변 테이블
+CREATE TABLE QNA_BOARD_R(
+    BNO NUMBER,
+    RNO NUMBER PRIMARY KEY,
+    NAME VARCHAR2(10),
+    CONTENT VARCHAR2(2000) NOT NULL,
+    REGDATE DATE DEFAULT SYSDATE
+);
+
+select * from QNA_board_r;
+
+--DROP TABLE QNA_board_r PURGE;
+
+create sequence QNA_board_r_seq;
+--DROP sequence QNA_board_r_seq;
+

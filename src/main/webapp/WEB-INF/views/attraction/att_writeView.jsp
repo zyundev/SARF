@@ -18,6 +18,9 @@ while(se.hasMoreElements()){
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 <title>글쓰기</title>
+<!-- SmartEditor2 라이브러리 --> 
+<script type="text/javascript" src="/smarteditor2/js/service/HuskyEZCreator.js" charset="utf-8"></script> 
+<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <style>
 * {
 	border: 0;
@@ -94,8 +97,10 @@ h3 {
 	color:#ffffff;
 	background-color:#4f9f4f;
 }
+.content{
+	width: 100%;
+}
 </style>
-<script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
 	<div class="base-layout">
@@ -103,9 +108,9 @@ h3 {
 			<h3>명소게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
-			<form name="writeForm" method="post" action="/attraction/write" enctype="multipart/form-data"> 
+			<form class="writeForm" name="writeForm" method="post" action="/attraction/write" enctype="multipart/form-data"> 
 				<!-- 구역 구분 -->
-				<div class="WritingTitle">명소 게시판
+				<div class="WritingTitle">지역
 					<select class="keychk" name="key">
 						<option value="wrong" selected>지역을 선택해주세요.</option>
 						<option value="EAST">강동</option>
@@ -119,9 +124,38 @@ h3 {
 					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
 				</div>
 				<!-- 내용 -->
-				<div style="height: 400px; padding: 5px 13px 5px 13px; border: 1px solid #ebecef;">
-					<textarea placeholder="내용을 입력해 주세요." name="content" style="resize: none; font-size: 15px;"></textarea>
-				</div>
+				<textarea placeholder="내용을 입력해 주세요." class="content"id="content" name="content" style="resize: none; font-size: 15px; outline: none;" rows="22" cols="115"></textarea>
+					<!-- SmartEditor2 -->
+					<script type="text/javascript">
+			        var oEditors = [];
+			        nhn.husky.EZCreator.createInIFrame({
+			            oAppRef: oEditors,
+			            elPlaceHolder: "content",
+			            sSkinURI: "/smarteditor2/SmartEditor2Skin.html",
+			            fCreator: "createSEditor2",
+			            htParams: { 
+			            	bUseVerticalResizer : false,
+			            	fOnBeforeUnload : function(){}
+			            }  
+			        });
+			        function submitContents(elClickedObj) {
+			            // 에디터의 내용이 textarea에 적용됩니다.
+			            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
+			            // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
+			 
+			            try {
+			                elClickedObj.form.submit();
+			            } catch(e) {}
+			       	}
+				</script>
+				<script>
+					$(function() {
+						$("#BaseButton").click(function() {
+							oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); 
+							//textarea의 id를 적어줍니다.
+						});
+					})
+				</script>
 				<!-- 더 알아보기  -->
 				<div>
 					<label>더 알아보기</label>
@@ -132,8 +166,8 @@ h3 {
 				<label>썸네일 이미지 2 </label><input type="file" name="file2"><br>
 				<label>썸네일 이미지 3 </label><input type="file" name="file3">
 				<div style="border: 1px solid black;">
-					<button type="button" class="BaseButton" onclick="write_btn()">등록</button>
 					<button type="button" class="BaseButton" onclick="location.href='/attraction/list'">취소</button> 
+					<button type="button" class="BaseButton" onclick="write_btn()">등록</button>
 				</div>
 			</form>
 		</div>
@@ -142,9 +176,15 @@ h3 {
 		function write_btn(){
 			if($('.keychk').val() == "wrong"){
 				alert('지역을 선택해주세요.');
-			}else{
-				submit();
+				
+				return false;
 			}
+			if($('.textarea_input').val() == ""){
+				alert('제목을 입력해주세요.');
+				
+				return false;
+			}
+			$('.writeForm').submit();
 		}
 	</script>
 </body>

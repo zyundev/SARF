@@ -31,27 +31,27 @@ function jusoCallBack(roadFullAddr){
 </script>
 
 <body>
-	<div class="logo">
-        <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
-    </div>
     <form onsubmit="return joinchk()" method="post" action="join" name="form">
         <div class="container">
+            <div class="logo">
+                <img src="/resources/images/logo.jpg" alt="로고" width="200px" onclick="location.href='/'">
+            </div>
             <div class="container_main">회원가입</div>
             <div class="container_id">
-                <input class="container_id_input" type="text" name="id">
+                <input class="container_id_input" type="text" name="id" onkeyup="blank_chk(this)" maxlength="20">
                 <div class="container_id_div">아이디</div>
                 <button type="button" class="idcheck">중복 확인</button>
             </div>
             <div class="container_pw">
-                <input class="container_pw_input" type="password" name="pw">
+                <input class="container_pw_input" type="password" name="pw" maxlength="30">
                 <div class="container_pw_div">비밀번호</div>
             </div>
             <div class="container_pwcheck">
-                <input class="container_pwcheck_input" type="password">
+                <input class="container_pwcheck_input" type="password" maxlength="30">
                 <div class="container_pwcheck_div">비밀번호 확인</div>
             </div>
             <div class="container_name">
-                <input class="container_name_input" type="text" name="name">
+                <input class="container_name_input" type="text" name="name" maxlength="10">
                 <div class="container_name_div">이름</div>
             </div>
             <div class="container_addr">
@@ -59,12 +59,13 @@ function jusoCallBack(roadFullAddr){
                 <div class="container_addr_div">주소</div>
             </div>
             <div class="container_email">
-                <input class="container_email_input" type="email" name="email">
+                <input class="container_email_input" type="email" name="email" maxlength="40">
                 <div class="container_email_div">이메일</div>
+                <button type="button" class="emailcheck">중복 확인</button>
             </div>
             <div class="container_phone">
-                <input class="container_phone_input" type="text" name="phone">
-                <div class="container_phone_div">전화번호</div>
+                <input class="container_phone_input" type="text" name="phone" maxlength="20">
+                <div class="container_phone_div">휴대폰번호</div>
             </div>
             <div class="container_join">
                 <input class="container_join_input" type="submit" value="회원 가입">
@@ -78,6 +79,21 @@ function jusoCallBack(roadFullAddr){
 		
    		window.open(url, "idchk", "width=275, height=120, left=800, top=300, scrollbars=no, resizable=no");
 	}) 
+	$('.emailcheck').on('click', function(){
+		var url = "/member/emailcheck?email=" + $('.container_email_input').val();
+		
+   		window.open(url, "emailchk", "width=275, height=120, left=800, top=300, scrollbars=no, resizable=no");
+	}) 
+	//첫 글자 공백 사용 X
+	function blank_chk(obj) {                        
+	    if(obj.value == " ")
+	    {              
+	        alert("첫 단어로 공백을 사용할 수 없습니다.");
+	        obj.focus();
+	        obj.value = obj.value.replace(' ','');
+	        return false;
+	    }
+	}
     </script>
 </body>
 </html>

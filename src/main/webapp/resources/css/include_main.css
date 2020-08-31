@@ -13,11 +13,17 @@
 	width: 100%;
 }
 
+.symbol {
+	position: relative;
+	left: 25px;
+	top: -7px;
+}
+
 .logo {
 	z-index: 1;
 	position: absolute;
-	margin-top: 2.5px;
-	left: 50%;
+	margin-top: -136px;
+	left: 49.57%;
 	/* margin-left:-(濡쒓퀬width/2) */
 	margin-left: -150px;
 }
@@ -33,7 +39,7 @@
 }
 
 .cursor{
-	cursor:Default;
+	cursor:pointer;
 }
 
 /* main-article1 */

@@ -118,6 +118,136 @@ while(se.hasMoreElements()){
         	width:300px;
         	height:225px;
         }
+        
+        .BaseButton {
+			display: inline-block;
+			margin-top: 5px;
+			font-weight: 700;
+			float: right;
+			width: 44px;
+			height: 39px;
+			background: #fff;
+			font-weight: bold;
+			border: 1px solid #4f9f4f;
+			border-radius: 6px;
+			cursor: pointer;
+			margin-left: 5px;
+			box-shadow: inset 0 0 0 1px #4f9f4f!important;
+			transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
+		}
+		
+		.BaseButton:hover{
+			color:#ffffff;
+			background-color:#4f9f4f;
+		}
+		
+		.dsn_more_btn {
+		
+			font-weight: bold;
+	
+	width:120px;
+	height: 25px;
+	font-size: 13px;
+	border-radius:3px;
+	color:#fff !important; 
+	display:inline-block; 
+	background-color:#6b9ab8; 
+	border:1px solid #56819d;
+	vertical-align:middle;
+	cursor: pointer;
+	border: 0px;
+		}
+		
+		.dsn_more_btn:hover{
+			color:#ffffff;
+			background-color:#6b9aff;
+		}
+		.dsn_write_btn {
+			display: inline-block;
+			margin-top: 20px;
+			margin-right: 30px;
+			float: right;
+			width: 60px;
+			height: 39px;
+			background: #fff;
+			font-weight: bold;
+			border: 1px solid #4f9f4f;
+			border-radius: 6px;
+			cursor: pointer;
+			box-shadow: inset 0 0 0 1px #4f9f4f!important;
+			transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
+		}
+		
+		.dsn_write_btn:hover{
+			color:#ffffff;
+			background-color:#4f9f4f;
+		}
+		
+		.dsn_top_btn {
+			display: inline-block;
+			margin-top: 20px;
+			font-weight: 700;
+			width: 44px;
+			height: 39px;
+			background: #fff;
+			font-weight: bold;
+			border: 1px solid #4f9f4f;
+			border-radius: 6px;
+			cursor: pointer;
+			margin-left: 30px;
+			box-shadow: inset 0 0 0 1px #4f9f4f!important;
+			transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
+		}
+		
+		.dsn_top_btn:hover{
+			color:#ffffff;
+			background-color:#4f9f4f;
+		}
+		
+		  .top {
+        		width: 120px;
+        		height: 40px;
+        		background-color:
+        		#004fff;
+        		
+        		color: white;
+        		
+        		box-shadow: 0 4px 16px
+        		rgba(0, 79, 255, 0.3);
+        		
+        		font-size: 16px;
+        		font-weight: bold;
+        		
+				border-radius: 20px;
+			
+			
+			  	position: absolute;
+			  	
+			  	left: 48%;    		
+        		
+        		
+        		
+        
+        }
+        
+        
+        .btn {
+	width:80px;
+	height: 35px;
+	font-size: 16px;
+	border-radius:3px;
+	color:#fff !important; 
+	display:inline-block; 
+	background-color:#6b9ab8; 
+	border:1px solid #56819d;
+	vertical-align:middle;
+	float: right;
+	margin-top: 10px;
+	margin-left: 5px;
+	cursor: pointer;
+	border: 0px;
+}
+     
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
@@ -140,9 +270,11 @@ while(se.hasMoreElements()){
 		            <input type="hidden" value="${gangdonglist.getKey()}"/>
 					<h3>
 						# ${gangdonglist.getSubject()}
-						<a href="${gangdonglist.getLink()}" target="_blank"><button type="button" name="link">더 알아보기</button></a>
-						<button type="button" class="button_1 update_btn" data-key="${gangdonglist.getKey()}" data-bno="${gangdonglist.getBno()}">수정</button>&nbsp;
-						<button type="button" class="button_2 delete_btn" data-key="${gangdonglist.getKey()}" data-bno="${gangdonglist.getBno()}">삭제</button>
+						<a href="${gangdonglist.getLink()}" target="_blank"><button type="button" class="dsn_more_btn" name="link">더 알아보기</button></a>
+						<c:if test="${member != null && member.getId() == 'admin'}">
+							<button type="button" class="button_1 update_btn BaseButton" data-key="${gangdonglist.getKey()}" data-bno="${gangdonglist.getBno()}">수정</button>&nbsp;
+							<button type="button" class="button_2 delete_btn BaseButton" data-key="${gangdonglist.getKey()}" data-bno="${gangdonglist.getBno()}">삭제</button>
+						</c:if>
 					</h3>   
 		            <table>
 		            	<tr>
@@ -151,10 +283,13 @@ while(se.hasMoreElements()){
 							<td><img src = "${gangdonglist.getImg3()}"></td>
 						</tr>
 		            </table>
-		            <div>${gangdonglist.getContent()}</div>
+				           <div style="white-space: pre-line;">${gangdonglist.getContent()}</div>
 	            </form>
 	        </c:forEach>    
-	        <button type="button" class="writebtn">글 쓰기</button>
+	        <c:if test="${member != null && member.getId() == 'admin'}">
+	        	<button type="button" class="writebtn dsn_write_btn">글 쓰기</button>
+	        </c:if>
+	        <button class="top dsn_top_btn" onclick="scrollWindow_2()"> Top </button>
 		</div>
 
 		<!-- 강서탭 -->
@@ -165,9 +300,11 @@ while(se.hasMoreElements()){
 					<input type="hidden" value="${gangseolist.getKey()}"/>
 					<h3>
 						# ${gangseolist.getSubject()}
-						<button type="button" name="link" onclick="location.href='${gangseolist.getLink()}'">더 알아보기</button>
-						<button type="button" class="button_1 update_btn" data-key="${gangseolist.getKey()}" data-bno="${gangseolist.getBno()}">수정</button>&nbsp;
-						<button type="button" class="button_2 delete_btn" data-key="${gangseolist.getKey()}" data-bno="${gangseolist.getBno()}">삭제</button>
+						<button type="button" name="link" class="dsn_more_btn" onclick="location.href='${gangseolist.getLink()}'">더 알아보기</button>
+						<c:if test="${member != null && member.getId() == 'admin'}">
+							<button type="button" class="button_1 update_btn BaseButton" data-key="${gangseolist.getKey()}" data-bno="${gangseolist.getBno()}">수정</button>&nbsp;
+							<button type="button" class="button_2 delete_btn BaseButton" data-key="${gangseolist.getKey()}" data-bno="${gangseolist.getBno()}">삭제</button>
+						</c:if>
 					</h3>   
 					<table> 
 						<tr>
@@ -179,7 +316,10 @@ while(se.hasMoreElements()){
 					<div>${gangseolist.getContent()}</div>
 				</form>
 			</c:forEach>  
-			<button type="button" class="writebtn">글 쓰기</button>
+			<c:if test="${member != null && member.getId() == 'admin'}">
+				<button type="button" class="writebtn dsn_write_btn">글 쓰기</button>
+			</c:if>
+			<button class="top dsn_top_btn" onclick="scrollWindow_2()"> Top </button>
 		</div>
 
 		<!-- 강남탭 -->
@@ -190,9 +330,11 @@ while(se.hasMoreElements()){
 					<input type="hidden" value="${gangnamlist.getKey()}"/>
 					<h3>
 						# ${gangnamlist.getSubject()}
-						<button type="button" name="link" onclick="location.href='${gangnamlist.getLink()}'">더 알아보기</button>
-						<button type="button" class="button_1 update_btn" data-key="${gangnamlist.getKey()}" data-bno="${gangnamlist.getBno()}">수정</button>&nbsp;
-						<button type="button" class="button_2 delete_btn" data-key="${gangnamlist.getKey()}" data-bno="${gangnamlist.getBno()}">삭제</button>
+						<button type="button" name="link" class="dsn_more_btn" onclick="location.href='${gangnamlist.getLink()}'">더 알아보기</button>
+						<c:if test="${member != null && member.getId() == 'admin'}">
+							<button type="button" class="button_1 update_btn BaseButton" data-key="${gangnamlist.getKey()}" data-bno="${gangnamlist.getBno()}">수정</button>&nbsp;
+							<button type="button" class="button_2 delete_btn BaseButton" data-key="${gangnamlist.getKey()}" data-bno="${gangnamlist.getBno()}">삭제</button>
+						</c:if>
 					</h3>   
 					<table>
 						<tr>
@@ -203,8 +345,11 @@ while(se.hasMoreElements()){
 					</table>
 					<div>${gangnamlist.getContent()}</div>
 				</form>
-			</c:forEach>  
-			<button type="button" class="writebtn">글 쓰기</button>
+			</c:forEach> 
+			<c:if test="${member != null && member.getId() == 'admin'}"> 
+				<button type="button" class="writebtn dsn_write_btn">글 쓰기</button>
+			</c:if>
+			<button class="top dsn_top_btn" onclick="scrollWindow_2()"> Top </button>
 		</div>
 
 		<!-- 강북탭 -->
@@ -215,9 +360,11 @@ while(se.hasMoreElements()){
 					<input type="hidden" value="${gangbuklist.getKey()}"/>
 					<h3>
 						# ${gangbuklist.getSubject()}
-						<button type="button" name="link" onclick="location.href='${gangbuklist.getLink()}'">더 알아보기</button>
-						<button type="button" class="button_1 update_btn" data-key="${gangbuklist.getKey()}" data-bno="${gangbuklist.getBno()}">수정</button>&nbsp;
-						<button type="button" class="button_2 delete_btn" data-key="${gangbuklist.getKey()}" data-bno="${gangbuklist.getBno()}">삭제</button>
+						<button type="button" name="link" class="dsn_more_btn" onclick="location.href='${gangbuklist.getLink()}'">더 알아보기</button>
+						<c:if test="${member != null && member.getId() == 'admin'}">
+							<button type="button" class="button_1 update_btn BaseButton" data-key="${gangbuklist.getKey()}" data-bno="${gangbuklist.getBno()}">수정</button>&nbsp;
+							<button type="button" class="button_2 delete_btn BaseButton" data-key="${gangbuklist.getKey()}" data-bno="${gangbuklist.getBno()}">삭제</button>
+						</c:if>
 					</h3>   
 					<table>
 						<tr>
@@ -229,18 +376,20 @@ while(se.hasMoreElements()){
 					<div>${gangbuklist.getContent()}</div>
 				</form>
 			</c:forEach>  
-			<button type="button" class="writebtn">글 쓰기</button>
+			<c:if test="${member != null && member.getId() == 'admin'}">
+				<button type="button" class="writebtn dsn_write_btn">글 쓰기</button>
+			</c:if>
+			<button class="top dsn_top_btn" onclick="scrollWindow_2()"> Top </button>
 		</div>
 	</div>
 	<script>
-			function scrollWindow_2() {
-				window.scroll({ top: 0, left: 0, behavior: 'smooth' });
-			}
-		</script>
-		<button class = "top"  onclick="scrollWindow_2()"> Top </button>
-		<footer>
-			<%@ include file="/resources/etc/footer.jsp" %>
-		</footer>
+		function scrollWindow_2() {
+			window.scroll({ top: 0, left: 0, behavior: 'smooth' });
+		}
+	</script>
+	<footer>
+		<%@ include file="/resources/etc/footer.jsp" %>
+	</footer>
 	<script>
 		$(function() {
 			$('ul.tab li').click(function() {
@@ -257,8 +406,6 @@ while(se.hasMoreElements()){
 				location.href = '/attraction/writeView';
 			})
 		});
-	</script>
-	<script>
 		// 수정 버튼
 		$('.update_btn').on('click', function(){
 			var urlparam = "?bno=" + $(this).attr('data-bno');
