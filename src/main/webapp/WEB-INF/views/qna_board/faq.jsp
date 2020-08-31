@@ -12,6 +12,13 @@
 <!-- Q A 폰트-->
 <link href="https://fonts.googleapis.com/css2?family=Judson:ital@1&display=swap" rel="stylesheet">
 
+<style>
+	header {
+		padding-top: 15px;
+		margin-bottom: -80px;
+	}
+</style>
+
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script type="text/javascript">
         $(function() {

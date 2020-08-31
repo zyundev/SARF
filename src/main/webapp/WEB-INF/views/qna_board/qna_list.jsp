@@ -22,12 +22,13 @@ while(se.hasMoreElements()){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/qna_list.css">
+<link rel="stylesheet" href="/resources/css/qna_menu.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 <body>
 
 	<header>
-		<%@ include file="head.jsp" %>
+		<%@ include file="q_head.jsp" %>
 	</header>
 
     <div class="container">
