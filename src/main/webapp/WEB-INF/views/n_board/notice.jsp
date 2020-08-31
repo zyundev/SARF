@@ -67,7 +67,7 @@ header {
 <body>
 
 	<header>
-		<%@ include file="head.jsp"%>
+		<%@ include file="n_head.jsp"%>
 	</header>
 
 	<div class="main-tab">
