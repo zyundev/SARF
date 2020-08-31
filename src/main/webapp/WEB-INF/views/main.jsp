@@ -35,8 +35,8 @@
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <title>SARF</title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/main.css" />
-<link rel="stylesheet" href="/resources/css/css_menu.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/main.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/css_menu.css" />
 
 <link href = "https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel = "stylesheet">
 

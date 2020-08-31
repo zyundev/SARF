@@ -140,21 +140,48 @@ while(se.hasMoreElements()){
 								
 								<em class="comment_inbox_name" >작성자 : ${member.id}</em>
 								<textarea class="content" id="content" name="content" rows="3" style="overflow: hidden; overflow-wrap: break-word;"></textarea>
-								<div class="input_box">
-									<button type="button" id="replyWrite_btn"
-										class="input_button basebutton skin size">등록</button>
-								</div>
-							</div>
-						</div>
-					</form>
-				</c:when>
-				<c:otherwise>
-					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인 해야 답글 작성 가능합니다.</p>
-					<!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
-				</c:otherwise>
-				</c:choose>
-				</div>
-			</div>
+								                        <div class="input_box">
+                           <a type="button" id="replyWrite_btn"
+                              class="input_button">등록</a>
+                        </div>
+                     </div>
+                  </div>
+               </form>
+            </c:when>
+            <c:otherwise>
+               <p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인 해야 답글 작성 가능합니다.</p>
+               <!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
+            </c:otherwise>
+            </c:choose>
+            </div>
+            <!-- 댓글 출력창-->
+             <div class="comment_box">
+               <p style="float: left; margin-right: 12px; font-size: 17px; font-weight:600px; margin-top: 10px;">댓글</p>
+               <c:forEach items="${replyList}" var="replyList">
+                  <div class="comment_print">
+                     <div class="comment_inbox">
+                           <em class="comment_inbox_name">${replyList.name}</em>
+                        <textarea style="padding-left:13px; overflow: hidden; outline: none;" wrap="hard">${replyList.content}</textarea>
+                        <p class="comment_info">
+                           <fmt:formatDate value="${replyList.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
+                        </p>
+                        <div class="right_area_reply">
+                        <c:choose>
+                        <c:when test="${member.id == replyList.name}">
+                        <button type="button" id="replyUpdate_btn"
+                              class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
+
+                        <button type="button" id="replyDelete_btn"
+                              class="basebutton skin size replyDelete_btn" data-rno="${replyList.rno}">삭제</button>
+                        </c:when>
+                        <c:otherwise></c:otherwise>
+                        </c:choose>
+                        </div>
+                     </div>
+                  </div>
+               </c:forEach>
+            </div>
+         </div>
 			<div class="top_btn" style="padding-bottom: 13px">
 				<div class="left_area">
 					
@@ -174,40 +201,7 @@ while(se.hasMoreElements()){
 					<button type="submit" class="basebutton skin size" id="delete_btn">삭제</button>
 				</div>
 			</div>
-			
 			<br><br>
-				<!-- 댓글 출력창-->
-			<div class="view_content">			
-			 	<div class="comment_box">
-					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
-					<c:forEach items="${replyList}" var="replyList">
-						<div class="comment_writer">
-							<div class="comment_inbox">
-									<em class="comment_inbox_name">작성자 : ${replyList.name}</em>
-								<p>
-									작성 날짜 :
-									<fmt:formatDate value="${replyList.regdate}"
-										pattern="yyyy-MM-dd HH:mm:ss" />
-								</p>
-								<textarea style="overflow: hidden; outline: none;" readonly="readonly">${replyList.content}</textarea>
-								<div class="right_area_reply">
-								<c:choose>
-								<c:when test="${member.id == replyList.name}">
-								<button type="button" id="replyUpdate_btn"
-										class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
-
-								<button type="button" id="replyDelete_btn"
-										class="basebutton skin size replyDelete_btn" data-rno="${replyList.rno}">삭제</button>
-								</c:when>
-								<c:otherwise></c:otherwise>
-								</c:choose>
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-				</div>
-			</div>
-
 		</div>
 </section>
 <script>
