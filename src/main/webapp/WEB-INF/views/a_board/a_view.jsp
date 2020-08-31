@@ -58,9 +58,12 @@ while(se.hasMoreElements()){
 						alert('다른사용자의 글을 삭제할 수 없습니다.');
 						return false;
 					}
-					formObj.attr("action", "/a_board/a_delete");
-					formObj.attr("method", "post");
-					formObj.submit();
+					var check = confirm('정말 삭제하시겠습니까?');
+					if(check) {
+						formObj.attr("action", "/a_board/a_delete");
+						formObj.attr("method", "post");
+						formObj.submit();
+					}
 				}
 			})
 			
@@ -132,20 +135,18 @@ while(se.hasMoreElements()){
 				<c:choose>
 				<c:when test="${member.id != null}">
 					<!-- 댓글 입력창-->
-					<p
-						style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>
+					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>
 					<form name="replyForm" method="post" role="form">
 						<input type="hidden" id="bno" name="bno" value="${read.bno}" />					
 						<input type="hidden" id="name" name="name" value="${member.id}" />
 
 						<div class="comment_writer">
 							<div class="comment_inbox">
-								
 								<em class="comment_inbox_name" >작성자 : ${member.id}</em>
 								<textarea class="content" id="content" name="content" rows="3" style="overflow: hidden; overflow-wrap: break-word;"></textarea>
 								<div class="input_box">
-									<button type="button" id="replyWrite_btn"
-										class="input_button basebutton skin size">등록</button>
+									<a type="button" id="replyWrite_btn"
+										class="input_button">등록</a>
 								</div>
 							</div>
 						</div>
@@ -157,43 +158,17 @@ while(se.hasMoreElements()){
 				</c:otherwise>
 				</c:choose>
 				</div>
-			</div>
-
-				<div class="top_btn" style="padding-bottom: 13px">
-				<div class="left_area">
-					
-					<!-- 					<a class="basebutton skin size">이전글</a>
-		
-				<a class="basebutton skin size">다음글</a> -->
-
-
-
-					<!-- 목록 -->
-					<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
-				</div>
-				<div class="right_area">
-					<!-- 수정 -->
-					<button type="submit" class="basebutton skin size" id="update_btn">수정</button>
-					<!-- 삭제 -->
-					<button type="submit" class="basebutton skin size" id="delete_btn">삭제</button>
-				</div>
-			</div>
-			
-			<br><br>
 				<!-- 댓글 출력창-->
-			<div class="view_content">			
 			 	<div class="comment_box">
-					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
+					<p style="float: left; margin-right: 12px; font-size: 17px; font-weight:600px; margin-top: 10px;">댓글</p>
 					<c:forEach items="${replyList}" var="replyList">
-						<div class="comment_writer">
+						<div class="comment_print">
 							<div class="comment_inbox">
-									<em class="comment_inbox_name">작성자 : ${replyList.name}</em>
-								<p>
-									작성 날짜 :
-									<fmt:formatDate value="${replyList.regdate}"
-										pattern="yyyy-MM-dd HH:mm:ss" />
+									<em class="comment_inbox_name">${replyList.name}</em>
+								<textarea style="padding-left:13px; overflow: hidden; outline: none; " wrap="hard">${replyList.content}</textarea>
+								<p class="comment_info">
+									<fmt:formatDate value="${replyList.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
 								</p>
-								<textarea style="overflow: hidden; outline: none;" readonly="readonly">${replyList.content}</textarea>
 								<div class="right_area_reply">
 								<c:choose>
 								<c:when test="${member.id == replyList.name}">
@@ -211,6 +186,19 @@ while(se.hasMoreElements()){
 					</c:forEach>
 				</div>
 			</div>
+				<div class="top_btn" style="padding-bottom: 13px">
+				<div class="left_area">
+					<!-- 목록 -->
+					<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
+				</div>
+				<div class="right_area">
+					<!-- 수정 -->
+					<button type="submit" class="basebutton skin size" id="update_btn">수정</button>
+					<!-- 삭제 -->
+					<button type="submit" class="basebutton skin size" id="delete_btn">삭제</button>
+				</div>
+			</div>
+			<br><br>
 		</div>
 </section>
 <script>
@@ -227,6 +215,25 @@ while(se.hasMoreElements()){
 		}
 		return false;
 	})
+$('#content').keydown(function(){
+        var rows = $('#content').val().split('\n').length;
+        var maxRows = 3;
+        if( rows > maxRows){
+            alert('3줄 까지만 가능합니다');
+            modifiedText = $('#content').val().split("\n").slice(0, maxRows);
+            $('#content').val(modifiedText.join("\n"));
+        }
+    })
+function adjustHeight() {
+  var textEle = $('textarea');
+  textEle[0].style.height = 'auto';
+  var textEleHeight = textEle.prop('scrollHeight');
+  textEle.css('height', textEleHeight);
+};
+var textEle = $('textarea');
+textEle.on('keyup', function() {
+  adjustHeight();
+});
 	
 	$('#content').keydown(function(){
         var rows = $('#content').val().split('\n').length;

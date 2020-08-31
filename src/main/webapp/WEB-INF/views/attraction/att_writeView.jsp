@@ -167,7 +167,7 @@ h3 {
 				<label>썸네일 이미지 3 </label><input type="file" name="file3">
 				<div style="border: 1px solid black;">
 					<button type="button" class="BaseButton" onclick="location.href='/attraction/list'">취소</button> 
-					<button type="button" class="BaseButton" onclick="write_btn()">등록</button>
+					<button id="BaseButton"type="button" class="BaseButton" onclick="write_btn()">등록</button>
 				</div>
 			</form>
 		</div>

@@ -40,10 +40,10 @@ div[contenteditable=true] {
   float: right;
 }
 .right_area_reply{
-   position: absolute;
-     top: 8px;
-     right: 16px;
-     padding-top: 25px;
+	position: absolute;
+  	top: 8px;
+  	right: 16px;
+  	padding-top: 105px;
 }
 .basebutton{
     display: inline-block;
@@ -101,36 +101,36 @@ div[contenteditable=true] {
     margin-bottom: 10px;
     font-weight: 700;
     font-size: 13px;
-   padding-left: 13px;
+	padding-left: 13px;
 }
 .comment_writer {
-   width: 740px;
-   height: auto;
+	width: 740px;
+	height: auto;
     padding: 10px 10px 0px 10px;
     border: 2px solid #ddd;
     border-radius: 6px;
     box-sizing: border-box;
     background: white;
-   float: right;
-   position: relative;
+	float: right;
+	position: relative;
 }
 .comment_print {
-   width: 740px;
-   height: auto;
+	width: 740px;
+	height: auto;
     border-bottom: 1px solid #ddd;
     box-sizing: border-box;
     background: white;
-   float: right;
-   margin-top: 12px;
+	float: right;
+	margin-top: 12px;
 }
 .comment_inbox textarea {
-   width: 680px;
-   height: 60px;
-   padding: 13px;
-   border: 0px solid #cecdce;
-   background: #fff;
-   line-height: 18px;
-   resize: none;
+	width: 680px;
+	height: 60px;
+	padding: 13px;
+	border: 0px solid #cecdce;
+	background: #fff;
+	line-height: 18px;
+	resize: none;
 }
 
 .reply_input{
@@ -150,15 +150,15 @@ div[contenteditable=true] {
     font-weight: 700;
     text-align: center;
     vertical-align: top;
-   float: right;
+	float: right;
     color: #b7b7b7;
     cursor: pointer;
 }
 .input_button:hover{
-   color:#000000;
+	color:#000000;
 }
-.comment_info{   
-   margin-top: 7px;
+.comment_info{	
+	margin-top: 7px;
     font-size: 12px;
     color: #979797;
     padding-left: 13px;

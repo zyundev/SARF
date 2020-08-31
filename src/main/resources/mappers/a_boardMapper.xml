@@ -5,11 +5,11 @@
 <mapper namespace="a_boardMapper">
 
 	<!-- 게시판 목록 조회 -->
-<!-- <select id="list" resultType="com.sarf.vo.BoardVO">
+	<select id="list" resultType="com.sarf.vo.BoardVO">
 	   SELECT *	FROM A_BOARD
 			ORDER BY BNO DESC
 	</select>
--->
+
 	<!-- 게시판 글 작성 -->
  	<insert id="write" >
 		INSERT INTO A_BOARD(BNO, SUBJECT, NAME, CONTENT)

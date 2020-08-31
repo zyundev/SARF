@@ -38,7 +38,7 @@
             <div>
                <input type="text" class="textarea_input" placeholder="제목을 입력하세요." id="subject" name="subject" value="${update.subject}" style="height: 40px;"/>
             </div>
-               <textarea placeholder="내용을 입력하세요." id="content" name="content" value="${update.content}" style="font-size:15px; "></textarea>
+               <textarea placeholder="내용을 입력하세요." id="content" name="content" style="font-size:15px; "><c:out value="${update.content}" /></textarea>
 					<!-- SmartEditor2 -->
 					<script type="text/javascript">
 			        var oEditors = [];
@@ -78,7 +78,7 @@
             </div>
             <div>
                <button type="button" class="cancel_btn BaseButton" onclick="location.href='/attraction/list'">취소</button>
-               <button type="button" class="update_btn BaseButton">저장</button>
+               <button id="BaseButton" type="button" class="update_btn BaseButton">저장</button>
             </div>
             
          </form>

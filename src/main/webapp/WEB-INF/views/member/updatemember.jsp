@@ -23,7 +23,7 @@
                 <div class="container_id_div">아이디</div>
             </div>
             <div class="container_pw">
-                <input class="container_pw_input" type="password" name="pw" maxlength="30">
+                <input class="container_pw_input" type="password" name="pw" maxlength="30" autofocus>
                 <div class="container_pw_div">변경할 비밀번호를 입력해주세요.</div>
             </div>
             <div class="container_pwcheck">
