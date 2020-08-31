@@ -89,7 +89,7 @@ header {
 <body>
 
 	<header>
-		<%@ include file="head.jsp"%>
+		<%@ include file="b_head.jsp"%>
 	</header>
 
 	<!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->

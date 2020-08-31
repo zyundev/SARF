@@ -13,6 +13,11 @@
 </head>
 <link rel="stylesheet" href="/resources/css/update.css" />
 <body>
+
+	<header>
+		<%@ include file="../board/bu_head.jsp" %>
+	</header>
+	
 	<div class="base-layout">
 		<div class="UpdateHeader">
 			<h3>게시판 글쓰기</h3>
@@ -69,7 +74,7 @@
       				$(".cancel_btn").on("click", function() {
        				  event.preventDefault();
        				  if(confirm("수정을 취소하시겠습니까?") == true) {
-        			    location.href = "/a_board/a_list";
+        			    location.href = "/a_board/a_view?bno=${update.bno}";
          				}
       				})
    				})

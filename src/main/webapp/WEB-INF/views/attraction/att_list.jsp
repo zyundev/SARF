@@ -253,6 +253,11 @@ while(se.hasMoreElements()){
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
+
+	<header>
+		<%@ include file="../board/b_head.jsp" %>
+	</header>
+	
 	<div id="container">
 		<h2>명소</h2>
         <hr style = "border: solid 3px black;" />

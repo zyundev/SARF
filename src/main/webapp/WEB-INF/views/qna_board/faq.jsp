@@ -49,7 +49,7 @@
 <body>
 
 <header>
-	<%@ include file="head.jsp"%>
+	<%@ include file="f_head.jsp"%>
 </header>
   
    <div class="container">

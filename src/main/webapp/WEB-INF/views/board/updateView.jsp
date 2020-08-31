@@ -40,7 +40,13 @@ $(document).ready(function() {
 </script>
 </head>
 <link rel="stylesheet" href="/resources/css/update.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/board_menu.css" />
 <body>
+
+	<header>
+		<%@ include file="b_head.jsp" %>
+	</header>
+
 	<div class="base-layout">
 		<div class="UpdateHeader">
 			<h3>게시판 글쓰기</h3>

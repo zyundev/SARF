@@ -8,8 +8,8 @@
 <meta charset="UTF-8">
 <title>SARF</title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/main.css" />
-<link rel="stylesheet" href="/resources/css/css_menu.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/main.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/css_menu.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
