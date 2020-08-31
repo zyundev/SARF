@@ -31,6 +31,7 @@ public class MemberController {
 	@Inject
 	UserMailSendService mailsender;	
 	
+	// 암호화 기능 사용
 	@Inject
 	BCryptPasswordEncoder pwdEncoder;
 	
@@ -152,14 +153,14 @@ public class MemberController {
 			logger.info("~~~post deletemember~~~");
 		}
 		
-		//세션에 있는 member를 가져와 member 변수에 넣어줍니다.
+		// 세션에 있는 member를 가져와 member 변수에 넣어줍니다.
 		MemberVO member = (MemberVO) session.getAttribute("member");
 		
 		// 세션에 있는 비밀번호
 		String sessionPass = member.getPw();
-		System.out.println("sessionpass~~~" + sessionPass);
+		System.out.println("sessionpass~~~ " + sessionPass);
 		
-		// vo로 들어오는 비밀번호
+		// vo로 들어오는 비밀번호를 암호화
 		String voPass = vo.getPw();
 		String pwd = pwdEncoder.encode(voPass);
 		System.out.println("pwd~~~ " + pwd);
@@ -231,8 +232,10 @@ public class MemberController {
 		
 		// 비밀번호 이메일 전송 후 임시 비밀번호 받음
 		String key = mailsender.mailSendWithUserKey(vo.getId(), vo.getEmail(), request);
+		String pwd = pwdEncoder.encode(key);
 		
-		findpw.setPw(key);
+		findpw.setPw(pwd);
+		
 		service.updateMember(findpw);
 		
 		rttr.addFlashAttribute("find_pw_msg", true);

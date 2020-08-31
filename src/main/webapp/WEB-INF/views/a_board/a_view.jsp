@@ -58,9 +58,12 @@ while(se.hasMoreElements()){
 						alert('다른사용자의 글을 삭제할 수 없습니다.');
 						return false;
 					}
-					formObj.attr("action", "/a_board/a_delete");
-					formObj.attr("method", "post");
-					formObj.submit();
+					var check = confirm('정말 삭제하시겠습니까?');
+					if(check) {
+						formObj.attr("action", "/a_board/a_delete");
+						formObj.attr("method", "post");
+						formObj.submit();
+					}
 				}
 			})
 			
@@ -231,6 +234,16 @@ var textEle = $('textarea');
 textEle.on('keyup', function() {
   adjustHeight();
 });
+	
+	$('#content').keydown(function(){
+        var rows = $('#content').val().split('\n').length;
+        var maxRows = 3;
+        if( rows > maxRows){
+            alert('3줄 까지만 가능합니다');
+            modifiedText = $('#content').val().split("\n").slice(0, maxRows);
+            $('#content').val(modifiedText.join("\n"));
+        }
+    })
 </script>
 </body>
 

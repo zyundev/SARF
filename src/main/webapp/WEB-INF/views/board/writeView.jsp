@@ -7,14 +7,14 @@
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
 <title>글쓰기</title>
 <link rel="stylesheet" href="/resources/css/write.css"/>
+<link rel="stylesheet" href="/resources/css/hf_collect/bwrite_menu.css" />
 <!-- SmartEditor2 라이브러리 --> 
 <script type="text/javascript" src="/se2/js/HuskyEZCreator.js" charset="utf-8"></script> 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 //첫 글자 공백 사용 X
-function blank_chk(obj) {                        
-    if(obj.value == " ")
-    {              
+function blank_chk(obj) {
+    if(obj.value == " ") {
         alert("첫 단어로 공백을 사용할 수 없습니다.");
         obj.focus();
         obj.value = obj.value.replace(' ','');
@@ -24,22 +24,27 @@ function blank_chk(obj) {
 
 // 제목, 내용 빈칸 X
 $(document).ready(function() {
-	$("#submit").click(function() {
+	$(".write-sb").click(function() {
 		if($("#sub").val().length == 0) {
 			alert("제목을 입력해주세요.");
 			$("#sub").focus();
 			return false;
 		}
-		/* if($("#content").val().length == 0) {
+		else if($("#content").val().length == 0) {
 			alert("내용을 입력해주세요.");
 			$("#content").focus();
 			return false;
-		} */
+		}
 	})
 })
 </script>
 </head>
 <body>
+
+	<header>
+		<%@ include file="bw_head.jsp" %>
+	</header>
+	
 	<div class="base-layout">
 		<div class="WritingHeader">
 			<h3>게시판 글쓰기</h3>
@@ -48,7 +53,7 @@ $(document).ready(function() {
 			<form name="writeForm" method="post" action="/board/write">
 				<div class="WritingTitle">자유 게시판</div>
 				<div>
-					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." id="sub" name="subject" onkeyup="blank_chk(this);" onchange="blank_chk(this);" style="height: 40px;"></textarea>
+					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." id="sub" name="subject" onkeyup="blank_chk(this);" style="height: 40px;"></textarea>
 				</div>
 				<!-- 
 					아래 부분의 TEXTAREA는 스마트 에디터에 의해 편집되는 내용을 담는 것으로
@@ -95,7 +100,7 @@ $(document).ready(function() {
 				</script>
 				<div>
 					<button type="button" class="BaseButton" onclick="location.href='/board/list'">취소</button>
-					<button id="submit" type="submit" class="BaseButton">등록</button>
+					<button type="submit" id="BaseButton" class="BaseButton write-sb">등록</button>
 				</div>
 			</form>
 		</div>

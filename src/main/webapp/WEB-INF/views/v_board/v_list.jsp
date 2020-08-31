@@ -91,7 +91,7 @@ header {
 <body>
 
 	<header>
-		<%@ include file="../board/head.jsp"%>
+		<%@ include file="../board/b_head.jsp"%>
 	</header>
 
 	<div class="main-tab">
@@ -99,8 +99,7 @@ header {
 		<!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
 		<div id="container">
 			<ul class="tab">
-				<li data-tab="tab1" class="cool-link"><a href="/board/list"><b>자유
-							게시판</b></a></li>
+				<li data-tab="tab1" class="cool-link"><a href="/board/list"><b>자유 게시판</b></a></li>
 				<li data-tab="tab2" class="cool-link"><a
 					href="/a_board/a_list"><b>명소 게시판</b> </a></li>
 				<li data-tab="tab3" class="cool-link"><a

@@ -58,7 +58,7 @@
 
 header {
 	padding-top: 15px;
-	padding-bottom: 75px;
+	padding-bottom: 15px;
 }
 </style>
 
@@ -67,7 +67,7 @@ header {
 <body>
 
 	<header>
-		<%@ include file="head.jsp"%>
+		<%@ include file="n_head.jsp"%>
 	</header>
 
 	<div class="main-tab">

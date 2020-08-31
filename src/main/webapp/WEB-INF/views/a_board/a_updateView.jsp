@@ -69,7 +69,7 @@
       				$(".cancel_btn").on("click", function() {
        				  event.preventDefault();
        				  if(confirm("수정을 취소하시겠습니까?") == true) {
-        			    location.href = "/a_board/a_list";
+        			    location.href = "/a_board/a_view?bno=${update.bno}";
          				}
       				})
    				})

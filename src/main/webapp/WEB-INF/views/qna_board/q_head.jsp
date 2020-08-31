@@ -8,9 +8,7 @@
 <meta charset="UTF-8">
 <title></title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/include_main.css" />
-<link rel="stylesheet" href="/resources/css/css_include_menu.css" />
-
+<link rel="stylesheet" href="/resources/css/hf_collect/qna_menu.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
@@ -21,11 +19,11 @@
 	</div>
     <!-- 로고 -->
       <div class="logo">
-		<a href="./"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
+		<a href="/"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
       </div>
 
 		<!-- 메뉴 -->
-		<input type="checkbox" id="menuicon"> <label for="menuicon">
+		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:-119px; margin-right:17px;">
 			<span></span> <span></span> <span></span>
 		</label>
 
@@ -56,9 +54,9 @@
 			<hr>
 			<a href="/attraction/list">명소</a>
 			<hr>
-			<a href="/resources/etc/restaurant.jsp">맛집</a>
+			<a href="/restaurant/list">맛집</a>
 			<hr>
-			<a href="/resources/etc/festival.jsp">축제</a>
+			<a href="/festival/list">축제</a>
 			<hr>
 
 		<div class="board">
@@ -87,6 +85,5 @@
 			</c:otherwise>
 		 </c:choose>
 		</div>
-	</header>
 </body>
 </html>

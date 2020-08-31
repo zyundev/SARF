@@ -62,7 +62,7 @@
 					})
 				</script>
 				<div>
-					<button type="button" class="BaseButton" onclick="location.href='/n_board/list'">취소</button>
+					<button type="button" class="BaseButton" onclick="location.href='/n_board/notice'">취소</button>
 					<button id="BaseButton" type="submit" class="BaseButton">등록</button>
 				</div>
 			</form>

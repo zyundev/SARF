@@ -22,12 +22,15 @@ while(se.hasMoreElements()){
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/qna_list.css">
+<link rel="stylesheet" href="/resources/css/qna_menu.css">
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- 구글 나눔 고딕 -->
-<link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&display=swap" rel="stylesheet">	
 </head>
 <body>
+
+	<header>
+		<%@ include file="q_head.jsp" %>
+	</header>
+
     <div class="container">
     	<h3>묻고 답하기</h3>
     <table class="board_list">
@@ -58,5 +61,10 @@ while(se.hasMoreElements()){
 			      </div>
 	
 	</div>
+	
+	<footer>
+		<%@ include file="footer.jsp" %>
+   </footer>
+	
 </body>
 </html>
