@@ -14,7 +14,7 @@
 <body>
 	<div class="base-layout">
 		<div class="WritingHeader">
-			<h3>게시판 글쓰기</h3>
+			<h3>축제 게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
 			<form name="writeForm" method="post" action="/v_board/v_write">

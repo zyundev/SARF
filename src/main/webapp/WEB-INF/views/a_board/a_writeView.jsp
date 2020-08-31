@@ -14,7 +14,7 @@
 <body>
 	<div class="base-layout">
 		<div class="WritingHeader">
-			<h3>게시판 글쓰기</h3>
+			<h3>명소 게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
 			<form name="writeForm" method="post" action="/a_board/a_write">
