@@ -99,9 +99,9 @@
 			<hr>
 			<a href="/attraction/list">명소</a>
 			<hr>
-			<a href="/resources/etc/restaurant.jsp">맛집</a>
+			<a href="/restaurant/list">맛집</a>
 			<hr>
-			<a href="/resources/etc/festival.jsp">축제</a>
+			<a href="/festival/list">축제</a>
 			<hr>
 
 		<div class="board">
