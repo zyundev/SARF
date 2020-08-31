@@ -6,32 +6,30 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SARF</title>
+<title></title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/hf_collect/main.css" />
-<link rel="stylesheet" href="/resources/css/hf_collect/css_menu.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/board_menu.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
-	<!-- 프로젝트 심벌 -->
+<!-- 프로젝트 심벌 -->
 	<div class="symbol">
 		<img src="/resources/images/project_symbol.png" alt="심볼" width="150px" height="150px">
 	</div>
     <!-- 로고 -->
-    <div class="logo">
+      <div class="logo">
 		<a href="/"><img src="/resources/images/logo.jpg" alt="로고" width="300px"></a>
-    </div>
-	<!-- 메뉴 -->
-	<input type="checkbox" id="menuicon"> 
-	<label for="menuicon">
-		<span></span>
-		<span></span> 
-		<span></span>
-	</label>
-	<div class="sidebar">
-		<a href="/n_board/notice">공지사항</a>
-		<hr>
+      </div>
+
+		<!-- 메뉴 -->
+		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:-126.5px; margin-right: 17px;">
+			<span></span> <span></span> <span></span>
+		</label>
+
+		<div class="sidebar">
+			<a href="/n_board/notice">공지사항</a>
+			<hr>
 		
 		<div class="board">
 			<a class="cursor" href="/board/list">게시판</a>
@@ -53,13 +51,14 @@
 				<br>
 			</div>
 		</div>
-		<hr>
-		<a href="/attraction/list">명소</a>
-		<hr>
-		<a href="/restaurant/list">맛집</a>
-		<hr>
-		<a href="/festival/list">축제</a>
-		<hr>
+			<hr>
+			<a href="/attraction/list">명소</a>
+			<hr>
+			<a href="/restaurant/list">맛집</a>
+			<hr>
+			<a href="/festival/list">축제</a>
+			<hr>
+
 		<div class="board">
 			<a class="cursor" href="/qna_board/faq">고객센터</a>
 			<div>
@@ -70,11 +69,11 @@
 				</p>				
 			</div>
 		</div>
-		<hr>
-		<a href="/resources/etc/intro.jsp">운영진 소개</a>
-		<hr>
-		<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
-		<c:choose>
+			<hr>
+			<a href="/resources/etc/intro.jsp">운영진 소개</a>
+			<hr>
+			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
+			<c:choose>
          	<c:when test="${member == null}">
          		<button class="menubar-button" id="signup" onclick="location.href='/member/join'">회원가입</button>
          		<button class="menubar-button" id="login" onclick="location.href='/member/login'">로그인</button>
@@ -85,6 +84,6 @@
 				<button class="menubar-button" id="logout" onclick="location.href='/member/logout'">로그아웃</button>
 			</c:otherwise>
 		 </c:choose>
-	</div>
+		</div>
 </body>
 </html>

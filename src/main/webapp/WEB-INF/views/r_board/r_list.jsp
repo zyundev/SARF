@@ -90,7 +90,7 @@ header {
 <body>
 
 	<header>
-		<%@ include file="../board/head.jsp"%>
+		<%@ include file="../board/b_head.jsp"%>
 	</header>
 
 	<div class="main-tab">

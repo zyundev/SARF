@@ -12,6 +12,11 @@
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
+
+	<header>
+		<%@ include file="../board/bw_head.jsp" %>
+	</header>
+	
 	<div class="base-layout">
 		<div class="WritingHeader">
 			<h3>명소 게시판 글쓰기</h3>

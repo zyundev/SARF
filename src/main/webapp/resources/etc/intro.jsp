@@ -7,6 +7,7 @@
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <title>운영진 소개</title>
 <link rel="stylesheet" type="text/css" href="/resources/css/intro.css">
+<link rel="stylesheet" type="text/css" href="/resources/css/hf_collect/intro_menu.css">
 <body>
 
 <header>
@@ -109,7 +110,6 @@
         <span class="semi-bubble_3"></span>
     </div>
     
-	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	<br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 	

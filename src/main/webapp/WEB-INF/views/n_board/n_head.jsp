@@ -6,15 +6,15 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>SARF</title>
+<title></title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/hf_collect/main.css" />
-<link rel="stylesheet" href="/resources/css/hf_collect/css_menu.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/notice_menu.css" />
+<link href="https://fonts.googleapis.com/css2?family=Jua&display=swap" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
 </head>
 <body>
-	<!-- 프로젝트 심벌 -->
+<!-- 프로젝트 심벌 -->
 	<div class="symbol">
 		<img src="/resources/images/project_symbol.png" alt="심볼" width="150px" height="150px">
 	</div>
@@ -24,7 +24,7 @@
     </div>
 	<!-- 메뉴 -->
 	<input type="checkbox" id="menuicon"> 
-	<label for="menuicon">
+	<label for="menuicon" style="margin-top:-126.5px; margin-right: -0.3px;">
 		<span></span>
 		<span></span> 
 		<span></span>
@@ -56,14 +56,14 @@
 		<hr>
 		<a href="/attraction/list">명소</a>
 		<hr>
-		<a href="/restaurant/list">맛집</a>
+		<a href="/resources/etc/restaurant.jsp">맛집</a>
 		<hr>
-		<a href="/festival/list">축제</a>
+		<a href="/resources/etc/festival.jsp">축제</a>
 		<hr>
 		<div class="board">
 			<a class="cursor" href="/qna_board/faq">고객센터</a>
 			<div>
-				<a href="/qna_board/faq"><button style="margin-right:120px" class="bd menubar-button">- QnA</button></a>
+				<a href="/qna_board/faq"><button style="margin-right:120px; padding-right:10px;" class="bd menubar-button">- QnA</button></a>
 				<br>				
 				<p>
 					<a href="/qna_board/qna_list"><button class="bd menubar-button">- 묻고 답하기</button></a>
