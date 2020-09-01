@@ -62,9 +62,12 @@ while(se.hasMoreElements()){
 					alert('다른사용자의 글을 삭제할 수 없습니다.');
 					return false;
 				}
-				formObj.attr("action", "/board/delete");
-				formObj.attr("method", "post");
-				formObj.submit();
+				var check = confirm('정말 삭제하시겠습니까?');
+				if(check) {
+					formObj.attr("action", "/board/delete");
+					formObj.attr("method", "post");
+					formObj.submit();
+				}
 			})
 			
 			// 취소
@@ -148,7 +151,7 @@ while(se.hasMoreElements()){
 							<div class="comment_inbox">
 								
 								<em class="comment_inbox_name" >작성자 : ${member.id}</em>
-								<textarea class="content" name="content" onkeydown="return limitLines(this, event)" rows="2" style="overflow: hidden; overflow-wrap: break-word;"></textarea>
+								<textarea class="content" id="content" name="content" rows="3" style="overflow: hidden; overflow-wrap: break-word;"></textarea>
 								<div class="input_box">
 									<button type="button" id="replyWrite_btn"
 										class="input_button basebutton skin size">등록</button>
@@ -237,16 +240,15 @@ while(se.hasMoreElements()){
 		return false;
 	})
 	
-	function limitLines(obj, e){
-		var numberOfLines = (obj.value.match(/\n/g) || []).length + 1,
-			maxRows = obj.rows;
-
-		if(e.which === 13 && numberOfLines === maxRows){
-			return false;
-		}
-	}
-
-	
+	$('#content').keydown(function(){
+        var rows = $('#content').val().split('\n').length;
+        var maxRows = 3;
+        if( rows > maxRows){
+            alert('3줄 까지만 가능합니다');
+            modifiedText = $('#content').val().split("\n").slice(0, maxRows);
+            $('#content').val(modifiedText.join("\n"));
+        }
+    })
 </script>
 </body>
 

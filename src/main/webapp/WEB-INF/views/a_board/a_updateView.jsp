@@ -13,11 +13,6 @@
 </head>
 <link rel="stylesheet" href="/resources/css/update.css" />
 <body>
-
-	<header>
-		<%@ include file="../board/bu_head.jsp" %>
-	</header>
-	
 	<div class="base-layout">
 		<div class="UpdateHeader">
 			<h3>게시판 글쓰기</h3>
