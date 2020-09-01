@@ -24,7 +24,7 @@ function blank_chk(obj) {
 
 // 제목, 내용 빈칸 X
 $(document).ready(function() {
-	$("#submit").click(function() {
+	$("#BaseButton").click(function() {
 		if($("#sub").val().length == 0) {
 			alert("제목을 입력해주세요.");
 			$("#sub").focus();
@@ -44,7 +44,7 @@ $(document).ready(function() {
 <body>
 
 	<header>
-		<%@ include file="b_head.jsp" %>
+		<%@ include file="bu_head.jsp" %>
 	</header>
 
 	<div class="base-layout">
@@ -120,7 +120,7 @@ $(document).ready(function() {
 				</div>
 				<div>
            			<button type="button" class="cancel_btn BaseButton">취소</button>
-			        <button id="submit" type="submit" class="update_btn BaseButton">저장</button>
+			        <button type="submit" id="BaseButton" class="update_btn BaseButton">저장</button>
 				</div>
 			</form>
 		</div>

@@ -24,7 +24,7 @@ function blank_chk(obj) {
 
 // 제목, 내용 빈칸 X
 $(document).ready(function() {
-	$(".write-sb").click(function() {
+	$("#BaseButton").click(function() {
 		if($("#sub").val().length == 0) {
 			alert("제목을 입력해주세요.");
 			$("#sub").focus();
@@ -100,7 +100,7 @@ $(document).ready(function() {
 				</script>
 				<div>
 					<button type="button" class="BaseButton" onclick="location.href='/board/list'">취소</button>
-					<button type="submit" id="BaseButton" class="BaseButton write-sb">등록</button>
+					<button type="submit" id="BaseButton" class="BaseButton">등록</button>
 				</div>
 			</form>
 		</div>
