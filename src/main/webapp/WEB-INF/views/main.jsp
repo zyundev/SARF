@@ -29,14 +29,26 @@
     font-size: 20px;
   
 }
+
+header {
+	-webkit-animation: fadein 4s; /* Safari and Chrome */
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
 </style>
 <meta charset="UTF-8">
 <meta name="viewport"
 	content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
 <title>SARF</title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/main.css" />
-<link rel="stylesheet" href="/resources/css/css_menu.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/main.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/css_menu.css" />
 
 <link href = "https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel = "stylesheet">
 
@@ -715,6 +727,8 @@
         }, 100);
         $('.loading-container');
     });
+
+         
 
 
     

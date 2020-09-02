@@ -23,7 +23,11 @@ while(se.hasMoreElements()){
 <title>상세 보기</title>
 <link href="/resources/css/view.css" rel="stylesheet" type="text/css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+<style>
+	header {
+		padding-bottom: 30px;
+	}
+</style>
 </head>
 
 <script type="text/javascript">
@@ -92,6 +96,11 @@ while(se.hasMoreElements()){
 </script>
 	
 <body>
+
+<header>
+	<%@ include file="../h_list/bv_head.jsp" %>
+</header>
+
 <section id="container">
 	<div class="view_list">
 			<div class="view_content">
@@ -245,6 +254,15 @@ textEle.on('keyup', function() {
         }
     })
 </script>
+
+<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
+	
 </body>
 
 </html>

@@ -79,6 +79,11 @@
 			})
 </script>
 <body>
+
+	<header>
+		<%@ include file="../h_list/qv_head.jsp" %>
+	</header>
+	
 	<div>
 		<h3 style="padding: 15px 0 16px 16px; font-size: 25px;">묻고 답하기</h3>
 		<table class="board_view">
@@ -182,5 +187,14 @@
 			<a href="/qna_board/qna_list" class="btn" id="list">목록으로</a>
 		</div>
 	</div>
+	
+	<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
+	
 </body>
 </html>

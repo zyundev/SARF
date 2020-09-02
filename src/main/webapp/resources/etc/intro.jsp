@@ -8,10 +8,11 @@
 <title>운영진 소개</title>
 <link rel="stylesheet" type="text/css" href="/resources/css/intro.css">
 <link rel="stylesheet" type="text/css" href="/resources/css/hf_collect/intro_menu.css">
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <body>
 
 <header>
-	<%@ include file="head.jsp"%>
+	<%@ include file="d_head.jsp" %>
 </header>
 
 	<div class="card-wrapper">
@@ -116,6 +117,14 @@
 <footer>
 	<%@ include file="footer.jsp"%>
 </footer>
+
+<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+</script>
 
 </body>
 </head>

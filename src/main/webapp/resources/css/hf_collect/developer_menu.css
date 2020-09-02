@@ -14,15 +14,15 @@
 
 .symbol {
 	position: relative;
-	left: 17px;
-	top: -15px;
-	margin-top: 23px;
+	left: 8px;
+	top: -15.5px;
+	margin-left: 9px;
 }
 
 .logo {
 	z-index: 1;
 	position: absolute;
-	margin-top: -144px;
+	margin-top: -145px;
 	left: 50%;
 	/* margin-left:-(濡쒓퀬width/2) */
 	margin-left: -150px;
@@ -47,6 +47,7 @@ footer {
 	margin-top: 100px;
 	text-align: center;
 	font-size: 15px;
+	font-family: 'Jua', sans-serif;
 }
 
 #menuicon {
@@ -215,9 +216,5 @@ button:hover {
 
 .bd {
 	margin-right: 95px;
-	font-family: 'Jua', sans-serif;
-}
-
-footer {
 	font-family: 'Jua', sans-serif;
 }

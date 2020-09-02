@@ -18,7 +18,7 @@ while(se.hasMoreElements()){
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>tab example</title>
+	<title>서울 축제 소개</title>
 	<style>
 		#container {
 			width:960px;
@@ -114,7 +114,7 @@ while(se.hasMoreElements()){
         	position: absolute;
         	left: 70%;
         }
-        img{
+        td img{
         	width:300px;
         	height:225px;
         }
@@ -228,12 +228,25 @@ while(se.hasMoreElements()){
         		
         
         }
+        
+        header {
+			padding-bottom: 30px;
+		}
+
+		footer {
+			padding-top: 50px;
+		}
      
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
+
+	<header>
+		<%@ include file="../h_list/intro_head.jsp" %>
+	</header>
+	
 	<div id="container">
 		<h2>축제</h2>
         <hr style = "border: solid 3px black;" />
@@ -403,5 +416,14 @@ while(se.hasMoreElements()){
 			return false;
 		})
 	</script>
+	
+	<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
+
 </body>
 </html>

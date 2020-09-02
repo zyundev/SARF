@@ -18,7 +18,7 @@ while(se.hasMoreElements()){
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>tab example</title>
+	<title>서울 맛집 소개</title>
 	<style>
 		#container {
 			width:960px;
@@ -62,30 +62,36 @@ while(se.hasMoreElements()){
        .tabcontent.current {
 			display: block;
 		}
+		
         .tabcontent2 {
 			display: none;
 			background-color: #E3E6DA;
 			padding: 6px 12px;
 			color:#000;
 		}
+		
         .tabcontent2.current {
 			display: block;
 		}
+		
         .tabcontent3 {
 			display: none;
 			background-color: #C0CEB2;
 			padding: 6px 12px;
 			color:#000;
 		}
+		
         .tabcontent3.current {
 			display: block;
 		}
+		
         .tabcontent4 {
 			display: none;
 			background-color: #8AA989;
 			padding: 6px 12px;
 			color:#000;
 		}
+		
           .tabcontent4.current {
 			display: block;
 		}
@@ -98,9 +104,11 @@ while(se.hasMoreElements()){
             height: 5px;
             background: #000;
         }
+        
         .cool-link:hover::after {
             width: 100%;
         }
+        
         .cool-link:checked::after{
         	width:100%;
         }
@@ -110,11 +118,13 @@ while(se.hasMoreElements()){
         	position: absolute;
         	left: 67%;
         }
+        
         .button_2 {
         	position: absolute;
         	left: 70%;
         }
-        img{
+        
+        td img{
         	width:300px;
         	height:225px;
         }
@@ -142,29 +152,25 @@ while(se.hasMoreElements()){
 		}
 		
 
-.dsn_more_btn {
-
+		.dsn_more_btn {
 			font-weight: bold;
-
-	
-	width:120px;
-	height: 25px;
-	font-size: 13px;
-	border-radius:3px;
-	color:#fff !important; 
-	display:inline-block; 
-	background-color:#6b9ab8; 
-	border:1px solid #56819d;
-	vertical-align:middle;
-	cursor: pointer;
-	border: 0px;
+			width:120px;
+			height: 25px;
+			font-size: 13px;
+			border-radius:3px;
+			color:#fff !important; 
+			display:inline-block; 
+			background-color:#6b9ab8; 
+			border:1px solid #56819d;
+			vertical-align:middle;
+			cursor: pointer;
+			border: 0px;
 		}
 		
 		.dsn_more_btn:hover{
 			color:#ffffff;
 			background-color:#6b9aff;
 		}
-
 		
 		.dsn_write_btn {
 			display: inline-block;
@@ -213,32 +219,34 @@ while(se.hasMoreElements()){
         		height: 40px;
         		background-color:
         		#004fff;
-        		
         		color: white;
-        		
         		box-shadow: 0 4px 16px
         		rgba(0, 79, 255, 0.3);
-        		
         		font-size: 16px;
         		font-weight: bold;
-        		
 				border-radius: 20px;
-			
-			
 			  	position: absolute;
-			  	
 			  	left: 48%;    		
-        		
-        		
-        		
-        
         }
+        
+        header {
+			padding-bottom: 30px;
+		}
+
+		footer {
+			padding-top: 50px;
+		}
      
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
+
+	<header>
+		<%@ include file="../h_list/intro_head.jsp" %>
+	</header>
+	
 	<div id="container">
 		<h2>맛집</h2>
         <hr style = "border: solid 3px black;" />
@@ -409,5 +417,14 @@ while(se.hasMoreElements()){
 			return false;
 		})
 	</script>
+	
+	<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
+	
 </body>
 </html>
