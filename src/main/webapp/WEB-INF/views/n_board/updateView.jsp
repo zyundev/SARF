@@ -9,10 +9,19 @@
 	textarea:focus {
 		outline: none;
 	}
+	
+	header {
+		padding-bottom: 30px;
+	}
 </style>
 </head>
 <link rel="stylesheet" href="/resources/css/update.css" />
 <body>
+
+	<header>
+		<%@ include file="nu_head.jsp" %>
+	</header>
+	
 	<div class="base-layout">
 		<div class="UpdateHeader">
 			<h3>게시판 글쓰기</h3>

@@ -1,43 +1,36 @@
-@charset "UTF-8";
-
 @import url('https://fonts.googleapis.com/css2?family=Jua&display=swap');
 
-body {
-	font-family: 'Jua', sans-serif;
+@media ( max-width :1300px) {
+	body {
+		position: absolute;
+	}
+}
+
+/* Header */
+.header {
+	position: relative;
+	width: 100%;
 }
 
 .symbol {
-	z-index: 2;
-	position: absolute;
-	left: 25px;
-	top: 8px;
-	-webkit-animation: fadein 4s; /* Safari and Chrome */
-}
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
+	position: relative;
+	left: 20px;
+	top: -7px;
+	margin-left: 25px;
+	margin-top: 15px;
 }
 
 .logo {
-	z-index: 2;
+	z-index: 1;
 	position: absolute;
-	margin-top: 25px;
-	left: 50%;
+	margin-top: -136px;
+	left: 50.6%;
 	/* margin-left:-(濡쒓퀬width/2) */
 	margin-left: -150px;
-	-webkit-animation: fadein 4s; /* Safari and Chrome */
 }
-@-webkit-keyframes fadein { /* Safari and Chrome */
-    from {
-        opacity:0;
-    }
-    to {
-        opacity:1;
-    }
+
+.logo img {
+	cursor: pointer;
 }
 
 .menu {
@@ -46,6 +39,22 @@ body {
 	margin-right: 30px;
 }
 
+.cursor{
+	cursor:pointer;
+}
+
+/* footer */
+footer {
+	margin-top: 100px;
+	text-align: center;
+	font-size: 15px;
+	font-family: 'Jua', sans-serif;
+}
+
+#menuicon {
+	font-family: 'Jua', sans-serif;
+	top: -3px;
+}
 
 /* 메뉴 아이콘 모양 설정 */
 input[id="menuicon"] {
@@ -58,7 +67,7 @@ input[id="menuicon"]+label {
 	height: 40px;
 	position: fixed;
 	right: 10px;
-	margin-top: 35px;
+	margin-right: 17px;
 	top: 10;
 	transition: all .35s;
 	cursor: pointer;
@@ -108,10 +117,11 @@ div[class="sidebar"] {
 	height: 100%;
 	background: #F1F1F1;
 	position: fixed;
-	top: 0;
+	top: -6.5px;
 	right: -300px;
 	z-index: 1;
 	transition: all .35s;
+	font-family: 'Jua', sans-serif;
 }
 
 /* �޴� �������� Ŭ���Ǹ� ���̵�ٰ� ȭ�鿡 ������ */
@@ -142,11 +152,6 @@ div[class="sidebar"] a:hover {
 	transition: all .35s;
 }
 
-.cursor {
-	cursor: pointer;
-}
-
-		
 #user-id-info {
 	font-size: 21pt;
 	text-align: center;
@@ -164,15 +169,20 @@ div[class="sidebar"] a:hover {
 
 #logout {
 	padding-top: 5px;
+	margin-top: -10px;
 }
 
 hr {
 	width: 80%;
+	margin: 0 auto;
 }
 
 .menubar-button {
 	float: right;
-	margin-right: 10px;
+	margin-right: 12px;
+	padding-bottom: 7px;
+	padding-right: 5px;
+	padding-bottom: 10px;
 	border: 0;
 	outline: 0;
 	font-family: Jua;
@@ -180,9 +190,19 @@ hr {
 	color: #B1B1B1;
 }
 
+.member-id-info {
+	margin-top: -12px;
+	padding-bottom: 7px;
+}
+
 button:hover {
 	color: #000;
 	cursor: pointer;
+}
+
+.sidebar a {
+	margin-top: 8px;
+	margin-bottom: 8px;
 }
 
 .sidebar .board div {

@@ -10,8 +10,18 @@
 <!-- SmartEditor2 라이브러리 --> 
 <script type="text/javascript" src="/se2/js/HuskyEZCreator.js" charset="utf-8"></script> 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<style>
+	header {
+		padding-bottom: 30px;
+	}
+</style>
 </head>
 <body>
+
+	<header>
+		<%@ include file="nw_head.jsp" %>
+	</header>
+	
 	<div class="base-layout">
 		<div class="WritingHeader">
 			<h3>게시판 글쓰기</h3>
