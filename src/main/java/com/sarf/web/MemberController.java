@@ -82,9 +82,14 @@ public class MemberController {
 		
 		HttpSession session = req.getSession();
 		session.getAttribute("member");
+		// 아이디가 존재하는 지 확인 
+			
 		MemberVO login = service.login(vo);
+		if(login == null) {
+			rttr.addFlashAttribute("idNull", true);
+			return "redirect:login";
+		}
 		boolean pwdMatch = pwdEncoder.matches(vo.getPw(), login.getPw());
-		
 		if(login != null && pwdMatch == true) {
 			session.setAttribute("logincheck", true);
 			session.setAttribute("member", login);
