@@ -85,7 +85,7 @@ body {
 
 header {
 	padding-top: 15px;
-	padding-bottom: 75px;
+	padding-bottom: 55px;
 }
 </style>
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
@@ -95,7 +95,7 @@ header {
 <body>
 
 	<header>
-		<%@ include file="../board/b_head.jsp"%>
+		<%@ include file="../h_list/b_head.jsp"%>
 	</header>
 
 	<div class="main-tab">
@@ -223,6 +223,14 @@ header {
 			<%@ include file="../board/footer.jsp"%>
 		</footer>
 	</div>
+	
+	<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
 
 </body>
 </html>

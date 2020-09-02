@@ -23,7 +23,7 @@
       </div>
 
 		<!-- 메뉴 -->
-		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:-135.5px; margin-right: -0.3px;">
+		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:-134px; margin-right: 0.5px;">
 			<span></span> <span></span> <span></span>
 		</label>
 

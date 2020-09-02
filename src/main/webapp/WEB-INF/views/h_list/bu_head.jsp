@@ -8,20 +8,14 @@
 <meta charset="UTF-8">
 <title></title>
 <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-<link rel="stylesheet" href="/resources/css/hf_collect/nview_menu.css" />
+<link rel="stylesheet" href="/resources/css/hf_collect/bupdate_menu.css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-<style>
-	.logo {
-		left: 50%;
-		margin-top: -132px;
-	}
-</style>
 </head>
 <body>
 <!-- 프로젝트 심벌 -->
 	<div class="symbol">
-		<img src="/resources/images/project_symbol.png" alt="심볼" width="150px" height="150px" style="margin-left: -28px;">
+		<img src="/resources/images/project_symbol.png" alt="심볼" width="150px" height="150px">
 	</div>
     <!-- 로고 -->
       <div class="logo">
@@ -29,7 +23,7 @@
       </div>
 
 		<!-- 메뉴 -->
-		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:33px; margin-right:0px;">
+		<input type="checkbox" id="menuicon"> <label for="menuicon" style="margin-top:33px; margin-right:17px;">
 			<span></span> <span></span> <span></span>
 		</label>
 

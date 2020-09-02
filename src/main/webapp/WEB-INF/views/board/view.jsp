@@ -97,7 +97,7 @@ while(se.hasMoreElements()){
 <body>
 
 <header>
-	<%@ include file="bv_head.jsp" %>
+	<%@ include file="../h_list/bv_head.jsp" %>
 </header>
 
 <section id="container">
@@ -250,6 +250,14 @@ while(se.hasMoreElements()){
         }
     })
 </script>
+
+<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
 </body>
 
 </html>

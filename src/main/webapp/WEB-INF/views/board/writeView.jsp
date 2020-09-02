@@ -42,7 +42,7 @@ $(document).ready(function() {
 <body>
 
 	<header>
-		<%@ include file="bw_head.jsp" %>
+		<%@ include file="../h_list/bw_head.jsp" %>
 	</header>
 	
 	<div class="base-layout">
@@ -105,6 +105,14 @@ $(document).ready(function() {
 			</form>
 		</div>
 	</div>
+	
+	<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
 
 </body>
 </html>

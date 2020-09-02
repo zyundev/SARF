@@ -19,7 +19,7 @@
 <body>
 
 	<header>
-		<%@ include file="nu_head.jsp" %>
+		<%@ include file="../h_list/nu_head.jsp" %>
 	</header>
 	
 	<div class="base-layout">
@@ -90,5 +90,14 @@
 			</form>
 		</div>
 	</div>
+	
+	<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
+	
 </body>
 </html>

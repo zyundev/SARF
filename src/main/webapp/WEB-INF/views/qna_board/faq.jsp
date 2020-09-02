@@ -49,7 +49,7 @@
 <body>
 
 <header>
-	<%@ include file="f_head.jsp"%>
+	<%@ include file="../h_list/f_head.jsp"%>
 </header>
   
    <div class="container">
@@ -117,5 +117,13 @@
    <footer>
 	<%@ include file="../board/footer.jsp"%>
    </footer>
+   
+   <script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
    </body>
 </html>

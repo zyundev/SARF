@@ -76,7 +76,7 @@ while(se.hasMoreElements()){
 <body>
 
 <header>
-	<%@ include file="nv_head.jsp" %>
+	<%@ include file="../h_list/nv_head.jsp" %>
 </header>
 
 <section id="container">
@@ -141,5 +141,13 @@ while(se.hasMoreElements()){
 
 		</div>
 </section>
+
+<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
 </body>
 </html>
