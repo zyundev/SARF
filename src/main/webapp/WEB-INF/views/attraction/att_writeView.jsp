@@ -17,7 +17,7 @@ while(se.hasMoreElements()){
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-<title>글쓰기</title>
+<title>명소 소개 글쓰기</title>
 <!-- SmartEditor2 라이브러리 --> 
 <script type="text/javascript" src="/smarteditor2/js/service/HuskyEZCreator.js" charset="utf-8"></script> 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -25,6 +25,10 @@ while(se.hasMoreElements()){
 * {
 	border: 0;
 	padding: 0;
+}
+
+body {
+	overflow-x: hidden;
 }
 
 div {
@@ -103,6 +107,11 @@ h3 {
 </style>
 </head>
 <body>
+
+	<header>
+		<%@ include file="../h_list/introw_head.jsp" %>
+	</header>
+	
 	<div class="base-layout">
 		<div class="WritingHeader">
 			<h3>명소게시판 글쓰기</h3>

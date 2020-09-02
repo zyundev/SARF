@@ -14,16 +14,17 @@
 
 .symbol {
 	position: relative;
-	left: 17px;
-	top: -15px;
-	margin-top: 23px;
+	left: 20px;
+	top: -7px;
+	margin-left: 5px;
+	margin-top: 15px;
 }
 
 .logo {
 	z-index: 1;
 	position: absolute;
-	margin-top: -144px;
-	left: 50%;
+	margin-top: -136px;
+	left: 49.1%;
 	/* margin-left:-(濡쒓퀬width/2) */
 	margin-left: -150px;
 }
@@ -47,6 +48,7 @@ footer {
 	margin-top: 100px;
 	text-align: center;
 	font-size: 15px;
+	font-family: 'Jua', sans-serif;
 }
 
 #menuicon {
@@ -215,9 +217,5 @@ button:hover {
 
 .bd {
 	margin-right: 95px;
-	font-family: 'Jua', sans-serif;
-}
-
-footer {
 	font-family: 'Jua', sans-serif;
 }

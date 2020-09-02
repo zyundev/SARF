@@ -29,6 +29,18 @@
     font-size: 20px;
   
 }
+
+header {
+	-webkit-animation: fadein 4s; /* Safari and Chrome */
+}
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity:0;
+    }
+    to {
+        opacity:1;
+    }
+}
 </style>
 <meta charset="UTF-8">
 <meta name="viewport"
@@ -715,6 +727,8 @@
         }, 100);
         $('.loading-container');
     });
+
+         
 
 
     

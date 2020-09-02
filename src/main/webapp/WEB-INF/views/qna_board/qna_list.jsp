@@ -28,7 +28,7 @@ while(se.hasMoreElements()){
 <body>
 
 	<header>
-		<%@ include file="q_head.jsp" %>
+		<%@ include file="../h_list/q_head.jsp" %>
 	</header>
 
     <div class="container">
@@ -65,6 +65,14 @@ while(se.hasMoreElements()){
 	<footer>
 		<%@ include file="footer.jsp" %>
    </footer>
+   
+   <script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
 	
 </body>
 </html>

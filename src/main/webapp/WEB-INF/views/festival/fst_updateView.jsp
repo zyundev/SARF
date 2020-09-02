@@ -6,16 +6,25 @@
 <head>
 <script type="text/javascript" src="/smarteditor2/js/service/HuskyEZCreator.js" charset="utf-8"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<title>게시판</title>
+<title>축제 게시판 수정</title>
 </head>
 <link rel="stylesheet" href="/resources/css/update.css" />
 <style>
+body {
+	overflow-x: hidden;
+}
+
 #content{
 	width: 100%;
 	height:400px;
 }
 </style>
 <body>
+
+	<header>
+		<%@ include file="../h_list/introu_head.jsp" %>
+	</header>
+	
    <div class="base-layout">
       <div class="UpdateHeader">
          <h3>축제게시판 글 수정하기</h3>

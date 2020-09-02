@@ -13,6 +13,11 @@
 </head>
 <link rel="stylesheet" href="/resources/css/update.css" />
 <body>
+
+	<header>
+		<%@ include file="../h_list/bu_head.jsp" %>
+	</header>
+	
 	<div class="base-layout">
 		<div class="UpdateHeader">
 			<h3>게시판 글쓰기</h3>
@@ -81,5 +86,14 @@
 			</form>
 		</div>
 	</div>
+	
+	<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
+	
 </body>
 </html>

@@ -17,11 +17,15 @@ while(se.hasMoreElements()){
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
-<title>글쓰기</title>
+<title>축제 소개 글쓰기</title>
 <style>
 * {
 	border: 0;
 	padding: 0;
+}
+
+body {
+	overflow-x: hidden;
 }
 
 div {
@@ -102,6 +106,11 @@ h3 {
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 </head>
 <body>
+
+	<header>
+		<%@ include file="../h_list/introw_head.jsp" %>
+	</header>
+	
 	<div class="base-layout">
 		<div class="WritingHeader">
 			<h3>축제게시판 글쓰기</h3>

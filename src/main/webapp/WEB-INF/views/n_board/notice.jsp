@@ -14,6 +14,9 @@
 
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
 <style>
+body {
+	overflow-x: hidden;
+}
 #container {
 	width: 980px;
 	margin: 0 auto;
@@ -67,7 +70,7 @@ header {
 <body>
 
 	<header>
-		<%@ include file="n_head.jsp"%>
+		<%@ include file="../h_list/n_head.jsp"%>
 	</header>
 
 	<div class="main-tab">
@@ -181,6 +184,14 @@ header {
 			<%@ include file="../board/footer.jsp"%>
 		</footer>
 	</div>
+	
+	<script>
+	window.onload = function() {
+		setTimeout (function () {
+			scrollTo(0,0);
+		},100);
+	}
+	</script>
 
 </body>
 </html>

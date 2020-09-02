@@ -79,7 +79,7 @@
 
 /* main-article3 */
 .intro {
-	background: url('../images/intro.jpg') no-repeat center center/cover;
+	background: url('../../images/intro.jpg') no-repeat center center/cover;
 	padding: 100px 20px;
 	text-align: center;
 	margin-bottom: 50px;
