@@ -31,6 +31,11 @@
 </head>
 
 <body>
+	<c:if test="${idNull == true}">
+		<script>
+			alert('입력하신 아이디는 존재하지 않습니다.');
+		</script>
+	</c:if>
 	<c:if test="${msg == false}">
 		<script>
 			alert('비밀번호가 일치하지 않습니다.');
