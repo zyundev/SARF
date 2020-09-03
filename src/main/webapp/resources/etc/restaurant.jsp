@@ -158,7 +158,7 @@
 			
 			  	position: absolute;
 			  	
-			  	left: 48%;    		
+			  	left: 44%;    		
         		
         		
         		
@@ -175,10 +175,11 @@
 </head>
 <body>
 
+<!-- 
 <header>
 	<%@ include file="head.jsp"%>
 </header>
-    
+--> 
     
     <br>
     <br>
