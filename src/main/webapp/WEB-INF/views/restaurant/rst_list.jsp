@@ -31,7 +31,6 @@ while(se.hasMoreElements()){
 			margin: 0;
 			padding: 0;
 			overflow: hidden;
-            
 		}
 		/* Float the list items side by side */
 		.tab li {
@@ -214,19 +213,17 @@ while(se.hasMoreElements()){
 			background-color:#4f9f4f;
 		}
 		
-		  .top {
-        		width: 120px;
-        		height: 40px;
-        		background-color:
-        		#004fff;
-        		color: white;
-        		box-shadow: 0 4px 16px
-        		rgba(0, 79, 255, 0.3);
-        		font-size: 16px;
-        		font-weight: bold;
-				border-radius: 20px;
-			  	position: absolute;
-			  	left: 48%;    		
+		.top {
+       		width: 120px;
+       		height: 40px;
+       		background-color:#004fff;
+       		color: white;
+       		box-shadow: 0 4px 16px rgba(0, 79, 255, 0.3);
+       		font-size: 16px;
+       		font-weight: bold;
+			border-radius: 20px;
+		  	position: absolute;
+		  	left: 44%;    		
         }
         
         header {
@@ -236,13 +233,11 @@ while(se.hasMoreElements()){
 		footer {
 			padding-top: 50px;
 		}
-     
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">
 </head>
 <body>
-
 	<header>
 		<%@ include file="../h_list/intro_head.jsp" %>
 	</header>
@@ -256,6 +251,7 @@ while(se.hasMoreElements()){
 			<li data-tab="tab3" class="cool-link"><a href="#none">#강남</a></li>
 			<li data-tab="tab4" class="cool-link"><a href="#none">#강북</a></li>
 		</ul>
+		
 		<!-- 강동탭 -->
         <div id="tab1" class="tabcontent current">
 	        <c:forEach items="${gangdonglist}" var="gangdonglist">
@@ -277,9 +273,7 @@ while(se.hasMoreElements()){
 							<td><img src = "${gangdonglist.getImg3()}"></td>
 						</tr>
 		            </table>
-
-
-<div style="white-space: pre-line;">${gangdonglist.getContent()}</div>
+					<div style="white-space: pre-line;">${gangdonglist.getContent()}</div>
 	            </form>
 	        </c:forEach>    
 	        <c:if test="${member != null && member.getId() == 'admin'}">
@@ -417,14 +411,12 @@ while(se.hasMoreElements()){
 			return false;
 		})
 	</script>
-	
 	<script>
-	window.onload = function() {
-		setTimeout (function () {
-			scrollTo(0,0);
-		},100);
-	}
+		window.onload = function() {
+			setTimeout (function () {
+				scrollTo(0,0);
+			},100);
+		}
 	</script>
-	
 </body>
 </html>

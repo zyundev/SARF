@@ -91,7 +91,7 @@ header {
           
     
     강북
-    <path class ="Gangbuk" onclick="scrollWindow()" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" value = "ScrollBy" onclick = "ScrollWindow()"
+    <path class ="Gangbuk" onclick="scrollWindow()" fill-rule="evenodd" clip-rule="evenodd" fill="#C8C8C8" value = "ScrollBy"
           
     d="M964.064,164.667
    c-1.447,9.018-0.285,18.105-2.002,27.506c-2.068,11.332-9.018,22.101-11.502,33.507c-0.867,3.979-0.977,9.201-1.5,14.003
