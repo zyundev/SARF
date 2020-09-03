@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -12,17 +12,24 @@
 <script type="text/javascript" src="/se2/js/HuskyEZCreator.js" charset="utf-8"></script> 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
-function check() {
-	  if(writeForm.subject.value == "") {
-	    alert("제목을 입력해 주세요.");
-	    writeForm.subject.focus();
-	    return false;
-	  } else if(writeForm.content.value == "") {
-	    	alert("내용을 입력해 주세요.");
-	    	writeForm.content.focus();
-	    	return false;
-	  	} else return true;
+//첫 글자 공백 사용 X
+function blank_chk(obj) {
+    if(obj.value == " ") {
+        alert("첫 글자를 공백으로 사용할수 없습니다.");
+        obj.focus();
+        obj.value = obj.value.replace(' ','');
+        return false;
+    }
+}
+
+// 제목, 내용 빈칸 X
+function bnc() {
+	if($("#subject").val().trim() == "") {
+		alert("제목을 입력해주세요.");
+		$("#subject").focus();
+		return false;
 	}
+}
 </script>
 </head>
 <body>
@@ -36,17 +43,17 @@ function check() {
 			<h3>게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
-			<form name="writeForm" method="post" action="/board/write" onsubmit="return check()">
+			<form name="writeForm" method="post" action="/board/write" onsubmit="return bnc()">
 				<div class="WritingTitle">자유 게시판</div>
 				<div>
-					<textarea class="bnc textarea_input" placeholder="제목을 입력해 주세요." id="subject" name="subject" style="height: 40px;"></textarea>
+					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." id="subject" name="subject" onkeyup="blank_chk(this);" style="height: 40px;"></textarea>
 				</div>
 				<!-- 
 					아래 부분의 TEXTAREA는 스마트 에디터에 의해 편집되는 내용을 담는 것으로
 					기본적인 정보와 크기, 화면표시(표시되지 않음)으로 설정되어 있습니다. 이 부분에
 					스마트 에디터가 표시될 것입니다.
 				-->
-				<textarea id="content" name="content" class="bnc textarea_input"></textarea>
+				<textarea id="content" name="content" class="textarea_input"></textarea>
 				<!-- SmartEditor2 -->
 				<script type="text/javascript">
 				/*
@@ -70,10 +77,6 @@ function check() {
 			            // 에디터의 내용이 textarea에 적용됩니다.
 			            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
 			            // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
-			 
-			            try {
-			                elClickedObj.form.submit();
-			            } catch(e) {}
 			       	}
 				</script>
 				<script>
@@ -81,12 +84,19 @@ function check() {
 						$("#BaseButton").click(function() {
 							oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); 
 							//textarea의 id를 적어줍니다.
+							var content = document.getElementById("content").value;
+
+				        	if(content == "" || content == null || content == '&nbsp;' || content == '<br>' || content == '<br/>' || content == '<p>&nbsp;</p>') {
+						        alert("내용을 작성해주세요.");
+						        oEditors.getById["content"].exec("FOCUS"); //포커싱
+						        return false;
+					       	} else return true;
 						});
 					})
 				</script>
 				<div>
 					<button type="button" class="BaseButton" onclick="location.href='/board/list'">취소</button>
-					<button type="submit" id="BaseButton" class="BaseButton" onclick="blank_chk()">등록</button>
+					<button type="submit" id="BaseButton" class="BaseButton">등록</button>
 				</div>
 			</form>
 		</div>
