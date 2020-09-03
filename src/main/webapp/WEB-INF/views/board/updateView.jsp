@@ -12,9 +12,8 @@
 </style>
 <script type="text/javascript">
 //첫 글자 공백 사용 X
-function blank_chk(obj) {                        
-    if(obj.value == " ")
-    {              
+function blank_chk(obj) {
+    if(obj.value == " ") {
         alert("첫 단어로 공백을 사용할 수 없습니다.");
         obj.focus();
         obj.value = obj.value.replace(' ','');
@@ -30,7 +29,7 @@ $(document).ready(function() {
 			$("#sub").focus();
 			return false;
 		}
-		if($("#content").val().length == 0) {
+		else if($("#content").val().length == 0) {
 			alert("내용을 입력해주세요.");
 			$("#content").focus();
 			return false;
@@ -49,7 +48,7 @@ $(document).ready(function() {
 
 	<div class="base-layout">
 		<div class="UpdateHeader">
-			<h3>게시판 글쓰기</h3>
+			<h3>게시물 수정하기</h3>
 		</div>
 		<nav>홈 - 글 작성</nav>
 		<div class="UpdateContent">
@@ -57,7 +56,7 @@ $(document).ready(function() {
 				<div class="UpdateTitle">자유 게시판</div>
 				<input type="hidden" name="bno" value="${update.bno}" readonly="readonly" />
 				<div>
-					<label for="content" class="textarea_input"><b>제목 : </b><input type="text" placeholder="제목을 입력하세요." id="sub" name="subject" onkeyup="blank_chk(this);" onchange="blank_chk(this);" class="subject_input" value="${update.subject}" /></label>
+					<label for="content" class="textarea_input"><b>제목 : </b><input type="text" placeholder="제목을 입력하세요." id="sub" name="subject" onkeyup="blank_chk(this);" class="subject_input" value="${update.subject}" /></label>
 				</div>
 				<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 				<script type="text/javascript" src="/se2/js/HuskyEZCreator.js" charset="utf-8"></script> 
