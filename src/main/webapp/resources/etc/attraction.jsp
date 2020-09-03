@@ -177,11 +177,7 @@
 
 </head>
 <body>
-
-<header>
-	<%@ include file="head.jsp"%>
-</header>
-    
+   
     
     <br>
     <br>
