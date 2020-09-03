@@ -10,6 +10,26 @@
 		outline: none;
 	}
 </style>
+<script type="text/javascript">
+//첫 글자 공백 사용 X
+function blank_chk(obj) {
+    if(obj.value == " ") {
+        alert("첫 글자를 공백으로 사용할수 없습니다.");
+        obj.focus();
+        obj.value = obj.value.replace(' ','');
+        return false;
+    }
+}
+
+// 제목, 내용 빈칸 X
+function bnc() {
+	if($("#subject").val().trim() == "") {
+		alert("제목을 입력해주세요.");
+		$("#subject").focus();
+		return false;
+	}
+}
+</script>
 </head>
 <link rel="stylesheet" href="/resources/css/update.css" />
 <body>
@@ -24,11 +44,11 @@
 		</div>
 		<nav>홈 - 글 작성</nav>
 		<div class="UpdateContent">
-			<form name="updateForm" role="form" method="post" action="/a_board/a_update">
+			<form name="updateForm" role="form" method="post" action="/a_board/a_update" onsubmit="return bnc()">
 				<div class="UpdateTitle">명소 게시판</div>
 				<input type="hidden" name="bno" value="${update.bno}" readonly="readonly" />
 				<div>
-					<label for="content" class="textarea_input"><b>제목 : </b><input type="text" placeholder="제목을 입력하세요." id="subject" name="subject" class="subject_input" value="${update.subject}" /></label>
+					<label for="content" class="textarea_input"><b>제목 : </b><input type="text" placeholder="제목을 입력하세요." id="subject" name="subject" onkeyup="blank_chk(this)" class="subject_input" value="${update.subject}" /></label>
 				</div>
 				<div>
 					<label for="name">작성자 </label><input type="text" id="name" name="name" value="${update.name}" readonly="readonly" />
@@ -65,6 +85,13 @@
 						$("#BaseButton").click(function() {
 							oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); 
 							//textarea의 id를 적어줍니다.
+							var content = document.getElementById("content").value;
+
+				        	if(content == "" || content == null || content == '&nbsp;' || content == '<br>' || content == '<br/>' || content == '<p>&nbsp;</p>') {
+						        alert("내용을 작성해주세요.");
+						        oEditors.getById["content"].exec("FOCUS"); //포커싱
+						        return false;
+					       	} else return true;
 						});
 					})
 				</script>

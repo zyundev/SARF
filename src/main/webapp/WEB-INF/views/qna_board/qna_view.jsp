@@ -1,17 +1,17 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+   pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 
 <%-- 세션값 확인 --%>
 <%@page import="java.util.Enumeration"%>
 <%
-	Enumeration se = session.getAttributeNames();
+   Enumeration se = session.getAttributeNames();
 
-	while (se.hasMoreElements()) {
-		String getse = se.nextElement() + "";
-		System.out.println("@@@@@@@ session : " + getse + " : " + session.getAttribute(getse));
-	}
+   while (se.hasMoreElements()) {
+      String getse = se.nextElement() + "";
+      System.out.println("@@@@@@@ session : " + getse + " : " + session.getAttribute(getse));
+   }
 %>
 <%-- 세션값 확인 끝 --%>
 
@@ -23,60 +23,60 @@
 <title>상세 보기</title>
 
 <link href="/resources/css/qna_view.css" rel="stylesheet"
-	type="text/css" />
+   type="text/css" />
 <script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
 <script type="text/javascript">
-	$(document).ready(
-			function() {
-				var formObj = $("form[name='readForm']");
+   $(document).ready(
+         function() {
+            var formObj = $("form[name='readForm']");
 
-				// 취소
-				$("#list_btn").on("click", function() {
+            // 취소
+            $("#list_btn").on("click", function() {
 
-					location.href = "/board/list";
-				})
+               location.href = "/board/list";
+            })
 
-				// 답변 글쓰기
-				$("#replyWrite_btn").on("click", function() {
-					var content = $(".content").val();
-					var replyFormObj = $("form[name='replyForm']");
+            // 답변 글쓰기
+            $("#replyWrite_btn").on("click", function() {
+               var content = $(".content").val();
+               var replyFormObj = $("form[name='replyForm']");
 
-					if (content == '') {
-						alert('내용을 입력하세요');
-						return "redirect:/board/view?bno=" + $
-						{
-							read.bno
-						}
-						;
+               if (content == '') {
+                  alert('내용을 입력하세요');
+                  return "redirect:/board/view?bno=" + $
+                  {
+                     read.bno
+                  }
+                  ;
 
-					} else {
-						replyFormObj.attr("action", "/qna_board/replyWrite");
-						replyFormObj.submit();
-					}
-				})
+               } else {
+                  replyFormObj.attr("action", "/qna_board/replyWrite");
+                  replyFormObj.submit();
+               }
+            })
 
-				$('.replyUpdate_btn').on('click', function() {
-					var urlparam = "?rno=" + $(this).attr('data-rno');
-					location.href = 'replyUpdateView' + urlparam;
-				})
-				$('.replyDelete_btn').on(
-						'click',
-						function() {
-							var check = confirm('정말 삭제하시겠습니까?');
+            $('.replyUpdate_btn').on('click', function() {
+               var urlparam = "?rno=" + $(this).attr('data-rno');
+               location.href = 'replyUpdateView' + urlparam;
+            })
+            $('.replyDelete_btn').on(
+                  'click',
+                  function() {
+                     var check = confirm('정말 삭제하시겠습니까?');
 
-							if (check) {
-								var urlparam = "?rno="
-										+ $(this).attr('data-rno') + "&bno="
-										+ $('#bno').val();
-								location.href = 'replyDelete' + urlparam;
-							}
-							return false;
-						})
-			})
+                     if (check) {
+                        var urlparam = "?rno="
+                              + $(this).attr('data-rno') + "&bno="
+                              + $('#bno').val();
+                        location.href = 'replyDelete' + urlparam;
+                     }
+                     return false;
+                  })
+         })
 </script>
 <body>
 
@@ -84,111 +84,111 @@
 		<%@ include file="../h_list/qv_head.jsp" %>
 	</header>
 	
-	<div>
-		<h3 style="padding: 15px 0 16px 16px; font-size: 25px;">묻고 답하기</h3>
-		<table class="board_view">
-			<colgroup>
-				<col width="15%" />
-				<col width="35%" />
-				<col width="15%" />
-				<col width="35%" />
-			</colgroup>
+   <div>
+      <h3 style="padding: 15px 0 16px 16px; font-size: 25px;">묻고 답하기</h3>
+      <table class="board_view">
+         <colgroup>
+            <col width="15%" />
+            <col width="35%" />
+            <col width="15%" />
+            <col width="35%" />
+         </colgroup>
 
-			<form name="readForm" role="form" method="post">
-				<input type="hidden" id="bno" name="bno" value="${read.bno}" />
-			</form>
+         <form name="readForm" role="form" method="post">
+            <input type="hidden" id="bno" name="bno" value="${read.bno}" />
+         </form>
 
-			<tbody>
-				<tr>
-					<th scope="row">제목</th>
-					<td colspan="3"><c:out value="${read.subject}"></c:out></td>
+         <tbody>
+            <tr>
+               <th scope="row">제목</th>
+               <td colspan="3"><c:out value="${read.subject}"></c:out></td>
 
-				</tr>
-				<tr>
-					<th scope="row">작성자</th>
-					<td><c:out value="${read.name}"></c:out></td>
-					<th scope="row">작성시간</th>
-					<td><fmt:formatDate value="${read.regdate}"
-							pattern="yyyy-MM-dd" /></td>
-				</tr>
-				<tr>
-					<th scope="row">처리상태</th>
-					<td>${map.HIT_CNT }</td>
-				</tr>
-				<tr>
-					<td colspan="4">${read.content}</td>
-				</tr>
-			</tbody>
-		</table>
-		<div class="comment_box">
-			<!-- 댓글 출력창-->
-			<div class="comment_box">
-				<p
-					style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
-				<c:forEach items="${replyList}" var="replyList">
-					<div class="comment_writer">
-						<div class="comment_inbox">
-							<em class="comment_inbox_name">작성자 : ${replyList.name}</em>
-							<p>
-								작성 날짜 :
-								<fmt:formatDate value="${replyList.regdate}"
-									pattern="yyyy-MM-dd HH:mm:ss" />
-							</p>
-							${replyList.content}
-							<div class="right_area">
+            </tr>
+            <tr>
+               <th scope="row">작성자</th>
+               <td><c:out value="${read.name}"></c:out></td>
+               <th scope="row">작성시간</th>
+               <td><fmt:formatDate value="${read.regdate}"
+                     pattern="yyyy-MM-dd" /></td>
+            </tr>
+            <tr>
+               <th scope="row">처리상태</th>
+               <td>${map.HIT_CNT }</td>
+            </tr>
+            <tr>
+               <td colspan="4">${read.content}</td>
+            </tr>
+         </tbody>
+      </table>
+      <div class="comment_box">
+         <!-- 댓글 출력창-->
+         <div class="comment_box">
+            <p
+               style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
+            <c:forEach items="${replyList}" var="replyList" >
+               <div class="comment_writer">
+                  <div class="comment_inbox">
+                     <em class="comment_inbox_name">작성자 : ${replyList.name}</em>
+                     <p>
+                        작성 날짜 :
+                        <fmt:formatDate value="${replyList.regdate}"
+                           pattern="yyyy-MM-dd HH:mm:ss" />
+                     </p>
+                     ${replyList.content}
+                     <div class="right_area">
 
-								<c:choose>
-									<c:when test="${member.id == replyList.name}">
-										<button type="button" id="replyUpdate_btn"
-											class="basebutton skin size replyUpdate_btn"
-											data-rno="${replyList.rno}">수정</button>
+                        <c:choose>
+                           <c:when test="${member.id == replyList.name}">
+                              <button type="button" id="replyUpdate_btn"
+                                 class="basebutton skin size replyUpdate_btn"
+                                 data-rno="${replyList.rno}">수정</button>
 
-										<button type="button" id="replyDelete_btn"
-											class="basebutton skin size replyDelete_btn"
-											data-rno="${replyList.rno}">삭제</button>
-									</c:when>
-									<c:otherwise></c:otherwise>
-								</c:choose>
-							</div>
-						</div>
-					</div>
-				</c:forEach>
-			</div>
+                              <button type="button" id="replyDelete_btn"
+                                 class="basebutton skin size replyDelete_btn"
+                                 data-rno="${replyList.rno}">삭제</button>
+                           </c:when>
+                           <c:otherwise></c:otherwise>
+                        </c:choose>
+                     </div>
+                  </div>
+               </div>
+            </c:forEach>
+         </div>
 
-			<!-- 댓글 입력창-->
+         <!-- 댓글 입력창-->
 
-			<div class="comment_writer">
-				<div class="comment_inbox">
-					<c:choose>
-						<c:when test="${member.id != null}">
-							<em class="comment_inbox_name">답변</em>
-							<form name="replyForm" method="post" role="form">
-								<input type="hidden" id="bno" name="bno" value="${read.bno}" />
-								<input type="hidden" id="name" name="name" value="${member.id}" />
-								<textarea class="cmt_write_box" name="content"
-									placeholder="댓글을 남겨보세요"></textarea>
-								<div class="input_box">
-									<a class="input_button" id="replyWrite_btn" role="button">등록</a>
-								</div>
-							</form>
-						</c:when>
-						<c:otherwise>
-							<p
-								style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인
-								해야 답글 작성 가능합니다.</p>
-							<!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
-						</c:otherwise>
-					</c:choose>
-				</div>
-			</div>
+         <div class="comment_writer">
+            <div class="comment_inbox">
+               <c:choose>
+                  <c:when test="${member.id != null}">
+                     <em class="comment_inbox_name">답변</em>
+                     <form name="replyForm" method="post" role="form">
+                        <input type="hidden" id="bno" name="bno" value="${read.bno}" />
+                        <input type="hidden" id="name" name="name" value="${member.id}" />
+                        <textarea class="cmt_write_box" name="content"
+                           placeholder="댓글을 남겨보세요"></textarea>
+                        <div class="input_box">
+                           <a class="input_button" id="replyWrite_btn" role="button">등록</a>
+                        </div>
+                     </form>
+                  </c:when>
+                  <c:otherwise>
+                     <p
+                        style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인
+                        해야 답글 작성 가능합니다.</p>
+                     <!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
+                  </c:otherwise>
+               </c:choose>
+            </div>
+         </div>
 
-		</div>
-		<div>
-			<a href="/qna_board/qna_list" class="btn" id="list">목록으로</a>
-		</div>
-	</div>
-	
-	<script>
+      </div>
+      <div>
+         <a href="/qna_board/qna_list" class="btn" id="list">목록으로</a>
+      </div>
+   </div>
+   
+   <script>
 	window.onload = function() {
 		setTimeout (function () {
 			scrollTo(0,0);
