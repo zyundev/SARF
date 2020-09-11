@@ -7,17 +7,17 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.sarf.vo.R_BoardVO;
+import com.sarf.vo.BoardVO;
 import com.sarf.vo.SearchCriteria;
 
 @Repository	// 하지 않아서 bean을 생성못함
-public class R_BoardDAOImpl implements R_BoardDAO{
+public class R_BoardDAOImpl implements BoardDAO{
 
 	@Inject
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<R_BoardVO> list(SearchCriteria scri) throws Exception {
+	public List<BoardVO> list(SearchCriteria scri) throws Exception {
 		return sqlSession.selectList("r_boardMapper.listPage", scri);
 	}
 	
@@ -28,13 +28,13 @@ public class R_BoardDAOImpl implements R_BoardDAO{
 	}
 
 	@Override
-	public void write(R_BoardVO boardVO) throws Exception {
+	public void write(BoardVO boardVO) throws Exception {
 		sqlSession.insert("r_boardMapper.write", boardVO);
 	}
 
 	// 게시물 조회
 	@Override
-	public R_BoardVO read(int bno) throws Exception {
+	public BoardVO read(int bno) throws Exception {
 		return sqlSession.selectOne("r_boardMapper.read", bno);
 	}
 	
@@ -45,7 +45,7 @@ public class R_BoardDAOImpl implements R_BoardDAO{
 	}
 
 	@Override
-	public void update(R_BoardVO boardVO) throws Exception {
+	public void update(BoardVO boardVO) throws Exception {
 		sqlSession.update("r_boardMapper.update", boardVO);
 	}
 

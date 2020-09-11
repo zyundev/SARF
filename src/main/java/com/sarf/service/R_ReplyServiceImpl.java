@@ -6,43 +6,43 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.sarf.dao.R_ReplyDAO;
-import com.sarf.vo.R_ReplyVO;
+import com.sarf.dao.R_ReplyDAOImpl;
+import com.sarf.vo.ReplyVO;
 
 @Service
-public class R_ReplyServiceImpl implements R_ReplyService{
+public class R_ReplyServiceImpl implements ReplyService{
 
 	@Inject
-	private R_ReplyDAO r_dao;
+	private R_ReplyDAOImpl dao;
 	
 	// 댓글 목록
 	@Override
-	public List<R_ReplyVO> readReply(int bno) throws Exception {
-		return r_dao.readReply(bno);
+	public List<ReplyVO> readReply(int bno) throws Exception {
+		return dao.readReply(bno);
 	}
 	
 	// 댓글 작성
 	@Override
-	public void writeReply(R_ReplyVO r_vo) throws Exception {
-		r_dao.writeReply(r_vo);
+	public void writeReply(ReplyVO r_vo) throws Exception {
+		dao.writeReply(r_vo);
 	}
 
 	// 댓글 수정
 	@Override
-	public void updateReply(R_ReplyVO r_vo) throws Exception {
-		r_dao.updateReply(r_vo);
+	public void updateReply(ReplyVO r_vo) throws Exception {
+		dao.updateReply(r_vo);
 	}
 	
 	// 선택된 댓글 조회
 	@Override
-	public R_ReplyVO selectReply(int rno) throws Exception {
-		return r_dao.selectReply(rno);
+	public ReplyVO selectReply(int rno) throws Exception {
+		return dao.selectReply(rno);
 	}
 
 	// 댓글 삭제
 	@Override
-	public void deleteReply(R_ReplyVO r_vo) throws Exception {
-		r_dao.deleteReply(r_vo);
+	public void deleteReply(ReplyVO r_vo) throws Exception {
+		dao.deleteReply(r_vo);
 	}
 
 }

@@ -16,8 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
 
-import com.sarf.service.Att_BoardService;
-import com.sarf.vo.Att_BoardVO;
+import com.sarf.service.Att_BoardServiceImpl;
+import com.sarf.vo.ARF_BoardVO;
 
 @Controller
 @RequestMapping("/attraction/*")
@@ -25,7 +25,7 @@ public class AttractionController {
 	private static final Logger logger = LoggerFactory.getLogger(AttractionController.class);
 
 	@Inject
-	Att_BoardService service;
+	Att_BoardServiceImpl service;
 	
 	// 게시판 목록 조회
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -50,7 +50,7 @@ public class AttractionController {
 	
 	// 게시판 글 작성
 	@RequestMapping(value="/write", method = RequestMethod.POST)
-	public String write(Att_BoardVO boardVO, MultipartHttpServletRequest mtf) throws Exception {
+	public String write(ARF_BoardVO boardVO, MultipartHttpServletRequest mtf) throws Exception {
 		logger.info("~~~명소 게시판 write~~~");
 		
 		Iterator<String> files = mtf.getFileNames();
@@ -111,7 +111,7 @@ public class AttractionController {
 
 	// 게시물 수정뷰(강동)
 	@RequestMapping(value = "/updateView", method = RequestMethod.GET)
-	public String updateView(Att_BoardVO boardVO, Model model) throws Exception{
+	public String updateView(ARF_BoardVO boardVO, Model model) throws Exception{
 		logger.info("~~~get updateView~~~");
 
 		model.addAttribute("update", service.updateview(boardVO.getBno()));
@@ -120,7 +120,7 @@ public class AttractionController {
 		
 	// 게시물 수정
 	@RequestMapping(value = "/update", method = RequestMethod.POST)
-	public String update(Att_BoardVO boardVO, @RequestParam String newkey) throws Exception{
+	public String update(ARF_BoardVO boardVO, @RequestParam String newkey) throws Exception{
 		logger.info("~~~post updateView~~~");
 		// key값 새로운 key로 변경
 		boardVO.setKey(newkey);
@@ -131,7 +131,7 @@ public class AttractionController {
 
 	// 게시물 삭제
 	@RequestMapping(value = "/delete", method = RequestMethod.GET)
-	public String delete(Att_BoardVO boardVO) throws Exception{
+	public String delete(ARF_BoardVO boardVO) throws Exception{
 		logger.info("딜리트");
 			
 		service.delete(boardVO.getBno());

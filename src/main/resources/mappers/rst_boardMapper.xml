@@ -4,14 +4,6 @@
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="rst_boardMapper">
 
-	<!-- 게시판 목록 조회
-	<select id="list" resultType="com.sarf.vo.rst_BoardVO">
-		SELECT *	
-		FROM rst_BOARD
-		ORDER BY BNO DESC
-	</select>
-	 -->
-
 	<!-- 게시판 글 작성 -->
  	<insert id="write" >
 		INSERT INTO RST_BOARD
@@ -19,7 +11,7 @@
 	</insert> 
 
 	<!-- 게시물 수정 -->
- 	<update id="update" parameterType="com.sarf.vo.Rst_BoardVO">
+ 	<update id="update" parameterType="com.sarf.vo.ARF_BoardVO">
 		UPDATE RST_BOARD
 		   SET SUBJECT = #{subject},
 		   	   CONTENT = #{content},
@@ -29,7 +21,7 @@
 	</update>
 	
 	<!-- 게시물 수정뷰 조회 -->
- 	<select id="updateview" resultType="com.sarf.vo.Rst_BoardVO" parameterType="int" >
+ 	<select id="updateview" resultType="com.sarf.vo.ARF_BoardVO" parameterType="int" >
 		SELECT *
 		FROM RST_BOARD
 		WHERE BNO = #{bno}
@@ -42,7 +34,7 @@
 	</delete>
 	
 	<!-- 명소게시판 강동페이지 -->
-	<select id="listPage1" resultType="com.sarf.vo.Rst_BoardVO">
+	<select id="listPage1" resultType="com.sarf.vo.ARF_BoardVO">
 		SELECT *	
 		FROM RST_BOARD
 		WHERE KEY = 'EAST'
@@ -50,7 +42,7 @@
 	</select>
 	
 	<!-- 명소게시판 강서페이지 -->
-	<select id="listPage2" resultType="com.sarf.vo.Rst_BoardVO">
+	<select id="listPage2" resultType="com.sarf.vo.ARF_BoardVO">
 		SELECT *	
 		FROM RST_BOARD
 		WHERE KEY = 'WEST'
@@ -58,7 +50,7 @@
 	</select>
 	
 	<!-- 명소게시판 강남페이지 -->
-	<select id="listPage3" resultType="com.sarf.vo.Rst_BoardVO">
+	<select id="listPage3" resultType="com.sarf.vo.ARF_BoardVO">
 		SELECT *	
 		FROM RST_BOARD
 		WHERE KEY = 'SOUTH'
@@ -66,7 +58,7 @@
 	</select>
 	
 	<!-- 명소게시판 강북페이지 -->
-	<select id="listPage4" resultType="com.sarf.vo.Rst_BoardVO">
+	<select id="listPage4" resultType="com.sarf.vo.ARF_BoardVO">
 		SELECT *	
 		FROM RST_BOARD
 		WHERE KEY = 'NORTH'
