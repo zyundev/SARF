@@ -1,14 +1,14 @@
 package com.sarf.vo;
 
-public class Fst_BoardVO {
-	private int bno; // ê²Œì‹œë¬? ë²ˆí˜¸
-	private String key; // ê°? ì§??—­ êµ¬ë¶„?š©?„
-	private String subject; // ? œëª?
-	private String content; // ?‚´?š©
-	private String img1; // ?´ë¯¸ì?1
-	private String img2; // ?´ë¯¸ì?2
-	private String img3; // ?´ë¯¸ì?3
-	private String link; // ë§í¬ ?‘?„±?š©
+public class ARF_BoardVO {
+	private int bno; // ê²Œì‹œë¬¼ ë²ˆí˜¸
+	private String key; // ê° ì§€ì—­ êµ¬ë¶„ìš©ë„
+	private String subject; // ì œëª©
+	private String content; // ë‚´ìš©
+	private String img1; // ì´ë¯¸ì§€1
+	private String img2; // ì´ë¯¸ì§€2
+	private String img3; // ì´ë¯¸ì§€3
+	private String link; // ë§í¬ ì‘ì„±ìš©
 
 	public int getBno() {
 		return bno;
@@ -76,7 +76,7 @@ public class Fst_BoardVO {
 
 	@Override
 	public String toString() {
-		return "Fst_BoardVO [bno=" + bno + ", key=" + key + ", subject=" + subject + ", content=" + content
+		return "Att_BoardVO [bno=" + bno + ", key=" + key + ", subject=" + subject + ", content=" + content
 				+ ", img1=" + img1 + ", img2=" + img2 + ", img3=" + img3 + ", link=" + link + "]";
 	}
 }

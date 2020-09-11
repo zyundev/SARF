@@ -6,19 +6,19 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.sarf.dao.N_BoardDAO;
-import com.sarf.vo.N_BoardVO;
+import com.sarf.dao.N_BoardDAOImpl;
+import com.sarf.vo.BoardVO;
 import com.sarf.vo.SearchCriteria;
 
 @Service
-public class N_BoardServiceImpl implements N_BoardService{
+public class N_BoardServiceImpl implements BoardService{
 
 	@Inject
-	private N_BoardDAO dao;
+	private N_BoardDAOImpl dao;
 	
 	// 게시물 목록 조회
 	@Override
-	public List<N_BoardVO> list(SearchCriteria scri) throws Exception {
+	public List<BoardVO> list(SearchCriteria scri) throws Exception {
 		return dao.list(scri);
 	}
 
@@ -30,20 +30,20 @@ public class N_BoardServiceImpl implements N_BoardService{
 
 	// 게시글 작성
 	@Override
-	public void write(N_BoardVO boardVO) throws Exception {
+	public void write(BoardVO boardVO) throws Exception {
 		dao.write(boardVO);
 	}
 
 	// 게시물 조회
 	@Override
-	public N_BoardVO read(int bno) throws Exception {
+	public BoardVO read(int bno) throws Exception {
 		dao.updateReadCount(bno); // 조회수 증가
 		return dao.read(bno);
 	}
 
 	// 게시물 수정
 	@Override
-	public void update(N_BoardVO boardVO) throws Exception {
+	public void update(BoardVO boardVO) throws Exception {
 		dao.update(boardVO);
 	}
 

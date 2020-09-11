@@ -7,17 +7,17 @@ import javax.inject.Inject;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.sarf.vo.N_BoardVO;
+import com.sarf.vo.BoardVO;
 import com.sarf.vo.SearchCriteria;
 
 @Repository
-public class N_BoardDAOImpl implements N_BoardDAO{
+public class N_BoardDAOImpl implements BoardDAO{
 
 	@Inject
 	private SqlSession sqlSession;
 	
 	@Override
-	public List<N_BoardVO> list(SearchCriteria scri) throws Exception {
+	public List<BoardVO> list(SearchCriteria scri) throws Exception {
 		return sqlSession.selectList("N_boardMapper.listPage", scri);
 	}
 	
@@ -28,13 +28,13 @@ public class N_BoardDAOImpl implements N_BoardDAO{
 	}
 
 	@Override
-	public void write(N_BoardVO boardVO) throws Exception {
+	public void write(BoardVO boardVO) throws Exception {
 		sqlSession.insert("N_boardMapper.write", boardVO);
 	}
 
 	// 게시물 조회
 	@Override
-	public N_BoardVO read(int bno) throws Exception {
+	public BoardVO read(int bno) throws Exception {
 		return sqlSession.selectOne("N_boardMapper.read", bno);
 	}
 	
@@ -46,7 +46,7 @@ public class N_BoardDAOImpl implements N_BoardDAO{
 	
 	// 게시물 수정
 	@Override
-	public void update(N_BoardVO boardVO) throws Exception {
+	public void update(BoardVO boardVO) throws Exception {
 		sqlSession.update("N_boardMapper.update", boardVO);
 	}
 

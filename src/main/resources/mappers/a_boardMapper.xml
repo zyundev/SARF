@@ -17,7 +17,7 @@
 	</insert> 
 
 	<!-- 게시물 조회 -->
- 	<select id="read" parameterType="int" resultType="com.sarf.vo.A_BoardVO">
+ 	<select id="read" parameterType="int" resultType="com.sarf.vo.BoardVO">
 		SELECT	BNO
 			  , SUBJECT
 			  , CONTENT
@@ -28,7 +28,7 @@
 	</select>
 
 	<!-- 게시물 수정 -->
- 	<update id="update" parameterType="com.sarf.vo.A_BoardVO">
+ 	<update id="update" parameterType="com.sarf.vo.BoardVO">
 		UPDATE A_BOARD
 		   SET SUBJECT = #{subject},
 		   	   CONTENT = #{content}
@@ -43,7 +43,7 @@
 	</delete>
 	
 	<!-- 게시판 페이지 -->
-	<select id="listPage" resultType="com.sarf.vo.A_BoardVO" parameterType="com.sarf.vo.SearchCriteria">
+	<select id="listPage" resultType="com.sarf.vo.BoardVO" parameterType="com.sarf.vo.SearchCriteria">
 		SELECT  BNO, 
 		        SUBJECT	, 
 		        CONTENT,

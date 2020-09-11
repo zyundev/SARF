@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.sarf.service.ReplyService;
+import com.sarf.service.ReplyServiceImpl;
 import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
@@ -22,7 +22,7 @@ public class ReplyController {
 	private static final Logger logger = LoggerFactory.getLogger(ReplyController.class);
 	
 	@Inject
-	ReplyService service;
+	ReplyServiceImpl service;
 	
 	// 댓글 작성
 	@RequestMapping(value = "/replyWrite", method = RequestMethod.POST)

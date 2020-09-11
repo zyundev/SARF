@@ -22,8 +22,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sarf.service.BoardService;
-import com.sarf.service.ReplyService;
+import com.sarf.service.BoardServiceImpl;
+import com.sarf.service.ReplyServiceImpl;
 import com.sarf.vo.BoardVO;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.PageMaker;
@@ -38,10 +38,10 @@ public class BoardController {
 	private static final Logger logger = LoggerFactory.getLogger(BoardController.class);
 
 	@Inject
-	BoardService service;
+	BoardServiceImpl service;
 	
 	@Inject
-	ReplyService replyService;
+	ReplyServiceImpl replyService;
 
 	// 게시판 목록 조회
 	@RequestMapping(value = "/list", method = RequestMethod.GET)

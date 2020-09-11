@@ -6,14 +6,14 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.sarf.dao.ReplyDAO;
+import com.sarf.dao.ReplyDAOImpl;
 import com.sarf.vo.ReplyVO;
 
 @Service
 public class ReplyServiceImpl implements ReplyService{
 
 	@Inject
-	private ReplyDAO dao;
+	private ReplyDAOImpl dao;
 	
 	// 댓글 목록
 	@Override
