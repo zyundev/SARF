@@ -64,16 +64,6 @@ public class ReplyController {
 
 		return "redirect:/board/view";
 	}
-	
-	//댓글 삭제 GET
-	@RequestMapping(value="/replyDeleteView", method = RequestMethod.GET)
-	public String replyDeleteView(ReplyVO vo, Model model) throws Exception {
-		logger.info("~~~get replyDeleteView~~~");
-		
-		model.addAttribute("replyDelete", service.selectReply(vo.getRno()));
-
-		return "board/replyDeleteView";
-	}
 
 	//댓글 삭제
 	@RequestMapping(value="/replyDelete", method = RequestMethod.GET)

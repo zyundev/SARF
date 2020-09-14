@@ -12,6 +12,7 @@ while(se.hasMoreElements()){
 	String getse = se.nextElement()+"";
 	System.out.println("@@@@@@@ session : "+getse+" : "+session.getAttribute(getse));
 }
+
 %>
 <!-- 세션값 확인 끝 -->
 
@@ -52,8 +53,17 @@ while(se.hasMoreElements()){
 						</td>
 						<td><c:out value="${list.name}"></c:out></td>
 						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
+						<c:set var="read1" value="read1" />
+						<c:set var="read2" value="read2" />
+						<td>답변대기</td>
+						<c:choose>
+						<c:when test="${anwser == true}">
+						<td>답변완료</td>
+						</c:when>
+						</c:choose>
 					</tr> 
 				</c:forEach>
+				
 	    </tbody>
 	</table>
 	            <div style="float:right">
@@ -65,14 +75,6 @@ while(se.hasMoreElements()){
 	<footer>
 		<%@ include file="footer.jsp" %>
    </footer>
-   
-   <script>
-	window.onload = function() {
-		setTimeout (function () {
-			scrollTo(0,0);
-		},100);
-	}
-	</script>
 	
 </body>
 </html>

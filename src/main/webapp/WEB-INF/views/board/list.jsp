@@ -118,6 +118,13 @@ header {
 		</div>
 		<table class="board_list">
 			<caption>게시판 목록</caption>
+			<colgroup>
+				<col width="20%" />
+				<col width="20%" />
+				<col width="20%" />
+				<col width="*" />
+				<col width="20%" />
+			</colgroup>
 			<thead>
 				<tr>
 					<th>번호</th>

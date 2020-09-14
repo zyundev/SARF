@@ -5,9 +5,12 @@ import java.util.List;
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Repository;
 
 import com.sarf.vo.ReplyVO;
+import com.sarf.web.ReplyController;
 
 @Repository
 public class ReplyDAOImpl implements ReplyDAO{
@@ -24,6 +27,7 @@ public class ReplyDAOImpl implements ReplyDAO{
 	//댓글 작성
 	@Override
 	public void writeReply(ReplyVO vo) throws Exception {
+		System.out.println("fdsffsddfsfdsfsdfsd" + vo.getName());
 		sql.insert("replyMapper.writeReply", vo);
 	}
 

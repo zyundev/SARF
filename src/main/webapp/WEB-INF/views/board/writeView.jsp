@@ -30,11 +30,13 @@ $(document).ready(function() {
 			$("#sub").focus();
 			return false;
 		}
-		else if($("#content").val().length == 0) {
+
+		/* if($("#content").html() === '<p>&nbsp;</p>') {
+			
 			alert("내용을 입력해주세요.");
 			$("#content").focus();
 			return false;
-		}
+		} */
 	})
 })
 </script>

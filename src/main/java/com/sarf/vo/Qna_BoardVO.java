@@ -9,6 +9,8 @@ public class Qna_BoardVO {
 	private String subject; 	// 제목
 	private String content; 	// 내용
 	private Date regdate;		// 날짜
+	private int ans;
+	
 
 	public int getBno() {
 		return bno;
@@ -40,16 +42,24 @@ public class Qna_BoardVO {
 	public void setRegdate(Date regdate) {
 		this.regdate = regdate;
 	}
-
+	
+	public int getAns() {
+		return ans;
+	}
+	public void setAns(int ans) {
+		this.ans = ans;
+	}
+	
 	@Override
 	public String toString() {
 		return "Qna_BoardVO [bno=" + bno + ", name=" + name + ", subject=" + subject + ", content=" + content
-				+ ", regdate=" + regdate + ", getBno()=" + getBno()
-				+ ", getName()=" + getName() + ", getSubject()=" + getSubject() + ", getContent()=" + getContent()
-				+ ", getRegdate()=" + getRegdate()
+				+ ", regdate=" + regdate + ", ans=" + ans + ", getBno()=" + getBno() + ", getName()=" + getName()
+				+ ", getSubject()=" + getSubject() + ", getContent()=" + getContent() + ", getRegdate()=" + getRegdate()
 				+ ", getClass()=" + getClass() + ", hashCode()=" + hashCode() + ", toString()=" + super.toString()
 				+ "]";
 	}
+
+	
 	
 
 }
