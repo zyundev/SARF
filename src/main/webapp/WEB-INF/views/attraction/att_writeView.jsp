@@ -21,6 +21,17 @@ while(se.hasMoreElements()){
 <!-- SmartEditor2 라이브러리 --> 
 <script type="text/javascript" src="/smarteditor2/js/service/HuskyEZCreator.js" charset="utf-8"></script> 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+//첫 글자 공백 사용 X
+function blank_chk(obj) {
+    if(obj.value == " ") {
+        alert("첫 글자를 공백으로 사용할수 없습니다.");
+        obj.focus();
+        obj.value = obj.value.replace(' ','');
+        return false;
+    }
+}
+</script>
 <style>
 * {
 	border: 0;
@@ -130,7 +141,7 @@ h3 {
 				</div>
 				<!-- 제목 -->
 				<div>
-					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
+					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" onkeyup="blank_chk(this)" style="height: 40px;"></textarea>
 				</div>
 				<!-- 내용 -->
 				<textarea placeholder="내용을 입력해 주세요." class="content"id="content" name="content" style="resize: none; font-size: 15px; outline: none;" rows="22" cols="115"></textarea>
