@@ -118,7 +118,7 @@ while(se.hasMoreElements()){
 
             <!-- 작성 시간 -->
             <div class="sysdate">
-               작성 날짜:
+
                <fmt:formatDate value="${read.regdate}"
                   pattern="yyyy-MM-dd HH:mm:ss" />
 

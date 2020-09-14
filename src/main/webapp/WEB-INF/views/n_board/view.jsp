@@ -21,7 +21,7 @@ while(se.hasMoreElements()){
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>상세 보기</title>
-<link href="/resources/css/view.css" rel="stylesheet" type="text/css" />
+<link href="/resources/css/notice.css" rel="stylesheet" type="text/css" />
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 <style>
 	header {
@@ -93,26 +93,22 @@ while(se.hasMoreElements()){
 				</form>
 
 				<!-- 제목 -->
-				<div>
-					제목: <label> ${read.subject} </label>
+				<div class="title">
+					 <label> ${read.subject} </label>
 				</div>
 
 				<!-- 닉네임, 작성시간 -->
-				<div>
-					닉네임: <label> ${read.name} </label>
+				<div class="nametag">
+					<label> ${read.name} </label>
 				</div>
 
 				<!-- 작성 시간 -->
-				<div>
-					작성 날짜:
+				<div class="sysdate">
 					<fmt:formatDate value="${read.regdate}"
 						pattern="yyyy-MM-dd HH:mm:ss" />
 
 				</div>
-				<br>
 
-
-				<hr size="1" color="c0c0c0">
 				<!-- 내용 -->
 				<label>${read.content} </label> <br> <br> <br> <br>
 

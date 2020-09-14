@@ -103,11 +103,12 @@ header {
 		<!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
 		<div id="container">
 			<ul class="tab">
-				<li data-tab="tab1" class="cool-link"><a href="/board/list"><b>자유 게시판</b></a></li>
-				<li data-tab="tab2" class="cool-link"><a
-					href="/a_board/a_list"><b>명소 게시판</b> </a></li>
-				<li data-tab="tab3" class="cool-link"><a
-					href="/r_board/r_list"><b>맛집 게시판</b></a></li>
+				<li data-tab="tab1" class="cool-link"><a href="/board/list"><b>자유
+							게시판</b></a></li>
+				<li data-tab="tab2" class="cool-link"><a href="/a_board/a_list"><b>명소
+							게시판</b> </a></li>
+				<li data-tab="tab3" class="cool-link"><a href="/r_board/r_list"><b>맛집
+							게시판</b></a></li>
 				<li data-tab="tab4" class="cool-link-always"><a
 					href="/v_board/v_list"><b>축제 게시판</b></a></li>
 			</ul>
@@ -122,13 +123,13 @@ header {
 			</div>
 			<table class="board_list">
 				<colgroup>
-            		<col width="12%" />
-            		<col width="50%" />
-            		<col width="13%" />
-            		<col width="13%" />
-            		<col width="12%" />
-       			</colgroup>
-					<caption>게시판 목록</caption>
+					<col width="12%" />
+					<col width="50%" />
+					<col width="13%" />
+					<col width="13%" />
+					<col width="12%" />
+				</colgroup>
+				<caption>게시판 목록</caption>
 				<thead>
 					<tr>
 						<th scope="col">번호</th>
@@ -152,33 +153,27 @@ header {
 					</c:forEach>
 				</tbody>
 			</table>
-			<div style="float: right">
-				<button class="write_btn"
-					onclick="location.href='/v_board/v_writeView'">글쓰기</button>
-			</div>
-
-
-
 			<div class="paging">
 				<ul class="paging-ul">
 					<c:if test="${pageMaker.prev}">
 						<li><a
-							href="v_list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+							href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
 					</c:if>
-
 					<c:forEach begin="${pageMaker.startPage}"
 						end="${pageMaker.endPage}" var="idx">
 						<li
 							<c:out value="${pageMaker.cri.page == idx ? 'class=info' : ''}" />>
-							<a href="v_list${pageMaker.makeSearch(idx)}">${idx}</a>
+							<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
 						</li>
 					</c:forEach>
-
 					<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 						<li><a
-							href="v_list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+							href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
 					</c:if>
 				</ul>
+			</div>
+			<div style="float: right;">
+				<button class="write_btn">글쓰기</button>
 			</div>
 		</div>
 
@@ -194,8 +189,8 @@ header {
 				<option value="sc"
 					<c:out value="${scri.searchType eq 'sc' ? 'selected' : ''}"/>>제목+내용</option>
 			</select> <span class='green_window'> <input name="keyword"
-				id="keywordInput" value="${scri.keyword}" type='text' onkeypress="if( event.keyCode==13 ){goSearch();}"
-				class='input_text' />
+				id="keywordInput" value="${scri.keyword}" type='text'
+				onkeypress="if( event.keyCode==13 ){goSearch();}" class='input_text' />
 			</span>
 			<button id="searchBtn" type="button" class='sch_smit'>검색</button>
 
@@ -230,7 +225,7 @@ header {
 			<%@ include file="../board/footer.jsp"%>
 		</footer>
 	</div>
-	
+
 	<script>
 	window.onload = function() {
 		setTimeout (function () {

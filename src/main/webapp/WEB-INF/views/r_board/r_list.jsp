@@ -122,13 +122,13 @@ header {
 			</div>
 			<table class="board_list">
 				<colgroup>
-            		<col width="12%" />
-            		<col width="50%" />
-            		<col width="13%" />
-            		<col width="13%" />
-            		<col width="12%" />
-       			</colgroup>
-					<caption>게시판 목록</caption>
+					<col width="12%" />
+					<col width="50%" />
+					<col width="13%" />
+					<col width="13%" />
+					<col width="12%" />
+				</colgroup>
+				<caption>게시판 목록</caption>
 				<thead>
 					<tr>
 						<th scope="col">번호</th>
@@ -152,30 +152,27 @@ header {
 					</c:forEach>
 				</tbody>
 			</table>
-			<div style="float: right">
-				<button class="write_btn"
-					onclick="location.href='/r_board/r_writeView'">글쓰기</button>
-			</div>
 			<div class="paging">
 				<ul class="paging-ul">
 					<c:if test="${pageMaker.prev}">
 						<li><a
-							href="r_list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+							href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
 					</c:if>
-
 					<c:forEach begin="${pageMaker.startPage}"
 						end="${pageMaker.endPage}" var="idx">
 						<li
 							<c:out value="${pageMaker.cri.page == idx ? 'class=info' : ''}" />>
-							<a href="r_list${pageMaker.makeSearch(idx)}">${idx}</a>
+							<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
 						</li>
 					</c:forEach>
-
 					<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
 						<li><a
-							href="r_list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+							href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
 					</c:if>
 				</ul>
+			</div>
+			<div style="float: right;">
+				<button class="write_btn">글쓰기</button>
 			</div>
 		</div>
 
@@ -227,7 +224,7 @@ header {
 			<%@ include file="../board/footer.jsp"%>
 		</footer>
 	</div>
-	
+
 	<script>
 	window.onload = function() {
 		setTimeout (function () {
