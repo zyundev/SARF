@@ -16,43 +16,45 @@ public class N_BoardDAOImpl implements BoardDAO{
 	@Inject
 	private SqlSession sqlSession;
 	
+	String mapper = "N_boardMapper";
+	
 	@Override
 	public List<BoardVO> list(SearchCriteria scri) throws Exception {
-		return sqlSession.selectList("N_boardMapper.listPage", scri);
+		return sqlSession.selectList(mapper + ".listPage", scri);
 	}
 	
 	// 게시물 총 갯수
 	@Override
 	public int listCount(SearchCriteria scri) throws Exception {
-		return sqlSession.selectOne("N_boardMapper.listCount", scri);
+		return sqlSession.selectOne(mapper + ".listCount", scri);
 	}
 
 	@Override
 	public void write(BoardVO boardVO) throws Exception {
-		sqlSession.insert("N_boardMapper.write", boardVO);
+		sqlSession.insert(mapper + ".write", boardVO);
 	}
 
 	// 게시물 조회
 	@Override
 	public BoardVO read(int bno) throws Exception {
-		return sqlSession.selectOne("N_boardMapper.read", bno);
+		return sqlSession.selectOne(mapper + ".read", bno);
 	}
 	
 	// 게시물 조회수 증가
 	@Override
 	public int updateReadCount(int bno) throws Exception {
-		return sqlSession.update("N_boardMapper.updateCount", bno);
+		return sqlSession.update(mapper + ".updateCount", bno);
 	}
 	
 	// 게시물 수정
 	@Override
 	public void update(BoardVO boardVO) throws Exception {
-		sqlSession.update("N_boardMapper.update", boardVO);
+		sqlSession.update(mapper + ".update", boardVO);
 	}
 
 	// 게시물 삭제
 	@Override
 	public void delete(int bno) throws Exception {
-		sqlSession.delete("N_boardMapper.delete", bno);
+		sqlSession.delete(mapper + ".delete", bno);
 	}
 }

@@ -16,5 +16,4 @@ public interface Qna_BoardService {
 	// 게시물 조회
 	public Qna_BoardVO read(int bno) throws Exception;
 
-
 }
