@@ -37,7 +37,7 @@
 <body>
 	<c:choose>
 		<c:when test="${emailcheck == false }">
-			<div class="div_email"><font color="#ff4444"><b>이미 사용중인 이메일</b></font>입니다. <br>다른 아이디를 입력해 주세요.</div>
+			<div class="div_email"><font color="#ff4444"><b>이미 사용중인 이메일</b></font>입니다. <br>다른 이메일를 입력해 주세요.</div>
 			<button class="close_btn" type="button" onclick="popupcloseX()">닫기</button>
 		</c:when>
 		<c:when test="${emailcheck == true }">
