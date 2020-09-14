@@ -40,7 +40,7 @@ function bnc() {
 	
 	<div class="base-layout">
 		<div class="UpdateHeader">
-			<h3>게시판 글쓰기</h3>
+			<h3>게시판 수정하기</h3>
 		</div>
 		<nav>홈 - 글 작성</nav>
 		<div class="UpdateContent">
@@ -50,14 +50,7 @@ function bnc() {
 				<div>
 					<label for="content" class="textarea_input"><b>제목 : </b><input type="text" placeholder="제목을 입력하세요." id="subject" name="subject" onkeyup="blank_chk(this)" class="subject_input" value="${update.subject}" /></label>
 				</div>
-				<div>
-					<label for="name">작성자 </label><input type="text" id="name" name="name" value="${update.name}" readonly="readonly" />
-				</div>
-				<div>
-					<label for="regdate">작성날짜 </label><fmt:formatDate value="${update.regdate}" pattern="yyyy-MM-dd" />
-				</div>
-				<div style="border: 1px solid black;">
-				</div>
+				
 				<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 				<script type="text/javascript" src="/se2/js/HuskyEZCreator.js" charset="utf-8"></script> 
 				<textarea class="textarea_input" id="content" name="content" cols="130" rows="26" placeholder="내용을 입력해주세요." style="resize:none;"><c:out value="${update.content}" /></textarea>

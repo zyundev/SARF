@@ -93,6 +93,11 @@ while(se.hasMoreElements()){
 </script>
    
 <body>
+
+<header>
+	<%@ include file="../h_list/bv_head.jsp" %>
+</header>
+
 <section id="container">
    <div class="view_list">
          <div class="view_content">
@@ -118,27 +123,26 @@ while(se.hasMoreElements()){
 
             <!-- 작성 시간 -->
             <div class="sysdate">
-               작성 날짜:
+
                <fmt:formatDate value="${read.regdate}"
                   pattern="yyyy-MM-dd HH:mm:ss" />
 
             </div>
 
-            <hr size="1" color="c0c0c0">
             <!-- 내용 -->
-            <label>${read.content} </label> <br> <br> <br> <br> <br>
+             <div style="margin-top: 5px; ">${read.content} </div> <br> <br> <br> <br> <br>
 
             <br>
             <div class="comment_box">
             <c:choose>
             <c:when test="${member.id != null}">
                <!-- 댓글 입력창-->
-               <p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>    
+               <div style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px; width: 100%;">댓글작성</div>    
                <form name="replyForm" method="post" role="form">
                   <input type="hidden" id="bno" name="bno" value="${read.bno}" />               
 				  <input type="hidden" id="name" name="name" value="${member.id}" />
 					
-                  <div class="comment_writer">
+                  <div class="cmt_writer">
                      <div class="comment_inbox">
                         
                         <em class="comment_inbox_name" >작성자 : ${member.id}</em>
@@ -160,14 +164,13 @@ while(se.hasMoreElements()){
                      <br><br>
             <!-- 댓글 출력창-->
              <div class="comment_box">
-               <p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
+               <div style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px; width:100%;">댓글</div>
                <c:forEach items="${replyList}" var="replyList">
                   <div class="comment_writer">
                      <div class="cmt_inbox">
-                           <em class="comment_inbox_name">작성자 : ${replyList.name}</em>
+                           <em class="comment_inbox_name"> ${replyList.name}</em>
                         <textarea style="overflow: hidden; outline: none;" readonly="readonly">${replyList.content}</textarea>
                         <span class="comment_info">
-                           작성 날짜 :
                            <fmt:formatDate value="${replyList.regdate}"
                               pattern="yyyy-MM-dd HH:mm:ss" />
                         </span>

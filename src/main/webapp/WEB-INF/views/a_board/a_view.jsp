@@ -102,114 +102,113 @@ while(se.hasMoreElements()){
 </header>
 
 <section id="container">
-	<div class="view_list">
-			<div class="view_content">
-				<!-- 게시판이름 -->
-				<div>
-					<b>명소 게시판</b>
-				</div>
+   <div class="view_list">
+         <div class="view_content">
+            <!-- 게시판이름 -->
+            <div>
+               <a class="title_back"href="#" onClick="history.go(-1); return false ; "> 명소게시판 </a>
+            </div>
 
-				<!-- 번호 -->
-				<form name="readForm" role="form" method="post">
-					<input type="hidden" id="bno" name="bno" value="${read.bno}" />
-				</form>
+            <!-- 번호 -->
+            <form name="readForm" role="form" method="post">
+               <input type="hidden" id="bno" name="bno" value="${read.bno}" />
+            </form>
 
-				<!-- 제목 -->
-				<div>
-					제목: <label> ${read.subject} </label>
-				</div>
+            <!-- 제목 -->
+            <div class="title">
+               <label> ${read.subject} </label>
+            </div>
 
-				<!-- 닉네임, 작성시간 -->
-				<div>
-					닉네임: <label> ${read.name} </label>
-				</div>
+            <!-- 닉네임, 작성시간 -->
+            <div class="nametag">
+               <label> ${read.name} </label>
+            </div>
 
-				<!-- 작성 시간 -->
-				<div>
-					작성 날짜:
-					<fmt:formatDate value="${read.regdate}"
-						pattern="yyyy-MM-dd HH:mm:ss" />
+            <!-- 작성 시간 -->
+            <div class="sysdate">
 
-				</div>
-				<br>
+               <fmt:formatDate value="${read.regdate}"
+                  pattern="yyyy-MM-dd HH:mm:ss" />
 
+            </div>
 
-				<hr size="1" color="c0c0c0">
-				<!-- 내용 -->
-				<label>${read.content} </label> <br> <br> <br> <br>
+            <!-- 내용 -->
+            
+            <div style="margin-top: 5px; ">${read.content} </div> <br> <br> <br> <br> <br>
 
-				<br>
-
-				<div class="comment_box">
-				<c:choose>
-				<c:when test="${member.id != null}">
-					<!-- 댓글 입력창-->
-					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>
-					<form name="replyForm" method="post" role="form">
-						<input type="hidden" id="bno" name="bno" value="${read.bno}" />					
-						<input type="hidden" id="name" name="name" value="${member.id}" />
-
-						<div class="comment_writer">
-							<div class="comment_inbox">
-								<em class="comment_inbox_name" >작성자 : ${member.id}</em>
-								<textarea class="content" id="content" name="content" rows="3" style="overflow: hidden; overflow-wrap: break-word;"></textarea>
-								<div class="input_box">
-									<a type="button" id="replyWrite_btn"
-										class="input_button">등록</a>
-								</div>
-							</div>
-						</div>
-					</form>
-				</c:when>
-				<c:otherwise>
-					<p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인 해야 답글 작성 가능합니다.</p>
-					<!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
-				</c:otherwise>
-				</c:choose>
-				</div>
-				<!-- 댓글 출력창-->
-			 	<div class="comment_box">
-					<p style="float: left; margin-right: 12px; font-size: 17px; font-weight:600px; margin-top: 10px;">댓글</p>
-					<c:forEach items="${replyList}" var="replyList">
-						<div class="comment_print">
-							<div class="comment_inbox">
-									<em class="comment_inbox_name">${replyList.name}</em>
-								<textarea style="padding-left:13px; overflow: hidden; outline: none; " wrap="hard">${replyList.content}</textarea>
-								<p class="comment_info">
-									<fmt:formatDate value="${replyList.regdate}" pattern="yyyy-MM-dd HH:mm:ss" />
-								</p>
-								<div class="right_area_reply">
-								<c:choose>
-								<c:when test="${member.id == replyList.name}">
-								<button type="button" id="replyUpdate_btn"
-										class="basebutton skin size replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
-
-								<button type="button" id="replyDelete_btn"
-										class="basebutton skin size replyDelete_btn" data-rno="${replyList.rno}">삭제</button>
-								</c:when>
-								<c:otherwise></c:otherwise>
-								</c:choose>
-								</div>
-							</div>
-						</div>
-					</c:forEach>
-				</div>
-			</div>
-				<div class="top_btn" style="padding-bottom: 13px">
-				<div class="left_area">
-					<!-- 목록 -->
-					<button type="submit" class="basebutton skin size" id="list_btn">목록</button>
-				</div>
-				<div class="right_area">
-					<!-- 수정 -->
-					<button type="submit" class="basebutton skin size" id="update_btn">수정</button>
-					<!-- 삭제 -->
-					<button type="submit" class="basebutton skin size" id="delete_btn">삭제</button>
-				</div>
-			</div>
-			<br><br>
-		</div>
+            <br>
+            <div class="comment_box">
+            <c:choose>
+            <c:when test="${member.id != null}">
+               <!-- 댓글 입력창-->
+               <p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글작성</p>    
+               <form name="replyForm" method="post" role="form">
+                  <input type="hidden" id="bno" name="bno" value="${read.bno}" />               
+				  <input type="hidden" id="name" name="name" value="${member.id}" />
+					
+                  <div class="cmt_writer">
+                     <div class="comment_inbox">
+                        
+                        <em class="comment_inbox_name" >작성자 : ${member.id}</em>
+                        <textarea class="content" id="content" name="content" rows="3" style="overflow: hidden; overflow-wrap: break-word;"></textarea>
+                        <div class="input_box">
+                           <a type="button" id="replyWrite_btn"
+                              class="input_button ">등록</a>
+                        </div>
+                     </div>
+                  </div>
+               </form>
+            </c:when>
+            <c:otherwise>
+               <p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인 해야 답글 작성 가능합니다.</p>
+               <!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
+            </c:otherwise>
+            </c:choose>
+            </div>
+                     <br><br>
+            <!-- 댓글 출력창-->
+             <div class="comment_box">
+               <p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
+               <c:forEach items="${replyList}" var="replyList">
+                  <div class="comment_writer">
+                     <div class="cmt_inbox">
+                           <em class="comment_inbox_name"> ${replyList.name}</em>
+                        <textarea style="overflow: hidden; outline: none;" readonly="readonly">${replyList.content}</textarea>
+                        <span class="comment_info">
+                           <fmt:formatDate value="${replyList.regdate}"
+                              pattern="yyyy-MM-dd HH:mm:ss" />
+                        </span>
+                        <div class="right_area_reply">
+                        <c:choose>
+                        <c:when test="${member.id == replyList.name}">
+                        <button type="button" id="replyDelete_btn"
+                              class="basebutton reply_skin replyDelete_btn" data-rno="${replyList.rno}">삭제</button>
+                        <button type="button" id="replyUpdate_btn"
+                              class="basebutton reply_skin replyUpdate_btn" data-rno="${replyList.rno}">수정</button>
+                        </c:when>
+                        <c:otherwise></c:otherwise>
+                        </c:choose>
+                        </div>
+                     </div>
+                  </div>
+               </c:forEach>
+            </div>
+         </div>
+         <div class="top_btn" style="padding-bottom: 13px">
+            <div class="left_area">
+               <!-- 목록 -->
+               <button type="submit" class="basebutton skin size" id="list_btn">목록</button>
+            </div>
+            <div class="right_area">
+               <!-- 수정 -->
+               <a type="submit" class="basebutton skin size" id="update_btn">수정</a>
+               <!-- 삭제 -->
+               <a type="submit" class="basebutton skin size" id="delete_btn">삭제</a>
+            </div>
+         </div>            
+      </div>
 </section>
+
 <script>
 	$('.replyUpdate_btn').on('click', function(){
 		var urlparam = "?rno=" + $(this).attr('data-rno');

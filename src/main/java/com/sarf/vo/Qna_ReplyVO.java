@@ -9,6 +9,7 @@ public class Qna_ReplyVO {
 	private String name;
 	private String content;
 	private Date regdate;
+	private int ans;
 	
 	public int getBno() {
 		return bno;
@@ -41,10 +42,18 @@ public class Qna_ReplyVO {
 		this.regdate = regdate;
 	}
 	
+	public int getAns() {
+		return ans;
+	}
+	public void setAns(int ans) {
+		this.ans = ans;
+	}
 	@Override
 	public String toString() {
-		return "ReplyVO [bno=" + bno + ", rno=" + rno + ", name=" + name + ", content=" + content + ", regdate="
-				+ regdate + "]";
+		return "Qna_ReplyVO [bno=" + bno + ", rno=" + rno + ", name=" + name + ", content=" + content + ", regdate="
+				+ regdate + ", ans=" + ans + "]";
 	}
+	
+	
 
 }

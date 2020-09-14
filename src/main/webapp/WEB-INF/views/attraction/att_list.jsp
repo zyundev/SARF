@@ -258,6 +258,8 @@ header {
 footer {
 	padding-top: 50px;
 }
+
+*:focus { outline:none; }
      
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>

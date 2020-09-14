@@ -1,0 +1,54 @@
+.view_list {
+	position: relative;
+	width: 800px;
+	margin: 0 auto;
+	margin-top: 30px;
+	font-size: 15px;
+}
+
+.view_content {
+	padding: 29px;
+	border: 1px solid green;
+	border-radius: 6px;
+}
+
+.comment_box {
+	display: inline-block;
+	margin-top: 10px;
+}
+
+.input_button {
+	display: inline-block;
+	min-width: 35px;
+	height: 34px;
+	font-size: 15px;
+	border-radius: 6px;
+	box-sizing: border-box;
+	font-weight: 700;
+	text-align: center;
+	vertical-align: top;
+	float: right;
+	border: 1px solid green;
+	background: #22B600;
+	color: black;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.input_button:hover {
+	color: #ffffff;
+	background-color: #22B600;
+}
+
+.cmt_write_box {
+	width: 700px;
+	height: 78px;
+	padding: 13px;
+	margin-top: 10px;
+	border: 1px solid #cecdce;
+	background: #fff;
+	line-height: 18px;
+	resize: none;
+}
+
+*:focus { outline:none; }

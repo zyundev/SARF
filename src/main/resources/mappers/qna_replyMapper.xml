@@ -23,7 +23,8 @@
 				VALUES(		#{bno},
 							Qna_BOARD_R_SEQ.NEXTVAL,
 							#{name},
-							#{content} )
+							#{content}
+										)
 	</insert>
 
 	<!-- 댓글 수정 -->

@@ -148,7 +148,6 @@
          </div>
 
          <!-- 댓글 입력창-->
-
                <c:choose>
                   <c:when test="${member.id == 'admin'}">
          <div class="comment_writer">

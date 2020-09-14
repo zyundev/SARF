@@ -17,6 +17,7 @@
 body {
 	overflow-x: hidden;
 }
+
 #container {
 	width: 980px;
 	margin: 0 auto;
@@ -82,13 +83,13 @@ header {
 			</div>
 			<table class="board_list">
 				<colgroup>
-            		<col width="12%" />
-            		<col width="50%" />
-            		<col width="13%" />
-            		<col width="13%" />
-            		<col width="12%" />
-       			</colgroup>
-					<caption>게시판 목록</caption>
+					<col width="12%" />
+					<col width="50%" />
+					<col width="13%" />
+					<col width="13%" />
+					<col width="12%" />
+				</colgroup>
+				<caption>게시판 목록</caption>
 				<thead>
 					<tr>
 						<th scope="col">번호</th>
@@ -112,35 +113,32 @@ header {
 					</c:forEach>
 				</tbody>
 			</table>
+			<div class="paging">
+				<ul class="paging-ul">
+					<c:if test="${pageMaker.prev}">
+						<li><a
+							href="list${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
+					</c:if>
+					<c:forEach begin="${pageMaker.startPage}"
+						end="${pageMaker.endPage}" var="idx">
+						<li
+							<c:out value="${pageMaker.cri.page == idx ? 'class=info' : ''}" />>
+							<a href="list${pageMaker.makeSearch(idx)}">${idx}</a>
+						</li>
+					</c:forEach>
+					<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
+						<li><a
+							href="list${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
+					</c:if>
+				</ul>
+			</div>
 			<c:if test="${member.id == 'admin'}">
 				<div style="float: right">
 					<button class="write_btn"
 						onclick="location.href='/n_board/writeView'">글쓰기</button>
 				</div>
 			</c:if>
-			<div class="paging">
-				<ul class="paging-ul">
-					<c:if test="${pageMaker.prev}">
-						<li><a
-							href="notice${pageMaker.makeSearch(pageMaker.startPage - 1)}">이전</a></li>
-					</c:if>
-
-					<c:forEach begin="${pageMaker.startPage}"
-						end="${pageMaker.endPage}" var="idx">
-						<li
-							<c:out value="${pageMaker.cri.page == idx ? 'class=info' : ''}" />>
-							<a href="notice${pageMaker.makeSearch(idx)}">${idx}</a>
-						</li>
-					</c:forEach>
-
-					<c:if test="${pageMaker.next && pageMaker.endPage > 0}">
-						<li><a
-							href="notice${pageMaker.makeSearch(pageMaker.endPage + 1)}">다음</a></li>
-					</c:if>
-				</ul>
-			</div>
 		</div>
-
 		<div align="center">
 
 			<select class="srch_select" name="srchfield">
@@ -191,13 +189,13 @@ header {
 			<%@ include file="../board/footer.jsp"%>
 		</footer>
 	</div>
-	
+
 	<script>
-	window.onload = function() {
-		setTimeout (function () {
-			scrollTo(0,0);
-		},100);
-	}
+		window.onload = function() {
+			setTimeout(function() {
+				scrollTo(0, 0);
+			}, 100);
+		}
 	</script>
 
 </body>

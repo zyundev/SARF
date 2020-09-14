@@ -3,6 +3,7 @@ package com.sarf.web;
 import java.util.List;
 
 import javax.inject.Inject;
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
 
 import org.slf4j.Logger;
@@ -12,6 +13,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.sarf.service.Qna_BoardService;
 import com.sarf.service.Qna_ReplyService;
@@ -80,11 +82,18 @@ public class Qna_BoardController {
 	// 게시물 조회
 	@RequestMapping(value = "/qna_view", method = RequestMethod.GET)
 
-	public String read(Qna_BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
+	public String read(Qna_BoardVO boardVO, Qna_ReplyVO replyVO, @ModelAttribute("scri") SearchCriteria scri, Model model, RedirectAttributes rttr) throws Exception{
 
 		logger.info("뷰");
 			
 		model.addAttribute("read", service.read(boardVO.getBno()));
+		
+		
+		if (replyVO.getAns() == 1) {
+			rttr.addAttribute("anwser", true);
+		} else if(replyVO.getAns() == 0) {
+			rttr.addAttribute("anwser", false);
+		}
 		
 		List<Qna_ReplyVO> replyList = replyService.readReply(boardVO.getBno());
 		model.addAttribute("replyList", replyList);

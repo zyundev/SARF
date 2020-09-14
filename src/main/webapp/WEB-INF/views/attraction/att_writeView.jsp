@@ -7,8 +7,8 @@
 Enumeration se = session.getAttributeNames();
 
 while(se.hasMoreElements()){
-	String getse = se.nextElement()+"";
-	System.out.println("@@@@@@@ session : "+getse+" : "+session.getAttribute(getse));
+   String getse = se.nextElement()+"";
+   System.out.println("@@@@@@@ session : "+getse+" : "+session.getAttribute(getse));
 }
 %>
 <%-- 세션값 확인 끝 --%>
@@ -34,87 +34,89 @@ function blank_chk(obj) {
 </script>
 <style>
 * {
-	border: 0;
-	padding: 0;
+   border: 0;
+   padding: 0;
 }
 
 body {
-	overflow-x: hidden;
+   overflow-x: hidden;
 }
 
 div {
-	display: block;
+   display: block;
 }
 
 .base-layout {
-	width: 960px;
-	margin: 0 auto;
+   width: 960px;
+   margin: 0 auto;
 }
 
 .WritingHeader {
-	position: relative;
-	margin-top: 20px;
-	border-bottom: 1px solid #323232;
+   position: relative;
+   margin-top: 20px;
+   border-bottom: 1px solid #323232;
 }
 
 h3 {
-	display: block;
-	font-size: 1.5em;
-	font-weight: bold;
+   display: block;
+   font-size: 1.5em;
+   font-weight: bold;
 }
 
 .WritingContent {
-	position: relative;
-	padding-top: 12px;
-	padding-bottom: 50px;
+   position: relative;
+   padding-top: 12px;
+   padding-bottom: 50px;
 }
 
 .WritingTitle {
-	padding: 5px 13px 5px 13px;
-	border: 1px solid #ebecef;
+   padding: 5px 13px 5px 13px;
+   border: 1px solid #ebecef;
 }
 
 .textarea_input {
-	display: block;
-	width: 100%;
-	min-height: 40px;
-	padding: 11px 12px 10px;
-	border: 1px solid #ebecef;
-	box-sizing: border-box;
-	overflow: hidden;
-	resize: none;
-	word-break: break-all;
-	font-size: 15px;
-	letter-spacing: -.23px;
-	line-height: 17px;
-	outline: none;
-	border-bottom: 1px solid black;
+   display: block;
+   width: 100%;
+   min-height: 40px;
+   padding: 11px 12px 10px;
+   border: 1px solid #ebecef;
+   box-sizing: border-box;
+   overflow: hidden;
+   resize: none;
+   word-break: break-all;
+   font-size: 15px;
+   letter-spacing: -.23px;
+   line-height: 17px;
+   outline: none;
+   border-bottom: 1px solid black;
 }
 
 .BaseButton {
-	display: inline-block;
-	margin-top: 5px;
-	font-weight: 700;
-	float: right;
-	width: 44px;
-	height: 39px;
-	background: #fff;
-	font-weight: bold;
-	border: 1px solid #4f9f4f;
-	border-radius: 6px;
-	cursor: pointer;
-	margin-left: 5px;
-	box-shadow: inset 0 0 0 1px #4f9f4f!important;
-	transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
+   display: inline-block;
+   margin-top: 5px;
+   font-weight: 700;
+   float: right;
+   width: 44px;
+   height: 39px;
+   background: #fff;
+   font-weight: bold;
+   border: 1px solid #4f9f4f;
+   border-radius: 6px;
+   cursor: pointer;
+   margin-left: 5px;
+   box-shadow: inset 0 0 0 1px #4f9f4f!important;
+   transition: background-color .3s,color .3s,background .3s,box-shadow .1s ease-in-out; 
 }
 
 .BaseButton:hover{
-	color:#ffffff;
-	background-color:#4f9f4f;
+   color:#ffffff;
+   background-color:#4f9f4f;
 }
 .content{
-	width: 100%;
+   width: 100%;
 }
+
+*:focus { outline:none; }
 </style>
 </head>
 <body>

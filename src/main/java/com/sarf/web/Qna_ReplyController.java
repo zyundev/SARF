@@ -36,6 +36,7 @@ public class Qna_ReplyController {
 		rttr.addAttribute("perPageNum", scri.getPerPageNum());
 		rttr.addAttribute("searchType", scri.getSearchType());
 		rttr.addAttribute("keyword", scri.getKeyword());
+		rttr.addAttribute("ans", qna_vo.getAns());
 		
 		return "redirect:/qna_board/qna_view";
 		

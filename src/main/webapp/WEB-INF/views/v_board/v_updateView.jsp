@@ -104,7 +104,7 @@ function bnc() {
       				$(".cancel_btn").on("click", function() {
        				  event.preventDefault();
        				  if(confirm("수정을 취소하시겠습니까?") == true) {
-       					location.href = "/v_board/view?bno=${update.bno}";
+       					location.href = "/v_board/v_view?bno=${update.bno}";
          				}
       				})
    				})
