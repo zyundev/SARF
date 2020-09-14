@@ -233,6 +233,8 @@ while(se.hasMoreElements()){
 		footer {
 			padding-top: 50px;
 		}
+		
+		*:focus { outline:none; }
 	</style>
 	<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Noto+Sans+KR&display=swap" rel="stylesheet">

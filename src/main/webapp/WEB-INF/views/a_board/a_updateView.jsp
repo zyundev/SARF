@@ -40,7 +40,7 @@ function bnc() {
 	
 	<div class="base-layout">
 		<div class="UpdateHeader">
-			<h3>게시판 글쓰기</h3>
+			<h3>게시판 수정하기</h3>
 		</div>
 		<nav>홈 - 글 작성</nav>
 		<div class="UpdateContent">
