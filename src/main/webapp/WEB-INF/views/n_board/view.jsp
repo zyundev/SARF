@@ -110,7 +110,7 @@ while(se.hasMoreElements()){
 				</div>
 
 				<!-- 내용 -->
-				<label>${read.content} </label> <br> <br> <br> <br>
+				 <div style="margin-top: 5px; ">${read.content} </div> <br> <br> <br> <br> <br>
 
 				<br>
 			</div>
