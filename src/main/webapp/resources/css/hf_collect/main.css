@@ -227,6 +227,10 @@ footer {
 
 		}
 		
+		#container img {
+			cursor: pointer;
+		}
+		
 		#container #tab1 .Dong_1 {
 		
 		 margin: 10px 45px;
