@@ -271,7 +271,7 @@ footer {
 	
 	<div id="container">
 		<h2>명소</h2>
-        <hr style = "border: solid 3px black;" />
+        <hr style = "border: solid 3px black; width:100%;" />
 		<ul class="tab">
             <li data-tab="tab1" class="cool-link"><a href="#none">#강동</a></li>
             <li data-tab="tab2" class="cool-link"><a href="#none">#강서</a></li>
