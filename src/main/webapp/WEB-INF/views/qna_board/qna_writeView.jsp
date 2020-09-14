@@ -29,6 +29,7 @@ function bnc() {
 	}
 }
 </script>
+
 </head>
 <body>
 
@@ -44,12 +45,12 @@ function bnc() {
    <table>
       <tr>
           <th>제목</th><td>
-             <input type="text" name="subject" maxlength="100">
+             <input type="text" name="subject" maxlength="100" autofocus>
           </td>
         </tr>
 
       <tr class="namemail">
-          <th>이름</th><td><input type="text" name="name" value="${member.id}"></td>
+          <th>이름</th><td>${member.id}</td>
         </tr>  
       <tr class="namemail">
           <th>휴대폰번호</th><td>${member.phone}</td>
@@ -58,17 +59,26 @@ function bnc() {
           <th>이메일</th><td>${member.email}</td>
         </tr>  
       <tr>
-          <th>내용</th><td><textarea name="content" placeholder="문의할 내용을 적어주세요."></textarea></td>
+          <th>내용</th><td><textarea name="content" placeholder="문의할 내용을 적어주세요." style="resize: none; margin: 10px 0px 10px 0px;"></textarea></td>
 
    </table>
-         <div>
-         <button type='submit' class='BaseButton'>등록</button>
-         <!-- 경로 재설정 -->
+   				<script type="text/javascript">
+   					$(document).ready(function() {
+
+      				$(".cancel_btn").on("click", function() {
+       				  event.preventDefault();
+       				  if(confirm("작성을 취소하시겠습니까?") == true) {
+       						history.go(-1);
+         				}
+      				})
+   				})
+				</script>
+         <div style="float: right">
+         <button type='submit' class='write_btn BaseButton'>등록</button>
+            <button type="button" class='cancel_btn write_btn BaseButton'>취소</button>
          </div>
                </form>
-            <button class='BaseButton' onclick="location.href='/qna_board/qna_list'">취소</button>
    </div>
-   
    <script>
 	window.onload = function() {
 		setTimeout (function () {

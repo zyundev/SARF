@@ -13,7 +13,7 @@ table {
 }
 
 .container{
-	width: 800px;
+	width: 1024px;
 	margin: 0 auto;
 	border-top: 30px;
     padding: 50px;
@@ -60,5 +60,7 @@ h3{
     color: #fff;
     display: inline-block;
     cursor: pointer;
-	
+	font-size:15px;
 }
+
+ *:focus { outline:none; }

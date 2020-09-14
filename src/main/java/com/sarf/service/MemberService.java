@@ -3,6 +3,7 @@ package com.sarf.service;
 import com.sarf.vo.MemberVO;
 
 public interface MemberService {
+	
 	// 회원가입
 	public void join(MemberVO vo) throws Exception;
 	
@@ -26,4 +27,5 @@ public interface MemberService {
 	
 	// 이메일 중복 체크
 	public String emailcheck(String email) throws Exception;
+	
 }

@@ -10,29 +10,26 @@ import org.springframework.stereotype.Repository;
 import com.sarf.vo.Qna_BoardVO;
 import com.sarf.vo.SearchCriteria;
 
-@Repository	// 하지 않아서 bean을 생성못함
+@Repository
 public class Qna_BoardDAOImpl implements Qna_BoardDAO{
 
 	@Inject
 	private SqlSession sqlSession;
 	
+	String mapper = "qna_boardMapper";
+	
 	@Override
 	public List<Qna_BoardVO> list(SearchCriteria scri) throws Exception {
-		return sqlSession.selectList("qna_boardMapper.list", scri);
+		return sqlSession.selectList(mapper + ".list", scri);
 	}
-
 
 	@Override
 	public void write(Qna_BoardVO boardVO) throws Exception {
-		sqlSession.insert("qna_boardMapper.write", boardVO);
+		sqlSession.insert(mapper + ".write", boardVO);
 	}
 
-	// 게시물 조회
 	@Override
 	public Qna_BoardVO read(int bno) throws Exception {
-		return sqlSession.selectOne("qna_boardMapper.read", bno);
+		return sqlSession.selectOne(mapper + ".read", bno);
 	}
-
-
-	
 }

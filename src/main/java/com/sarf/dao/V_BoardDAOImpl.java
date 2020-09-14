@@ -10,48 +10,52 @@ import org.springframework.stereotype.Repository;
 import com.sarf.vo.BoardVO;
 import com.sarf.vo.SearchCriteria;
 
-@Repository	// 하지 않아서 bean을 생성못함
+@Repository
 public class V_BoardDAOImpl implements BoardDAO{
 
 	@Inject
 	private SqlSession sqlSession;
 	
+	String mapper = "V_boardMapper";
+	// 조회
 	@Override
 	public List<BoardVO> list(SearchCriteria scri) throws Exception {
-		return sqlSession.selectList("V_boardMapper.listPage", scri);
+		return sqlSession.selectList(mapper + ".listPage", scri);
 	}
 	
 	// 게시물 총 갯수
 	@Override
 	public int listCount(SearchCriteria scri) throws Exception {
-		return sqlSession.selectOne("V_boardMapper.listCount", scri);
+		return sqlSession.selectOne(mapper + ".listCount", scri);
 	}
 
+	// 글 쓰기
 	@Override
 	public void write(BoardVO boardVO) throws Exception {
-		sqlSession.insert("V_boardMapper.write", boardVO);
+		sqlSession.insert(mapper + ".write", boardVO);
 	}
 
 	// 게시물 조회
 	@Override
 	public BoardVO read(int bno) throws Exception {
-		return sqlSession.selectOne("V_boardMapper.read", bno);
+		return sqlSession.selectOne(mapper + ".read", bno);
 	}
 	
 	// 게시물 조회수 증가
 	@Override
 	public int updateReadCount(int bno) throws Exception {
-		return sqlSession.update("V_boardMapper.updateCount", bno);
+		return sqlSession.update(mapper + ".updateCount", bno);
 	}
 
+	// 수정
 	@Override
 	public void update(BoardVO boardVO) throws Exception {
-		sqlSession.update("V_boardMapper.update", boardVO);
+		sqlSession.update(mapper + ".update", boardVO);
 	}
 
+	// 삭제
 	@Override
 	public void delete(int bno) throws Exception {
-		sqlSession.delete("V_boardMapper.delete", bno);
+		sqlSession.delete(mapper + ".delete", bno);
 	}
-	
 }

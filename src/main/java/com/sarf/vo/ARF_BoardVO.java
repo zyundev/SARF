@@ -41,7 +41,7 @@ public class ARF_BoardVO {
 	public void setContent(String content) {
 		this.content = content;
 	}
-	
+
 	public String getImg1() {
 		return img1;
 	}
@@ -65,7 +65,7 @@ public class ARF_BoardVO {
 	public void setImg3(String img3) {
 		this.img3 = img3;
 	}
-	
+
 	public String getLink() {
 		return link;
 	}
@@ -76,7 +76,7 @@ public class ARF_BoardVO {
 
 	@Override
 	public String toString() {
-		return "Att_BoardVO [bno=" + bno + ", key=" + key + ", subject=" + subject + ", content=" + content
-				+ ", img1=" + img1 + ", img2=" + img2 + ", img3=" + img3 + ", link=" + link + "]";
+		return "Att_BoardVO [bno=" + bno + ", key=" + key + ", subject=" + subject + ", content=" + content + ", img1="
+				+ img1 + ", img2=" + img2 + ", img3=" + img3 + ", link=" + link + "]";
 	}
 }

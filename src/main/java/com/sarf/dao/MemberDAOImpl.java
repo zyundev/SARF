@@ -14,6 +14,7 @@ public class MemberDAOImpl implements MemberDAO {
 	SqlSession sql;
 	
 	String mapper = "memberMapper";
+	
 	// 회원가입
 	@Override
 	public void join(MemberVO vo) throws Exception {

@@ -52,7 +52,6 @@ public class ReplyController {
 		return "board/replyUpdateView";
 	}
 	
-	
 	//댓글 수정 POST
 	@RequestMapping(value="/replyUpdate", method = RequestMethod.POST)
 	public String replyUpdate(ReplyVO vo, RedirectAttributes rttr) throws Exception {
