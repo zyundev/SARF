@@ -145,3 +145,4 @@ input+div {
 	color:#ffffff;
 	background-color:#4f9f4f;
 }
+*:focus { outline:none; }

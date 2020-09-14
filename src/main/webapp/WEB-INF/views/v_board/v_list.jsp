@@ -121,14 +121,21 @@ header {
 				<h2>축제 게시판</h2>
 			</div>
 			<table class="board_list">
-				<caption>게시판 목록</caption>
+				<colgroup>
+            		<col width="12%" />
+            		<col width="50%" />
+            		<col width="13%" />
+            		<col width="13%" />
+            		<col width="12%" />
+       			</colgroup>
+					<caption>게시판 목록</caption>
 				<thead>
 					<tr>
-						<th>번호</th>
-						<th>제목</th>
-						<th>글쓴이</th>
-						<th>작성일</th>
-						<th>조회</th>
+						<th scope="col">번호</th>
+						<th scope="col">제목</th>
+						<th scope="col">글쓴이</th>
+						<th scope="col">작성일</th>
+						<th scope="col">조회</th>
 					</tr>
 				</thead>
 				<tbody>
