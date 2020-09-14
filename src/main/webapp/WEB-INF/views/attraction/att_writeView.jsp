@@ -21,6 +21,17 @@ while(se.hasMoreElements()){
 <!-- SmartEditor2 라이브러리 --> 
 <script type="text/javascript" src="/smarteditor2/js/service/HuskyEZCreator.js" charset="utf-8"></script> 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script>
+//첫 글자 공백 사용 X
+function blank_chk(obj) {
+    if(obj.value == " ") {
+        alert("첫 글자를 공백으로 사용할수 없습니다.");
+        obj.focus();
+        obj.value = obj.value.replace(' ','');
+        return false;
+    }
+}
+</script>
 <style>
 * {
    border: 0;
@@ -110,93 +121,93 @@ h3 {
 </head>
 <body>
 
-   <header>
-      <%@ include file="../h_list/introw_head.jsp" %>
-   </header>
-   
-   <div class="base-layout">
-      <div class="WritingHeader">
-         <h3>명소게시판 글쓰기</h3>
-      </div>
-      <div class="WritingContent">
-         <form class="writeForm" name="writeForm" method="post" action="/attraction/write" enctype="multipart/form-data"> 
-            <!-- 구역 구분 -->
-            <div class="WritingTitle">지역
-               <select class="keychk" name="key">
-                  <option value="wrong" selected>지역을 선택해주세요.</option>
-                  <option value="EAST">강동</option>
-                  <option value="WEST">강서</option>
-                  <option value="SOUTH">강남</option>
-                  <option value="NORTH">강북</option>
-               </select>
-            </div>
-            <!-- 제목 -->
-            <div>
-               <textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
-            </div>
-            <!-- 내용 -->
-            <textarea placeholder="내용을 입력해 주세요." class="content"id="content" name="content" style="resize: none; font-size: 15px; outline: none;" rows="22" cols="115"></textarea>
-               <!-- SmartEditor2 -->
-               <script type="text/javascript">
-                 var oEditors = [];
-                 nhn.husky.EZCreator.createInIFrame({
-                     oAppRef: oEditors,
-                     elPlaceHolder: "content",
-                     sSkinURI: "/smarteditor2/SmartEditor2Skin.html",
-                     fCreator: "createSEditor2",
-                     htParams: { 
-                        bUseVerticalResizer : false,
-                        fOnBeforeUnload : function(){}
-                     }  
-                 });
-                 function submitContents(elClickedObj) {
-                     // 에디터의 내용이 textarea에 적용됩니다.
-                     oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
-                     // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
-          
-                     try {
-                         elClickedObj.form.submit();
-                     } catch(e) {}
-                   }
-            </script>
-            <script>
-               $(function() {
-                  $("#BaseButton").click(function() {
-                     oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); 
-                     //textarea의 id를 적어줍니다.
-                  });
-               })
-            </script>
-            <!-- 더 알아보기  -->
-            <div>
-               <label>더 알아보기</label>
-               <input type="text" name="link" value="http://">
-            </div>
-            <!-- 이미지 업로드 -->
-            <label>썸네일 이미지 1 </label><input type="file" name="file"><br>
-            <label>썸네일 이미지 2 </label><input type="file" name="file2"><br>
-            <label>썸네일 이미지 3 </label><input type="file" name="file3">
-            <div style="border: 1px solid black;">
-               <button type="button" class="BaseButton" onclick="location.href='/attraction/list'">취소</button> 
-               <button id="BaseButton" type="submit" class="BaseButton" onclick="write_btn()">등록</button>
-            </div>
-         </form>
-      </div>
-   </div>
-   <script>
-      function write_btn(){
-         if($('.keychk').val() == "wrong"){
-            alert('지역을 선택해주세요.');
-            
-            return false;
-         }
-         if($('.textarea_input').val() == ""){
-            alert('제목을 입력해주세요.');
-            
-            return false;
-         }
-         $('.writeForm').submit();
-      }
-   </script>
+	<header>
+		<%@ include file="../h_list/introw_head.jsp" %>
+	</header>
+	
+	<div class="base-layout">
+		<div class="WritingHeader">
+			<h3>명소게시판 글쓰기</h3>
+		</div>
+		<div class="WritingContent">
+			<form class="writeForm" name="writeForm" method="post" action="/attraction/write" enctype="multipart/form-data"> 
+				<!-- 구역 구분 -->
+				<div class="WritingTitle">지역
+					<select class="keychk" name="key">
+						<option value="wrong" selected>지역을 선택해주세요.</option>
+						<option value="EAST">강동</option>
+						<option value="WEST">강서</option>
+						<option value="SOUTH">강남</option>
+						<option value="NORTH">강북</option>
+					</select>
+				</div>
+				<!-- 제목 -->
+				<div>
+					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" onkeyup="blank_chk(this)" style="height: 40px;"></textarea>
+				</div>
+				<!-- 내용 -->
+				<textarea placeholder="내용을 입력해 주세요." class="content"id="content" name="content" style="resize: none; font-size: 15px; outline: none;" rows="22" cols="115"></textarea>
+					<!-- SmartEditor2 -->
+					<script type="text/javascript">
+			        var oEditors = [];
+			        nhn.husky.EZCreator.createInIFrame({
+			            oAppRef: oEditors,
+			            elPlaceHolder: "content",
+			            sSkinURI: "/smarteditor2/SmartEditor2Skin.html",
+			            fCreator: "createSEditor2",
+			            htParams: { 
+			            	bUseVerticalResizer : false,
+			            	fOnBeforeUnload : function(){}
+			            }  
+			        });
+			        function submitContents(elClickedObj) {
+			            // 에디터의 내용이 textarea에 적용됩니다.
+			            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
+			            // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
+			 
+			            try {
+			                elClickedObj.form.submit();
+			            } catch(e) {}
+			       	}
+				</script>
+				<script>
+					$(function() {
+						$("#BaseButton").click(function() {
+							oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); 
+							//textarea의 id를 적어줍니다.
+						});
+					})
+				</script>
+				<!-- 더 알아보기  -->
+				<div>
+					<label>더 알아보기</label>
+					<input type="text" name="link" value="http://">
+				</div>
+				<!-- 이미지 업로드 -->
+				<label>썸네일 이미지 1 </label><input type="file" name="file"><br>
+				<label>썸네일 이미지 2 </label><input type="file" name="file2"><br>
+				<label>썸네일 이미지 3 </label><input type="file" name="file3">
+				<div style="border: 1px solid black;">
+					<button type="button" class="BaseButton" onclick="location.href='/attraction/list'">취소</button> 
+					<button id="BaseButton"type="button" class="BaseButton" onclick="write_btn()">등록</button>
+				</div>
+			</form>
+		</div>
+	</div>
+	<script>
+		function write_btn(){
+			if($('.keychk').val() == "wrong"){
+				alert('지역을 선택해주세요.');
+				
+				return false;
+			}
+			if($('.textarea_input').val() == ""){
+				alert('제목을 입력해주세요.');
+				
+				return false;
+			}
+			$('.writeForm').submit();
+		}
+	</script>
 </body>
 </html>

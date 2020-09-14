@@ -18,7 +18,7 @@
 	<div class="card-wrapper">
 		<div class="card_1">
 			<div class="imgBx">
-				<img src="/resources/images/pf_1.png">
+				<img src="/resources/images/pf_1.jpg">
 			</div>
 			<div class="details">
 				<h2>
@@ -30,7 +30,7 @@
 		</div>
 		<div class="card_2">
 			<div class="imgBx">
-				<img src="/resources/images/pf_2.png">
+				<img src="/resources/images/pf_2.jpg">
 			</div>
 			<div class="details">
 				<h2>
@@ -43,7 +43,7 @@
 		</div>
 		<div class="card_3">
 			<div class="imgBx">
-				<img src="/resources/images/pf_3.png">
+				<img src="/resources/images/pf_3.jpg">
 			</div>
 			<div class="details">
 				<h2>
@@ -56,7 +56,7 @@
 		</div>
 		<div class="card_4">
 			<div class="imgBx">
-				<img src="/resources/images/pf_4.png">
+				<img src="/resources/images/pf_4.jpg">
 			</div>
 			<div class="details">
 				<h2>
@@ -69,7 +69,7 @@
 		</div>
 		<div class="card_5">
 			<div class="imgBx">
-				<img src="/resources/images/pf_5.png">
+				<img src="/resources/images/pf_5.jpg">
 			</div>
 			<div class="details">
 				<h2>
@@ -81,20 +81,20 @@
 		</div>
 		<div class="card_6">
 			<div class="imgBx">
-				<img src="/resources/images/pf_6.jpg">
+				<img src="/resources/images/pf_6.png">
 			</div>
 			<div class="details">
 				<h2>
 					정성학<span> 팀원</span>
 				</h2>
 				<p>실력있는 팀원들과 함께하며 조금 부족한 면을 팀원들의
-				   <br>도움을 받아가며 헤쳐나갈수 있었습니다.
+				   <br>도움을 받아 제 실력을 다듬을 수 있었습니다.
 				   <br>다들 수고하셨습니다.</p>
 			</div>
 		</div>
 		<div class="card_7">
 			<div class="imgBx">
-				<img src="/resources/images/pf_7.png">
+				<img src="/resources/images/pf_7.jpg">
 			</div>
 			<div class="details">
 				<h2>
@@ -120,7 +120,7 @@
 <footer>
 	<%@ include file="footer.jsp"%>
 </footer>
-0
+
 <script>
 	window.onload = function() {
 		setTimeout (function () {
