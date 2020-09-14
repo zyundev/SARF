@@ -22,8 +22,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>커뮤니티</title>
 <link rel="stylesheet" href="/resources/css/list.css">
-<script
-	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script	src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
 <style>
@@ -89,21 +88,13 @@ header {
 }
 </style>
 <!--  자유, 명소, 맛집, 축제 게시판 스타일 수정: 김성규 -->
-
-
-
-
-
-
 </head>
 <body>
-
 	<header>
 		<%@ include file="../h_list/b_head.jsp"%>
 	</header>
 
 	<div class="main-tab">
-
 		<!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
 		<div id="container">
 			<ul class="tab">
@@ -118,7 +109,6 @@ header {
 			</ul>
 		</div>
 		<!--  list 부분, 자유,명소, 맛집, 축제 게시판 style 추가: 김성규 -->
-
 
 		<!-- location  -->
 		<div class="board_list_wrap">
@@ -196,26 +186,24 @@ header {
 		</div>
 
 		<script>
-		 $(function(){
-			 $('#searchBtn').on('click', function() {
-			 	self.location = "a_list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
-			 });
-			 $('.write_btn').on('click', function(){
-				if(${logincheck} == false){
-					alert('로그인해주세요.');
-					location.href='/member/login';
-				}else{
-		 			location.href='/a_board/a_writeView';
-				}
-	 		});
-		 });  
-
-
+			$(function(){
+				 $('#searchBtn').on('click', function() {
+				 	self.location = "a_list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+				 });
+				 $('.write_btn').on('click', function(){
+					if(${logincheck} == false){
+						alert('로그인해주세요.');
+						location.href='/member/login';
+					}else{
+			 			location.href='/a_board/a_writeView';
+					}
+		 		});
+			 });  
+	
 			function goSearch(){
-				//..
-					self.location = "a_list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
-				} 
-	</script>
+				self.location = "a_list" + '${pageMaker.makeQuery(1)}' + "&searchType=" + $("select option:selected").val() + "&keyword=" + encodeURIComponent($('#keywordInput').val());
+			} 
+		</script>
 
 	</div>
 
@@ -226,12 +214,11 @@ header {
 	</div>
 	
 	<script>
-	window.onload = function() {
-		setTimeout (function () {
-			scrollTo(0,0);
-		},100);
-	}
+		window.onload = function() {
+			setTimeout (function () {
+				scrollTo(0,0);
+			},100);
+		}
 	</script>
-
 </body>
 </html>
