@@ -62,11 +62,11 @@ h3 {
 	margin-top: 5px;
 	font-weight: 700;
 	float: right;
-	width: 44px;
-	height: 39px;
-	background: #fff;
+	width: 48px;
+	height: 30px;
+	background: #56C82C;
 	font-weight: bold;
-	border: 1px solid #4f9f4f;
+	border: 1px solid #56C82C;
 	border-radius: 6px;
 	cursor: pointer;
 	margin-left: 5px;
@@ -76,6 +76,6 @@ h3 {
 
 .BaseButton:hover{
 	color:#ffffff;
-	background-color:#4f9f4f;
+	background-color:#22B600;
 }
  *:focus { outline:none; }
