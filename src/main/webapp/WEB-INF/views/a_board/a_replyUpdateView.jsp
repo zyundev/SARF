@@ -7,72 +7,22 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width">
 <title>댓글 수정</title>
-<!-- <link href="/resources/css/view.css" rel="stylesheet" type="text/css" /> -->
-<style>
-.view_list{
-  position: relative;
-  width: 800px;
-  margin: 0 auto;
-  margin-top: 30px;
-  font-size: 15px;
-}
-
-.view_content{
-  padding: 29px;
-  border: 1px solid green;
-  border-radius: 6px;
-}
-.comment_box{
-	display: inline-block;
-    margin-top: 10px;
-}
-
-.input_button{
-	display: inline-block;
-    min-width: 35px;
-    height: 34px;
-    font-size: 15px;
-    border-radius: 6px;
-    box-sizing: border-box;
-    font-weight: 700;
-    text-align: center;
-    vertical-align: top;
-	float: right;
-	border: 1px solid green;
-    background: #22B600;
-    color: black;
-    margin-left: 10px;
-}
-
-.cmt_write_box {
-	width: 700px;
-	height: 78px;
-	padding: 13px;
-	margin-top: 10px;
-	border: 1px solid #cecdce;
-	background: #fff;
-	line-height: 18px;
-	resize: none;
-}
-</style>
+<link href="/resources/css/replyupdate.css" rel="stylesheet"
+	type="text/css" />
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 <script type="text/javascript">
 	$(function(){
 		var formObj = $("form[name='updateForm']");
 		
-		$(".cancel_btn").on("click", function(){
-			location.href = "/a_board/a_view?bno=${replyUpdate.bno}";
-			/*
-			   + "&page=${scri.page}"
-			   + "&perPageNum=${scri.perPageNum}"
-			   + "&searchType=${scri.searchType}"
-			   + "&keyword=${scri.keyword}";
-			*/
+		$(".cancel_btn").on("click", function() {
+			event.preventDefault();
+			if (confirm("수정을 취소하시겠습니까?") == true) {
+				history.go(-1);
+			}
 		})
 	})
 </script>
 </head>
-
 <body>
 	<div class="view_list">
 		<div class="view_content">
