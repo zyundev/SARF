@@ -159,7 +159,7 @@
          <div class="comment_writer">
             <div class="comment_inbox">
                <c:choose>
-                  <c:when test="${member.id != 'admin'}">
+                  <c:when test="${member.id != null}">
                      <em class="comment_inbox_name">답변</em>
                      <form name="replyForm" method="post" role="form">
                         <input type="hidden" id="bno" name="bno" value="${read.bno}" />
