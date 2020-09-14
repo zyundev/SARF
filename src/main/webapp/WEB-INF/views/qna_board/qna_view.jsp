@@ -84,7 +84,7 @@
 		<%@ include file="../h_list/qv_head.jsp" %>
 	</header>
 	
-   <div>
+   <div class="mainarea">
       <h3 style="padding: 15px 0 16px 16px; font-size: 25px;">묻고 답하기</h3>
       <table class="board_view">
          <colgroup>
@@ -102,7 +102,6 @@
             <tr>
                <th scope="row">제목</th>
                <td colspan="3"><c:out value="${read.subject}"></c:out></td>
-
             </tr>
             <tr>
                <th scope="row">작성자</th>
@@ -112,10 +111,6 @@
                      pattern="yyyy-MM-dd" /></td>
             </tr>
             <tr>
-               <th scope="row">처리상태</th>
-               <td>${map.HIT_CNT }</td>
-            </tr>
-            <tr>
                <td colspan="4">${read.content}</td>
             </tr>
          </tbody>
@@ -123,29 +118,26 @@
       <div class="comment_box">
          <!-- 댓글 출력창-->
          <div class="comment_box">
-            <p
-               style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">댓글</p>
             <c:forEach items="${replyList}" var="replyList" >
                <div class="comment_writer">
                   <div class="comment_inbox">
-                     <em class="comment_inbox_name">작성자 : ${replyList.name}</em>
-                     <p>
-                        작성 날짜 :
-                        <fmt:formatDate value="${replyList.regdate}"
-                           pattern="yyyy-MM-dd HH:mm:ss" />
-                     </p>
-                     ${replyList.content}
+                     <em class="comment_inbox_name"> 답변 : ${replyList.name}</em>
+                        <textarea style="overflow: hidden; outline: none;" readonly="readonly">${replyList.content}</textarea>
+                        <span class="comment_info">
+                           작성 날짜 :
+                           <fmt:formatDate value="${replyList.regdate}"
+                              pattern="yyyy-MM-dd HH:mm:ss" />
+                        </span>
                      <div class="right_area">
-
                         <c:choose>
                            <c:when test="${member.id == replyList.name}">
-                              <button type="button" id="replyUpdate_btn"
-                                 class="basebutton skin size replyUpdate_btn"
-                                 data-rno="${replyList.rno}">수정</button>
-
                               <button type="button" id="replyDelete_btn"
-                                 class="basebutton skin size replyDelete_btn"
+                                 class="input_button replyDelete_btn"
                                  data-rno="${replyList.rno}">삭제</button>
+
+                              <button type="button" id="replyUpdate_btn"
+                                 class="input_button replyUpdate_btn"
+                                 data-rno="${replyList.rno}">수정</button>
                            </c:when>
                            <c:otherwise></c:otherwise>
                         </c:choose>
@@ -156,10 +148,10 @@
          </div>
 
          <!-- 댓글 입력창-->
+               <c:choose>
+                  <c:when test="${member.id == 'admin'}">
          <div class="comment_writer">
             <div class="comment_inbox">
-               <c:choose>
-                  <c:when test="${member.id != null}">
                      <em class="comment_inbox_name">답변</em>
                      <form name="replyForm" method="post" role="form">
                         <input type="hidden" id="bno" name="bno" value="${read.bno}" />
@@ -170,20 +162,14 @@
                            <a class="input_button" id="replyWrite_btn" role="button">등록</a>
                         </div>
                      </form>
-                  </c:when>
-                  <c:otherwise>
-                     <p
-                        style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">로그인
-                        해야 답글 작성 가능합니다.</p>
-                     <!-- 로그인 버튼은 나중에 목차 달아서 만들 필요 없음 -->
-                  </c:otherwise>
-               </c:choose>
             </div>
          </div>
+                  </c:when>
+               </c:choose>
 
       </div>
       <div>
-         <a href="/qna_board/qna_list" class="btn" id="list">목록으로</a>
+         <button type="button" onclick="location.href=href='/qna_board/qna_list'" class="btn" id="list">목록으로</button>
       </div>
    </div>
    

@@ -45,14 +45,14 @@ function bnc() {
 			<form name="writeForm" method="post" action="/a_board/a_write" onsubmit="return bnc()">
 				<div class="WritingTitle">명소 게시판</div>
 				<div>
-					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." id="subject" name="subject" onkeyup="blank_chk(this)" style="height: 40px;"></textarea>
+					<input type="text"class="textarea_input" placeholder="제목을 입력해 주세요." id="subject" name="subject" onkeyup="blank_chk(this);" style="height: 40px;" autofocus></input>
 				</div>
 				<!-- 
 					아래 부분의 TEXTAREA는 스마트 에디터에 의해 편집되는 내용을 담는 것으로
 					기본적인 정보와 크기, 화면표시(표시되지 않음)으로 설정되어 있습니다. 이 부분에
 					스마트 에디터가 표시될 것입니다.
 				-->
-				<textarea id="content" name="content" class="textarea_input" placeholder="내용을 입력해 주세요."></textarea>
+				<textarea id="content" name="content" class="textarea_input"></textarea>
 				<!-- SmartEditor2 -->
 				<script type="text/javascript">
 				/*
@@ -66,16 +66,16 @@ function bnc() {
 			            oAppRef: oEditors,
 			            elPlaceHolder: "content",
 			            sSkinURI: "/se2/SmartEditor2Skin.html",
-			            fCreator: "createSEditor2"
+			            fCreator: "createSEditor2",
+			            htParams: { 
+			            	bUseVerticalResizer : false,
+			            	fOnBeforeUnload : function(){}
+			            }  
 			        });
 			        function submitContents(elClickedObj) {
 			            // 에디터의 내용이 textarea에 적용됩니다.
 			            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
 			            // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
-			 
-			            try {
-			                elClickedObj.form.submit();
-			            } catch(e) {}
 			       	}
 				</script>
 				<script>
@@ -93,8 +93,19 @@ function bnc() {
 						});
 					})
 				</script>
+				<script type="text/javascript">
+   					$(document).ready(function() {
+
+      				$(".cancel_btn").on("click", function() {
+       				  event.preventDefault();
+       				  if(confirm("작성을 취소하시겠습니까?") == true) {
+       						history.go(-1);
+         				}
+      				})
+   				})
+				</script>				
 				<div>
-					<button type="button" class="BaseButton" onclick="location.href='/a_board/a_list'">취소</button>
+					<button type="button" class="cancel_btn BaseButton">취소</button>
 					<button id="BaseButton" type="submit" class="BaseButton">등록</button>
 				</div>
 			</form>

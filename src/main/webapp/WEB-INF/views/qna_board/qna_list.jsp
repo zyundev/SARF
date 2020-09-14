@@ -41,7 +41,6 @@ while(se.hasMoreElements()){
         	    <th>제목</th>
             	<th>작성자</th>
             	<th>작성일자</th>
-            	<th>답변여부</th>
         	</tr>
     	</thead>
     	<tbody>
@@ -69,7 +68,18 @@ while(se.hasMoreElements()){
 	            <div style="float:right">
 				  <button class="write_btn" onclick="location.href='/qna_board/qna_writeView'">글쓰기</button> 
 			      </div>
-	
+	<script>
+		$(function(){
+			$('.write_btn').on('click', function(){
+				if(${logincheck} == false){
+					alert('로그인해주세요.');
+					location.href='/member/login';
+				}else{
+					location.href='/qna_board/qna_writeView'
+				}
+ 			});
+		});
+	</script>
 	</div>
 	
 	<footer>
