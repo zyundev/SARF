@@ -64,5 +64,15 @@ textarea{
 b{
    font-size: 12px;
 }
+.write_btn{
+	margin-top: 20px;
+	height: 40px;
+    padding: 0 20px;
+    background: #007bc0;
+    font-weight: bold;
+    color: #fff;
+    display: inline-block;
+    cursor: pointer;
+}
 
  *:focus { outline:none; }

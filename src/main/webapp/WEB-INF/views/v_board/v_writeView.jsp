@@ -46,7 +46,7 @@ function bnc() {
 			<form name="writeForm" method="post" action="/v_board/v_write" onsubmit="return bnc()">
 				<div class="WritingTitle">축제 게시판</div>
 				<div>
-					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." id="subject" name="subject" onkeyup="blank_chk(this);" style="height: 40px;"></textarea>
+						<input type="text"class="textarea_input" placeholder="제목을 입력해 주세요." id="subject" name="subject" onkeyup="blank_chk(this);" style="height: 40px;" autofocus></input>
 				</div>
 				<!-- 
 					아래 부분의 TEXTAREA는 스마트 에디터에 의해 편집되는 내용을 담는 것으로
@@ -94,9 +94,20 @@ function bnc() {
 						});
 					})
 				</script>
+				<script type="text/javascript">
+   					$(document).ready(function() {
+
+      				$(".cancel_btn").on("click", function() {
+       				  event.preventDefault();
+       				  if(confirm("작성을 취소하시겠습니까?") == true) {
+       						history.go(-1);
+         				}
+      				})
+   				})
+				</script>				
 				<div>
-					<button type="button" class="BaseButton" onclick="location.href='/v_board/v_list'">취소</button>
-					<button type="submit" id="BaseButton" class="BaseButton">등록</button>
+					<button type="button" class="cancel_btn BaseButton">취소</button>
+					<button id="BaseButton" type="submit" class="BaseButton">등록</button>
 				</div>
 			</form>
 		</div>
