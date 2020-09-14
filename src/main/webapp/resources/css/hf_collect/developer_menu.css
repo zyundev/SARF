@@ -15,14 +15,14 @@
 .symbol {
 	position: relative;
 	left: 8px;
-	top: -15.5px;
+	top: -38.5px;
 	margin-left: 9px;
 }
 
 .logo {
 	z-index: 1;
 	position: absolute;
-	margin-top: -145px;
+	margin-top: -168px;
 	left: 50%;
 	/* margin-left:-(濡쒓퀬width/2) */
 	margin-left: -150px;

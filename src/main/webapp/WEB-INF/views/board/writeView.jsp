@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+ <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <!DOCTYPE html>
@@ -15,7 +15,7 @@
 //첫 글자 공백 사용 X
 function blank_chk(obj) {
     if(obj.value == " ") {
-        alert("첫 단어로 공백을 사용할 수 없습니다.");
+        alert("첫 글자를 공백으로 사용할수 없습니다.");
         obj.focus();
         obj.value = obj.value.replace(' ','');
         return false;
@@ -23,22 +23,13 @@ function blank_chk(obj) {
 }
 
 // 제목, 내용 빈칸 X
-$(document).ready(function() {
-	$("#BaseButton").click(function() {
-		if($("#sub").val().length == 0) {
-			alert("제목을 입력해주세요.");
-			$("#sub").focus();
-			return false;
-		}
-
-		/* if($("#content").html() === '<p>&nbsp;</p>') {
-			
-			alert("내용을 입력해주세요.");
-			$("#content").focus();
-			return false;
-		} */
-	})
-})
+function bnc() {
+	if($("#subject").val().trim() == "") {
+		alert("제목을 입력해주세요.");
+		$("#subject").focus();
+		return false;
+	}
+}
 </script>
 </head>
 <body>
@@ -52,10 +43,10 @@ $(document).ready(function() {
 			<h3>게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
-			<form name="writeForm" method="post" action="/board/write">
+			<form name="writeForm" method="post" action="/board/write" onsubmit="return bnc()">
 				<div class="WritingTitle">자유 게시판</div>
 				<div>
-					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." id="sub" name="subject" onkeyup="blank_chk(this);" style="height: 40px;"></textarea>
+					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." id="subject" name="subject" onkeyup="blank_chk(this);" style="height: 40px;"></textarea>
 				</div>
 				<!-- 
 					아래 부분의 TEXTAREA는 스마트 에디터에 의해 편집되는 내용을 담는 것으로
@@ -86,10 +77,6 @@ $(document).ready(function() {
 			            // 에디터의 내용이 textarea에 적용됩니다.
 			            oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []);
 			            // 에디터의 내용에 대한 값 검증은 이곳에서 document.getElementById("ir1").value를 이용해서 처리하면 됩니다.
-			 
-			            try {
-			                elClickedObj.form.submit();
-			            } catch(e) {}
 			       	}
 				</script>
 				<script>
@@ -97,6 +84,13 @@ $(document).ready(function() {
 						$("#BaseButton").click(function() {
 							oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); 
 							//textarea의 id를 적어줍니다.
+							var content = document.getElementById("content").value;
+
+				        	if(content == "" || content == null || content == '&nbsp;' || content == '<br>' || content == '<br/>' || content == '<p>&nbsp;</p>') {
+						        alert("내용을 작성해주세요.");
+						        oEditors.getById["content"].exec("FOCUS"); //포커싱
+						        return false;
+					       	} else return true;
 						});
 					})
 				</script>

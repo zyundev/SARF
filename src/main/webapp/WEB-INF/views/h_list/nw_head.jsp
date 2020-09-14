@@ -28,8 +28,8 @@
 		</label>
 
 		<div class="sidebar">
-			<a href="/n_board/notice">공지사항</a>
-			<hr>
+		<a href="/n_board/notice">공지사항</a>
+		<hr>
 		
 		<div class="board">
 			<a class="cursor" href="/board/list">게시판</a>
@@ -51,27 +51,26 @@
 				<br>
 			</div>
 		</div>
-			<hr>
-			<a href="/attraction/list">명소</a>
-			<hr>
-			<a href="/restaurant/list">맛집</a>
-			<hr>
-			<a href="/festival/list">축제</a>
-			<hr>
-
+		<hr>
+		<a href="/attraction/list">명소</a>
+		<hr>
+		<a href="/resources/etc/restaurant.jsp">맛집</a>
+		<hr>
+		<a href="/resources/etc/festival.jsp">축제</a>
+		<hr>
 		<div class="board">
 			<a class="cursor" href="/qna_board/faq">고객센터</a>
 			<div>
-				<a href="/qna_board/faq"><button style="margin-right:120px" class="bd menubar-button">- QnA</button></a>
+				<a href="/qna_board/faq"><button style="margin-right:120px; padding-right:10px;" class="bd menubar-button">- QnA</button></a>
 				<br>				
 				<p>
 					<a href="/qna_board/qna_list"><button class="bd menubar-button">- 묻고 답하기</button></a>
 				</p>				
 			</div>
 		</div>
-			<hr>
-			<a href="/resources/etc/intro.jsp">운영진 소개</a>
-			<hr>
+		<hr>
+		<a href="/resources/etc/intro.jsp">운영진 소개</a>
+		<hr>
 			<!-- 공지사항 게시판 명소 맛집 축제 고객지원 운영진소개 -->
 			<c:choose>
          	<c:when test="${member == null}">

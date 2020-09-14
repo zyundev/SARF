@@ -6,7 +6,7 @@ import javax.inject.Inject;
 
 import org.springframework.stereotype.Service;
 
-import com.sarf.dao.BoardDAO;
+import com.sarf.dao.BoardDAOImpl;
 import com.sarf.vo.BoardVO;
 import com.sarf.vo.SearchCriteria;
 
@@ -14,7 +14,7 @@ import com.sarf.vo.SearchCriteria;
 public class BoardServiceImpl implements BoardService {
 
 	@Inject
-	private BoardDAO dao;
+	private BoardDAOImpl dao;
 	
 	// 게시물 목록 조회
 	@Override

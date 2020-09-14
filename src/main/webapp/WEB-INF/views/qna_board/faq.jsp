@@ -17,6 +17,9 @@
 		padding-top: 15px;
 		margin-bottom: -80px;
 	}
+	footer{
+		padding-top:100px;
+	}
 </style>
 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -114,6 +117,7 @@
 			</div>      
       </div>
    </div>
+
    <footer>
 	<%@ include file="../board/footer.jsp"%>
    </footer>

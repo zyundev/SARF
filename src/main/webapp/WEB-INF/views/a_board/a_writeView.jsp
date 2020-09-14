@@ -10,6 +10,26 @@
 <!-- SmartEditor2 라이브러리 --> 
 <script type="text/javascript" src="/se2/js/HuskyEZCreator.js" charset="utf-8"></script> 
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+<script type="text/javascript">
+//첫 글자 공백 사용 X
+function blank_chk(obj) {
+    if(obj.value == " ") {
+        alert("첫 글자를 공백으로 사용할수 없습니다.");
+        obj.focus();
+        obj.value = obj.value.replace(' ','');
+        return false;
+    }
+}
+
+// 제목, 내용 빈칸 X
+function bnc() {
+	if($("#subject").val().trim() == "") {
+		alert("제목을 입력해주세요.");
+		$("#subject").focus();
+		return false;
+	}
+}
+</script>
 </head>
 <body>
 
@@ -22,10 +42,10 @@
 			<h3>명소 게시판 글쓰기</h3>
 		</div>
 		<div class="WritingContent">
-			<form name="writeForm" method="post" action="/a_board/a_write">
+			<form name="writeForm" method="post" action="/a_board/a_write" onsubmit="return bnc()">
 				<div class="WritingTitle">명소 게시판</div>
 				<div>
-					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." name="subject" style="height: 40px;"></textarea>
+					<textarea class="textarea_input" placeholder="제목을 입력해 주세요." id="subject" name="subject" onkeyup="blank_chk(this)" style="height: 40px;"></textarea>
 				</div>
 				<!-- 
 					아래 부분의 TEXTAREA는 스마트 에디터에 의해 편집되는 내용을 담는 것으로
@@ -63,6 +83,13 @@
 						$("#BaseButton").click(function() {
 							oEditors.getById["content"].exec("UPDATE_CONTENTS_FIELD", []); 
 							//textarea의 id를 적어줍니다.
+							var content = document.getElementById("content").value;
+
+				        	if(content == "" || content == null || content == '&nbsp;' || content == '<br>' || content == '<br/>' || content == '<p>&nbsp;</p>') {
+						        alert("내용을 작성해주세요.");
+						        oEditors.getById["content"].exec("FOCUS"); //포커싱
+						        return false;
+					       	} else return true;
 						});
 					})
 				</script>

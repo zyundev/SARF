@@ -226,7 +226,7 @@ while(se.hasMoreElements()){
 			
 			  	position: absolute;
 			  	
-			  	left: 48%;    		
+			  	left: 44%;    		
         		
         		
         		

@@ -22,26 +22,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sarf.service.A_BoardService;
-import com.sarf.service.A_ReplyService;
-import com.sarf.vo.A_BoardVO;
-import com.sarf.vo.A_ReplyVO;
+import com.sarf.service.A_BoardServiceImpl;
+import com.sarf.service.A_ReplyServiceImpl;
+import com.sarf.vo.BoardVO;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.PageMaker;
 import com.sarf.vo.PhotoVO;
+import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
 @Controller
 @RequestMapping("/a_board/*")
 public class A_BoardController {
-
 	private static final Logger logger = LoggerFactory.getLogger(A_BoardController.class);
 
 	@Inject
-	A_BoardService service;
+	A_BoardServiceImpl service;
 	
 	@Inject
-	A_ReplyService replyService;
+	A_ReplyServiceImpl replyService;
 
 	// 게시판 목록 조회
 	@RequestMapping(value = "/a_list", method = RequestMethod.GET)
@@ -68,7 +67,7 @@ public class A_BoardController {
 	
 	// 게시판 글 작성
 	@RequestMapping(value="/a_board/a_write", method = RequestMethod.POST)
-	public String write(A_BoardVO boardVO, HttpSession session) throws Exception {
+	public String write(BoardVO boardVO, HttpSession session) throws Exception {
 		logger.info("작성완료");
 
 		MemberVO memberVO = (MemberVO) session.getAttribute("member");
@@ -81,13 +80,13 @@ public class A_BoardController {
 		
 	// 게시물 조회
 	@RequestMapping(value = "/a_view", method = RequestMethod.GET)
-	public String read(A_BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
+	public String read(BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{
 		logger.info("뷰");
 			
 		model.addAttribute("read", service.read(boardVO.getBno()));
 		model.addAttribute("scri", scri);
 		
-		List<A_ReplyVO> replyList = replyService.readReply(boardVO.getBno());
+		List<ReplyVO> replyList = replyService.readReply(boardVO.getBno());
 		model.addAttribute("replyList", replyList);
 		
 		return "a_board/a_view";
@@ -95,7 +94,7 @@ public class A_BoardController {
 	
 	// 게시물 수정뷰
 	@RequestMapping(value = "/a_updateView", method = RequestMethod.GET)
-	public String updateView(A_BoardVO boardVO, Model model) throws Exception{
+	public String updateView(BoardVO boardVO, Model model) throws Exception{
 		logger.info("없데이트뷰");
 			
 		model.addAttribute("update", service.read(boardVO.getBno()));
@@ -105,7 +104,7 @@ public class A_BoardController {
 		
 	// 게시물 수정
 	@RequestMapping(value = "/a_update", method = RequestMethod.POST)
-	public String update(A_BoardVO boardVO) throws Exception{
+	public String update(BoardVO boardVO) throws Exception{
 		logger.info("없데이트");
 			
 		service.update(boardVO);
@@ -115,7 +114,7 @@ public class A_BoardController {
 
 	// 게시물 삭제
 	@RequestMapping(value = "/a_delete", method = RequestMethod.POST)
-	public String delete(A_BoardVO boardVO) throws Exception{
+	public String delete(BoardVO boardVO) throws Exception{
 		logger.info("딜리트");
 			
 		service.delete(boardVO.getBno());
@@ -126,7 +125,6 @@ public class A_BoardController {
 	// 싱글파일업로드
 	@RequestMapping("/singleupload")
 	public String photoUpload(HttpServletRequest request, PhotoVO vo) {
-		System.out.println("싱글탔어~~~~~~");
 		String callback = vo.getCallback();
 		String callback_func = vo.getCallback_func();
 		String file_result = "";
@@ -164,7 +162,6 @@ public class A_BoardController {
 	@RequestMapping("/multiupload")
 	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response) {
 		try {
-			System.out.println("다중탔어~~~~~~");
 			// 파일정보
 			String sFileInfo = "";
 			// 파일명을 받는다 - 일반 원본파일명

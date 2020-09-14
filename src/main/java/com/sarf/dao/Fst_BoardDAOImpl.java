@@ -2,58 +2,57 @@ package com.sarf.dao;
 
 import java.util.List;
 
-
 import javax.inject.Inject;
 
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.stereotype.Repository;
 
-import com.sarf.vo.Fst_BoardVO;
+import com.sarf.vo.ARF_BoardVO;
 
 @Repository	
-public class Fst_BoardDAOImpl implements Fst_BoardDAO{
+public class Fst_BoardDAOImpl implements ARF_BoardDAO{
 	@Inject
 	private SqlSession sqlSession;
 	
 	String mapper = "fst_boardMapper";
 	
-	// 게시?�� 목록 조회 강동
+	// 게시?�� 목록 조회 강동
 	@Override
-	public List<Fst_BoardVO> list1() throws Exception {
+	public List<ARF_BoardVO> list1() throws Exception {
 		return sqlSession.selectList(mapper + ".listPage1");
 	}
 	
-	// 게시?�� 목록 조회 강서
+	// 게시?�� 목록 조회 강서
 	@Override
-	public List<Fst_BoardVO> list2() throws Exception {
+	public List<ARF_BoardVO> list2() throws Exception {
 		return sqlSession.selectList(mapper + ".listPage2");
 	}
 	
-	// 게시?�� 목록 조회 강남
+	// 게시?�� 목록 조회 강남
 	@Override
-	public List<Fst_BoardVO> list3() throws Exception {
+	public List<ARF_BoardVO> list3() throws Exception {
 		return sqlSession.selectList(mapper + ".listPage3");
 	}
 	
-	// 게시?�� 목록 조회 강북
+	// 게시?�� 목록 조회 강북
 	@Override
-	public List<Fst_BoardVO> list4() throws Exception {
+	public List<ARF_BoardVO> list4() throws Exception {
 		return sqlSession.selectList(mapper + ".listPage4");
 	}
 	
-	// 게시?�� ?��?���? 조회
+	// 게시?�� ?��?���? 조회
 	@Override
-	public Fst_BoardVO updateview(int bno) throws Exception {
+	public ARF_BoardVO updateview(int bno) throws Exception {
 		return sqlSession.selectOne(mapper + ".updateview", bno);
 	}
 
 	@Override
-	public void write(Fst_BoardVO boardVO) throws Exception {
+	public void write(ARF_BoardVO boardVO) throws Exception {
 		sqlSession.insert(mapper + ".write", boardVO);
 	}
 
 	@Override
-	public void update(Fst_BoardVO boardVO) throws Exception {
+	public void update(ARF_BoardVO boardVO) throws Exception {
 		sqlSession.update(mapper + ".update", boardVO);
 	}
 

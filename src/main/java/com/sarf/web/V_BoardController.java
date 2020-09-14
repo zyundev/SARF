@@ -22,26 +22,25 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.sarf.service.V_BoardService;
-import com.sarf.service.V_ReplyService;
+import com.sarf.service.V_BoardServiceImpl;
+import com.sarf.service.V_ReplyServiceImpl;
+import com.sarf.vo.BoardVO;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.PageMaker;
 import com.sarf.vo.PhotoVO;
+import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
-import com.sarf.vo.V_BoardVO;
-import com.sarf.vo.V_ReplyVO;
 
 @Controller
 @RequestMapping("/v_board/*")
 public class V_BoardController {
-
 	private static final Logger logger = LoggerFactory.getLogger(V_BoardController.class);
 
 	@Inject
-	V_BoardService service;
+	V_BoardServiceImpl service;
 	
 	@Inject
-	V_ReplyService replyService;
+	V_ReplyServiceImpl replyService;
 
 	// 게시판 목록 조회
 	@RequestMapping(value = "/v_list", method = RequestMethod.GET)
@@ -68,7 +67,7 @@ public class V_BoardController {
 	  // 게시판 글 작성
 	 
 	  @RequestMapping(value="/v_board/v_write", method = RequestMethod.POST) public
-	  String write(V_BoardVO boardVO, HttpSession session) throws Exception {
+	  String write(BoardVO boardVO, HttpSession session) throws Exception {
 	  logger.info("작성완료");
 	 
 	  MemberVO memberVO = (MemberVO) session.getAttribute("member"); String boardId
@@ -81,13 +80,13 @@ public class V_BoardController {
 	
 	  // 게시물 조회
 	  @RequestMapping(value = "/v_view", method = RequestMethod.GET) 
-	  public String read(V_BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{ 
+	  public String read(BoardVO boardVO, @ModelAttribute("scri") SearchCriteria scri, Model model) throws Exception{ 
 		  logger.info("뷰");
 	 
 		  model.addAttribute("read", service.read(boardVO.getBno()));
 		  model.addAttribute("scri", scri);
 
-		  List<V_ReplyVO> replyList = replyService.readReply(boardVO.getBno());
+		  List<ReplyVO> replyList = replyService.readReply(boardVO.getBno());
 		  model.addAttribute("replyList", replyList);
 		 
 		  return "v_board/v_view"; 
@@ -97,7 +96,7 @@ public class V_BoardController {
 	  // 게시물 수정뷰
 	  
 	  @RequestMapping(value = "/v_updateView", method = RequestMethod.GET) public
-	  String updateView(V_BoardVO boardVO, Model model) throws Exception{
+	  String updateView(BoardVO boardVO, Model model) throws Exception{
 	  logger.info("김성규 업데이트");
 	  
 	  model.addAttribute("update", service.read(boardVO.getBno()));
@@ -107,7 +106,7 @@ public class V_BoardController {
 	  // 게시물 수정
 	  
 	  @RequestMapping(value = "/v_update", method = RequestMethod.POST) public String
-	  update(V_BoardVO boardVO) throws Exception{ logger.info("없데이트");
+	  update(BoardVO boardVO) throws Exception{ logger.info("없데이트");
 	  
 	  service.update(boardVO);
 	 
@@ -118,7 +117,7 @@ public class V_BoardController {
 	 // 게시물 삭제
 	  
 	 @RequestMapping(value = "/v_delete", method = RequestMethod.POST) public String
-	  delete(V_BoardVO boardVO) throws Exception{ logger.info("딜리트");
+	  delete(BoardVO boardVO) throws Exception{ logger.info("딜리트");
 	  
 	 service.delete(boardVO.getBno());
 	 
@@ -219,5 +218,4 @@ public class V_BoardController {
 			e.printStackTrace();
 		}
 	}
-
 }

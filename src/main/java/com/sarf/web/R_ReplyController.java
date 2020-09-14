@@ -10,8 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.sarf.service.R_ReplyService;
-import com.sarf.vo.R_ReplyVO;
+import com.sarf.service.R_ReplyServiceImpl;
+import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
 @Controller
@@ -21,11 +21,11 @@ public class R_ReplyController {
 	private static final Logger logger = LoggerFactory.getLogger(R_ReplyController.class);
 	
 	@Inject
-	R_ReplyService service;
+	R_ReplyServiceImpl service;
 	
 	// 댓글 작성
 	@RequestMapping(value = "/replyWrite", method = RequestMethod.POST)
-	public String replyWrite(R_ReplyVO r_vo, SearchCriteria scri, RedirectAttributes rttr) throws Exception {
+	public String replyWrite(ReplyVO r_vo, SearchCriteria scri, RedirectAttributes rttr) throws Exception {
 		
 		logger.info("~~~~~~~~~post r_replyWrite~~~~~~~~~");
 		
@@ -43,7 +43,7 @@ public class R_ReplyController {
 	
 	//댓글 수정 GET
 	@RequestMapping(value="/replyUpdateView", method = RequestMethod.GET)
-	public String replyUpdateView(R_ReplyVO r_vo, Model model) throws Exception {
+	public String replyUpdateView(ReplyVO r_vo, Model model) throws Exception {
 		logger.info("~~~get r_replyUpdateView~~~");
 		
 		model.addAttribute("replyUpdate", service.selectReply(r_vo.getRno()));
@@ -54,7 +54,7 @@ public class R_ReplyController {
 	
 	//댓글 수정 POST
 	@RequestMapping(value="/replyUpdate", method = RequestMethod.POST)
-	public String replyUpdate(R_ReplyVO r_vo, RedirectAttributes rttr) throws Exception {
+	public String replyUpdate(ReplyVO r_vo, RedirectAttributes rttr) throws Exception {
 		logger.info("~~~post replyUpdate~~~");
 		
 		service.updateReply(r_vo);
@@ -66,7 +66,7 @@ public class R_ReplyController {
 	
 	//댓글 삭제 GET
 	@RequestMapping(value="/replyDeleteView", method = RequestMethod.GET)
-	public String replyDeleteView(R_ReplyVO r_vo, Model model) throws Exception {
+	public String replyDeleteView(ReplyVO r_vo, Model model) throws Exception {
 		logger.info("~~~get replyDeleteView~~~");
 		
 		model.addAttribute("replyDelete", service.selectReply(r_vo.getRno()));
@@ -76,7 +76,7 @@ public class R_ReplyController {
 
 	//댓글 삭제
 	@RequestMapping(value="/replyDelete", method = RequestMethod.GET)
-	public String r_replyDelete(R_ReplyVO r_vo, RedirectAttributes rttr) throws Exception {
+	public String r_replyDelete(ReplyVO r_vo, RedirectAttributes rttr) throws Exception {
 		logger.info("~~~get replyDelete~~~");
 		
 		service.deleteReply(r_vo);
