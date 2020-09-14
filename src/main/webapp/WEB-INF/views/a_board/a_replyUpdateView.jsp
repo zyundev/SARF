@@ -63,11 +63,11 @@
 		$(".cancel_btn").on("click", function(){
 			location.href = "/a_board/a_view?bno=${replyUpdate.bno}";
 			/*
-				   + "&page=${scri.page}"
-				   + "&perPageNum=${scri.perPageNum}"
-				   + "&searchType=${scri.searchType}"
-				   + "&keyword=${scri.keyword}";
-			   */
+			   + "&page=${scri.page}"
+			   + "&perPageNum=${scri.perPageNum}"
+			   + "&searchType=${scri.searchType}"
+			   + "&keyword=${scri.keyword}";
+			*/
 		})
 	})
 </script>
