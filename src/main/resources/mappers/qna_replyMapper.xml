@@ -18,14 +18,13 @@
 							BNO,
 							RNO,
 							NAME,
-							CONTENT,
-							ANS
+							CONTENT
 									)
 				VALUES(		#{bno},
 							Qna_BOARD_R_SEQ.NEXTVAL,
 							#{name},
-							#{content},
-							1 )
+							#{content}
+										)
 	</insert>
 
 	<!-- 댓글 수정 -->

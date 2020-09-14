@@ -93,6 +93,11 @@ while(se.hasMoreElements()){
 </script>
    
 <body>
+
+<header>
+	<%@ include file="../h_list/bv_head.jsp" %>
+</header>
+
 <section id="container">
    <div class="view_list">
          <div class="view_content">

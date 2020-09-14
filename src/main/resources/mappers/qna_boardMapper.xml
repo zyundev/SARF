@@ -13,8 +13,8 @@
 
 	<!-- 게시판 글 작성 -->
  	<insert id="write" >
-		INSERT INTO QNA_BOARD(BNO, NAME, SUBJECT, CONTENT, REGDATE, ANS)
-		VALUES(QNA_BOARD_SEQ.NEXTVAL, #{name}, #{subject}, #{content}, sysdate, 0)
+		INSERT INTO QNA_BOARD(BNO, NAME, SUBJECT, CONTENT, REGDATE)
+		VALUES(QNA_BOARD_SEQ.NEXTVAL, #{name}, #{subject}, #{content}, sysdate)
 	</insert> 
 
 	<!-- 게시물 조회 -->
@@ -24,7 +24,6 @@
 			  , CONTENT
 			  , NAME
 			  , REGDATE
-			  , ANS
 		 FROM QNA_BOARD
 		 WHERE BNO = #{bno}
 	</select>

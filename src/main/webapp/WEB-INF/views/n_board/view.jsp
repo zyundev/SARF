@@ -59,9 +59,12 @@ while(se.hasMoreElements()){
 					alert('다른사용자의 글을 삭제할 수 없습니다.');
 					return false;
 				}
-				formObj.attr("action", "/n_board/delete");
-				formObj.attr("method", "post");
-				formObj.submit();
+				var chck = confirm('삭제하시겠습니까?');
+				if(chck){
+					formObj.attr("action", "/n_board/delete");
+					formObj.attr("method", "post");
+					formObj.submit();
+				}
 			})
 			
 			// 취소

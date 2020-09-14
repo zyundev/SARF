@@ -46,7 +46,7 @@ function bnc() {
 		<nav>홈 - 글 작성</nav>
 		<div class="UpdateContent">
 			<form name="updateForm" role="form" method="post" action="/r_board/r_update" onsubmit="return bnc()">
-				<div class="UpdateTitle">자유 게시판</div>
+				<div class="UpdateTitle">맛집 게시판</div>
 				<input type="hidden" name="bno" value="${update.bno}" readonly="readonly" />
 				<div>
 					<label for="content" class="textarea_input"><b>제목 : </b><input type="text" placeholder="제목을 입력하세요." id="subject" name="subject" onkeyup="blank_chk(this);" class="subject_input" value="${update.subject}" /></label>
@@ -104,7 +104,7 @@ function bnc() {
       				$(".cancel_btn").on("click", function() {
        				  event.preventDefault();
        				  if(confirm("수정을 취소하시겠습니까?") == true) {
-       					location.href = "/r_board/view?bno=${update.bno}";
+       					location.href = "/r_board/r_view?bno=${update.bno}";
          				}
       				})
    				})
