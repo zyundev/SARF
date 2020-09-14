@@ -5,6 +5,7 @@ import java.util.List;
 import com.sarf.vo.ARF_BoardVO;
 
 public interface ARF_BoardDAO {
+	
 	// 게시물 작성
 	public void write(ARF_BoardVO boardVO) throws Exception;
 

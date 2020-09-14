@@ -44,7 +44,6 @@ public class V_BoardController {
 
 	// 게시판 목록 조회
 	@RequestMapping(value = "/v_list", method = RequestMethod.GET)
-
 	public String list(Model model, @ModelAttribute("scri") SearchCriteria scri) throws Exception{
 		logger.info("김성규");
 
@@ -60,21 +59,23 @@ public class V_BoardController {
 	}
 
 	  // 게시판 글 작성 화면
-	  
 	  @RequestMapping(value = "/v_board/v_writeView", method = RequestMethod.GET)
-	  public void writeView() throws Exception{ logger.info("작성화면"); }
+	  public void writeView() throws Exception{ 
+		  logger.info("작성화면"); 
+	  }
 	  
 	  // 게시판 글 작성
+	  @RequestMapping(value="/v_board/v_write", method = RequestMethod.POST) 
+	  public String write(BoardVO boardVO, HttpSession session) throws Exception {
+		  logger.info("작성완료");
 	 
-	  @RequestMapping(value="/v_board/v_write", method = RequestMethod.POST) public
-	  String write(BoardVO boardVO, HttpSession session) throws Exception {
-	  logger.info("작성완료");
+		  MemberVO memberVO = (MemberVO) session.getAttribute("member"); 
+		  String boardId = memberVO.getId(); 
+		  boardVO.setName(boardId);
 	 
-	  MemberVO memberVO = (MemberVO) session.getAttribute("member"); String boardId
-	  = memberVO.getId(); boardVO.setName(boardId);
-	 
-	  service.write(boardVO); return "redirect:/v_board/v_list"; 
-	  
+		  service.write(boardVO); 
+		  
+		  return "redirect:/v_board/v_list"; 
 	  }
 	 
 	
@@ -94,34 +95,34 @@ public class V_BoardController {
 	 
 	
 	  // 게시물 수정뷰
+	  @RequestMapping(value = "/v_updateView", method = RequestMethod.GET) 
+	  public String updateView(BoardVO boardVO, Model model) throws Exception{
+		  logger.info("김성규 업데이트");
 	  
-	  @RequestMapping(value = "/v_updateView", method = RequestMethod.GET) public
-	  String updateView(BoardVO boardVO, Model model) throws Exception{
-	  logger.info("김성규 업데이트");
+		  model.addAttribute("update", service.read(boardVO.getBno()));
 	  
-	  model.addAttribute("update", service.read(boardVO.getBno()));
-	  
-	  return "v_board/v_updateView"; }
+		  return "v_board/v_updateView"; 
+	  }
 	 
 	  // 게시물 수정
+	  @RequestMapping(value = "/v_update", method = RequestMethod.POST) 
+	  public String update(BoardVO boardVO) throws Exception{ 
+		  logger.info("없데이트");
 	  
-	  @RequestMapping(value = "/v_update", method = RequestMethod.POST) public String
-	  update(BoardVO boardVO) throws Exception{ logger.info("없데이트");
-	  
-	  service.update(boardVO);
+		  service.update(boardVO);
 	 
-	  return "redirect:/v_board/v_view?bno=" + boardVO.getBno(); 
+		  return "redirect:/v_board/v_view?bno=" + boardVO.getBno(); 
 	  }
 	  
 	
 	 // 게시물 삭제
+	 @RequestMapping(value = "/v_delete", method = RequestMethod.POST) 
+	 public String delete(BoardVO boardVO) throws Exception{ 
+		 logger.info("딜리트");
 	  
-	 @RequestMapping(value = "/v_delete", method = RequestMethod.POST) public String
-	  delete(BoardVO boardVO) throws Exception{ logger.info("딜리트");
-	  
-	 service.delete(boardVO.getBno());
+		 service.delete(boardVO.getBno());
 	 
-	 return "redirect:/v_board/v_list"; 
+		 return "redirect:/v_board/v_list"; 
 	 }
 	 
 	// 싱글파일업로드

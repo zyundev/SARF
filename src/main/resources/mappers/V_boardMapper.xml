@@ -90,16 +90,3 @@
 		WHERE BNO = #{BNO}
 	</update>
 </mapper>
-
-
-
-
-
-
-
-
-
-
-
-
-
