@@ -165,6 +165,9 @@
             </div>
          </div>
                   </c:when>
+                  <c:otherwise>
+                  <p style="float: left; margin-top: 3px; margin-right: 12px; font-size: 17px;">관리자만 답글 작성 가능합니다.</p>
+                  </c:otherwise>
                </c:choose>
 
       </div>

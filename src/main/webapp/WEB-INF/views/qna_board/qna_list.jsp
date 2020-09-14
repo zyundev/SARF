@@ -48,7 +48,10 @@ while(se.hasMoreElements()){
 					<tr>
 						<td><c:out value="${list.bno}"></c:out></td>
 						<td class="tit">
-							<a href="/qna_board/qna_view?bno=${list.bno}"><c:out value="${list.subject}"/></a>
+						<c:if test="${member.id == 'admin' || member.id == list.name}">
+							<a href="/qna_board/qna_view?bno=${list.bno}">
+						</c:if>
+						<c:out value="${list.subject}"/></a>
 						</td>
 						<td><c:out value="${list.name}"></c:out></td>
 						<td><fmt:formatDate value="${list.regdate}" pattern="yyyy-MM-dd" /></td>
@@ -57,9 +60,11 @@ while(se.hasMoreElements()){
 				
 	    </tbody>
 	</table>
+				<c:if test="${member.id != 'admin'}">
 	            <div style="float:right">
 				  <button class="write_btn" onclick="location.href='/qna_board/qna_writeView'">글쓰기</button> 
 			      </div>
+			    </c:if>
 	<script>
 		$(function(){
 			$('.write_btn').on('click', function(){
