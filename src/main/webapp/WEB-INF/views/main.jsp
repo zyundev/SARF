@@ -468,28 +468,18 @@ header {
 			<li data-tab="tab3" class = "cool-link" >#축제</li>
 		</ul>
         
-    
-
-        
-        
-        
-        
         <div id="tab1" class="tabcontent current">
             <Br>
             <br>
             <br>
     
-            <img class = "Dong_1" src="/resources/images/att_image/Dong/Am_1.jpg" alt="강동3" width="350px"
-					height="300px">  
-                
+            <img class = "Dong_1" onclick="location.href='/attraction/list'" src="/resources/images/att_image/Dong/Am_1.jpg" alt="강동3" width="350px"
+					height="300px"> 
 
-           <img class = "Dong_2" src="/resources/images/res_image/Dong_2/Bong_1.png" alt="강동3" width="350px"
+           <img class = "Dong_2" onclick="location.href='/restaurant/list'" src="/resources/images/res_image/Dong_2/Bong_1.png" alt="강동3" width="350px"
 					height="300px">    
-   
-   
                         
-                        
-          <img class = "Dong_3" src="/resources/images/fes_image/Dong_3/Moon_1.jpg" alt="강동3" width="350px"
+          <img class = "Dong_3" onclick="location.href='/festival/list'" src="/resources/images/fes_image/Dong_3/Moon_1.jpg" alt="강동3" width="350px"
 					height="300px">    
             <br>
             <br>
@@ -498,64 +488,44 @@ header {
         
 		<div id="tab2" class="tabcontent2">
             
-            
             <Br>
             <br>
             <br>
     
-            <img class = "Seo_1" src="/resources/images/att_image/Seo/Hu_1.jpg" alt="강서" width="350px"
+            <img class = "Seo_1" onclick="location.href='/attraction/list'" src="/resources/images/att_image/Seo/Hu_1.jpg" alt="강서" width="350px"
 					height="300px">  
-					
-					    
            
-           <img class = "Seo_2" src="/resources/images/res_image/Seo_2/Cal_1.png" alt="강서" width="350px"
+           <img class = "Seo_2" onclick="location.href='/restaurant/list'" src="/resources/images/res_image/Seo_2/Cal_1.png" alt="강서" width="350px"
 					height="300px">  
-					
-					
-                          
                 
-                
-          <img class = "Seo_3" src="/resources/images/fes_image/Seo_3/Han_1.jpg" alt="강서" width="350px"
+          <img class = "Seo_3" onclick="location.href='/festival/list'" src="/resources/images/fes_image/Seo_3/Han_1.jpg" alt="강서" width="350px"
 					height="300px">    
             
-            
             <br>
             <br>
             <br>
-            
             
          </div>     
-            
             
         <div id="tab3" class="tabcontent3">
      <Br>
             <br>
             <br>
     
-            <img class = "Nam_1" src="/resources/images/att_image/Nam/Aqua_1.jpg" alt="강남" width="350px"
+            <img class = "Nam_1" onclick="location.href='/attraction/list'" src="/resources/images/att_image/Nam/Aqua_1.jpg" alt="강남" width="350px"
 					height="300px">  
-                
-               
-                        
-           
-           
-           <img class = "Nam_2" src="/resources/images/res_image/Nam_2/Ro_1.png" alt="강남" width="350px"
+					
+           <img class = "Nam_2" onclick="location.href='/restaurant/list'" src="/resources/images/res_image/Nam_2/Ro_1.png" alt="강남" width="350px"
 					height="300px">    
 					
-		
-                
-                
-          <img class = "Nam_3" src="/resources/images/fes_image/Nam_3/Eat_1.jpg" alt="강남" width="350px"
+          <img class = "Nam_3" onclick="location.href='/festival/list'" src="/resources/images/fes_image/Nam_3/Eat_1.jpg" alt="강남" width="350px"
 					height="300px">    
-            
             
             <br>
             <br>
             <br>
             
 		  </div>
-	
-
         
         <div id="tab4" class="tabcontent4">
                 
@@ -563,21 +533,14 @@ header {
             <br>
             <br>
     
-            <img class = "Buk_1" src="/resources/images/att_image/Book/Gyeong_1.jpg" alt="강북" width="350px"
+            <img class = "Buk_1" onclick="location.href='/attraction/list'" src="/resources/images/att_image/Book/Gyeong_1.jpg" alt="강북" width="350px"
 					height="300px">  
-					
-				
            
-           
-           <img class = "Buk_2" src="/resources/images/res_image/Book_2/Mi_1.png" alt="강북" width="350px"
+           <img class = "Buk_2" onclick="location.href='/restaurant/list'" src="/resources/images/res_image/Book_2/Mi_1.png" alt="강북" width="350px"
 					height="300px">    
-					
-		
                 
-                
-          <img  class = "Buk_3" src="/resources/images/fes_image/Book_3/Light_1.jpg" alt="강북" width="350px"
+          <img  class = "Buk_3" onclick="location.href='/festival/list'" src="/resources/images/fes_image/Book_3/Light_1.jpg" alt="강북" width="350px"
 					height="300px">    
-            
             
             <br>
             <br>

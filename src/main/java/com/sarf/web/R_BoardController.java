@@ -27,7 +27,6 @@ import com.sarf.service.R_ReplyServiceImpl;
 import com.sarf.vo.BoardVO;
 import com.sarf.vo.MemberVO;
 import com.sarf.vo.PageMaker;
-import com.sarf.vo.PhotoVO;
 import com.sarf.vo.ReplyVO;
 import com.sarf.vo.SearchCriteria;
 
@@ -122,44 +121,6 @@ public class R_BoardController {
 		return "redirect:/r_board/r_list";
 	}
 	
-	// 싱글파일업로드
-	@RequestMapping("/singleupload")
-	public String photoUpload(HttpServletRequest request, PhotoVO vo) {
-		System.out.println("싱글탔어~~~~~~");
-		String callback = vo.getCallback();
-		String callback_func = vo.getCallback_func();
-		String file_result = "";
-		try {
-			if (vo.getFiledata() != null && vo.getFiledata().getOriginalFilename() != null
-					&& !vo.getFiledata().getOriginalFilename().equals("")) {
-				// 파일이 존재하면
-				String original_name = vo.getFiledata().getOriginalFilename();
-				String ext = original_name.substring(original_name.lastIndexOf(".") + 1);
-				// 파일 기본경로
-				String defaultPath = request.getSession().getServletContext().getRealPath("/");
-				// 파일 기본경로 _ 상세경로
-				String path = defaultPath + "resources" + File.separator + "photo_upload" + File.separator;
-				File file = new File(path);
-				System.out.println("path:" + path);
-				// 디렉토리 존재하지 않을경우 디렉토리 생성
-				if (!file.exists()) {
-					file.mkdirs();
-				}
-				// 서버에 업로드 할 파일명(한글문제로 인해 원본파일은 올리지 않는것이 좋음)
-				String realname = UUID.randomUUID().toString() + "." + ext;
-				///////////////// 서버에 파일쓰기 /////////////////
-				vo.getFiledata().transferTo(new File(path + realname));
-				file_result += "&bNewLine=true&sFileName=" + original_name + "&sFileURL=/resources/photo_upload/"
-						+ realname;
-			} else {
-				file_result += "&errstr=error";
-			}
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return "redirect:" + callback + "?callback_func=" + callback_func + file_result;
-	}
-
 	@RequestMapping("/multiupload")
 	public void multiplePhotoUpload(HttpServletRequest request, HttpServletResponse response) {
 		try {
