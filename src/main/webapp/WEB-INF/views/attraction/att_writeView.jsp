@@ -54,7 +54,7 @@ div {
 .WritingHeader {
    position: relative;
    margin-top: 20px;
-   border-bottom: 1px solid #323232;
+   border-bottom: 1px solid #323232; 
 }
 
 h3 {
