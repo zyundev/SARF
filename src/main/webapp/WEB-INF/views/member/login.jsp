@@ -55,7 +55,7 @@
 			<div class="container_main">로그인</div>
 			<div class="container_id">
 				<input class="container_id_input" type="text" name="id"
-					onkeydown="if (event.keyCode == 13) document.getElementById('login_enter').click()">
+					onkeydown="if (event.keyCode == 13) document.getElementById('login_enter').click()" autofocus>
 				<div class="container_id_div">아이디</div>
 			</div>
 			<div class="container_pw">

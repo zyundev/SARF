@@ -37,13 +37,13 @@
                 if (myArticle.hasClass('hide')) {
                     // 아코디언 효과
                     article.addClass('hide').removeClass('show'); 
-                    article.find('.a').slideUp(0);
+                    article.find('.a').slideUp(100);
                     
                     myArticle.removeClass('hide').addClass('show');
-                    myArticle.find('.a').slideDown(0);
+                    myArticle.find('.a').slideDown(100);
                 } else {
                     myArticle.removeClass('show').addClass('hide');
-                    myArticle.find('.a').slideUp(0);
+                    myArticle.find('.a').slideUp(100);
                 }
             });
         });
