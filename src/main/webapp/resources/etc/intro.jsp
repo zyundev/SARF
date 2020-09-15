@@ -81,7 +81,7 @@
 		</div>
 		<div class="card_6">
 			<div class="imgBx">
-				<img src="/resources/images/pf_6.png">
+				<img src="/resources/images/pf_6.jpg">
 			</div>
 			<div class="details">
 				<h2>
