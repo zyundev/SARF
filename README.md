@@ -20,6 +20,6 @@
 
 ## PDF 자료
 
-> SARF.pdf 파일은 Sarf 프로젝트 설명 파일입니다.
+> [SARF.pdf](https://github.com/LifeIT-web/SARF/blob/master/SARF.pdf) 파일은 Sarf 프로젝트 설명 파일입니다.
 
 
