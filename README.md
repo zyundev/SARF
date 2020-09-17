@@ -1,7 +1,4 @@
 # SARF (Seoul Attraction Restaurant Festival)
-<br><br><br>
-
-
 
 ## 목적
 
